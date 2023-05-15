@@ -29,10 +29,14 @@
 
 SR3_CONFIG=/Users/tomkralidis/Library/Application\ Support/sr3
 
-install:
+install: setup
 	cp publish2wis2.py $(SR3_CONFIG)/plugins
 	cp bufr.conf $(SR3_CONFIG)/subscribe
 
 setup:
 	mkdir -p $(SR3_CONFIG)/plugins
 	mkdir -p $(SR3_CONFIG)/subscribe
+
+clean:
+	rm -fr $(SR3_CONFIG)/plugins
+	rm -fr $(SR3_CONFIG)/subscribe

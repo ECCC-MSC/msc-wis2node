@@ -27,8 +27,11 @@
 #
 # =================================================================
 
+import json
 import logging
-import os
+
+from pywis_pubsub.mqtt import MQTTPubSubClient
+from pywis_pubsub.publish import create_message
 from sarracenia.flowcb import FlowCB
 
 LOGGER = logging.getLogger(__name__)
@@ -55,12 +58,9 @@ class WIS2Publisher(FlowCB):
 
         for msg in worklist.incoming:
             try:
-                filepath = f"{os.sep}{['relPath']}"
-                LOGGER.debug(f'Local filepath: {filepath}')
-
-                identifier = os.path.basename(filepath)
-
-                self.publish_to_wis2(msg=msg, filepath=filepath)
+                LOGGER.debug('Processing notification')
+                url = f'{msg.baseUrl}{msg.relPath}'
+                self.publish_to_wis2(msg.filename, url)
                 new_incoming.append(msg)
             except Exception as err:
                 LOGGER.error(f'Error sending to remote: {err}')
@@ -69,16 +69,26 @@ class WIS2Publisher(FlowCB):
 
         worklist.incoming = new_incoming
 
-    def publish_to_wis2(self, msg, filepath: str) -> None:
+    def publish_to_wis2(self, identifier: str, url: str) -> None:
         """
         WIS2 publisher
 
-        :param filepath: `str` of local filepath to upload
+        :param identifier: `str` of identifier
+        :param url: `str` of URL of resource
 
         :returns: `bool` of dispatch result
         """
 
-        remote_filepath = filepath.lstrip("/")
+        topic = 'origin/a/wis2/can/eccc-msc/data/core/weather/surface-based-observations',
+        message = create_message(
+            topic=topic,
+            content_type='application/x-bufr',
+            url=url,
+            identifier=identifier
+        )
+        LOGGER.debug('Publishing WIS2 notification message')
+        m = MQTTPubSubClient('mqtt://mscwis2user:mscwis2user@a2ea81cfe2b44453992b427ed2abe9cd.s2.eu.hivemq.cloud:8883')
+        m.pub(topic, json.dumps(message))
 
     def __repr__(self):
         return '<WIS2Publisher>'
