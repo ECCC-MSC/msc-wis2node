@@ -29,8 +29,10 @@
 
 import json
 import logging
+import os
+import random
 
-from pywis_pubsub.mqtt import MQTTPubSubClient
+from paho.mqtt import publish
 from pywis_pubsub.publish import create_message
 from sarracenia.flowcb import FlowCB
 
@@ -43,7 +45,12 @@ class WIS2Publisher(FlowCB):
     def __init__(self, options):
         """initialize"""
 
-        self.options = options
+        self.username = os.environ['MSC_WIS2NODE_BROKER_USERNAME']
+        self.password = os.environ['MSC_WIS2NODE_BROKER_PASSWORD']
+        self.hostname = os.environ['MSC_WIS2NODE_BROKER_HOSTNAME']
+        self.port = int(os.environ['MSC_WIS2NODE_BROKER_PORT'])
+
+        self.client_id = f'msc-wis2node id={random.randint(0, 1000)} (https://github.com/ECCC-MSC/msc-wis2node)'  # noqa
 
     def after_accept(self, worklist) -> None:
         """
@@ -59,11 +66,11 @@ class WIS2Publisher(FlowCB):
         for msg in worklist.incoming:
             try:
                 LOGGER.debug('Processing notification')
-                url = f'{msg.baseUrl}{msg.relPath}'
-                self.publish_to_wis2(msg.filename, url)
+                url = f"{msg['baseUrl']}{msg['relPath']}"
+                self.publish_to_wis2(msg['filename'], url)
                 new_incoming.append(msg)
             except Exception as err:
-                LOGGER.error(f'Error sending to remote: {err}')
+                LOGGER.error(f'Error sending to remote: {err}', exc_info=True)
                 worklist.failed.append(msg)
                 continue
 
@@ -79,16 +86,28 @@ class WIS2Publisher(FlowCB):
         :returns: `bool` of dispatch result
         """
 
-        topic = 'origin/a/wis2/can/eccc-msc/data/core/weather/surface-based-observations',
+        topic = 'origin/a/wis2/can/eccc-msc/data/core/weather/surface-based-observations'  # noqa
         message = create_message(
             topic=topic,
             content_type='application/x-bufr',
             url=url,
             identifier=identifier
         )
+        print(json.dumps(message, indent=4))
         LOGGER.debug('Publishing WIS2 notification message')
-        m = MQTTPubSubClient('mqtt://mscwis2user:mscwis2user@a2ea81cfe2b44453992b427ed2abe9cd.s2.eu.hivemq.cloud:8883')
-        m.pub(topic, json.dumps(message))
+
+        publish.single(
+            topic,
+            payload=message,
+            qos=1,
+            hostname=self.hostname,
+            port=self.port,
+            client_id=self.client_id,
+            auth={
+                'username': self.username,
+                'password': self.password
+            }
+        )
 
     def __repr__(self):
         return '<WIS2Publisher>'

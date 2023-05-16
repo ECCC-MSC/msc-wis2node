@@ -38,5 +38,7 @@ setup:
 	mkdir -p $(SR3_CONFIG)/subscribe
 
 clean:
-	rm -fr $(SR3_CONFIG)/plugins
-	rm -fr $(SR3_CONFIG)/subscribe
+	rm -fr $(SR3_CONFIG)/plugins/publish2wis2.py
+	rm -fr $(SR3_CONFIG)/subscribe/bufr.conf
+
+.PHONY: install setup clean
