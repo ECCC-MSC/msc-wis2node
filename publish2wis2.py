@@ -31,7 +31,9 @@ import json
 import logging
 import os
 import random
+import ssl
 
+import certifi
 from paho.mqtt import publish
 from pywis_pubsub.publish import create_message
 from sarracenia.flowcb import FlowCB
@@ -51,6 +53,9 @@ class WIS2Publisher(FlowCB):
         self.port = int(os.environ['MSC_WIS2NODE_BROKER_PORT'])
 
         self.client_id = f'msc-wis2node id={random.randint(0, 1000)} (https://github.com/ECCC-MSC/msc-wis2node)'  # noqa
+
+
+        self.tls = {'ca_certs': certifi.where(), 'tls_version': ssl.PROTOCOL_TLSv1_2}
 
     def after_accept(self, worklist) -> None:
         """
@@ -98,11 +103,12 @@ class WIS2Publisher(FlowCB):
 
         publish.single(
             topic,
-            payload=message,
+            payload=json.dumps(message),
             qos=1,
             hostname=self.hostname,
             port=self.port,
             client_id=self.client_id,
+            tls=self.tls,
             auth={
                 'username': self.username,
                 'password': self.password
