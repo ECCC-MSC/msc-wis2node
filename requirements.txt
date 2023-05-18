@@ -1,3 +1,4 @@
 certifi
 metpx-sr3
 pywis-pubsub
+urllib3<2

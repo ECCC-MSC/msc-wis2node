@@ -38,6 +38,7 @@ setup:
 	mkdir -p $(SR3_CONFIG)/subscribe
 
 clean:
+	sr3 cleanup subscribe/bufr
 	rm -fr $(SR3_CONFIG)/plugins/publish2wis2.py
 	rm -fr $(SR3_CONFIG)/subscribe/bufr.conf
 
