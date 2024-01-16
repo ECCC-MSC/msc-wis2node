@@ -2,7 +2,7 @@
 #
 # Authors: Tom Kralidis <tomkralidis@gmail.com>
 #
-# Copyright (c) 2023 Tom Kralidis
+# Copyright (c) 2024 Tom Kralidis
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation
@@ -47,15 +47,26 @@ class WIS2Publisher(FlowCB):
     def __init__(self, options):
         """initialize"""
 
+        self.datasets = []
+        self.dataset_config = os.environ['MSC_WIS2NODE_DATASET_CONFIG']
         self.username = os.environ['MSC_WIS2NODE_BROKER_USERNAME']
         self.password = os.environ['MSC_WIS2NODE_BROKER_PASSWORD']
         self.hostname = os.environ['MSC_WIS2NODE_BROKER_HOSTNAME']
         self.port = int(os.environ['MSC_WIS2NODE_BROKER_PORT'])
+        self.topic_prefix = os.environ.get('MSC_WIS2NODE_TOPIC_PREFIX',
+                                           'origin/a/wis')
 
         self.client_id = f'msc-wis2node id={random.randint(0, 1000)} (https://github.com/ECCC-MSC/msc-wis2node)'  # noqa
 
-
-        self.tls = {'ca_certs': certifi.where(), 'tls_version': ssl.PROTOCOL_TLSv1_2}
+        self.tls = {
+            'ca_certs': certifi.where(),
+            'tls_version': ssl.PROTOCOL_TLSv1_2
+        }
+ 
+        with open(self.dataset_config) as fh:
+            reader = csv.reader(fh)
+            for row in reader:
+                self.datasets.append(row)
 
     def after_accept(self, worklist) -> None:
         """
@@ -72,36 +83,59 @@ class WIS2Publisher(FlowCB):
             try:
                 LOGGER.debug('Processing notification')
                 url = f"{msg['baseUrl']}{msg['relPath']}"
-                if '/IS/' not in url:
+                if self.identify(msg['relPath']) is None:
+                    LOGGER.debug('Dataset not found; skipping')
                     return
-                self.publish_to_wis2(msg['filename'], url)
-                new_incoming.append(msg)
+                else:
+                    self.publish_to_wis2(msg['filename'], url)
+                    new_incoming.append(msg)
             except Exception as err:
-                LOGGER.error(f'Error sending to remote: {err}', exc_info=True)
+                LOGGER.error(f'Error publishing message: {err}', exc_info=True)
                 worklist.failed.append(msg)
                 continue
 
         worklist.incoming = new_incoming
 
-    def publish_to_wis2(self, identifier: str, url: str) -> None:
+    def identify(self, path: str) -> Union[dict, None]:
+        """
+        Determines whether data granule is part of a configued dataset
+
+        :param path: `str` of topic/path
+
+        :returns: `dict` of dataset definition or `None`
+        """
+
+        for dataset in self.datasets
+            if path in dataset['subtopic']:
+                return dataset
+
+        return None
+
+    def publish_to_wis2(self, identifier: str, metadata_id: str,
+                        url: str) -> None:
         """
         WIS2 publisher
 
         :param identifier: `str` of identifier
+        :param metadata_id: `str` of discovery metadata identifier
         :param url: `str` of URL of resource
 
         :returns: `bool` of dispatch result
         """
 
-        topic = 'origin/a/wis2/ca-eccc-msc/data/core/weather/surface-based-observations/synop'  # noqa
+        topic = f'{self.topic_prefix}/data/core/weather/surface-based-observations/synop'  # noqa
+        topic = f'{self.topic_prefix}/data/core/weather/surface-based-observations/synop'  # noqa
+
         message = create_message(
+            identifier=identifier,
+            metadata_id=metadata_id,
             topic=topic,
-            content_type='application/x-bufr',
-            url=url,
-            identifier=identifier
+            content_type='application/octet-stream',
+            url=url
         )
-        print(json.dumps(message, indent=4))
-        LOGGER.debug('Publishing WIS2 notification message')
+
+        LOGGER.debug(json.dumps(message, indent=4))
+        LOGGER.info('Publishing WIS2 notification message')
 
         publish.single(
             topic,
