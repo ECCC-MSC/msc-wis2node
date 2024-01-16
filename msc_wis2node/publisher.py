@@ -1,31 +1,21 @@
-# =================================================================
+###############################################################################
 #
-# Authors: Tom Kralidis <tomkralidis@gmail.com>
+# Copyright (C) 2024 Tom Kralidis
 #
-# Copyright (c) 2024 Tom Kralidis
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
 #
-# Permission is hereby granted, free of charge, to any person
-# obtaining a copy of this software and associated documentation
-# files (the "Software"), to deal in the Software without
-# restriction, including without limitation the rights to use,
-# copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the
-# Software is furnished to do so, subject to the following
-# conditions:
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
 #
-# The above copyright notice and this permission notice shall be
-# included in all copies or substantial portions of the Software.
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-# OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-# NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-# HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-# WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-# OTHER DEALINGS IN THE SOFTWARE.
-#
-# =================================================================
+###############################################################################
 
 import csv
 import json
@@ -34,6 +24,7 @@ import os
 import random
 import ssl
 from typing import Union
+import uuid
 
 import certifi
 from paho.mqtt import publish
@@ -66,7 +57,7 @@ class WIS2Publisher(FlowCB):
         }
 
         with open(self.dataset_config) as fh:
-            reader = csv.reader(fh)
+            reader = csv.DictReader(fh)
             for row in reader:
                 self.datasets.append(row)
 
@@ -82,14 +73,20 @@ class WIS2Publisher(FlowCB):
         new_incoming = []
 
         for msg in worklist.incoming:
+            dataset = None
             try:
                 LOGGER.debug('Processing notification')
-                url = f"{msg['baseUrl']}{msg['relPath']}"
-                if self.identify(msg['relPath']) is None:
+                relpath = '/' + msg['relPath'].lstrip('/')
+
+                url = f"{msg['baseUrl']}{relpath}"
+                dataset = self.identify(relpath)
+
+                if dataset is None:
                     LOGGER.debug('Dataset not found; skipping')
                     return
                 else:
-                    self.publish_to_wis2(msg['filename'], url)
+                    LOGGER.debug(f'Publishing dataset notification: {url}')
+                    self.publish_to_wis2(dataset, url)
                     new_incoming.append(msg)
             except Exception as err:
                 LOGGER.error(f'Error publishing message: {err}', exc_info=True)
@@ -108,50 +105,67 @@ class WIS2Publisher(FlowCB):
         """
 
         for dataset in self.datasets:
-            if path in dataset['subtopic']:
+            dirpath = self._subtopic2dirpath(dataset['subtopic'])
+            if dirpath.startswith(dirpath):
+                LOGGER.debug('Found match')
                 return dataset
 
         return None
 
-    def publish_to_wis2(self, identifier: str, metadata_id: str,
-                        url: str) -> None:
+    def publish_to_wis2(self, dataset: str, url: str) -> None:
         """
         WIS2 publisher
 
-        :param identifier: `str` of identifier
         :param metadata_id: `str` of discovery metadata identifier
         :param url: `str` of URL of resource
 
         :returns: `bool` of dispatch result
         """
 
-        topic = f'{self.topic_prefix}/data/core/weather/surface-based-observations/synop'  # noqa
-        topic = f'{self.topic_prefix}/data/core/weather/surface-based-observations/synop'  # noqa
+        topic = f"{self.topic_prefix}/{dataset['wis2-topic']}"
 
         message = create_message(
-            identifier=identifier,
-            metadata_id=metadata_id,
+            identifier=str(uuid.uuid4()),
+            metadata_id=dataset['metadata_id'],
             topic=topic,
             content_type='application/octet-stream',
             url=url
         )
 
+        print("MESSAGE", message)
         LOGGER.debug(json.dumps(message, indent=4))
         LOGGER.info('Publishing WIS2 notification message')
 
-        publish.single(
-            topic,
-            payload=json.dumps(message),
-            qos=1,
-            hostname=self.hostname,
-            port=self.port,
-            client_id=self.client_id,
-            tls=self.tls,
-            auth={
-                'username': self.username,
-                'password': self.password
-            }
-        )
+#        publish.single(
+#            topic,
+#            payload=json.dumps(message),
+#            qos=1,
+#            hostname=self.hostname,
+#            port=self.port,
+#            client_id=self.client_id,
+#            tls=self.tls,
+#            auth={
+#                'username': self.username,
+#                'password': self.password
+#            }
+#        )
+
+    def _subtopic2dirpath(self, subtopic: str) -> str:
+        """
+        Transforms AMQP subtopic to directory path
+
+        :param subtopic: `str` of AMQP subtopic
+
+        :returns: `str` of directory path
+        """
+
+        LOGGER.debug(f'AMQP subtopic: {subtopic}')
+
+        dirpath = subtopic.replace('.', '/').rstrip('/#')
+
+        LOGGER.debug(f'directory path: {dirpath}')
+
+        return dirpath
 
     def __repr__(self):
         return '<WIS2Publisher>'
