@@ -27,7 +27,14 @@
 #
 # =================================================================
 
-SR3_CONFIG=/Users/tomkralidis/Library/Application\ Support/sr3
+# Ubuntu
+SR3_CONFIG=${HOME}/.config/sr3
+
+# Mac OSX
+#SR3_CONFIG=${HOME}/Library/Application\ Support/sr3
+
+check:
+	echo ${SR3_CONFIG}
 
 install: setup
 	cp publish2wis2.py $(SR3_CONFIG)/plugins
@@ -42,4 +49,4 @@ clean:
 	rm -fr $(SR3_CONFIG)/plugins/publish2wis2.py
 	rm -fr $(SR3_CONFIG)/subscribe/bufr.conf
 
-.PHONY: install setup clean
+.PHONY: check install setup clean
