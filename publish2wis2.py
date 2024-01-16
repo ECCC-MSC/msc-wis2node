@@ -93,7 +93,7 @@ class WIS2Publisher(FlowCB):
         :returns: `bool` of dispatch result
         """
 
-        topic = 'origin/a/wis2/can/eccc-msc/data/core/weather/surface-based-observations/synop'  # noqa
+        topic = 'origin/a/wis2/ca-eccc-msc/data/core/weather/surface-based-observations/synop'  # noqa
         message = create_message(
             topic=topic,
             content_type='application/x-bufr',
