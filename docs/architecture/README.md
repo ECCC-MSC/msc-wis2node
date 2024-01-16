@@ -13,7 +13,7 @@ to build a table for runtime handling and publishing of MSC data to WIS2.
 
 ### Run time
 
-The msc-wis2node comnponent provides the following runtime workflow:
+The msc-wis2node component provides the following runtime workflow:
 
 - connects to [MSC Datamart notification service](https://eccc-msc.github.io/open-data/msc-datamart/readme_en/), subscribed to all notifications
 - on data notification:
