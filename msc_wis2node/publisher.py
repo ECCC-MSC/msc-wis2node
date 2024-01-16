@@ -27,11 +27,13 @@
 #
 # =================================================================
 
+import csv
 import json
 import logging
 import os
 import random
 import ssl
+from typing import Union
 
 import certifi
 from paho.mqtt import publish
@@ -62,7 +64,7 @@ class WIS2Publisher(FlowCB):
             'ca_certs': certifi.where(),
             'tls_version': ssl.PROTOCOL_TLSv1_2
         }
- 
+
         with open(self.dataset_config) as fh:
             reader = csv.reader(fh)
             for row in reader:
@@ -105,7 +107,7 @@ class WIS2Publisher(FlowCB):
         :returns: `dict` of dataset definition or `None`
         """
 
-        for dataset in self.datasets
+        for dataset in self.datasets:
             if path in dataset['subtopic']:
                 return dataset
 
