@@ -74,12 +74,12 @@ setup(
     description=DESCRIPTION.strip(),
     long_description=LONG_DESCRIPTION,
     long_description_content_type='text/markdown',
-    license='MIT',
+    license='GPLv3',
     platforms='all',
     keywords=' '.join([
         'MSC',
         'WIS2',
-        'PubSub',
+        'Pub/Sub',
         'broker',
         'topic'
     ]),
@@ -101,7 +101,7 @@ setup(
         'Environment :: Console',
         'Intended Audience :: Developers',
         'Intended Audience :: Science/Research',
-        'License :: OSI Approved :: MIT License',
+        'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
         'Operating System :: OS Independent',
         'Programming Language :: Python'
     ],
