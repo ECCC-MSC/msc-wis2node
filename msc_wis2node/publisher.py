@@ -105,10 +105,13 @@ class WIS2Publisher(FlowCB):
         """
 
         for dataset in self.datasets:
-            dirpath = self._subtopic2dirpath(dataset['subtopic'])
-            if dirpath.startswith(dirpath):
+            subtopic_dirpath = self._subtopic2dirpath(dataset['subtopic'])
+
+            if path.startswith(subtopic_dirpath):
                 LOGGER.debug('Found match')
                 return dataset
+
+        LOGGER.debug('No match found')
 
         return None
 
@@ -132,23 +135,22 @@ class WIS2Publisher(FlowCB):
             url=url
         )
 
-        print("MESSAGE", message)
         LOGGER.debug(json.dumps(message, indent=4))
         LOGGER.info('Publishing WIS2 notification message')
 
-#        publish.single(
-#            topic,
-#            payload=json.dumps(message),
-#            qos=1,
-#            hostname=self.hostname,
-#            port=self.port,
-#            client_id=self.client_id,
-#            tls=self.tls,
-#            auth={
-#                'username': self.username,
-#                'password': self.password
-#            }
-#        )
+        publish.single(
+            topic,
+            payload=json.dumps(message),
+            qos=1,
+            hostname=self.hostname,
+            port=self.port,
+            client_id=self.client_id,
+            tls=self.tls,
+            auth={
+                'username': self.username,
+                'password': self.password
+            }
+        )
 
     def _subtopic2dirpath(self, subtopic: str) -> str:
         """
@@ -161,11 +163,12 @@ class WIS2Publisher(FlowCB):
 
         LOGGER.debug(f'AMQP subtopic: {subtopic}')
 
-        dirpath = subtopic.replace('.', '/').rstrip('/#')
+        dirpath = '/' + subtopic.replace('.', '/').rstrip('/#')
 
         LOGGER.debug(f'directory path: {dirpath}')
 
         return dirpath
 
     def __repr__(self):
+
         return '<WIS2Publisher>'
