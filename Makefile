@@ -37,10 +37,8 @@ check:
 	echo "SR3 configuration directory: ${SR3_CONFIG}"
 
 install: setup
-	cp publish2wis2.py $(SR3_CONFIG)/plugins
 	cp msc_wis2node/publisher.py $(SR3_CONFIG)/plugins
 	cp deploy/default/sarracenia/all.conf $(SR3_CONFIG)/subscribe
-	cp bufr.conf $(SR3_CONFIG)/subscribe
 
 setup:
 	mkdir -p $(SR3_CONFIG)/plugins
@@ -48,9 +46,7 @@ setup:
 
 clean:
 	sr3 cleanup subscribe/bufr
-	rm -fr $(SR3_CONFIG)/plugins/publish2wis2.py
 	rm -fr $(SR3_CONFIG)/plugins/publisher.py
 	rm -fr $(SR3_CONFIG)/subscribe/all.conf
-	rm -fr $(SR3_CONFIG)/subscribe/bufr.conf
 
 .PHONY: check install setup clean
