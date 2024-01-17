@@ -1,0 +1,14 @@
+Source: msc-wis2node
+Section: python
+Priority: optional
+Maintainer: Tom Kralidis <tomkralidis@gmail.com>
+Build-Depends: debhelper (>= 9), python3, python3-setuptools
+Standards-Version: 3.9.5
+X-Python-Version: >= 3.6
+Vcs-Git: https://github.com/ECCC-MSC/msc-wis2node.git
+
+Package: msc-wis2node
+Architecture: all
+Depends: python3, python3-click, python3-metpx-sarracenia, pywis-pubsub
+Homepage: https://github.com/ECCC-MSC/msc-wis2node
+Description: MSC WMO WIS2 Node implementation

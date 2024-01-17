@@ -1,0 +1,5 @@
+msc-wis2node (0.1.0) focal; urgency=medium
+
+  * initial Debian packaging
+
+ -- Tom Kralidis <tomkralidis@gmail.com>  Tue, 16 Jan 2024 17:24:50 +0000

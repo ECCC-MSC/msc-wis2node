@@ -2,7 +2,7 @@
 #
 # Authors: Tom Kralidis <tomkralidis@gmail.com>
 #
-# Copyright (c) 2023 Tom Kralidis
+# Copyright (c) 2024 Tom Kralidis
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation
@@ -34,10 +34,12 @@ SR3_CONFIG=${HOME}/.config/sr3
 #SR3_CONFIG=${HOME}/Library/Application\ Support/sr3
 
 check:
-	echo ${SR3_CONFIG}
+	echo "SR3 configuration directory: ${SR3_CONFIG}"
 
 install: setup
 	cp publish2wis2.py $(SR3_CONFIG)/plugins
+	cp msc_wis2node/publisher.py $(SR3_CONFIG)/plugins
+	cp deploy/default/sarracenia/all.conf $(SR3_CONFIG)/subscribe
 	cp bufr.conf $(SR3_CONFIG)/subscribe
 
 setup:
@@ -47,6 +49,8 @@ setup:
 clean:
 	sr3 cleanup subscribe/bufr
 	rm -fr $(SR3_CONFIG)/plugins/publish2wis2.py
+	rm -fr $(SR3_CONFIG)/plugins/publisher.py
+	rm -fr $(SR3_CONFIG)/subscribe/all.conf
 	rm -fr $(SR3_CONFIG)/subscribe/bufr.conf
 
 .PHONY: check install setup clean
