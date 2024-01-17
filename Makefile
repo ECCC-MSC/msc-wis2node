@@ -38,15 +38,14 @@ check:
 
 install: setup
 	cp msc_wis2node/publisher.py $(SR3_CONFIG)/plugins
-	cp deploy/default/sarracenia/all.conf $(SR3_CONFIG)/subscribe
+	cp deploy/default/sarracenia/hpfx.conf $(SR3_CONFIG)/subscribe
 
 setup:
 	mkdir -p $(SR3_CONFIG)/plugins
 	mkdir -p $(SR3_CONFIG)/subscribe
 
 clean:
-	sr3 cleanup subscribe/bufr
 	rm -fr $(SR3_CONFIG)/plugins/publisher.py
-	rm -fr $(SR3_CONFIG)/subscribe/all.conf
+	rm -fr $(SR3_CONFIG)/subscribe/hpfx.conf
 
 .PHONY: check install setup clean

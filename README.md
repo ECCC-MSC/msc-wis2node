@@ -45,7 +45,7 @@ source local.env
 msc-wis2node setup
 
 # connect to MSC Datamart notification service
-sr3 start subscribe/msc-wis2node
+sr3 start subscribe/hpfx
 ```
 
 ### Docker
