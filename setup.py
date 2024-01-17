@@ -93,7 +93,7 @@ setup(
     include_package_data=True,
     entry_points={
         'console_scripts': [
-            'msc-wis2node:=msc_wis2node:cli'
+            'msc-wis2node=msc_wis2node:cli'
         ]
     },
     classifiers=[
