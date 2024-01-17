@@ -22,6 +22,8 @@ __version__ = '0.1.0'
 
 import click
 
+from msc_wis2node.dataset import dataset
+
 
 @click.group()
 @click.version_option(version=__version__)
@@ -29,3 +31,6 @@ def cli():
     """MSC WIS2 Node management utility"""
 
     pass
+
+
+cli.add_command(dataset)
