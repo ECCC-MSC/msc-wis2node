@@ -17,7 +17,6 @@
 #
 ###############################################################################
 
-import csv
 import json
 import logging
 import os
@@ -41,6 +40,7 @@ class WIS2Publisher(FlowCB):
         """initialize"""
 
         self.datasets = []
+        self.tls = None
         self.dataset_config = os.environ['MSC_WIS2NODE_DATASET_CONFIG']
         self.username = os.environ['MSC_WIS2NODE_BROKER_USERNAME']
         self.password = os.environ['MSC_WIS2NODE_BROKER_PASSWORD']
@@ -51,15 +51,14 @@ class WIS2Publisher(FlowCB):
 
         self.client_id = f'msc-wis2node id={random.randint(0, 1000)} (https://github.com/ECCC-MSC/msc-wis2node)'  # noqa
 
-        self.tls = {
-            'ca_certs': certifi.where(),
-            'tls_version': ssl.PROTOCOL_TLSv1_2
-        }
+        if self.port == 8883:
+            self.tls = {
+                'ca_certs': certifi.where(),
+                'tls_version': ssl.PROTOCOL_TLSv1_2
+            }
 
         with open(self.dataset_config) as fh:
-            reader = csv.DictReader(fh)
-            for row in reader:
-                self.datasets.append(row)
+            self.datasets = json.load(fh)['datasets']
 
     def after_accept(self, worklist) -> None:
         """
@@ -119,7 +118,7 @@ class WIS2Publisher(FlowCB):
         """
         WIS2 publisher
 
-        :param metadata_id: `str` of discovery metadata identifier
+        :param dataset: `dict` of dataset definition
         :param url: `str` of URL of resource
 
         :returns: `bool` of dispatch result
