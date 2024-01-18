@@ -21,24 +21,26 @@
 from io import BytesIO
 import json
 import logging
-import os
 from pathlib import Path
 import tempfile
+from typing import Union
 from urllib.request import urlopen
 import zipfile
 
 import click
 import yaml
 
+from msc_wis2node import cli_options
+from msc_wis2node.env import DATASET_CONFIG, DISCOVERY_METADATA_ZIP_URL
+
 LOGGER = logging.getLogger(__name__)
 
-DISCOVERY_METADATA_ZIP = os.environ['MSC_WIS2NODE_DISCOVERY_METADATA_ZIP']
-DATASET_CONFIG = os.environ['MSC_WIS2NODE_DATASET_CONFIG']
 
-
-def create_datasets_conf() -> None:
+def create_datasets_conf(metadata_zipfile: Union[Path, None]) -> None:
     """
     Create dataset definition configuration
+
+    :param metadata_zipfile: path to zipfile of MCF repository
 
     :returns: `None`
     """
@@ -49,10 +51,18 @@ def create_datasets_conf() -> None:
         'datasets': []
     }
 
+    if metadata_zipfile is not None:
+        with metadata_zipfile.open('rb') as fh:
+            zipfile_content = fh.read()
+    else:
+        zipfile_content = urlopen(DISCOVERY_METADATA_ZIP_URL).read()
+
     with tempfile.TemporaryDirectory() as td:
-        fh = BytesIO(urlopen(DISCOVERY_METADATA_ZIP).read())
+        fh = BytesIO(zipfile_content)
         with zipfile.ZipFile(fh) as z:
+            LOGGER.debug(f'Extracting all MCFs to {td}')
             z.extractall(td)
+
             path = Path(td) / 'discovery-metadata-master'
             mcfs_to_process = path.rglob('*.yml')
 
@@ -95,12 +105,16 @@ def dataset():
 
 @click.command()
 @click.pass_context
-def setup(ctx):
+@cli_options.OPTION_VERBOSITY
+@click.option('--metadata-zipfile', '-mz',
+              type=click.Path(exists=True, dir_okay=False, path_type=Path),
+              help='Zipfile of discovery metadata repository')
+def setup(ctx, metadata_zipfile, verbosity):
     """Setup dataset definitions"""
 
-    click.echo('Downloading MSC Discovery Metadata MCF files')
+    click.echo('Setting up runtime dataset definition configuration')
 
-    create_datasets_conf()
+    create_datasets_conf(metadata_zipfile)
 
 
 dataset.add_command(setup)
