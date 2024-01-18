@@ -19,7 +19,6 @@
 
 import json
 import logging
-import os
 import random
 import ssl
 from typing import Union
@@ -30,36 +29,13 @@ from paho.mqtt import publish
 from pywis_pubsub.publish import create_message
 from sarracenia.flowcb import FlowCB
 
+from msc_wis2node.env import (BROKER_HOSTNAME, BROKER_PORT, BROKER_USERNAME,
+                              BROKER_PASSWORD, DATASET_CONFIG, TOPIC_PREFIX)
+
 LOGGER = logging.getLogger(__name__)
 
 
-class WIS2Publisher(FlowCB):
-    """WIS2 Publisher"""
-
-    def __init__(self, options):
-        """initialize"""
-
-        self.datasets = []
-        self.tls = None
-        self.dataset_config = os.environ['MSC_WIS2NODE_DATASET_CONFIG']
-        self.username = os.environ['MSC_WIS2NODE_BROKER_USERNAME']
-        self.password = os.environ['MSC_WIS2NODE_BROKER_PASSWORD']
-        self.hostname = os.environ['MSC_WIS2NODE_BROKER_HOSTNAME']
-        self.port = int(os.environ['MSC_WIS2NODE_BROKER_PORT'])
-        self.topic_prefix = os.environ.get('MSC_WIS2NODE_TOPIC_PREFIX',
-                                           'origin/a/wis')
-
-        self.client_id = f'msc-wis2node id={random.randint(0, 1000)} (https://github.com/ECCC-MSC/msc-wis2node)'  # noqa
-
-        if self.port == 8883:
-            self.tls = {
-                'ca_certs': certifi.where(),
-                'tls_version': ssl.PROTOCOL_TLSv1_2
-            }
-
-        with open(self.dataset_config) as fh:
-            self.datasets = json.load(fh)['datasets']
-
+class WIS2FlowCB(FlowCB):
     def after_accept(self, worklist) -> None:
         """
         sarracenia dispatcher
@@ -72,27 +48,66 @@ class WIS2Publisher(FlowCB):
         new_incoming = []
 
         for msg in worklist.incoming:
-            dataset = None
             try:
-                LOGGER.debug('Processing notification')
-                relpath = '/' + msg['relPath'].lstrip('/')
+                LOGGER.debug('Processing message')
 
-                url = f"{msg['baseUrl']}{relpath}"
-                dataset = self.identify(relpath)
+                wis2_publisher = WIS2Publisher()
 
-                if dataset is None:
-                    LOGGER.debug('Dataset not found; skipping')
-                    return
-                else:
-                    LOGGER.debug(f'Publishing dataset notification: {url}')
-                    self.publish_to_wis2(dataset, url)
+                if wis2_publisher.publish(msg['baseUrl'], msg['relPath']):
                     new_incoming.append(msg)
+                else:
+                    return
             except Exception as err:
                 LOGGER.error(f'Error publishing message: {err}', exc_info=True)
                 worklist.failed.append(msg)
                 continue
 
         worklist.incoming = new_incoming
+
+
+class WIS2Publisher:
+    """WIS2 Publisher"""
+
+    def __init__(self):
+        """initialize"""
+
+        self.datasets = []
+        self.tls = None
+
+        self.client_id = f'msc-wis2node id={random.randint(0, 1000)} (https://github.com/ECCC-MSC/msc-wis2node)'  # noqa
+
+        if BROKER_PORT == 8883:
+            self.tls = {
+                'ca_certs': certifi.where(),
+                'tls_version': ssl.PROTOCOL_TLSv1_2
+            }
+
+        with open(DATASET_CONFIG) as fh:
+            self.datasets = json.load(fh)['datasets']
+
+    def publish(self, base_url: str, relative_path: str) -> bool:
+        """
+        Publish notification message
+
+        :param base_url: base URL of HTTP endpoint of filepath
+        :param base_url: base URL of HTTP endpoint of filepath
+
+        :returns: `bool` of publishing result
+        """
+
+        relative_path2 = '/' + relative_path.lstrip('/')
+
+        url = f'{base_url}{relative_path2}'
+
+        dataset = self.identify(relative_path)
+
+        if dataset is None:
+            LOGGER.debug('Dataset not found; skipping')
+            return False
+
+        LOGGER.debug(f'Publishing dataset notification: {url}')
+        self.publish_to_wis2(dataset, url)
+        return True
 
     def identify(self, path: str) -> Union[dict, None]:
         """
@@ -124,7 +139,7 @@ class WIS2Publisher(FlowCB):
         :returns: `bool` of dispatch result
         """
 
-        topic = f"{self.topic_prefix}/{dataset['wis2-topic']}"
+        topic = f"{TOPIC_PREFIX}/{dataset['wis2-topic']}"
 
         message = create_message(
             identifier=str(uuid.uuid4()),
@@ -141,13 +156,13 @@ class WIS2Publisher(FlowCB):
             topic,
             payload=json.dumps(message),
             qos=1,
-            hostname=self.hostname,
-            port=self.port,
+            hostname=BROKER_HOSTNAME,
+            port=BROKER_PORT,
             client_id=self.client_id,
             tls=self.tls,
             auth={
-                'username': self.username,
-                'password': self.password
+                'username': BROKER_USERNAME,
+                'password': BROKER_PASSWORD
             }
         )
 
@@ -169,5 +184,4 @@ class WIS2Publisher(FlowCB):
         return dirpath
 
     def __repr__(self):
-
         return '<WIS2Publisher>'
