@@ -77,7 +77,7 @@ def create_datasets_conf(metadata_zipfile: Union[Path, None]) -> None:
                         mcf = yaml.load(fh2, Loader=yaml.SafeLoader)
 
                         dataset = {
-                            'metadata_id': mcf['metadata']['identifier']
+                            'metadata-id': mcf['metadata']['identifier']
                         }
                         datasets_conf['datasets'].append(dataset)
 

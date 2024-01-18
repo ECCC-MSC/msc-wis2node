@@ -143,9 +143,9 @@ class WIS2Publisher:
 
         message = create_message(
             identifier=str(uuid.uuid4()),
-            metadata_id=dataset['metadata_id'],
+            # metadata_id=dataset['metadata-id'],
             topic=topic,
-            content_type='application/octet-stream',
+            content_type=dataset['media-type'],
             url=url
         )
 
