@@ -90,7 +90,7 @@ class WIS2Publisher:
         Publish notification message
 
         :param base_url: base URL of HTTP endpoint of filepath
-        :param base_url: base URL of HTTP endpoint of filepath
+        :param relative_path: relative filepath
 
         :returns: `bool` of publishing result
         """
