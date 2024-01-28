@@ -20,6 +20,7 @@
 import json
 import logging
 import random
+import re
 import ssl
 from typing import Union
 import uuid
@@ -45,6 +46,7 @@ class WIS2FlowCB(FlowCB):
         :returns: None
         """
 
+        LOGGER.debug('JJJ')
         new_incoming = []
 
         for msg in worklist.incoming:
@@ -95,23 +97,24 @@ class WIS2Publisher:
         :returns: `bool` of publishing result
         """
 
-        relative_path2 = '/' + relative_path.lstrip('/')
-
-        url = f'{base_url}{relative_path2}'
-
         dataset = self.identify(relative_path)
 
         if dataset is None:
             LOGGER.debug('Dataset not found; skipping')
             return False
 
+        relative_path2 = '/' + relative_path.lstrip('/')
+        url = f'{base_url}{relative_path2}'
+
         LOGGER.debug(f'Publishing dataset notification: {url}')
         self.publish_to_wis2(dataset, url)
+
         return True
 
     def identify(self, path: str) -> Union[dict, None]:
         """
-        Determines whether data granule is part of a configued dataset
+        Determines whether data granule is part of a configured
+        dataset definition
 
         :param path: `str` of topic/path
 
@@ -119,11 +122,26 @@ class WIS2Publisher:
         """
 
         for dataset in self.datasets:
+            match = False
             subtopic_dirpath = self._subtopic2dirpath(dataset['subtopic'])
 
+            LOGGER.debug(f'Testing subtopic match: {subtopic_dirpath}')
             if path.startswith(subtopic_dirpath):
-                LOGGER.debug('Found match')
-                return dataset
+                LOGGER.debug('Found matching subtopic')
+                match = True
+
+                LOGGER.debug('Matching any regexes')
+                for regex in dataset.get('regexes', []):
+                    pass
+                    LOGGER.debug(f'Testing regex match: {regex}')
+                    if re.search(regex, path) is not None:
+                        LOGGER.debug('Found matching regex')
+                    else:
+                        match = False
+
+                if match:
+                    LOGGER.debug('Found matching dataset definition')
+                    return dataset
 
         LOGGER.debug('No match found')
 
@@ -140,6 +158,7 @@ class WIS2Publisher:
         """
 
         topic = f"{TOPIC_PREFIX}/{dataset['wis2-topic']}"
+        LOGGER.info(f'TOPIC: {topic}')
 
         message = create_message(
             identifier=str(uuid.uuid4()),
