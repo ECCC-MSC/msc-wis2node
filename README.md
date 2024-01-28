@@ -30,6 +30,15 @@ source bin/activate
 git clone https://github.com/ECCC-MSC/msc-wis2node.git
 cd msc-wis2node
 python3 setup.py install
+
+# install sarracenia configurations
+# verify configuration directory (default is based on $HOME/.config/sr3)
+make check
+# install configurations
+make install
+
+# override the configuration default installation location
+make install SR3_CONFIG=/path/to/foo
 ```
 
 ## Running
@@ -37,12 +46,12 @@ python3 setup.py install
 ```bash
 # setup environment and configuration
 cp msc-wis2node.env local.env
-vim local.env # update accordingly
+vim local.env  # update accordingly
 
 source local.env
 
-# setup msc-wis2node
-msc-wis2node setup
+# setup dataset configuration
+msc-wis2node dataset setup
 
 # connect to MSC Datamart notification service
 sr3 start subscribe/hpfx
@@ -50,7 +59,7 @@ sr3 start subscribe/hpfx
 
 ### Docker
 
-Instructions to run msc-wis2node via Docker can be found the [`docker`](docker) directory.
+Instructions to run msc-wis2node via Docker can be found in the [`docker`](docker) directory.
 
 ## Development
 
