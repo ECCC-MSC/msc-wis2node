@@ -47,10 +47,24 @@ make install SR3_CONFIG=/path/to/foo
 # setup environment and configuration
 cp msc-wis2node.env local.env
 vim local.env  # update accordingly
+#
+# environment variables
+#
+# MSC_WIS2NODE_BROKER_HOSTNAME: hostname of the MQTT broker to publish to
+# MSC_WIS2NODE_BROKER_PORT: port of the MQTT broker to publish to
+# MSC_WIS2NODE_BROKER_USERNAME: username of the MQTT broker to publish to=admin
+# MSC_WIS2NODE_BROKER_PASSWORD: password of the MQTT broker to publish to
+# MSC_WIS2NODE_MSC_DATAMART_AMQP: URL to MSC Datamart notification service
+# MSC_WIS2NODE_DATASET_CONFIG: filepath where MSC dataset definitions are managed
+# MSC_WIS2NODE_DISCOVERY_METADATA_ZIP_URL: URL to SSC GitLab zipfile of MSC discovery metadata
+# MSC_WIS2NODE_TOPIC_PREFIX: base topic prefix for publication (i.e. origin/a/wis2/ca-eccc-msc)
 
 source local.env
 
-# setup dataset configuration
+# setup dataset configuration based on zipfile defined in MSC_WIS2NODE_DISCOVERY_METADATA_ZIP_URL
+# note: MSC_WIS2NODE_DISCOVERY_METADATA_ZIP_URL can be overridden with the --metadata-zipfile option
+# on the command line
+#
 msc-wis2node dataset setup
 
 # connect to MSC Datamart notification service
