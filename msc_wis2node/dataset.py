@@ -81,8 +81,9 @@ def create_datasets_conf(metadata_zipfile: Union[Path, None]) -> None:
                         }
                         datasets_conf['datasets'].append(dataset)
 
-                        if mcf['metadata']['identifier'] is None:
-                            print("NONE", path_object)
+                        if mcf['metadata'].get('identifier') is None:
+                            msg = f'No metadata identifier in {path_object}'
+                            LOGGER.error(msg)
 
                 except yaml.parser.ParserError as err:
                     LOGGER.warning(f'YAML parsing error: {err}')
