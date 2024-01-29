@@ -168,6 +168,11 @@ class WIS2Publisher:
             url=url
         )
 
+        LOGGER.debug('Removing system and version from data_id')
+        data_id = message['properties']['data_id']
+        tokens = data_id.split('/')
+        message['properties']['data_id'] = '/'.join(tokens[2:])
+
         LOGGER.debug(json.dumps(message, indent=4))
         LOGGER.info('Publishing WIS2 notification message')
 
