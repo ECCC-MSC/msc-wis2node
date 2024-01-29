@@ -17,6 +17,7 @@
 #
 ###############################################################################
 
+from datetime import date, datetime, timezone
 import json
 import logging
 import random
@@ -29,6 +30,7 @@ import certifi
 from paho.mqtt import publish
 from pywis_pubsub.publish import create_message
 from sarracenia.flowcb import FlowCB
+import yaml
 
 from msc_wis2node.env import (BROKER_HOSTNAME, BROKER_PORT, BROKER_USERNAME,
                               BROKER_PASSWORD, DATASET_CONFIG, TOPIC_PREFIX)
@@ -85,7 +87,7 @@ class WIS2Publisher:
             }
 
         with open(DATASET_CONFIG) as fh:
-            self.datasets = json.load(fh)['datasets']
+            self.datasets = yaml.load(fh, Loader=yaml.SafeLoader)['datasets']
 
     def publish(self, base_url: str, relative_path: str) -> bool:
         """
@@ -122,6 +124,7 @@ class WIS2Publisher:
         """
 
         for dataset in self.datasets:
+            LOGGER.debug(f"DATASETS: {self.datasets}")
             match = False
             subtopic_dirpath = self._subtopic2dirpath(dataset['subtopic'])
 
@@ -160,9 +163,13 @@ class WIS2Publisher:
         topic = f"{TOPIC_PREFIX}/{dataset['wis2-topic']}"
         LOGGER.info(f'TOPIC: {topic}')
 
+        datetime_ = self._topic_regex2datetime(
+            topic, dataset.get('msc-filename-datetime'))
+
         message = create_message(
             identifier=str(uuid.uuid4()),
             # metadata_id=dataset['metadata-id'],
+            datetime_=datetime_,
             topic=topic,
             content_type=dataset['media-type'],
             url=url
@@ -206,6 +213,40 @@ class WIS2Publisher:
         LOGGER.debug(f'directory path: {dirpath}')
 
         return dirpath
+
+    def _topic_regex2datetime(self, topic: str,
+                              pattern: Union[str, None]) -> Union[str, None]:
+        """
+        Generate RFC3339 string
+
+        :param topic: topic
+        :param pattern: regular expression of date pattern
+
+        :returns: `str` of resulting RFC3339 datetime, or `None` if not found
+        """
+
+        if pattern is None:
+            return None
+
+        match = re.search(topic, pattern)
+
+        if match is None:
+            LOGGER.debug(f'No match ({pattern} not in {topic})')
+            return None
+
+        groups = [int(m) for m in match.groups()]
+        LOGGER.debug(f'datetime regex groups found: {groups}')
+
+        if len(groups) < 3:
+            LOGGER.debug('Casting date')
+            obj = date(*groups)
+            value = obj.isoformat()
+        else:
+            LOGGER.debug('Casting datetime')
+            dt = datetime(*groups, tzinfo=timezone.utc)
+            value = f'{dt.isoformat()}Z'
+
+        return value
 
     def __repr__(self):
         return '<WIS2Publisher>'

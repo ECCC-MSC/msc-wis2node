@@ -19,7 +19,6 @@
 ###############################################################################
 
 from io import BytesIO
-import json
 import logging
 from pathlib import Path
 import tempfile
@@ -93,8 +92,10 @@ def create_datasets_conf(metadata_zipfile: Union[Path, None]) -> None:
                 except AttributeError as err:
                     LOGGER.warning(f'Missing distribution: {err}')
 
-    with Path(DATASET_CONFIG).open('w') as fh:
-        json.dump(datasets_conf, fh, indent=4)
+    LOGGER.debug('Dumping YAML document')
+    with Path(DATASET_CONFIG).open('wb') as fh:
+        yaml.dump(datasets_conf, fh, sort_keys=False, encoding='utf8',
+                  indent=4, default_flow_style=False)
 
 
 @click.group()
