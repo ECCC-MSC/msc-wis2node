@@ -161,10 +161,10 @@ class WIS2Publisher:
         """
 
         topic = f"{TOPIC_PREFIX}/{dataset['wis2-topic']}"
-        LOGGER.info(f'TOPIC: {topic}')
+        LOGGER.info(f'URL: {url}')
 
         datetime_ = self._topic_regex2datetime(
-            topic, dataset.get('msc-filename-datetime'))
+            url, dataset.get('msc-filename-datetime-regex'))
 
         message = create_message(
             identifier=str(uuid.uuid4()),
@@ -180,8 +180,10 @@ class WIS2Publisher:
         tokens = data_id.split('/')
         message['properties']['data_id'] = '/'.join(tokens[2:])
 
-        LOGGER.debug(json.dumps(message, indent=4))
-        LOGGER.info('Publishing WIS2 notification message')
+        LOGGER.info(json.dumps(message, indent=4))
+        msg = (f'Publishing WIS2 notification message to '
+               f'host={BROKER_HOSTNAME}, port={BROKER_PORT}, topic={topic}')
+        LOGGER.info(msg)
 
         publish.single(
             topic,
