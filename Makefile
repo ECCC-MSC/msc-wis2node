@@ -34,7 +34,7 @@ SR3_CONFIG=${HOME}/.config/sr3
 #SR3_CONFIG=${HOME}/Library/Application\ Support/sr3
 
 check:
-	echo "SR3 configuration directory: ${SR3_CONFIG}"
+	@echo "SR3 configuration directory: ${SR3_CONFIG}"
 
 install: setup
 	cp msc_wis2node/publisher.py $(SR3_CONFIG)/plugins
