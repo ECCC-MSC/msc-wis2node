@@ -35,11 +35,19 @@ from msc_wis2node.env import DATASET_CONFIG, DISCOVERY_METADATA_ZIP_URL
 LOGGER = logging.getLogger(__name__)
 
 
-def create_datasets_conf(metadata_zipfile: Union[Path, None]) -> None:
+FORMATS = {
+    'GRIB2': 'application/x-grib',
+    'BUFR': 'application/x-bufr'
+}
+
+
+def create_datasets_conf(metadata_zipfile: Union[Path, None],
+                         output: Path) -> None:
     """
     Create dataset definition configuration
 
     :param metadata_zipfile: path to zipfile of MCF repository
+    :param output: `Path` object of output file
 
     :returns: `None`
     """
@@ -84,6 +92,11 @@ def create_datasets_conf(metadata_zipfile: Union[Path, None]) -> None:
                             msg = f'No metadata identifier in {path_object}'
                             LOGGER.error(msg)
 
+                        dataset['subtopic'] = mcf['distribution']['amqps_eng-CAN']['url'].split('/')[-1]  # noqa
+                        dataset['wis2-topic'] = mcf['distribution']['mqtt_eng-CAN']['channel']  # noqa
+
+                        format_ = FORMATS[mcf['distribution']['amqps_eng-CAN']['format']['en']]  # noqa
+                        dataset['media-type'] = format_
                 except yaml.parser.ParserError as err:
                     LOGGER.warning(f'YAML parsing error: {err}')
                     LOGGER.warning('Skipping')
@@ -92,8 +105,8 @@ def create_datasets_conf(metadata_zipfile: Union[Path, None]) -> None:
                 except AttributeError as err:
                     LOGGER.warning(f'Missing distribution: {err}')
 
-    LOGGER.debug('Dumping YAML document')
-    with Path(DATASET_CONFIG).open('wb') as fh:
+    LOGGER.debug(f'Dumping YAML document to {output}')
+    with output.open('wb') as fh:
         yaml.dump(datasets_conf, fh, sort_keys=False, encoding='utf8',
                   indent=4, default_flow_style=False)
 
@@ -108,15 +121,16 @@ def dataset():
 @click.command()
 @click.pass_context
 @cli_options.OPTION_VERBOSITY
+@cli_options.OPTION_OUTPUT
 @click.option('--metadata-zipfile', '-mz',
               type=click.Path(exists=True, dir_okay=False, path_type=Path),
               help='Zipfile of discovery metadata repository')
-def setup(ctx, metadata_zipfile, verbosity):
+def setup(ctx, metadata_zipfile, output, verbosity):
     """Setup dataset definitions"""
 
     click.echo('Setting up runtime dataset definition configuration')
 
-    create_datasets_conf(metadata_zipfile)
+    create_datasets_conf(metadata_zipfile, Path(output or DATASET_CONFIG))
 
 
 dataset.add_command(setup)

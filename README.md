@@ -61,10 +61,13 @@ vim local.env  # update accordingly
 
 source local.env
 
-# setup dataset configuration based on zipfile defined in MSC_WIS2NODE_DISCOVERY_METADATA_ZIP_URL
-# note: MSC_WIS2NODE_DISCOVERY_METADATA_ZIP_URL can be overridden with the --metadata-zipfile option
+# setup dataset configuration based on zipfile defined in $MSC_WIS2NODE_DISCOVERY_METADATA_ZIP_URL
+# note: $MSC_WIS2NODE_DISCOVERY_METADATA_ZIP_URL can be overridden with the --metadata-zipfile option
 # on the command line
 #
+# the output is written to $MSC_WIS2NODE_DATASET_CONFIG by default, and can be overriden with the --output
+# option on the command line
+
 msc-wis2node dataset setup
 
 # connect to MSC Datamart notification service

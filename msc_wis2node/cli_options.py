@@ -24,6 +24,10 @@ import sys
 
 import click
 
+OPTION_OUTPUT = click.option(
+    '--output', '-o',
+    type=click.Path(exists=False, dir_okay=False, path_type=pathlib.Path),
+    help='Name of output file')
 
 OPTION_METADATA_ZIPFILE = click.option(
     '--metadata-zipfile', '-mz',
