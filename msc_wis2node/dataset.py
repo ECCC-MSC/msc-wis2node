@@ -83,27 +83,34 @@ def create_datasets_conf(metadata_zipfile: Union[Path, None],
                     with path_object.open() as fh2:
                         mcf = yaml.load(fh2, Loader=yaml.SafeLoader)
 
+                        if mcf['msc-metadata']['status'] not in ['completed', 'published']:  # noqa
+                            LOGGER.info('Metadata not completed or published')
+                            continue
+
                         dataset = {
                             'metadata-id': mcf['metadata']['identifier']
                         }
-                        datasets_conf['datasets'].append(dataset)
 
                         if mcf['metadata'].get('identifier') is None:
                             msg = f'No metadata identifier in {path_object}'
                             LOGGER.error(msg)
 
-                        dataset['subtopic'] = mcf['distribution']['amqps_eng-CAN']['url'].split('/')[-1]  # noqa
+                        dataset['title'] = mcf['identification']['title']['en']
+                        dataset['subtopic'] = mcf['distribution']['amqps_eng-CAN']['channel']  # noqa
                         dataset['wis2-topic'] = mcf['distribution']['mqtt_eng-CAN']['channel']  # noqa
 
                         format_ = FORMATS[mcf['distribution']['amqps_eng-CAN']['format']['en']]  # noqa
                         dataset['media-type'] = format_
+
+                        datasets_conf['datasets'].append(dataset)
+
                 except yaml.parser.ParserError as err:
-                    LOGGER.warning(f'YAML parsing error: {err}')
+                    LOGGER.warning(f'{path_object.name} YAML parsing error: {err}')  # noqa
                     LOGGER.warning('Skipping')
                 except (KeyError, TypeError) as err:
-                    LOGGER.warning(f'key not defined: {err}')
+                    LOGGER.warning(f'{path_object.name} key not defined: {err}')  # noqa
                 except AttributeError as err:
-                    LOGGER.warning(f'Missing distribution: {err}')
+                    LOGGER.warning(f'{path_object.name} missing distribution: {err}')  # noqa
 
     LOGGER.debug(f'Dumping YAML document to {output}')
     with output.open('wb') as fh:
