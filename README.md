@@ -71,7 +71,7 @@ source local.env
 msc-wis2node dataset setup
 
 # connect to MSC Datamart notification service
-sr3 start subscribe/hpfx
+sr3 start subscribe/dd.weather.gc.ca-all
 ```
 
 ### Docker

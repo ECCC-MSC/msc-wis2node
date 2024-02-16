@@ -38,7 +38,7 @@ check:
 
 install: setup
 	cp msc_wis2node/publisher.py $(SR3_CONFIG)/plugins
-	cp deploy/default/sarracenia/hpfx.conf $(SR3_CONFIG)/subscribe
+	cp deploy/default/sarracenia/dd.weather.gc.ca-all.conf $(SR3_CONFIG)/subscribe
 
 setup:
 	mkdir -p $(SR3_CONFIG)/plugins
@@ -46,6 +46,6 @@ setup:
 
 clean:
 	rm -fr $(SR3_CONFIG)/plugins/publisher.py
-	rm -fr $(SR3_CONFIG)/subscribe/hpfx.conf
+	rm -fr $(SR3_CONFIG)/subscribe/dd.weather.gc.ca-all.conf
 
 .PHONY: check install setup clean
