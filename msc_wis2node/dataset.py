@@ -88,7 +88,8 @@ def create_datasets_conf(metadata_zipfile: Union[Path, None],
                             continue
 
                         dataset = {
-                            'metadata-id': mcf['metadata']['identifier']
+                            'metadata-id': mcf['metadata']['identifier'],
+                            'regexes': []
                         }
 
                         if mcf['metadata'].get('identifier') is None:
@@ -98,13 +99,17 @@ def create_datasets_conf(metadata_zipfile: Union[Path, None],
                         dataset['title'] = mcf['identification']['title']['en']
                         dataset['subtopic'] = mcf['distribution']['amqps_eng-CAN']['channel']  # noqa
                         dataset['wis2-topic'] = mcf['distribution']['mqtt_eng-CAN']['channel']  # noqa
+                        dataset['media-type'] = get_format(mcf['distribution'])
 
-                        format_ = FORMATS[mcf['distribution']['amqps_eng-CAN']['format']['en']]  # noqa
-                        dataset['media-type'] = format_
+                        try:
+                            for accept in mcf['distribution']['amqps_eng-CAN']['msc-sarracenia']['accept']:  # noqa
+                                dataset['regexes'].append(accept)
+                        except KeyError:
+                            pass
 
                         datasets_conf['datasets'].append(dataset)
 
-                except yaml.parser.ParserError as err:
+                except (yaml.parser.ParserError, yaml.scanner.ScannerError) as err:  # noqa
                     LOGGER.warning(f'{path_object.name} YAML parsing error: {err}')  # noqa
                     LOGGER.warning('Skipping')
                 except (KeyError, TypeError) as err:
@@ -116,6 +121,27 @@ def create_datasets_conf(metadata_zipfile: Union[Path, None],
     with output.open('wb') as fh:
         yaml.dump(datasets_conf, fh, sort_keys=False, encoding='utf8',
                   indent=4, default_flow_style=False)
+
+
+def get_format(distribution: dict) -> Union[str, None]:
+    """
+    Derives format of dataset
+
+    :param distribution: `dict` of distribution objects
+
+    :returns: `str` of format media type if found,
+              else default to `application/octet-stream`
+    """
+
+    format_ = 'application/octet-stream'
+
+    for key, value in distribution.items():
+        if 'format' in value:
+            format_ = FORMATS[value['format']['en']]
+            LOGGER.debug('Found format {format_}')
+            break
+
+    return format_
 
 
 @click.group()
