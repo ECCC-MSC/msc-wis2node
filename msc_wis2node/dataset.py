@@ -36,8 +36,13 @@ LOGGER = logging.getLogger(__name__)
 
 
 FORMATS = {
+    'BUFR': 'application/x-bufr',
+    'CSV': 'text/csv',
     'GRIB2': 'application/x-grib',
-    'BUFR': 'application/x-bufr'
+    'GeoJSON': 'application/geo+json',
+    'JSON': 'application/json',
+    'TXT': 'text/plain',
+    'XML': 'application/xml'
 }
 
 
@@ -102,8 +107,8 @@ def create_datasets_conf(metadata_zipfile: Union[Path, None],
                         dataset['media-type'] = get_format(mcf['distribution'])
 
                         try:
-                            for accept in mcf['distribution']['amqps_eng-CAN']['msc-sarracenia']['accept']:  # noqa
-                                dataset['regexes'].append(accept)
+                            for regex in mcf['distribution']['amqps_eng-CAN']['regexes']:  # noqa
+                                dataset['regexes'].append(regex)
                         except KeyError:
                             pass
 
