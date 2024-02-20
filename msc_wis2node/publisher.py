@@ -150,7 +150,7 @@ class WIS2Publisher:
 
         return None
 
-    def publish_to_wis2(self, dataset: str, url: str) -> None:
+    def publish_to_wis2(self, dataset: dict, url: str) -> None:
         """
         WIS2 publisher
 
@@ -174,6 +174,11 @@ class WIS2Publisher:
             content_type=dataset['media-type'],
             url=url
         )
+
+        cache = dataset.get('cache', True)
+        if not cache:
+            LOGGER.info(f'Setting properties.cache={cache}')
+            message['properties']['cache'] = False
 
         LOGGER.debug('Removing system and version from data_id')
         data_id = message['properties']['data_id']
