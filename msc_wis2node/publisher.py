@@ -18,6 +18,7 @@
 ###############################################################################
 
 from datetime import date, datetime, timezone
+from fnmatch import fnmatch
 import json
 import logging
 import random
@@ -48,7 +49,6 @@ class WIS2FlowCB(FlowCB):
         :returns: None
         """
 
-        LOGGER.debug('JJJ')
         new_incoming = []
 
         for msg in worklist.incoming:
@@ -124,12 +124,12 @@ class WIS2Publisher:
         """
 
         for dataset in self.datasets:
-            LOGGER.debug(f"DATASETS: {self.datasets}")
+            LOGGER.debug(f'Dataset: {dataset}')
             match = False
             subtopic_dirpath = self._subtopic2dirpath(dataset['subtopic'])
 
             LOGGER.debug(f'Testing subtopic match: {subtopic_dirpath}')
-            if path.startswith(subtopic_dirpath):
+            if fnmatch(path, subtopic_dirpath):
                 LOGGER.debug('Found matching subtopic')
                 match = True
 
@@ -145,6 +145,10 @@ class WIS2Publisher:
                 if match:
                     LOGGER.debug('Found matching dataset definition')
                     return dataset
+            else:
+                LOGGER.debug('NO MATCH')
+                LOGGER.debug(path)
+                LOGGER.debug(subtopic_dirpath)
 
         LOGGER.debug('No match found')
 
@@ -216,6 +220,7 @@ class WIS2Publisher:
         LOGGER.debug(f'AMQP subtopic: {subtopic}')
 
         dirpath = '/' + subtopic.replace('.', '/').rstrip('/#')
+        dirpath = f'*{dirpath}*'
 
         LOGGER.debug(f'directory path: {dirpath}')
 
