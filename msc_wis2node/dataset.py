@@ -75,8 +75,8 @@ def create_datasets_conf(metadata_zipfile: Union[Path, None],
             LOGGER.debug(f'Extracting all MCFs to {td}')
             z.extractall(td)
 
-            path = Path(td) / 'discovery-metadata-master'
-            mcfs_to_process = path.rglob('*.yml')
+            path = Path(td)
+            mcfs_to_process = path.rglob('*/*.yml')
 
             for path_object in mcfs_to_process:
                 LOGGER.debug(f'Path: {path_object}')
@@ -86,6 +86,7 @@ def create_datasets_conf(metadata_zipfile: Union[Path, None],
 
                 try:
                     with path_object.open() as fh2:
+                        LOGGER.debug(f'Processing {path_object}')
                         mcf = yaml.load(fh2, Loader=yaml.SafeLoader)
 
                         if mcf['msc-metadata']['status'] not in ['completed', 'published']:  # noqa
@@ -106,9 +107,16 @@ def create_datasets_conf(metadata_zipfile: Union[Path, None],
                         dataset['wis2-topic'] = mcf['distribution']['mqtt_eng-CAN']['channel']  # noqa
                         dataset['media-type'] = get_format(mcf['distribution'])
 
+                        LOGGER.debug('Handling regular expressions')
                         try:
-                            for regex in mcf['distribution']['amqps_eng-CAN']['regexes']:  # noqa
+                            for regex in mcf['distribution']['amqps_eng-CAN']['msc-regex-filters']:  # noqa
                                 dataset['regexes'].append(regex)
+                        except KeyError:
+                            pass
+
+                        LOGGER.debug('Handling caching')
+                        try:
+                            dataset['cache'] = mcf['msc-metadata']['publish-to']['wmo-wis2'].get('cache', True)  # noqa
                         except KeyError:
                             pass
 
