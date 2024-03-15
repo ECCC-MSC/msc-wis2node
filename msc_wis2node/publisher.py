@@ -41,6 +41,10 @@ LOGGER = logging.getLogger(__name__)
 
 
 class WIS2FlowCB(FlowCB):
+    def __init__(self, options):
+        super().__init__(options,logger)
+        self.o.add_option('selfPublish', 'flag', True)
+
     def after_accept(self, worklist) -> None:
         """
         sarracenia dispatcher
