@@ -34,7 +34,8 @@ from sarracenia.flowcb import FlowCB
 import yaml
 
 from msc_wis2node.env import (BROKER_HOSTNAME, BROKER_PORT, BROKER_USERNAME,
-                              BROKER_PASSWORD, DATASET_CONFIG, TOPIC_PREFIX)
+                              BROKER_PASSWORD, CENTRE_ID, DATASET_CONFIG,
+                              TOPIC_PREFIX)
 
 LOGGER = logging.getLogger(__name__)
 
@@ -164,15 +165,17 @@ class WIS2Publisher:
         :returns: `bool` of dispatch result
         """
 
-        topic = f"{TOPIC_PREFIX}/{dataset['wis2-topic']}"
+        topic = f"{TOPIC_PREFIX}/{CENTRE_ID}/{dataset['wis2-topic']}"
         LOGGER.info(f'URL: {url}')
 
         datetime_ = self._topic_regex2datetime(
             url, dataset.get('msc-filename-datetime-regex'))
 
+        metadata_id = f"urn:wmo:md:{CENTRE_ID}:{dataset['metadata-id']}"
+
         message = create_message(
             identifier=str(uuid.uuid4()),
-            # metadata_id=dataset['metadata-id'],
+            metadata_id=metadata_id,
             datetime_=datetime_,
             topic=topic,
             content_type=dataset['media-type'],

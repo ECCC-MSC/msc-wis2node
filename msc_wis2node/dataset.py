@@ -76,7 +76,7 @@ def create_datasets_conf(metadata_zipfile: Union[Path, None],
             z.extractall(td)
 
             path = Path(td)
-            mcfs_to_process = path.rglob('*/*.yml')
+            mcfs_to_process = path.rglob('mcf/**/*.yml')
 
             for path_object in mcfs_to_process:
                 LOGGER.debug(f'Path: {path_object}')
