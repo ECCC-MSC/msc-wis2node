@@ -1,0 +1,2 @@
+broker: ${PYWIS_PUBSUB_BROKER_URL}
+publish_topic: origin/a/wis2/${CENTRE_ID}/metadata
