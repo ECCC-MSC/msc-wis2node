@@ -176,7 +176,8 @@
             "href": "https://www.canada.ca/en/environment-climate-change/services/water-overview/quantity/monitoring/survey/data-products-services/national-archive-hydat.html",
             "type": "text/html",
             "rel": "about",
-            "title": "National Water Data Archive"
+            "title": "National Water Data Archive",
+            "hreflang": "en"
         },
         {
             "href": "https://www.canada.ca/fr/environnement-changement-climatique/services/eau-apercu/volume/surveillance/releves/produits-donnees-services/archives-nationales-hydat.html",
