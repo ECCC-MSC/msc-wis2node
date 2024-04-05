@@ -9,7 +9,7 @@ on:
     branches:
       - gh-pages
     paths:
-      - 'metadata/**.json'
+      - '**.json'
 
 jobs:
   main:
