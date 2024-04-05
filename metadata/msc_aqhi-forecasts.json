@@ -1,5 +1,5 @@
 {
-    "id": "urn:wmo:md:ca-eccc-msc:1ee9e14d-0814-5201-a3be-705809d8ee0e",
+    "id": "urn:wmo:md:ca-eccc-msc:a563e47d-6eb9-4f7f-933c-222ae49fe57f",
     "conformsTo": [
         "http://wis.wmo.int/spec/wcmp/2/conf/core"
     ],
@@ -9,43 +9,49 @@
         "coordinates": [
             [
                 [
-                    -141.01,
-                    41.67
+                    -141,
+                    41.68
                 ],
                 [
-                    -141.01,
-                    82.12
-                ],
-                [
-                    -52.62,
-                    82.12
+                    -141,
+                    83.11
                 ],
                 [
                     -52.62,
-                    41.67
+                    83.11
                 ],
                 [
-                    -141.01,
-                    41.67
+                    -52.62,
+                    41.68
+                ],
+                [
+                    -141,
+                    41.68
                 ]
             ]
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:1ee9e14d-0814-5201-a3be-705809d8ee0e",
-        "title": "Historical Hydrometric Data",
-        "description": "Historical hydrometric data are standardized water resource data and information. They are collected, interpreted and disseminated by the National Hydrological Services (NHS) in partnership with the provinces, territories and other agencies through the National Hydrometric Program. These data sets include daily mean, monthly mean, annual maximum and minimum daily mean and instantaneous peak water level and discharge information for over 2700 active and 5100 discontinued hydrometric monitoring stations across Canada.",
+        "identifier": "urn:wmo:md:ca-eccc-msc:a563e47d-6eb9-4f7f-933c-222ae49fe57f",
+        "title": "Air Quality Health Index Forecasts",
+        "description": "The Air Quality Health Index (AQHI) is a scale designed to help quantify the quality of the air in a certain region on a scale from 1 to 10. When the amount of air pollution is very high, the number is reported as 10+. It also includes a category that describes the health risk associated with the index reading (e.g. Low, Moderate, High, or Very High Health Risk). The AQHI is calculated based on the relative risks of a combination of common air pollutants that are known to harm human health, including ground-level ozone, particulate matter, and nitrogen dioxide. The AQHI formulation captures only the short term or acute health risk (exposure of hour or days at a maximum). The formulation of the AQHI may change over time to reflect new understanding associated with air pollution health effects. The AQHI is calculated from data observed in real time, without being verified (quality control).",
         "themes": [
             {
                 "concepts": [
                     {
-                        "id": "Water"
+                        "id": "Air"
                     },
                     {
-                        "id": "Inland waters"
+                        "id": "Air quality"
                     },
                     {
-                        "id": "Water management"
+                        "id": "Health hazards"
+                    },
+                    {
+                        "id": "Forecasting"
+                    },
+                    {
+                        "id": "Air pollution"
                     }
                 ],
                 "scheme": "https://canada.multites.net/cst/EAEAD1E6-7DD2-4997-BE7F-40BFB1CBE8A2/CST20230912.rdf"
@@ -53,7 +59,7 @@
             {
                 "concepts": [
                     {
-                        "id": "hydrology"
+                        "id": "atmospheric-composition"
                     }
                 ],
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
@@ -61,10 +67,10 @@
         ],
         "language": "en",
         "type": "dataset",
-        "created": "1850-01-01T00:00:00Z",
+        "created": "2014-02-14T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "SQL"
+            "CSV,XML"
         ],
         "contacts": [
             {
@@ -107,82 +113,48 @@
             }
         ],
         "keywords": [
-            "Historical",
-            "Archive",
-            "Hydrology",
-            "Hydrometric",
-            "Streamflow",
-            "Discharge",
-            "Water level",
-            "Water quantity",
-            "Sediment concentration",
-            "Water",
+            "Air quality forecasts",
+            "Health index",
+            "Health risk",
+            "Air",
+            "Air - Quality",
             "National (CA)",
-            "Observation",
-            "Measurement"
+            "Atmosphere"
         ],
-        "wmo:dataPolicy": "core"
+        "wmo:dataPolicy": "recommended"
     },
     "links": [
         {
-            "href": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/",
-            "type": "text/html",
-            "rel": "archives",
-            "title": "Collaboration"
-        },
-        {
-            "href": "https://api.weather.gc.ca/collections/hydrometric-stations/items",
+            "href": "https://api.weather.gc.ca/collections/aqhi-forecasts-realtime/items",
             "type": "application/geo+json",
             "rel": "items",
-            "title": "hydrometric-stations"
+            "title": "aqhi-forecasts-realtime"
         },
         {
-            "href": "https://api.weather.gc.ca/collections/hydrometric-daily-mean/items",
-            "type": "application/geo+json",
-            "rel": "items",
-            "title": "hydrometric-daily-mean"
-        },
-        {
-            "href": "https://api.weather.gc.ca/collections/hydrometric-monthly-mean/items",
-            "type": "application/geo+json",
-            "rel": "items",
-            "title": "hydrometric-monthly-mean"
-        },
-        {
-            "href": "https://api.weather.gc.ca/collections/hydrometric-annual-statistics/items",
-            "type": "application/geo+json",
-            "rel": "items",
-            "title": "hydrometric-annual-statistics"
-        },
-        {
-            "href": "https://api.weather.gc.ca/collections/hydrometric-annual-peaks/items",
-            "type": "application/geo+json",
-            "rel": "items",
-            "title": "hydrometric-annual-peaks"
-        },
-        {
-            "href": "https://wateroffice.ec.gc.ca/mainmenu/historical_data_index_e.html",
+            "href": "https://dd.weather.gc.ca/air_quality/aqhi",
             "type": "text/html",
-            "rel": "about",
-            "title": "Historical Hydrometric Data"
+            "rel": "items",
+            "title": "MSC Datamart"
         },
         {
-            "href": "https://eau.ec.gc.ca/mainmenu/historical_data_index_f.html",
+            "href": "https://dd.meteo.gc.ca/air_quality/aqhi",
             "type": "text/html",
-            "rel": "about",
-            "title": "Historical Hydrometric Data"
+            "rel": "items",
+            "title": "MSC Datamart"
         },
         {
-            "href": "https://www.canada.ca/en/environment-climate-change/services/water-overview/quantity/monitoring/survey/data-products-services/national-archive-hydat.html",
-            "type": "text/html",
-            "rel": "about",
-            "title": "National Water Data Archive"
+            "href": "amqps://dd.weather.gc.ca/",
+            "type": "application/json",
+            "rel": "items",
+            "title": "MSC Datamart AMQP",
+            "channel": "air_quality.aqhi.*.forecast.#"
         },
         {
-            "href": "https://www.canada.ca/fr/environnement-changement-climatique/services/eau-apercu/volume/surveillance/releves/produits-donnees-services/archives-nationales-hydat.html",
-            "type": "text/html",
-            "rel": "about",
-            "title": "National Water Data Archive"
+            "href": "amqps://dd.weather.gc.ca/",
+            "type": "application/json",
+            "rel": "items",
+            "title": "MSC Datamart AMQP",
+            "channel": "air_quality.aqhi.*.forecast.#"
         },
         {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
@@ -199,7 +171,7 @@
     ],
     "time": {
         "interval": [
-            "1850-01-01",
+            "2013-01-01",
             ".."
         ]
     }

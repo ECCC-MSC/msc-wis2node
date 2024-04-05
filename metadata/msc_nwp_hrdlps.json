@@ -1,0 +1,181 @@
+{
+    "id": "urn:wmo:md:ca-eccc-msc:6712547a-7b6e-4746-ac51-e369a1f1f1ee",
+    "conformsTo": [
+        "http://wis.wmo.int/spec/wcmp/2/conf/core"
+    ],
+    "type": "Feature",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -152.7685268,
+                    27.2840148
+                ],
+                [
+                    -152.7685268,
+                    70.6164825
+                ],
+                [
+                    -40.6938032,
+                    70.6164825
+                ],
+                [
+                    -40.6938032,
+                    27.2840148
+                ],
+                [
+                    -152.7685268,
+                    27.2840148
+                ]
+            ]
+        ]
+    },
+    "properties": {
+        "identifier": "urn:wmo:md:ca-eccc-msc:6712547a-7b6e-4746-ac51-e369a1f1f1ee",
+        "title": "High Resolution Deterministic Land Surface Prediction System [experimental]",
+        "description": "The High Resolution Deterministic Land Prediction System (HRDLPS) produces high-resolution medium-range forecasts of land surface, subsurface variables, and of near-surface atmospheric variables (1.5 m temperature and dewpoint, 10 m wind). HRDLPS is initialized with analysis and trial fields provided by the Canadian Land Data Assimilation System of the National Surface and River Prediction System (CaLDAS-NSRPS). The system is then driven with atmospheric forecasts provided by the HRDPS over the first two days of integration and by the GDPS over the next four days. Predictions are performed twice a day. The system runs on a grid with a 2.5 km horizontal spacing covering Canada and part of the USA.",
+        "themes": [
+            {
+                "concepts": [
+                    {
+                        "id": "Weather forecasts"
+                    },
+                    {
+                        "id": "Temperature"
+                    },
+                    {
+                        "id": "Drainage"
+                    },
+                    {
+                        "id": "Soil"
+                    },
+                    {
+                        "id": "Inland waters"
+                    },
+                    {
+                        "id": "Snow"
+                    },
+                    {
+                        "id": "Wind"
+                    },
+                    {
+                        "id": "Meteorological data"
+                    }
+                ],
+                "scheme": "https://canada.multites.net/cst/EAEAD1E6-7DD2-4997-BE7F-40BFB1CBE8A2/CST20230912.rdf"
+            },
+            {
+                "concepts": [
+                    {
+                        "id": "hydrology"
+                    }
+                ],
+                "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
+            }
+        ],
+        "language": "en",
+        "type": "dataset",
+        "created": "2022-11-21T00:00:00Z",
+        "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
+        "formats": [
+            "NetCDF"
+        ],
+        "contacts": [
+            {
+                "addresses": [
+                    {
+                        "deliveryPoint": [
+                            "77 Westmorland Street, suite 260"
+                        ],
+                        "city": "Fredericton",
+                        "administrativeArea": "New Brunswick",
+                        "postalCode": "E3B 6Z4",
+                        "country": "Canada"
+                    }
+                ],
+                "roles": [
+                    "host"
+                ],
+                "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
+                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
+                "position": "National Inquiry Response Team",
+                "hoursOfService": "0700h - 1500h EST",
+                "contactInstructions": "email",
+                "phones": [
+                    {
+                        "value": "+18199972800"
+                    }
+                ],
+                "emails": [
+                    {
+                        "value": "ECWeather-Meteo@ec.gc.ca"
+                    }
+                ],
+                "links": [
+                    {
+                        "rel": "canonical",
+                        "type": "text/html",
+                        "href": "https://www.canada.ca/en/environment-climate-change.html"
+                    }
+                ]
+            }
+        ],
+        "keywords": [
+            "Prediction",
+            "High resolution",
+            "Deterministic",
+            "Land surface",
+            "Weather and Climate",
+            "International",
+            "Atmosphere"
+        ],
+        "wmo:dataPolicy": "recommended"
+    },
+    "links": [
+        {
+            "href": "https://dd.alpha.weather.gc.ca/model_hrdlps/2.5km/",
+            "type": "text/html",
+            "rel": "items",
+            "title": "MSC Datamart"
+        },
+        {
+            "href": "https://dd.alpha.meteo.gc.ca/model_hrdlps/2.5km/",
+            "type": "text/html",
+            "rel": "items",
+            "title": "MSC Datamart"
+        },
+        {
+            "href": "amqps://dd.alpha.weather.gc.ca/",
+            "type": "application/json",
+            "rel": "items",
+            "title": "MSC Datamart AMQP",
+            "channel": "model_hrdlps.2.5km.#"
+        },
+        {
+            "href": "amqps://dd.alpha.weather.gc.ca/",
+            "type": "application/json",
+            "rel": "items",
+            "title": "MSC Datamart AMQP",
+            "channel": "model_hrdlps.2.5km.#"
+        },
+        {
+            "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
+            "type": "text/html",
+            "rel": "license",
+            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
+        },
+        {
+            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
+            "type": "text/html",
+            "rel": "license",
+            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
+        }
+    ],
+    "time": {
+        "interval": [
+            "2022-11-21",
+            ".."
+        ]
+    }
+}

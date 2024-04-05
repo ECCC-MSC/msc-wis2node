@@ -1,0 +1,168 @@
+{
+    "id": "urn:wmo:md:ca-eccc-msc:7c1070fd-af7d-40fe-9e78-49d2962f0bbc",
+    "conformsTo": [
+        "http://wis.wmo.int/spec/wcmp/2/conf/core"
+    ],
+    "type": "Feature",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -141,
+                    40
+                ],
+                [
+                    -141,
+                    88
+                ],
+                [
+                    -42,
+                    88
+                ],
+                [
+                    -42,
+                    40
+                ],
+                [
+                    -141,
+                    40
+                ]
+            ]
+        ]
+    },
+    "properties": {
+        "identifier": "urn:wmo:md:ca-eccc-msc:7c1070fd-af7d-40fe-9e78-49d2962f0bbc",
+        "title": "UMOS statistically post-processed Forecast of the Global Deterministic Prediction System (GDPS-UMOS-MLR)",
+        "description": "Statistical post-processing of weather and environmental forecasts issued by numerical models, including the Global Deterministic Prediction System (GDPS), reduces systematic bias and error variance of raw numerical forecasts. This is achieved by establishing an optimal relationship between observations recorded at stations and co-located numerical model outputs. The Updatable Model Output Statistics (UMOS) system at Environment Canada carries out this task. The statistical relationships are built using the Model Output Statistics (MOS) method and a multiple linear regression (MLR) technic. The weather and environmental variable being statistically post-processed by UMOS consists of air temperature at approximately 1.5 meters above ground. The absence of a statistically post-processed forecast can be caused by a missing statistical model due to insufficient observation data quality or quantity. Geographical coverage includes weather stations across Canada. Statistically post-processed forecasts are available at the same frequency of emission as the numerical model producing the raw forecasts and at 3-hourly lead times up to 144 hours (6 days) for the GDPS.",
+        "themes": [
+            {
+                "concepts": [
+                    {
+                        "id": "Weather forecasts"
+                    },
+                    {
+                        "id": "Air temperature"
+                    },
+                    {
+                        "id": "Wind"
+                    }
+                ],
+                "scheme": "https://canada.multites.net/cst/EAEAD1E6-7DD2-4997-BE7F-40BFB1CBE8A2/CST20230912.rdf"
+            },
+            {
+                "concepts": [
+                    {
+                        "id": "weather"
+                    }
+                ],
+                "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
+            }
+        ],
+        "language": "en",
+        "type": "dataset",
+        "created": "2023-07-28T00:00:00Z",
+        "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
+        "formats": [
+            "GeoJSON"
+        ],
+        "contacts": [
+            {
+                "addresses": [
+                    {
+                        "deliveryPoint": [
+                            "77 Westmorland Street, suite 260"
+                        ],
+                        "city": "Fredericton",
+                        "administrativeArea": "New Brunswick",
+                        "postalCode": "E3B 6Z4",
+                        "country": "Canada"
+                    }
+                ],
+                "roles": [
+                    "host"
+                ],
+                "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
+                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
+                "position": "National Inquiry Response Team",
+                "hoursOfService": "0700h - 1500h EST",
+                "contactInstructions": "email",
+                "phones": [
+                    {
+                        "value": "+18199972800"
+                    }
+                ],
+                "emails": [
+                    {
+                        "value": "ECWeather-Meteo@ec.gc.ca"
+                    }
+                ],
+                "links": [
+                    {
+                        "rel": "canonical",
+                        "type": "text/html",
+                        "href": "https://www.canada.ca/en/environment-climate-change.html"
+                    }
+                ]
+            }
+        ],
+        "keywords": [
+            "Statistical post-processing",
+            "Machine learning",
+            "Multiple linear regression",
+            "UMOS",
+            "Environmental forecast",
+            "Point forecast",
+            "Weather and Climate",
+            "National (CA)",
+            "Atmosphere"
+        ],
+        "wmo:dataPolicy": "recommended"
+    },
+    "links": [
+        {
+            "href": "https://dd.weather.gc.ca/model_gem_global/stat-post-processing/",
+            "type": "text/html",
+            "rel": "items",
+            "title": "MSC Datamart"
+        },
+        {
+            "href": "https://dd.meteo.gc.ca/model_gem_global/stat-post-processing/",
+            "type": "text/html",
+            "rel": "items",
+            "title": "MSC Datamart"
+        },
+        {
+            "href": "amqps://dd.weather.gc.ca/",
+            "type": "application/json",
+            "rel": "items",
+            "title": "MSC Datamart AMQP",
+            "channel": "model_gem_global.stat-post-processing.#"
+        },
+        {
+            "href": "amqps://dd.weather.gc.ca/",
+            "type": "application/json",
+            "rel": "items",
+            "title": "MSC Datamart AMQP",
+            "channel": "model_gem_global.stat-post-processing.#"
+        },
+        {
+            "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
+            "type": "text/html",
+            "rel": "license",
+            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
+        },
+        {
+            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
+            "type": "text/html",
+            "rel": "license",
+            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
+        }
+    ],
+    "time": {
+        "interval": [
+            "2023-07-28",
+            ".."
+        ]
+    }
+}

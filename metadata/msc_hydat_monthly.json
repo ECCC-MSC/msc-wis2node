@@ -1,5 +1,5 @@
 {
-    "id": "urn:wmo:md:ca-eccc-msc:1ee9e14d-0814-5201-a3be-705809d8ee0e",
+    "id": "urn:wmo:md:ca-eccc-msc:76747350-2faa-490e-90d1-0e5af6e66027",
     "conformsTo": [
         "http://wis.wmo.int/spec/wcmp/2/conf/core"
     ],
@@ -32,9 +32,9 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:1ee9e14d-0814-5201-a3be-705809d8ee0e",
-        "title": "Historical Hydrometric Data",
-        "description": "Historical hydrometric data are standardized water resource data and information. They are collected, interpreted and disseminated by the National Hydrological Services (NHS) in partnership with the provinces, territories and other agencies through the National Hydrometric Program. These data sets include daily mean, monthly mean, annual maximum and minimum daily mean and instantaneous peak water level and discharge information for over 2700 active and 5100 discontinued hydrometric monitoring stations across Canada.",
+        "identifier": "urn:wmo:md:ca-eccc-msc:76747350-2faa-490e-90d1-0e5af6e66027",
+        "title": "Monthly Mean of Water Level or Flow",
+        "description": "The monthly mean is the average of daily mean values for a given month.",
         "themes": [
             {
                 "concepts": [
@@ -131,6 +131,12 @@
             "title": "Collaboration"
         },
         {
+            "href": "https://api.weather.gc.ca/collections/hydrometric-monthly-mean/items",
+            "type": "application/geo+json",
+            "rel": "items",
+            "title": "hydrometric-monthly-mean"
+        },
+        {
             "href": "https://api.weather.gc.ca/collections/hydrometric-stations/items",
             "type": "application/geo+json",
             "rel": "items",
@@ -141,12 +147,6 @@
             "type": "application/geo+json",
             "rel": "items",
             "title": "hydrometric-daily-mean"
-        },
-        {
-            "href": "https://api.weather.gc.ca/collections/hydrometric-monthly-mean/items",
-            "type": "application/geo+json",
-            "rel": "items",
-            "title": "hydrometric-monthly-mean"
         },
         {
             "href": "https://api.weather.gc.ca/collections/hydrometric-annual-statistics/items",

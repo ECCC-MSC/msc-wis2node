@@ -1,0 +1,165 @@
+{
+    "id": "urn:wmo:md:ca-eccc-msc:8fc6ad48-1a98-45fa-9eba-9a27ddae5014",
+    "conformsTo": [
+        "http://wis.wmo.int/spec/wcmp/2/conf/core"
+    ],
+    "type": "Feature",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -140.8675,
+                    42.04307
+                ],
+                [
+                    -140.8675,
+                    82.51778
+                ],
+                [
+                    -52.7,
+                    82.51778
+                ],
+                [
+                    -52.7,
+                    42.04307
+                ],
+                [
+                    -140.8675,
+                    42.04307
+                ]
+            ]
+        ]
+    },
+    "properties": {
+        "identifier": "urn:wmo:md:ca-eccc-msc:8fc6ad48-1a98-45fa-9eba-9a27ddae5014",
+        "title": "Long Term Climate Extremes, Daily Extremes of Records \u2013 Precipitation",
+        "description": "Anomalous weather resulting in Temperature and Precipitation extremes occurs almost every day somewhere in Canada. For the purpose of identifying and tabulating daily extremes of record for temperature, precipitation and snowfall, the Meteorological Service of Canada has threaded or put together data from closely related stations to compile a long time series of data for about 750 locations in Canada to monitor for record-breaking weather. Virtual Climate stations correspond with the city pages of weather.gc.ca. This data provides the daily extremes of record for Precipitation for each day of the year. Daily elements include: Greatest Precipitation.",
+        "themes": [
+            {
+                "concepts": [
+                    {
+                        "id": "Climate"
+                    },
+                    {
+                        "id": "Precipitation"
+                    }
+                ],
+                "scheme": "https://canada.multites.net/cst/EAEAD1E6-7DD2-4997-BE7F-40BFB1CBE8A2/CST20230912.rdf"
+            },
+            {
+                "concepts": [
+                    {
+                        "id": "climate"
+                    }
+                ],
+                "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
+            }
+        ],
+        "language": "en",
+        "type": "dataset",
+        "created": "2021-02-15T00:00:00Z",
+        "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
+        "formats": [
+            "CSV"
+        ],
+        "contacts": [
+            {
+                "addresses": [
+                    {
+                        "deliveryPoint": [
+                            "77 Westmorland Street, suite 260"
+                        ],
+                        "city": "Fredericton",
+                        "administrativeArea": "New Brunswick",
+                        "postalCode": "E3B 6Z4",
+                        "country": "Canada"
+                    }
+                ],
+                "roles": [
+                    "host"
+                ],
+                "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
+                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
+                "position": "National Inquiry Response Team",
+                "hoursOfService": "0700h - 1500h EST",
+                "contactInstructions": "email",
+                "phones": [
+                    {
+                        "value": "+18199972800"
+                    }
+                ],
+                "emails": [
+                    {
+                        "value": "ECWeather-Meteo@ec.gc.ca"
+                    }
+                ],
+                "links": [
+                    {
+                        "rel": "canonical",
+                        "type": "text/html",
+                        "href": "https://www.canada.ca/en/environment-climate-change.html"
+                    }
+                ]
+            }
+        ],
+        "keywords": [
+            "Weather and Climate",
+            "National (CA)",
+            "Atmosphere"
+        ],
+        "wmo:dataPolicy": "recommended"
+    },
+    "links": [
+        {
+            "href": "https://dd.weather.gc.ca/climate/ltce/daily/precipitation/",
+            "type": "text/html",
+            "rel": "items",
+            "title": "MSC Datamart"
+        },
+        {
+            "href": "https://dd.meteo.gc.ca/climate/ltce/daily/precipitation/",
+            "type": "text/html",
+            "rel": "items",
+            "title": "MSC Datamart"
+        },
+        {
+            "href": "amqps://dd.weather.gc.ca/",
+            "type": "application/json",
+            "rel": "items",
+            "title": "MSC Datamart AMQP",
+            "channel": "climate.ltce.daily.precipitation.#"
+        },
+        {
+            "href": "amqps://dd.weather.gc.ca/",
+            "type": "application/json",
+            "rel": "items",
+            "title": "MSC Datamart AMQP",
+            "channel": "climate.ltce.daily.precipitation.#"
+        },
+        {
+            "href": "https://api.weather.gc.ca/collections/ltce-precipitation/items/",
+            "type": "application/geo+json",
+            "rel": "items",
+            "title": "ltce-precipitation"
+        },
+        {
+            "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
+            "type": "text/html",
+            "rel": "license",
+            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
+        },
+        {
+            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
+            "type": "text/html",
+            "rel": "license",
+            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
+        }
+    ],
+    "time": {
+        "interval": [
+            "1840-05-01",
+            ".."
+        ]
+    }
+}

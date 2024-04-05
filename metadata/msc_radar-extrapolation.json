@@ -1,0 +1,151 @@
+{
+    "id": "urn:wmo:md:ca-eccc-msc:2280b47c-fb7c-4bab-a632-33f59eb82385",
+    "conformsTo": [
+        "http://wis.wmo.int/spec/wcmp/2/conf/core"
+    ],
+    "type": "Feature",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -170.323855,
+                    16.93461
+                ],
+                [
+                    -170.323855,
+                    67.19061
+                ],
+                [
+                    -50.002855,
+                    67.19061
+                ],
+                [
+                    -50.002855,
+                    16.93461
+                ],
+                [
+                    -170.323855,
+                    16.93461
+                ]
+            ]
+        ]
+    },
+    "properties": {
+        "identifier": "urn:wmo:md:ca-eccc-msc:2280b47c-fb7c-4bab-a632-33f59eb82385",
+        "title": "North American Radar Extrapolation Composite [experimental]",
+        "description": "This product is the Radar Extrapolation Composite at 1 km resolution over the North American domain. It uses only the 6-minute high-resolution (1 km) radar composite (the one displayed on the different government public platforms) as input. Using a modification of the open source PySTEPS library, a motion field is computed, and radar echoes are projected forward in time. The motion is based on similarities between radar reflectivity in a time sequence at multiple spatial scales. Future radar reflectivity is extrapolated, followed by conversion to precipitation rates of MM/HR (Rain) or CM/HR (Snow). An output sequence of future radar is generated every 6 minutes. It is important to note that this output is only a projection of existing echoes with no account for the growth and decay that is expected in a real radar sequence. Errors will exist, especially near the edges of radar coverage, or near geographic features. Therefore, the product should be used with caution considering that no perfect solution can exist given the limits of predictability.",
+        "themes": [
+            {
+                "concepts": [
+                    {
+                        "id": "Radar"
+                    },
+                    {
+                        "id": "Remote sensing"
+                    },
+                    {
+                        "id": "Weather"
+                    }
+                ],
+                "scheme": "https://canada.multites.net/cst/EAEAD1E6-7DD2-4997-BE7F-40BFB1CBE8A2/CST20230912.rdf"
+            },
+            {
+                "concepts": [
+                    {
+                        "id": "weather"
+                    }
+                ],
+                "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
+            }
+        ],
+        "language": "en",
+        "type": "dataset",
+        "created": "2023-01-30T00:00:00Z",
+        "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
+        "formats": [
+            "WMS"
+        ],
+        "contacts": [
+            {
+                "addresses": [
+                    {
+                        "deliveryPoint": [
+                            "77 Westmorland Street, suite 260"
+                        ],
+                        "city": "Fredericton",
+                        "administrativeArea": "New Brunswick",
+                        "postalCode": "E3B 6Z4",
+                        "country": "Canada"
+                    }
+                ],
+                "roles": [
+                    "host"
+                ],
+                "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
+                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
+                "position": "National Inquiry Response Team",
+                "hoursOfService": "0700h - 1500h EST",
+                "contactInstructions": "email",
+                "phones": [
+                    {
+                        "value": "+18199972800"
+                    }
+                ],
+                "emails": [
+                    {
+                        "value": "ECWeather-Meteo@ec.gc.ca"
+                    }
+                ],
+                "links": [
+                    {
+                        "rel": "canonical",
+                        "type": "text/html",
+                        "href": "https://www.canada.ca/en/environment-climate-change.html"
+                    }
+                ]
+            }
+        ],
+        "keywords": [
+            "Atmospheric conditions",
+            "Meteorology",
+            "Radar extrapolation",
+            "Weather and Climate",
+            "National (CA)",
+            "Atmosphere"
+        ],
+        "wmo:dataPolicy": "recommended"
+    },
+    "links": [
+        {
+            "href": "https://geo.weather.gc.ca/geomet?lang=en&service=WMS&request=GetCapabilities&layers=Radar_1km_RainPrecipRate-Extrapolation",
+            "type": "application/xml",
+            "rel": "data",
+            "title": "Radar extrapolation precipitation rate for rain [mm/h] [experimental]"
+        },
+        {
+            "href": "https://geo.meteo.gc.ca/geomet?lang=fr&service=WMS&request=GetCapabilities&layers=Radar_1km_RainPrecipRate-Extrapolation",
+            "type": "application/xml",
+            "rel": "data",
+            "title": "Radar extrapolation precipitation rate for rain [mm/h] [experimental]"
+        },
+        {
+            "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
+            "type": "text/html",
+            "rel": "license",
+            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
+        },
+        {
+            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
+            "type": "text/html",
+            "rel": "license",
+            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
+        }
+    ],
+    "time": {
+        "interval": [
+            "2023-01-30",
+            ".."
+        ]
+    }
+}

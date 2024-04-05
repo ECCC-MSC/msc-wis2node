@@ -1,5 +1,5 @@
 {
-    "id": "urn:wmo:md:ca-eccc-msc:1ee9e14d-0814-5201-a3be-705809d8ee0e",
+    "id": "urn:wmo:md:ca-eccc-msc:46763060-e859-4812-8da5-2361d99b4c34",
     "conformsTo": [
         "http://wis.wmo.int/spec/wcmp/2/conf/core"
     ],
@@ -32,20 +32,26 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:1ee9e14d-0814-5201-a3be-705809d8ee0e",
-        "title": "Historical Hydrometric Data",
-        "description": "Historical hydrometric data are standardized water resource data and information. They are collected, interpreted and disseminated by the National Hydrological Services (NHS) in partnership with the provinces, territories and other agencies through the National Hydrometric Program. These data sets include daily mean, monthly mean, annual maximum and minimum daily mean and instantaneous peak water level and discharge information for over 2700 active and 5100 discontinued hydrometric monitoring stations across Canada.",
+        "identifier": "urn:wmo:md:ca-eccc-msc:46763060-e859-4812-8da5-2361d99b4c34",
+        "title": "Hydrometric Monitoring Stations",
+        "description": "A station is a site on a river or lake where water quantity (water level and flow) are collected and recorded.",
         "themes": [
             {
                 "concepts": [
                     {
-                        "id": "Water"
+                        "id": "Station"
                     },
                     {
-                        "id": "Inland waters"
+                        "id": "Hydrometric station"
                     },
                     {
-                        "id": "Water management"
+                        "id": "Stream gauge"
+                    },
+                    {
+                        "id": "Gaging station"
+                    },
+                    {
+                        "id": "Gauging station"
                     }
                 ],
                 "scheme": "https://canada.multites.net/cst/EAEAD1E6-7DD2-4997-BE7F-40BFB1CBE8A2/CST20230912.rdf"
@@ -64,6 +70,8 @@
         "created": "1850-01-01T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
+            "WMS",
+            "CSV",
             "SQL"
         ],
         "contacts": [
@@ -107,15 +115,9 @@
             }
         ],
         "keywords": [
-            "Historical",
-            "Archive",
-            "Hydrology",
-            "Hydrometric",
-            "Streamflow",
-            "Discharge",
-            "Water level",
-            "Water quantity",
-            "Sediment concentration",
+            "Water",
+            "Inland waters",
+            "Water management",
             "Water",
             "National (CA)",
             "Observation",
@@ -125,64 +127,66 @@
     },
     "links": [
         {
+            "href": "https://dd.weather.gc.ca/hydrometric/doc/",
+            "type": "text/html",
+            "rel": "items",
+            "title": "MSC Datamart"
+        },
+        {
+            "href": "https://dd.meteo.gc.ca/hydrometric/doc/",
+            "type": "text/html",
+            "rel": "items",
+            "title": "MSC Datamart"
+        },
+        {
+            "href": "amqps://dd.weather.gc.ca/",
+            "type": "application/json",
+            "rel": "items",
+            "title": "MSC Datamart AMQP",
+            "channel": "hydrometric.doc.#"
+        },
+        {
+            "href": "amqps://dd.weather.gc.ca/",
+            "type": "application/json",
+            "rel": "items",
+            "title": "MSC Datamart AMQP",
+            "channel": "hydrometric.doc.#"
+        },
+        {
+            "href": "https://geo.weather.gc.ca/geomet-climate/?lang=E&service=WMS&request=GetCapabilities",
+            "type": "application/xml",
+            "rel": "data",
+            "title": "HYDROMETRIC.STATIONS"
+        },
+        {
+            "href": "https://geo.meteo.gc.ca/geomet-climate/?lang=F&service=WMS&request=GetCapabilities",
+            "type": "application/xml",
+            "rel": "data",
+            "title": "HYDROMETRIC.STATIONS"
+        },
+        {
+            "href": "https://api.weather.gc.ca/collections/hydrometric-stations/",
+            "type": "application/json",
+            "rel": "collection",
+            "title": "hydrometric-stations"
+        },
+        {
             "href": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/",
             "type": "text/html",
             "rel": "archives",
             "title": "Collaboration"
         },
         {
-            "href": "https://api.weather.gc.ca/collections/hydrometric-stations/items",
-            "type": "application/geo+json",
-            "rel": "items",
-            "title": "hydrometric-stations"
-        },
-        {
-            "href": "https://api.weather.gc.ca/collections/hydrometric-daily-mean/items",
-            "type": "application/geo+json",
-            "rel": "items",
-            "title": "hydrometric-daily-mean"
-        },
-        {
-            "href": "https://api.weather.gc.ca/collections/hydrometric-monthly-mean/items",
-            "type": "application/geo+json",
-            "rel": "items",
-            "title": "hydrometric-monthly-mean"
-        },
-        {
-            "href": "https://api.weather.gc.ca/collections/hydrometric-annual-statistics/items",
-            "type": "application/geo+json",
-            "rel": "items",
-            "title": "hydrometric-annual-statistics"
-        },
-        {
-            "href": "https://api.weather.gc.ca/collections/hydrometric-annual-peaks/items",
-            "type": "application/geo+json",
-            "rel": "items",
-            "title": "hydrometric-annual-peaks"
-        },
-        {
-            "href": "https://wateroffice.ec.gc.ca/mainmenu/historical_data_index_e.html",
+            "href": "https://wateroffice.ec.gc.ca/mainmenu/station_and_network_data_index_e.html",
             "type": "text/html",
             "rel": "about",
-            "title": "Historical Hydrometric Data"
+            "title": "Hydrometric Station and Network Data"
         },
         {
-            "href": "https://eau.ec.gc.ca/mainmenu/historical_data_index_f.html",
+            "href": "https://eau.ec.gc.ca/mainmenu/station_and_network_data_index_f.html",
             "type": "text/html",
             "rel": "about",
-            "title": "Historical Hydrometric Data"
-        },
-        {
-            "href": "https://www.canada.ca/en/environment-climate-change/services/water-overview/quantity/monitoring/survey/data-products-services/national-archive-hydat.html",
-            "type": "text/html",
-            "rel": "about",
-            "title": "National Water Data Archive"
-        },
-        {
-            "href": "https://www.canada.ca/fr/environnement-changement-climatique/services/eau-apercu/volume/surveillance/releves/produits-donnees-services/archives-nationales-hydat.html",
-            "type": "text/html",
-            "rel": "about",
-            "title": "National Water Data Archive"
+            "title": "Hydrometric Station and Network Data"
         },
         {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",

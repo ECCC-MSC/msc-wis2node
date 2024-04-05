@@ -1,0 +1,197 @@
+{
+    "id": "urn:wmo:md:ca-eccc-msc:bfe44cce-a9c4-467f-9172-c8800b32e4ec",
+    "conformsTo": [
+        "http://wis.wmo.int/spec/wcmp/2/conf/core"
+    ],
+    "type": "Feature",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -77.015,
+                    34.87
+                ],
+                [
+                    -77.015,
+                    54.47
+                ],
+                [
+                    -37.025,
+                    54.47
+                ],
+                [
+                    -37.025,
+                    34.87
+                ],
+                [
+                    -77.015,
+                    34.87
+                ]
+            ]
+        ]
+    },
+    "properties": {
+        "identifier": "urn:wmo:md:ca-eccc-msc:bfe44cce-a9c4-467f-9172-c8800b32e4ec",
+        "title": "Coastal Ice-Ocean Prediction System for the East Coast of Canada (CIOPS-East)",
+        "description": "The Coastal Ice-Ocean Predicton System (CIOPS) provides a 48 hour ocean and ice forecast over different domains (East, West, Salish Sea) four times a day at 1/36\u00b0 resolution. A pseudo-analysis component is forced at the ocean boundaries by the Regional Ice-Ocean Prediction System (RIOPS) forecasts and spectrally nudged to the RIOPS solution in the deep ocean. Fields from the pseudo-analysis are used to initialize the 00Z forecast, whilst the 06, 12 and 18Z forecasts use a restart files saved at hour 6 from the previous forecast. The atmospheric fluxes for both the pseudo-analysis and forecast components are provided by the High Resolution Deterministic Prediction System (HRDPS) blended both spatially and temporally with either the Global Deterministic Prediction System (GDPS) (for CIOPS-East) or the Regional Deterministic Predicton System (RDPS) (for CIOPS-West) for areas not covered by the HRDPS.",
+        "themes": [
+            {
+                "concepts": [
+                    {
+                        "id": "Ice"
+                    },
+                    {
+                        "id": "Tides"
+                    },
+                    {
+                        "id": "Water"
+                    },
+                    {
+                        "id": "Environmental emergencies"
+                    },
+                    {
+                        "id": "Coastal waters"
+                    },
+                    {
+                        "id": "Coasts"
+                    },
+                    {
+                        "id": "Oceans"
+                    }
+                ],
+                "scheme": "https://canada.multites.net/cst/EAEAD1E6-7DD2-4997-BE7F-40BFB1CBE8A2/CST20230912.rdf"
+            },
+            {
+                "concepts": [
+                    {
+                        "id": "ocean"
+                    }
+                ],
+                "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
+            }
+        ],
+        "language": "en",
+        "type": "dataset",
+        "created": "2021-12-01T00:00:00Z",
+        "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
+        "formats": [
+            "NetCDF",
+            "WMS"
+        ],
+        "contacts": [
+            {
+                "addresses": [
+                    {
+                        "deliveryPoint": [
+                            "77 Westmorland Street, suite 260"
+                        ],
+                        "city": "Fredericton",
+                        "administrativeArea": "New Brunswick",
+                        "postalCode": "E3B 6Z4",
+                        "country": "Canada"
+                    }
+                ],
+                "roles": [
+                    "host"
+                ],
+                "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
+                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
+                "position": "National Inquiry Response Team",
+                "hoursOfService": "0700h - 1500h EST",
+                "contactInstructions": "email",
+                "phones": [
+                    {
+                        "value": "+18199972800"
+                    }
+                ],
+                "emails": [
+                    {
+                        "value": "ECWeather-Meteo@ec.gc.ca"
+                    }
+                ],
+                "links": [
+                    {
+                        "rel": "canonical",
+                        "type": "text/html",
+                        "href": "https://www.canada.ca/en/environment-climate-change.html"
+                    }
+                ]
+            }
+        ],
+        "keywords": [
+            "Ocean",
+            "Ice",
+            "Coast",
+            "Water",
+            "Water - Ocean Basin - Atlantic Ocean",
+            "Water - Ocean Basin - Pacific Ocean",
+            "S",
+            "e",
+            "a",
+            " ",
+            "i",
+            "c",
+            "e"
+        ],
+        "wmo:dataPolicy": "recommended"
+    },
+    "links": [
+        {
+            "href": "https://hpfx.collab.science.gc.ca/YYYYMMDD/WXO-DD/model_ciops/east/",
+            "type": "text/html",
+            "rel": "items",
+            "title": "MSC Datamart"
+        },
+        {
+            "href": "https://hpfx.collab.science.gc.ca/YYYYMMDD/WXO-DD/model_ciops/east/",
+            "type": "text/html",
+            "rel": "items",
+            "title": "MSC Datamart"
+        },
+        {
+            "href": "amqps://hpfx.collab.science.gc.ca/",
+            "type": "application/json",
+            "rel": "items",
+            "title": "MSC Datamart AMQP",
+            "channel": "*.WXO-DD.model_ciops.east.#"
+        },
+        {
+            "href": "amqps://hpfx.collab.science.gc.ca/",
+            "type": "application/json",
+            "rel": "items",
+            "title": "MSC Datamart AMQP",
+            "channel": "*.WXO-DD.model_ciops.east.#"
+        },
+        {
+            "href": "https://geo.weather.gc.ca/geomet?lang=en&service=WMS&request=GetCapabilities&layers=CIOPS-East_2km_SeaIceAreaFraction",
+            "type": "application/xml",
+            "rel": "data",
+            "title": "Sea ice area fraction"
+        },
+        {
+            "href": "https://geo.meteo.gc.ca/geomet?lang=fr&service=WMS&request=GetCapabilities&layers=CIOPS-East_2km_SeaIceAreaFraction",
+            "type": "application/xml",
+            "rel": "data",
+            "title": "Sea ice area fraction"
+        },
+        {
+            "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
+            "type": "text/html",
+            "rel": "license",
+            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
+        },
+        {
+            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
+            "type": "text/html",
+            "rel": "license",
+            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
+        }
+    ],
+    "time": {
+        "interval": [
+            "2021-12-01",
+            ".."
+        ]
+    }
+}

@@ -1,0 +1,171 @@
+{
+    "id": "urn:wmo:md:ca-eccc-msc:2c2cadd7-5248-4764-bf88-5042b73465c3",
+    "conformsTo": [
+        "http://wis.wmo.int/spec/wcmp/2/conf/core"
+    ],
+    "type": "Feature",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -72.0416665,
+                    41.9583335
+                ],
+                [
+                    -72.0416665,
+                    60.0415978
+                ],
+                [
+                    -44.2917685,
+                    60.0415978
+                ],
+                [
+                    -44.2917685,
+                    41.9583335
+                ],
+                [
+                    -72.0416665,
+                    41.9583335
+                ]
+            ]
+        ]
+    },
+    "properties": {
+        "identifier": "urn:wmo:md:ca-eccc-msc:2c2cadd7-5248-4764-bf88-5042b73465c3",
+        "title": "Regional Ensemble Storm Surge Prediction System",
+        "description": "The Regional Ensemble storm Surge Prediction System (RESPS) produces storm surge forecasts using the DalCoast ocean model. DalCoast (Bernier and Thompson 2015) is a storm surge forecast system for the east coast of Canada based on the depth-integrated, barotropic and linearized form of the Princeton Ocean Model. The model is forced by the 10 meters winds and sea level pressure from the Global Ensemble Prediction System (GEPS).",
+        "themes": [
+            {
+                "concepts": [
+                    {
+                        "id": "Forecasting"
+                    },
+                    {
+                        "id": "Storms"
+                    },
+                    {
+                        "id": "Water"
+                    },
+                    {
+                        "id": "Seas"
+                    }
+                ],
+                "scheme": "https://canada.multites.net/cst/EAEAD1E6-7DD2-4997-BE7F-40BFB1CBE8A2/CST20230912.rdf"
+            },
+            {
+                "concepts": [
+                    {
+                        "id": "ocean"
+                    }
+                ],
+                "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
+            }
+        ],
+        "language": "en",
+        "type": "dataset",
+        "created": "2019-07-03T00:00:00Z",
+        "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
+        "formats": [
+            "NetCDF"
+        ],
+        "contacts": [
+            {
+                "addresses": [
+                    {
+                        "deliveryPoint": [
+                            "77 Westmorland Street, suite 260"
+                        ],
+                        "city": "Fredericton",
+                        "administrativeArea": "New Brunswick",
+                        "postalCode": "E3B 6Z4",
+                        "country": "Canada"
+                    }
+                ],
+                "roles": [
+                    "host"
+                ],
+                "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
+                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
+                "position": "National Inquiry Response Team",
+                "hoursOfService": "0700h - 1500h EST",
+                "contactInstructions": "email",
+                "phones": [
+                    {
+                        "value": "+18199972800"
+                    }
+                ],
+                "emails": [
+                    {
+                        "value": "ECWeather-Meteo@ec.gc.ca"
+                    }
+                ],
+                "links": [
+                    {
+                        "rel": "canonical",
+                        "type": "text/html",
+                        "href": "https://www.canada.ca/en/environment-climate-change.html"
+                    }
+                ]
+            }
+        ],
+        "keywords": [
+            "Storm surge",
+            "Sea surface height",
+            "Prediction",
+            "Regional",
+            "Ensemble",
+            "Water",
+            "Weather and Climate",
+            "National (CA)",
+            "Ocean"
+        ],
+        "wmo:dataPolicy": "recommended"
+    },
+    "links": [
+        {
+            "href": "https://dd.weather.gc.ca/model_resps/",
+            "type": "text/html",
+            "rel": "items",
+            "title": "MSC Datamart"
+        },
+        {
+            "href": "https://dd.meteo.gc.ca/model_resps/",
+            "type": "text/html",
+            "rel": "items",
+            "title": "MSC Datamart"
+        },
+        {
+            "href": "amqps://dd.weather.gc.ca/",
+            "type": "application/json",
+            "rel": "items",
+            "title": "MSC Datamart AMQP",
+            "channel": "model_resps.#"
+        },
+        {
+            "href": "amqps://dd.weather.gc.ca/",
+            "type": "application/json",
+            "rel": "items",
+            "title": "MSC Datamart AMQP",
+            "channel": "model_resps.#"
+        },
+        {
+            "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
+            "type": "text/html",
+            "rel": "license",
+            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
+        },
+        {
+            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
+            "type": "text/html",
+            "rel": "license",
+            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
+        }
+    ],
+    "time": {
+        "interval": [
+            "2019-07-03",
+            ".."
+        ]
+    }
+}

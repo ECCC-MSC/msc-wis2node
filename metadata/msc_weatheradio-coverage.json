@@ -1,0 +1,147 @@
+{
+    "id": "urn:wmo:md:ca-eccc-msc:ffa61839-e219-5c52-9fa8-8d26447fb2bf",
+    "conformsTo": [
+        "http://wis.wmo.int/spec/wcmp/2/conf/core"
+    ],
+    "type": "Feature",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -145,
+                    40
+                ],
+                [
+                    -145,
+                    90
+                ],
+                [
+                    -51,
+                    90
+                ],
+                [
+                    -51,
+                    40
+                ],
+                [
+                    -145,
+                    40
+                ]
+            ]
+        ]
+    },
+    "properties": {
+        "identifier": "urn:wmo:md:ca-eccc-msc:ffa61839-e219-5c52-9fa8-8d26447fb2bf",
+        "title": "Canadian Weatheradio Network Coverage",
+        "description": "Weatheradio is a network of radio transmitters covering North America. These transmitters provide continuous broadcasts of weather information and instant updates when weather threatens. Data is offered in dBm which indicates signal strength. A weather radio unit inside a house would normally be able to get a signal -90dBm or stronger while an external antenna can get  up to -110dBm.",
+        "themes": [
+            {
+                "concepts": [
+                    {
+                        "id": "Weather"
+                    },
+                    {
+                        "id": "Weather forecasts"
+                    }
+                ],
+                "scheme": "https://canada.multites.net/cst/EAEAD1E6-7DD2-4997-BE7F-40BFB1CBE8A2/CST20230912.rdf"
+            },
+            {
+                "concepts": [
+                    {
+                        "id": "weather"
+                    }
+                ],
+                "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
+            }
+        ],
+        "language": "en",
+        "type": "dataset",
+        "created": "2014-01-01T00:00:00Z",
+        "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
+        "formats": [
+            "WMS"
+        ],
+        "contacts": [
+            {
+                "addresses": [
+                    {
+                        "deliveryPoint": [
+                            "77 Westmorland Street, suite 260"
+                        ],
+                        "city": "Fredericton",
+                        "administrativeArea": "New Brunswick",
+                        "postalCode": "E3B 6Z4",
+                        "country": "Canada"
+                    }
+                ],
+                "roles": [
+                    "host"
+                ],
+                "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
+                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
+                "position": "National Inquiry Response Team",
+                "hoursOfService": "0700h - 1500h EST",
+                "contactInstructions": "email",
+                "phones": [
+                    {
+                        "value": "+18199972800"
+                    }
+                ],
+                "emails": [
+                    {
+                        "value": "ECWeather-Meteo@ec.gc.ca"
+                    }
+                ],
+                "links": [
+                    {
+                        "rel": "canonical",
+                        "type": "text/html",
+                        "href": "https://www.canada.ca/en/environment-climate-change.html"
+                    }
+                ]
+            }
+        ],
+        "keywords": [
+            "Radio",
+            "Weather information",
+            "Weather and Climate",
+            "International",
+            "Atmosphere"
+        ],
+        "wmo:dataPolicy": "recommended"
+    },
+    "links": [
+        {
+            "href": "https://geo.weather.gc.ca/geomet?lang=en&service=WMS&request=GetCapabilities&layers=WEATHERADIO",
+            "type": "application/xml",
+            "rel": "data",
+            "title": "weatheradio"
+        },
+        {
+            "href": "https://geo.weather.gc.ca/geomet?lang=fr&service=WMS&request=GetCapabilities&layers=WEATHERADIO",
+            "type": "application/xml",
+            "rel": "data",
+            "title": "weatheradio"
+        },
+        {
+            "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
+            "type": "text/html",
+            "rel": "license",
+            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
+        },
+        {
+            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
+            "type": "text/html",
+            "rel": "license",
+            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
+        }
+    ],
+    "time": {
+        "interval": [
+            "2014-01-01",
+            ".."
+        ]
+    }
+}

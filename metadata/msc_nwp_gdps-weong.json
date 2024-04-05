@@ -1,0 +1,211 @@
+{
+    "id": "urn:wmo:md:ca-eccc-msc:903b7591-a5ec-4cdd-95e2-0a6cf602685b",
+    "conformsTo": [
+        "http://wis.wmo.int/spec/wcmp/2/conf/core"
+    ],
+    "type": "Feature",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -180,
+                    -90
+                ],
+                [
+                    -180,
+                    90
+                ],
+                [
+                    180,
+                    90
+                ],
+                [
+                    180,
+                    -90
+                ],
+                [
+                    -180,
+                    -90
+                ]
+            ]
+        ]
+    },
+    "properties": {
+        "identifier": "urn:wmo:md:ca-eccc-msc:903b7591-a5ec-4cdd-95e2-0a6cf602685b",
+        "title": "Weather Elements on Grid based on the Global Deterministic Prediction System [experimental]",
+        "description": "Weather Elements on Grid (WEonG) based on the Global Deterministic Prediction System (GDPS) is a post-processing system designed to compute the weather elements required by different forecast programs (public, marine, aviation, air quality, etc.). This system amalgamates numerical and post-processed data using various diagnostic approaches. Hourly concepts are produced from different algorithms using outputs from the Global Deterministic Prediction System (GDPS).",
+        "themes": [
+            {
+                "concepts": [
+                    {
+                        "id": "Weather forecasts"
+                    },
+                    {
+                        "id": "Precipitation"
+                    },
+                    {
+                        "id": "Air temperature"
+                    },
+                    {
+                        "id": "Humidity"
+                    },
+                    {
+                        "id": "Snow"
+                    },
+                    {
+                        "id": "Wind"
+                    },
+                    {
+                        "id": "Meteorological data"
+                    }
+                ],
+                "scheme": "https://canada.multites.net/cst/EAEAD1E6-7DD2-4997-BE7F-40BFB1CBE8A2/CST20230912.rdf"
+            },
+            {
+                "concepts": [
+                    {
+                        "id": "weather"
+                    }
+                ],
+                "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
+            }
+        ],
+        "language": "en",
+        "type": "dataset",
+        "created": "2022-09-26T00:00:00Z",
+        "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
+        "formats": [
+            "GRIB2",
+            "WMS"
+        ],
+        "contacts": [
+            {
+                "addresses": [
+                    {
+                        "deliveryPoint": [
+                            "77 Westmorland Street, suite 260"
+                        ],
+                        "city": "Fredericton",
+                        "administrativeArea": "New Brunswick",
+                        "postalCode": "E3B 6Z4",
+                        "country": "Canada"
+                    }
+                ],
+                "roles": [
+                    "host"
+                ],
+                "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
+                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
+                "position": "National Inquiry Response Team",
+                "hoursOfService": "0700h - 1500h EST",
+                "contactInstructions": "email",
+                "phones": [
+                    {
+                        "value": "+18199972800"
+                    }
+                ],
+                "emails": [
+                    {
+                        "value": "ECWeather-Meteo@ec.gc.ca"
+                    }
+                ],
+                "links": [
+                    {
+                        "rel": "canonical",
+                        "type": "text/html",
+                        "href": "https://www.canada.ca/en/environment-climate-change.html"
+                    }
+                ]
+            }
+        ],
+        "keywords": [
+            "Prediction",
+            "Global",
+            "Deterministic",
+            "Sky",
+            "Thunderstorm",
+            "Snow Squalls",
+            "Blowing snow",
+            "Fog",
+            "Precipitation Types",
+            "Wind Gusts",
+            "Weather and Climate",
+            "International",
+            "Atmosphere"
+        ],
+        "wmo:dataPolicy": "recommended"
+    },
+    "links": [
+        {
+            "href": "https://geo.weather.gc.ca/geomet?lang=en&service=WMS&request=GetCapabilities&layers=GDPS-WEonG_15km_AirTemp",
+            "type": "application/xml",
+            "rel": "data",
+            "title": "Air temperature [\u00b0C]"
+        },
+        {
+            "href": "https://geo.meteo.gc.ca/geomet?lang=fr&service=WMS&request=GetCapabilities&layers=GDPS-WEonG_15km_AirTemp",
+            "type": "application/xml",
+            "rel": "data",
+            "title": "Air temperature [\u00b0C]"
+        },
+        {
+            "href": "https://dd.alpha.weather.gc.ca/model_gem_global/15km/",
+            "type": "text/html",
+            "rel": "items",
+            "title": "MSC Datamart"
+        },
+        {
+            "href": "https://dd.alpha.meteo.gc.ca/model_gem_global/15km/",
+            "type": "text/html",
+            "rel": "items",
+            "title": "MSC Datamart"
+        },
+        {
+            "href": "amqps://dd.alpha.weather.gc.ca/",
+            "type": "application/json",
+            "rel": "items",
+            "title": "MSC Datamart AMQP",
+            "channel": "model_gem_global.15km.#"
+        },
+        {
+            "href": "amqps://dd.alpha.weather.gc.ca/",
+            "type": "application/json",
+            "rel": "items",
+            "title": "MSC Datamart AMQP",
+            "channel": "model_gem_global.15km.#"
+        },
+        {
+            "href": "mqtts://hpfx.collab.science.gc.ca:8883",
+            "type": "application/geo+json",
+            "rel": "items",
+            "title": "MSC Datamart MQTT",
+            "channel": "data/core/weather/prediction/forecast/medium-range/deterministic/global"
+        },
+        {
+            "href": "mqtts://hpfx.collab.science.gc.ca:8883",
+            "type": "application/geo+json",
+            "rel": "items",
+            "title": "MSC Datamart MQTT",
+            "channel": "data/core/weather/prediction/forecast/medium-range/deterministic/global"
+        },
+        {
+            "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
+            "type": "text/html",
+            "rel": "license",
+            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
+        },
+        {
+            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
+            "type": "text/html",
+            "rel": "license",
+            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
+        }
+    ],
+    "time": {
+        "interval": [
+            "2022-09-26",
+            ".."
+        ]
+    }
+}

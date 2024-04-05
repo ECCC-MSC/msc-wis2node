@@ -1,5 +1,5 @@
 {
-    "id": "urn:wmo:md:ca-eccc-msc:1ee9e14d-0814-5201-a3be-705809d8ee0e",
+    "id": "urn:wmo:md:ca-eccc-msc:fef83cf6-170d-4ab1-8694-05a25a429478",
     "conformsTo": [
         "http://wis.wmo.int/spec/wcmp/2/conf/core"
     ],
@@ -9,43 +9,58 @@
         "coordinates": [
             [
                 [
-                    -141.01,
-                    41.67
+                    -140.8,
+                    41.83
                 ],
                 [
-                    -141.01,
-                    82.12
+                    -140.8,
+                    82.5
                 ],
                 [
-                    -52.62,
-                    82.12
+                    -52.6,
+                    82.5
                 ],
                 [
-                    -52.62,
-                    41.67
+                    -52.6,
+                    41.83
                 ],
                 [
-                    -141.01,
-                    41.67
+                    -140.8,
+                    41.83
                 ]
             ]
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:1ee9e14d-0814-5201-a3be-705809d8ee0e",
-        "title": "Historical Hydrometric Data",
-        "description": "Historical hydrometric data are standardized water resource data and information. They are collected, interpreted and disseminated by the National Hydrological Services (NHS) in partnership with the provinces, territories and other agencies through the National Hydrometric Program. These data sets include daily mean, monthly mean, annual maximum and minimum daily mean and instantaneous peak water level and discharge information for over 2700 active and 5100 discontinued hydrometric monitoring stations across Canada.",
+        "identifier": "urn:wmo:md:ca-eccc-msc:fef83cf6-170d-4ab1-8694-05a25a429478",
+        "title": "Hourly moored buoy marine data",
+        "description": "The MSC moored buoy network operates approximately 20-40 moored buoys, varying based on seasonal changes, along the West and East coasts, and inland lakes. These buoys include 3-meter discus buoys along the coasts and both 3 and 1.7-meter Watchkeeper buoys on inland lakes. The network utilizes two types of payloads, namely Watchman100 (WM100) and Watchman500 (WM500), with a transition to the latter since 2021. WM500 payloads offer full-time Iridium data transmission with additional wave and housekeeping elements reported at regular hourly intervals. Buoys with WM100 payloads primarily use satellite telemetry (GOES) for data delivery.",
         "themes": [
             {
                 "concepts": [
                     {
-                        "id": "Water"
+                        "id": "Meteorological data"
                     },
                     {
-                        "id": "Inland waters"
+                        "id": "Marine"
                     },
                     {
-                        "id": "Water management"
+                        "id": "Atmospheric pressure"
+                    },
+                    {
+                        "id": "Air Temperature"
+                    },
+                    {
+                        "id": "Wind"
+                    },
+                    {
+                        "id": "Wave"
+                    },
+                    {
+                        "id": "Oceans"
+                    },
+                    {
+                        "id": "Lakes"
                     }
                 ],
                 "scheme": "https://canada.multites.net/cst/EAEAD1E6-7DD2-4997-BE7F-40BFB1CBE8A2/CST20230912.rdf"
@@ -53,7 +68,7 @@
             {
                 "concepts": [
                     {
-                        "id": "hydrology"
+                        "id": "weather"
                     }
                 ],
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
@@ -61,10 +76,12 @@
         ],
         "language": "en",
         "type": "dataset",
-        "created": "1850-01-01T00:00:00Z",
+        "created": "2022-10-22T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "SQL"
+            "GeoJSON",
+            "BUFR",
+            "XML"
         ],
         "contacts": [
             {
@@ -107,82 +124,65 @@
             }
         ],
         "keywords": [
-            "Historical",
-            "Archive",
-            "Hydrology",
-            "Hydrometric",
-            "Streamflow",
-            "Discharge",
-            "Water level",
-            "Water quantity",
-            "Sediment concentration",
-            "Water",
+            "Station pressure",
+            "Maximum temperature",
+            "Minimum temperature",
+            "Mean temperature",
+            "Average temperature",
+            "Wind direction",
+            "Wind speed",
+            "Weather and Climate",
             "National (CA)",
-            "Observation",
-            "Measurement"
+            "Atmosphere"
         ],
         "wmo:dataPolicy": "core"
     },
     "links": [
         {
-            "href": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/",
+            "href": "https://dd.weather.gc.ca/bulletins/alphanumeric/",
             "type": "text/html",
-            "rel": "archives",
-            "title": "Collaboration"
+            "rel": "items",
+            "title": "MSC Datamart"
         },
         {
-            "href": "https://api.weather.gc.ca/collections/hydrometric-stations/items",
+            "href": "https://dd.weather.gc.ca/bulletins/alphanumeric/",
+            "type": "text/html",
+            "rel": "items",
+            "title": "MSC Datamart"
+        },
+        {
+            "href": "amqps://dd.weather.gc.ca/",
+            "type": "application/json",
+            "rel": "items",
+            "title": "MSC Datamart AMQP",
+            "channel": "bulletins.alphanumeric.*.IO.CWAO.#"
+        },
+        {
+            "href": "amqps://dd.weather.gc.ca/",
+            "type": "application/json",
+            "rel": "items",
+            "title": "MSC Datamart AMQP",
+            "channel": "bulletins.alphanumeric.*.IO.CWAO.#"
+        },
+        {
+            "href": "mqtts://hpfx.collab.science.gc.ca:8883",
             "type": "application/geo+json",
             "rel": "items",
-            "title": "hydrometric-stations"
+            "title": "MSC Datamart MQTT",
+            "channel": "data/core/weather/surface-based-observations/buoy"
         },
         {
-            "href": "https://api.weather.gc.ca/collections/hydrometric-daily-mean/items",
+            "href": "mqtts://hpfx.collab.science.gc.ca:8883",
             "type": "application/geo+json",
             "rel": "items",
-            "title": "hydrometric-daily-mean"
+            "title": "MSC Datamart MQTT",
+            "channel": "data/core/weather/surface-based-observations/buoy"
         },
         {
-            "href": "https://api.weather.gc.ca/collections/hydrometric-monthly-mean/items",
+            "href": "https://api.weather.gc.ca/collections/bulletins-realtime/items?lang=en&f=json&issuer_code=CWAO&type=IO",
             "type": "application/geo+json",
-            "rel": "items",
-            "title": "hydrometric-monthly-mean"
-        },
-        {
-            "href": "https://api.weather.gc.ca/collections/hydrometric-annual-statistics/items",
-            "type": "application/geo+json",
-            "rel": "items",
-            "title": "hydrometric-annual-statistics"
-        },
-        {
-            "href": "https://api.weather.gc.ca/collections/hydrometric-annual-peaks/items",
-            "type": "application/geo+json",
-            "rel": "items",
-            "title": "hydrometric-annual-peaks"
-        },
-        {
-            "href": "https://wateroffice.ec.gc.ca/mainmenu/historical_data_index_e.html",
-            "type": "text/html",
-            "rel": "about",
-            "title": "Historical Hydrometric Data"
-        },
-        {
-            "href": "https://eau.ec.gc.ca/mainmenu/historical_data_index_f.html",
-            "type": "text/html",
-            "rel": "about",
-            "title": "Historical Hydrometric Data"
-        },
-        {
-            "href": "https://www.canada.ca/en/environment-climate-change/services/water-overview/quantity/monitoring/survey/data-products-services/national-archive-hydat.html",
-            "type": "text/html",
-            "rel": "about",
-            "title": "National Water Data Archive"
-        },
-        {
-            "href": "https://www.canada.ca/fr/environnement-changement-climatique/services/eau-apercu/volume/surveillance/releves/produits-donnees-services/archives-nationales-hydat.html",
-            "type": "text/html",
-            "rel": "about",
-            "title": "National Water Data Archive"
+            "rel": "collection",
+            "title": "bulletins-realtime"
         },
         {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
@@ -199,7 +199,7 @@
     ],
     "time": {
         "interval": [
-            "1850-01-01",
+            "2022-10-22",
             ".."
         ]
     }

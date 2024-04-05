@@ -1,0 +1,191 @@
+{
+    "id": "urn:wmo:md:ca-eccc-msc:dc3a7022-95e8-45a7-bf63-3d45b6cda0dc",
+    "conformsTo": [
+        "http://wis.wmo.int/spec/wcmp/2/conf/core"
+    ],
+    "type": "Feature",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -180,
+                    -90
+                ],
+                [
+                    -180,
+                    90
+                ],
+                [
+                    180,
+                    90
+                ],
+                [
+                    180,
+                    -90
+                ],
+                [
+                    -180,
+                    -90
+                ]
+            ]
+        ]
+    },
+    "properties": {
+        "identifier": "urn:wmo:md:ca-eccc-msc:dc3a7022-95e8-45a7-bf63-3d45b6cda0dc",
+        "title": "Global Ice-Ocean Prediction System - Lat/lon",
+        "description": "The Global Ice-Ocean Prediction System (GIOPS) produces global sea ice and ocean analyses and 10 day forecasts daily. This product contains time-mean sea ice and ocean forecast fields interpolated to two grids. One of the grids is a 0.2\u00b0 resolution regular latitude-longitude grid covering the global ocean (north of 80\u00b0 S). The other grid is in north-polar stereographic projection with a 5-km spacing at the standard parallel 60\u00b0 N and covers the Arctic Ocean and the neighbouring sub-polar seas. Data is available for 50 depths. The data files are in netCDF format and comply with the Climate and Forecast Conventions.",
+        "themes": [
+            {
+                "concepts": [
+                    {
+                        "id": "Forecasting"
+                    },
+                    {
+                        "id": "Ice"
+                    },
+                    {
+                        "id": "Water"
+                    },
+                    {
+                        "id": "Arctic"
+                    },
+                    {
+                        "id": "Coastal waters"
+                    },
+                    {
+                        "id": "Oceans"
+                    },
+                    {
+                        "id": "Polar regions"
+                    }
+                ],
+                "scheme": "https://canada.multites.net/cst/EAEAD1E6-7DD2-4997-BE7F-40BFB1CBE8A2/CST20230912.rdf"
+            },
+            {
+                "concepts": [
+                    {
+                        "id": "ocean"
+                    }
+                ],
+                "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
+            }
+        ],
+        "language": "en",
+        "type": "dataset",
+        "created": "2015-08-20T00:00:00Z",
+        "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
+        "formats": [
+            "NetCDF",
+            "WMS"
+        ],
+        "contacts": [
+            {
+                "addresses": [
+                    {
+                        "deliveryPoint": [
+                            "77 Westmorland Street, suite 260"
+                        ],
+                        "city": "Fredericton",
+                        "administrativeArea": "New Brunswick",
+                        "postalCode": "E3B 6Z4",
+                        "country": "Canada"
+                    }
+                ],
+                "roles": [
+                    "host"
+                ],
+                "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
+                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
+                "position": "National Inquiry Response Team",
+                "hoursOfService": "0700h - 1500h EST",
+                "contactInstructions": "email",
+                "phones": [
+                    {
+                        "value": "+18199972800"
+                    }
+                ],
+                "emails": [
+                    {
+                        "value": "ECWeather-Meteo@ec.gc.ca"
+                    }
+                ],
+                "links": [
+                    {
+                        "rel": "canonical",
+                        "type": "text/html",
+                        "href": "https://www.canada.ca/en/environment-climate-change.html"
+                    }
+                ]
+            }
+        ],
+        "keywords": [
+            "Sea ice-ocean forecast",
+            "Prediction",
+            "Global",
+            "Water",
+            "International",
+            "Ocean",
+            "Sea ice"
+        ],
+        "wmo:dataPolicy": "recommended"
+    },
+    "links": [
+        {
+            "href": "https://dd.weather.gc.ca/model_giops/netcdf/lat_lon/",
+            "type": "text/html",
+            "rel": "items",
+            "title": "MSC Datamart"
+        },
+        {
+            "href": "https://dd.meteo.gc.ca/model_giops/netcdf/lat_lon/",
+            "type": "text/html",
+            "rel": "items",
+            "title": "MSC Datamart"
+        },
+        {
+            "href": "https://geo.weather.gc.ca/geomet?lang=en&service=WMS&request=GetCapabilities&layers=OCEAN.GIOPS.2D_TM2",
+            "type": "application/xml",
+            "rel": "data",
+            "title": "Sea temperature [K]"
+        },
+        {
+            "href": "https://geo.meteo.gc.ca/geomet?lang=fr&service=WMS&request=GetCapabilities&layers=OCEAN.GIOPS.2D_TM2",
+            "type": "application/xml",
+            "rel": "data",
+            "title": "Sea temperature [K]"
+        },
+        {
+            "href": "amqps://dd.weather.gc.ca/",
+            "type": "application/json",
+            "rel": "items",
+            "title": "MSC Datamart AMQP",
+            "channel": "model_giops.netcdf.lat_lon.#"
+        },
+        {
+            "href": "amqps://dd.weather.gc.ca/",
+            "type": "application/json",
+            "rel": "items",
+            "title": "MSC Datamart AMQP",
+            "channel": "model_giops.netcdf.lat_lon.#"
+        },
+        {
+            "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
+            "type": "text/html",
+            "rel": "license",
+            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
+        },
+        {
+            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
+            "type": "text/html",
+            "rel": "license",
+            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
+        }
+    ],
+    "time": {
+        "interval": [
+            "2016-03-10",
+            ".."
+        ]
+    }
+}

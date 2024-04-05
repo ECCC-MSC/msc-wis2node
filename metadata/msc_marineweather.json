@@ -1,0 +1,175 @@
+{
+    "id": "urn:wmo:md:ca-eccc-msc:5e8247ca-891e-5686-a6a5-0631c50fe2db",
+    "conformsTo": [
+        "http://wis.wmo.int/spec/wcmp/2/conf/core"
+    ],
+    "type": "Feature",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -172.17,
+                    36.5
+                ],
+                [
+                    -172.17,
+                    83.6
+                ],
+                [
+                    -10.42,
+                    83.6
+                ],
+                [
+                    -10.42,
+                    36.5
+                ],
+                [
+                    -172.17,
+                    36.5
+                ]
+            ]
+        ]
+    },
+    "properties": {
+        "identifier": "urn:wmo:md:ca-eccc-msc:5e8247ca-891e-5686-a6a5-0631c50fe2db",
+        "title": "Marine Forecasts and Warnings for Canada",
+        "description": "Environment Canada (EC) provides a marine forecasting service to mariners and marine interests. This enables them to make informed decisions about marine weather conditions that may impact their safety, security or operations. EC also provides marine forecasts in order to meet Canada\u2019s treaty obligations under the International Maritime Organization\u2019s Safety Of Life At Sea (SOLAS) Convention.",
+        "themes": [
+            {
+                "concepts": [
+                    {
+                        "id": "Weather forecasts"
+                    },
+                    {
+                        "id": "Precipitation"
+                    },
+                    {
+                        "id": "Air temperature"
+                    },
+                    {
+                        "id": "Humidity"
+                    },
+                    {
+                        "id": "Snow"
+                    },
+                    {
+                        "id": "Wind"
+                    },
+                    {
+                        "id": "Meteorological data"
+                    }
+                ],
+                "scheme": "https://canada.multites.net/cst/EAEAD1E6-7DD2-4997-BE7F-40BFB1CBE8A2/CST20230912.rdf"
+            },
+            {
+                "concepts": [
+                    {
+                        "id": "ocean"
+                    }
+                ],
+                "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
+            }
+        ],
+        "language": "en",
+        "type": "dataset",
+        "created": "None",
+        "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
+        "formats": [
+            "XML"
+        ],
+        "contacts": [
+            {
+                "addresses": [
+                    {
+                        "deliveryPoint": [
+                            "77 Westmorland Street, suite 260"
+                        ],
+                        "city": "Fredericton",
+                        "administrativeArea": "New Brunswick",
+                        "postalCode": "E3B 6Z4",
+                        "country": "Canada"
+                    }
+                ],
+                "roles": [
+                    "host"
+                ],
+                "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
+                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
+                "position": "National Inquiry Response Team",
+                "hoursOfService": "0700h - 1500h EST",
+                "contactInstructions": "email",
+                "phones": [
+                    {
+                        "value": "+18199972800"
+                    }
+                ],
+                "emails": [
+                    {
+                        "value": "ECWeather-Meteo@ec.gc.ca"
+                    }
+                ],
+                "links": [
+                    {
+                        "rel": "canonical",
+                        "type": "text/html",
+                        "href": "https://www.canada.ca/en/environment-climate-change.html"
+                    }
+                ]
+            }
+        ],
+        "keywords": [
+            "Marine forecasts and warnings",
+            "Weather and Climate",
+            "National (CA)",
+            "Atmosphere"
+        ],
+        "wmo:dataPolicy": "core"
+    },
+    "links": [
+        {
+            "href": "https://dd.weather.gc.ca/marine_weather/xml/",
+            "type": "text/html",
+            "rel": "items",
+            "title": "MSC Datamart"
+        },
+        {
+            "href": "https://dd.meteo.gc.ca/marine_weather/xml/",
+            "type": "text/html",
+            "rel": "items",
+            "title": "MSC Datamart"
+        },
+        {
+            "href": "amqps://dd.weather.gc.ca/",
+            "type": "application/json",
+            "rel": "items",
+            "title": "MSC Datamart AMQP",
+            "channel": "marine_weather.xml.#"
+        },
+        {
+            "href": "amqps://dd.weather.gc.ca/",
+            "type": "application/json",
+            "rel": "items",
+            "title": "MSC Datamart AMQP",
+            "channel": "marine_weather.xml.#"
+        },
+        {
+            "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
+            "type": "text/html",
+            "rel": "license",
+            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
+        },
+        {
+            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
+            "type": "text/html",
+            "rel": "license",
+            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
+        }
+    ],
+    "time": {
+        "interval": [
+            "..",
+            ".."
+        ]
+    }
+}

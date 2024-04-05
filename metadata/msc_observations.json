@@ -1,0 +1,220 @@
+{
+    "id": "urn:wmo:md:ca-eccc-msc:e50a9544-eee2-460c-a8b1-1a92a487d060",
+    "conformsTo": [
+        "http://wis.wmo.int/spec/wcmp/2/conf/core"
+    ],
+    "type": "Feature",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -140.8,
+                    41.83
+                ],
+                [
+                    -140.8,
+                    82.5
+                ],
+                [
+                    -52.6,
+                    82.5
+                ],
+                [
+                    -52.6,
+                    41.83
+                ],
+                [
+                    -140.8,
+                    41.83
+                ]
+            ]
+        ]
+    },
+    "properties": {
+        "identifier": "urn:wmo:md:ca-eccc-msc:e50a9544-eee2-460c-a8b1-1a92a487d060",
+        "title": "Meteorological Observations",
+        "description": "Meteorological Observations describe datasets that contain information about weather and climate conditions as available on the Environment Canada weather.gc.ca web site. These pages contain information about current weather conditions and past climate including temperature, wind, and humidity measurements, written descriptions of current conditions, rain and snow amounts, average and extreme temperatures, etc. The current conditions are acquired from a variety of observing system operators and are provided in near-real time with limited quality assurance. Current condition information should not be considered as quality-controlled official values. The availability of values for every observation period is not guaranteed as they may be affected by observing system operations.",
+        "themes": [
+            {
+                "concepts": [
+                    {
+                        "id": "Weather"
+                    },
+                    {
+                        "id": "Archives"
+                    },
+                    {
+                        "id": "Precipitation"
+                    },
+                    {
+                        "id": "Air temperature"
+                    },
+                    {
+                        "id": "Humidity"
+                    },
+                    {
+                        "id": "Snow"
+                    },
+                    {
+                        "id": "Wind"
+                    },
+                    {
+                        "id": "Meteorological data"
+                    }
+                ],
+                "scheme": "https://canada.multites.net/cst/EAEAD1E6-7DD2-4997-BE7F-40BFB1CBE8A2/CST20230912.rdf"
+            },
+            {
+                "concepts": [
+                    {
+                        "id": "weather"
+                    }
+                ],
+                "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
+            }
+        ],
+        "language": "en",
+        "type": "dataset",
+        "created": "2014-02-14T00:00:00Z",
+        "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
+        "formats": [
+            "GeoJSON",
+            "XML"
+        ],
+        "contacts": [
+            {
+                "addresses": [
+                    {
+                        "deliveryPoint": [
+                            "77 Westmorland Street, suite 260"
+                        ],
+                        "city": "Fredericton",
+                        "administrativeArea": "New Brunswick",
+                        "postalCode": "E3B 6Z4",
+                        "country": "Canada"
+                    }
+                ],
+                "roles": [
+                    "host"
+                ],
+                "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
+                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
+                "position": "National Inquiry Response Team",
+                "hoursOfService": "0700h - 1500h EST",
+                "contactInstructions": "email",
+                "phones": [
+                    {
+                        "value": "+18199972800"
+                    }
+                ],
+                "emails": [
+                    {
+                        "value": "ECWeather-Meteo@ec.gc.ca"
+                    }
+                ],
+                "links": [
+                    {
+                        "rel": "canonical",
+                        "type": "text/html",
+                        "href": "https://www.canada.ca/en/environment-climate-change.html"
+                    }
+                ]
+            }
+        ],
+        "keywords": [
+            "Maximum temperature",
+            "Minimum temperature",
+            "Mean temperature",
+            "Average temperature",
+            "Maximum relative humidity",
+            "Minimum relative humidity",
+            "Relative humidity",
+            "Total rain",
+            "Total snow",
+            "Total precipitation",
+            "Snow on ground",
+            "Maximum gust direction",
+            "Maximum wind speed",
+            "Gust",
+            "Dry bulb temperature",
+            "Wet bulb temperature",
+            "Dew point",
+            "Wind direction",
+            "Wind speed",
+            "Visiblity",
+            "Station pressure",
+            "Pressure",
+            "Humidex",
+            "Windchill",
+            "Weather description",
+            "Atmospheric monitoring",
+            "Rain",
+            "Snow",
+            "Surface weather",
+            "Weather stations",
+            "Climate stations",
+            "Volunteer weather stations",
+            "Surface weather network",
+            "Reference climate network",
+            "Cooperative climate network",
+            "Ambient temperature",
+            "Weather and Climate",
+            "National (CA)",
+            "Atmosphere"
+        ],
+        "wmo:dataPolicy": "core"
+    },
+    "links": [
+        {
+            "href": "https://dd.weather.gc.ca/observations/",
+            "type": "text/html",
+            "rel": "items",
+            "title": "MSC Datamart"
+        },
+        {
+            "href": "https://dd.meteo.gc.ca/observations/",
+            "type": "text/html",
+            "rel": "items",
+            "title": "MSC Datamart"
+        },
+        {
+            "href": "amqps://dd.weather.gc.ca/",
+            "type": "application/json",
+            "rel": "items",
+            "title": "MSC Datamart AMQP",
+            "channel": "observations.#"
+        },
+        {
+            "href": "amqps://dd.weather.gc.ca/",
+            "type": "application/json",
+            "rel": "items",
+            "title": "MSC Datamart AMQP",
+            "channel": "observations.#"
+        },
+        {
+            "href": "https://api.weather.gc.ca/collections/swob-realtime",
+            "type": "application/json",
+            "rel": "collection",
+            "title": "swob-realtime"
+        },
+        {
+            "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
+            "type": "text/html",
+            "rel": "license",
+            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
+        },
+        {
+            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
+            "type": "text/html",
+            "rel": "license",
+            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
+        }
+    ],
+    "time": {
+        "interval": [
+            "1840-01-01",
+            ".."
+        ]
+    }
+}

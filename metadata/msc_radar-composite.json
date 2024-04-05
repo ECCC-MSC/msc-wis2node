@@ -1,0 +1,151 @@
+{
+    "id": "urn:wmo:md:ca-eccc-msc:37aecae5-7783-4274-b595-df02aa003ac3",
+    "conformsTo": [
+        "http://wis.wmo.int/spec/wcmp/2/conf/core"
+    ],
+    "type": "Feature",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -170.323855,
+                    16.93461
+                ],
+                [
+                    -170.323855,
+                    67.19061
+                ],
+                [
+                    -50.002855,
+                    67.19061
+                ],
+                [
+                    -50.002855,
+                    16.93461
+                ],
+                [
+                    -170.323855,
+                    16.93461
+                ]
+            ]
+        ]
+    },
+    "properties": {
+        "identifier": "urn:wmo:md:ca-eccc-msc:37aecae5-7783-4274-b595-df02aa003ac3",
+        "title": "North American Radar Composite (1 km)",
+        "description": "This mosaic is calculated over the North American domain with a horizontal spatial resolution of 1 km. This mosaic therefore includes all the Canadian and American radars available in the network and which can reach a maximum of 180 contributing radars. To better represent precipitation over the different seasons, this mosaic renders in mm/h to represent rain and in cm/h to represent snow. For the two precipitation types (rain and snow), we use two different mathematical relationships to convert the reflectivity by rainfall rates (mm/h rain cm/h for snow). This is a hybrid mosaic composed of different estimation precipitation products : PRECIP-ET product used only for C-Band radars (which are in the process of being replaced with  S-Band radars) and DPQPE (Dual-Pol Quantitative Precipitation Estimation) for S-Band radars. For the US Nexrad radars, ECCC uses the most similar product from the US Meteorological Service (NOAA). This product displays radar reflectivity converted into precipitation rates, using the same formulas as the Canadian radars.",
+        "themes": [
+            {
+                "concepts": [
+                    {
+                        "id": "Radar"
+                    },
+                    {
+                        "id": "Remote sensing"
+                    },
+                    {
+                        "id": "Weather"
+                    }
+                ],
+                "scheme": "https://canada.multites.net/cst/EAEAD1E6-7DD2-4997-BE7F-40BFB1CBE8A2/CST20230912.rdf"
+            },
+            {
+                "concepts": [
+                    {
+                        "id": "weather"
+                    }
+                ],
+                "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
+            }
+        ],
+        "language": "en",
+        "type": "dataset",
+        "created": "2018-03-08T00:00:00Z",
+        "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
+        "formats": [
+            "WMS"
+        ],
+        "contacts": [
+            {
+                "addresses": [
+                    {
+                        "deliveryPoint": [
+                            "77 Westmorland Street, suite 260"
+                        ],
+                        "city": "Fredericton",
+                        "administrativeArea": "New Brunswick",
+                        "postalCode": "E3B 6Z4",
+                        "country": "Canada"
+                    }
+                ],
+                "roles": [
+                    "host"
+                ],
+                "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
+                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
+                "position": "National Inquiry Response Team",
+                "hoursOfService": "0700h - 1500h EST",
+                "contactInstructions": "email",
+                "phones": [
+                    {
+                        "value": "+18199972800"
+                    }
+                ],
+                "emails": [
+                    {
+                        "value": "ECWeather-Meteo@ec.gc.ca"
+                    }
+                ],
+                "links": [
+                    {
+                        "rel": "canonical",
+                        "type": "text/html",
+                        "href": "https://www.canada.ca/en/environment-climate-change.html"
+                    }
+                ]
+            }
+        ],
+        "keywords": [
+            "Atmospheric conditions",
+            "Meteorology",
+            "Weather",
+            "Weather and Climate",
+            "National (CA)",
+            "Atmosphere"
+        ],
+        "wmo:dataPolicy": "core"
+    },
+    "links": [
+        {
+            "href": "https://geo.weather.gc.ca/geomet?lang=en&service=WMS&request=GetCapabilities&layers=RADAR_1KM_RRAI",
+            "type": "application/xml",
+            "rel": "data",
+            "title": "Radar precipitation rate (Rain) (1 km) [mm/h]"
+        },
+        {
+            "href": "https://geo.meteo.gc.ca/geomet?lang=fr&service=WMS&request=GetCapabilities&layers=RADAR_1KM_RRAI",
+            "type": "application/xml",
+            "rel": "data",
+            "title": "Radar precipitation rate (Rain) (1 km) [mm/h]"
+        },
+        {
+            "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
+            "type": "text/html",
+            "rel": "license",
+            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
+        },
+        {
+            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
+            "type": "text/html",
+            "rel": "license",
+            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
+        }
+    ],
+    "time": {
+        "interval": [
+            "2018-03-08",
+            ".."
+        ]
+    }
+}

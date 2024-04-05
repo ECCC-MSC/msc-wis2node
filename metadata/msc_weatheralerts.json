@@ -1,0 +1,199 @@
+{
+    "id": "urn:wmo:md:ca-eccc-msc:79550951-6b17-49a6-9028-8ae1c21274cf",
+    "conformsTo": [
+        "http://wis.wmo.int/spec/wcmp/2/conf/core"
+    ],
+    "type": "Feature",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -145.27,
+                    37.3
+                ],
+                [
+                    -145.27,
+                    87.61
+                ],
+                [
+                    -48.11,
+                    87.61
+                ],
+                [
+                    -48.11,
+                    37.3
+                ],
+                [
+                    -145.27,
+                    37.3
+                ]
+            ]
+        ]
+    },
+    "properties": {
+        "identifier": "urn:wmo:md:ca-eccc-msc:79550951-6b17-49a6-9028-8ae1c21274cf",
+        "title": "Weather alerts",
+        "description": "Environment Canada issues weather alerts about weather related hazards in order to notify those in affected areas so that they can take steps to protect themselves and their property from harm. Alerts are classified depending on the severity and timing of the subject event and include: warnings, watches, advisories and statements. Warnings are usually issued six to 24 hours in advance, although some severe weather (such as thunderstorms and tornadoes) can occur rapidly, with less than a half hours' notice.",
+        "themes": [
+            {
+                "concepts": [
+                    {
+                        "id": "Weather warnings"
+                    },
+                    {
+                        "id": "Precipitation"
+                    },
+                    {
+                        "id": "Snow"
+                    },
+                    {
+                        "id": "Wind"
+                    },
+                    {
+                        "id": "Storms"
+                    },
+                    {
+                        "id": "Floods"
+                    }
+                ],
+                "scheme": "https://canada.multites.net/cst/EAEAD1E6-7DD2-4997-BE7F-40BFB1CBE8A2/CST20230912.rdf"
+            },
+            {
+                "concepts": [
+                    {
+                        "id": "weather"
+                    }
+                ],
+                "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
+            }
+        ],
+        "language": "en",
+        "type": "dataset",
+        "created": "1871-01-01T00:00:00Z",
+        "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
+        "formats": [
+            "WMS",
+            "XML"
+        ],
+        "contacts": [
+            {
+                "addresses": [
+                    {
+                        "deliveryPoint": [
+                            "77 Westmorland Street, suite 260"
+                        ],
+                        "city": "Fredericton",
+                        "administrativeArea": "New Brunswick",
+                        "postalCode": "E3B 6Z4",
+                        "country": "Canada"
+                    }
+                ],
+                "roles": [
+                    "host"
+                ],
+                "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
+                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
+                "position": "National Inquiry Response Team",
+                "hoursOfService": "0700h - 1500h EST",
+                "contactInstructions": "email",
+                "phones": [
+                    {
+                        "value": "+18199972800"
+                    }
+                ],
+                "emails": [
+                    {
+                        "value": "ECWeather-Meteo@ec.gc.ca"
+                    }
+                ],
+                "links": [
+                    {
+                        "rel": "canonical",
+                        "type": "text/html",
+                        "href": "https://www.canada.ca/en/environment-climate-change.html"
+                    }
+                ]
+            }
+        ],
+        "keywords": [
+            "Alerts",
+            "Weather and Climate",
+            "National (CA)",
+            "Atmosphere"
+        ],
+        "wmo:dataPolicy": "core"
+    },
+    "links": [
+        {
+            "href": "https://dd.weather.gc.ca/alerts/cap/",
+            "type": "text/html",
+            "rel": "items",
+            "title": "MSC Datamart"
+        },
+        {
+            "href": "https://dd.meteo.gc.ca/alerts/cap/",
+            "type": "text/html",
+            "rel": "items",
+            "title": "MSC Datamart"
+        },
+        {
+            "href": "https://geo.weather.gc.ca/geomet?lang=en&service=WMS&request=GetCapabilities&layers=ALERTS",
+            "type": "application/xml",
+            "rel": "data",
+            "title": "Weather Alerts [experimental]"
+        },
+        {
+            "href": "https://geo.meteo.gc.ca/geomet?lang=fr&service=WMS&request=GetCapabilities&layers=ALERTS",
+            "type": "application/xml",
+            "rel": "data",
+            "title": "Weather Alerts [experimental]"
+        },
+        {
+            "href": "amqps://dd.weather.gc.ca/",
+            "type": "application/json",
+            "rel": "items",
+            "title": "MSC Datamart AMQP",
+            "channel": "alerts.cap.#"
+        },
+        {
+            "href": "amqps://dd.weather.gc.ca/",
+            "type": "application/json",
+            "rel": "items",
+            "title": "MSC Datamart AMQP",
+            "channel": "alerts.cap.#"
+        },
+        {
+            "href": "mqtts://hpfx.collab.science.gc.ca:8883",
+            "type": "application/geo+json",
+            "rel": "items",
+            "title": "MSC Datamart MQTT",
+            "channel": "data/core/weather/advisories-warnings"
+        },
+        {
+            "href": "mqtts://hpfx.collab.science.gc.ca:8883",
+            "type": "application/geo+json",
+            "rel": "items",
+            "title": "MSC Datamart MQTT",
+            "channel": "data/core/weather/advisories-warnings"
+        },
+        {
+            "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
+            "type": "text/html",
+            "rel": "license",
+            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
+        },
+        {
+            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
+            "type": "text/html",
+            "rel": "license",
+            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
+        }
+    ],
+    "time": {
+        "interval": [
+            "1871-01-01",
+            ".."
+        ]
+    }
+}

@@ -1,0 +1,151 @@
+{
+    "id": "urn:wmo:md:ca-eccc-msc:37d76d67-0304-4e79-8a56-a839097ddd3d",
+    "conformsTo": [
+        "http://wis.wmo.int/spec/wcmp/2/conf/core"
+    ],
+    "type": "Feature",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -170.323855,
+                    16.93461
+                ],
+                [
+                    -170.323855,
+                    67.19061
+                ],
+                [
+                    -50.002855,
+                    67.19061
+                ],
+                [
+                    -50.002855,
+                    16.93461
+                ],
+                [
+                    -170.323855,
+                    16.93461
+                ]
+            ]
+        ]
+    },
+    "properties": {
+        "identifier": "urn:wmo:md:ca-eccc-msc:37d76d67-0304-4e79-8a56-a839097ddd3d",
+        "title": "North American radar surface precipitation type [1 km] [experimental]",
+        "description": "This product is a composite at 1 km resolution over the North American domain, which, for areas with radar coverage, can distinguish occurrence and type of precipitation and can recognize several levels of precipitation intensity. This product uses as input two high-resolution radar composites namely a North American composite cleaned using dual-polarization technology, another radar composite of particle (precipitation) classification as well as the surface temperature from the CMC High Regional Deterministic Prediction System (HRDPS) model. The SPTP product is produced every 6 minutes.",
+        "themes": [
+            {
+                "concepts": [
+                    {
+                        "id": "Radar"
+                    },
+                    {
+                        "id": "Remote sensing"
+                    },
+                    {
+                        "id": "Weather"
+                    }
+                ],
+                "scheme": "https://canada.multites.net/cst/EAEAD1E6-7DD2-4997-BE7F-40BFB1CBE8A2/CST20230912.rdf"
+            },
+            {
+                "concepts": [
+                    {
+                        "id": "weather"
+                    }
+                ],
+                "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
+            }
+        ],
+        "language": "en",
+        "type": "dataset",
+        "created": "2023-01-30T00:00:00Z",
+        "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
+        "formats": [
+            "WMS"
+        ],
+        "contacts": [
+            {
+                "addresses": [
+                    {
+                        "deliveryPoint": [
+                            "77 Westmorland Street, suite 260"
+                        ],
+                        "city": "Fredericton",
+                        "administrativeArea": "New Brunswick",
+                        "postalCode": "E3B 6Z4",
+                        "country": "Canada"
+                    }
+                ],
+                "roles": [
+                    "host"
+                ],
+                "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
+                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
+                "position": "National Inquiry Response Team",
+                "hoursOfService": "0700h - 1500h EST",
+                "contactInstructions": "email",
+                "phones": [
+                    {
+                        "value": "+18199972800"
+                    }
+                ],
+                "emails": [
+                    {
+                        "value": "ECWeather-Meteo@ec.gc.ca"
+                    }
+                ],
+                "links": [
+                    {
+                        "rel": "canonical",
+                        "type": "text/html",
+                        "href": "https://www.canada.ca/en/environment-climate-change.html"
+                    }
+                ]
+            }
+        ],
+        "keywords": [
+            "Atmospheric conditions",
+            "Meteorology",
+            "Weather",
+            "Weather and Climate",
+            "National (CA)",
+            "Atmosphere"
+        ],
+        "wmo:dataPolicy": "core"
+    },
+    "links": [
+        {
+            "href": "https://geo.weather.gc.ca/geomet?lang=en&service=WMS&request=GetCapabilities&layers=Radar_1km_SfcPrecipType",
+            "type": "application/xml",
+            "rel": "data",
+            "title": "Radar surface precipitation type [experimental]"
+        },
+        {
+            "href": "https://geo.meteo.gc.ca/geomet?lang=fr&service=WMS&request=GetCapabilities&layers=Radar_1km_SfcPrecipType",
+            "type": "application/xml",
+            "rel": "data",
+            "title": "Radar surface precipitation type [experimental]"
+        },
+        {
+            "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
+            "type": "text/html",
+            "rel": "license",
+            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
+        },
+        {
+            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
+            "type": "text/html",
+            "rel": "license",
+            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
+        }
+    ],
+    "time": {
+        "interval": [
+            "2023-01-30",
+            ".."
+        ]
+    }
+}
