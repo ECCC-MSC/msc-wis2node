@@ -1,0 +1,37 @@
+name: Validate and publish WCMP2 discovery metadata
+
+env:
+    CENTRE_ID: ca-eccc-msc
+    PYWIS_PUBSUB_BROKER_URL: ${{ secrets.PYWIS_PUBSUB_BROKER_URL }}
+
+on:
+  push:
+    branches:
+      - 'gh-pages'
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.8]
+    steps:
+    - name: checkout gh-pages branch
+      uses: actions/checkout@v3
+      with:
+        ref: gh-pages
+    - uses: actions/setup-python@v2
+      name: Setup Python ${{ matrix.python-version }}
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install requirements
+      run: |
+        python3 -m pip install --upgrade pip
+        pip3 install https://github.com/wmo-im/pywcmp/archive/master.zip
+        pip3 install https://github.com/wmo-im/pywis-pubsub/archive/main.zip
+    - name: Validate WCMP2 records
+      run: |
+        find . -type f -name "*.json" -exec pywcmp ets validate {} \;
+    - name: Publish WNMs of WCMP2 records
+      run: |
+        find . -type f -name "*.json" -exec pywis-pubsub publish --topic origin/a/wis2/${CENTRE_ID}/metadata --config config/pywis-pubsub-publish.yml -u https://eccc-msc.github.io/msc-wis2node/{} -i `cat /proc/sys/kernel/random/uuid` -v DEBUG \;
