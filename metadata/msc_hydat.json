@@ -182,7 +182,8 @@
             "href": "https://www.canada.ca/fr/environnement-changement-climatique/services/eau-apercu/volume/surveillance/releves/produits-donnees-services/archives-nationales-hydat.html",
             "type": "text/html",
             "rel": "about",
-            "title": "National Water Data Archive"
+            "title": "National Water Data Archive",
+            "hreflang": "en"
         },
         {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
