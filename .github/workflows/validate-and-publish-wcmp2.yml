@@ -37,4 +37,4 @@ jobs:
         find . -type f -name "*.json" -exec pywcmp ets validate {} \;
     - name: Publish WNMs of WCMP2 records
       run: |
-        for i in metadata/*.json; do pywis-pubsub publish --topic origin/a/wis2/${WIS2_CENTRE_ID}/metadata --config config/pywis-pubsub-publish.yml -u https://eccc-msc.github.io/msc-wis2node/$i -i `cat /proc/sys/kernel/random/uuid` -v DEBUG; done
+        for i in metadata/*.json; do pywis-pubsub publish --topic origin/a/wis2/${CENTRE_ID}/metadata --config config/pywis-pubsub-publish.yml -u https://eccc-msc.github.io/msc-wis2node/$i -i `cat /proc/sys/kernel/random/uuid` -v DEBUG; done
