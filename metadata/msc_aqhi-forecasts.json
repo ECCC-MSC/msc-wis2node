@@ -160,7 +160,8 @@
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
             "type": "text/html",
             "rel": "license",
-            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
+            "title": "Environment and Climate Change Canada Data Servers End-use Licence",
+            "hreflang": "en"
         },
         {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
