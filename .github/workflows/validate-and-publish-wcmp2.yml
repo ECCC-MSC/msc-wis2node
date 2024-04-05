@@ -29,6 +29,9 @@ jobs:
         python3 -m pip install --upgrade pip
         pip3 install https://github.com/wmo-im/pywcmp/archive/master.zip
         pip3 install https://github.com/wmo-im/pywis-pubsub/archive/main.zip
+    - name: Cache WCMP2 schemas for validation
+      run: |
+        pywcmp bundle sync        
     - name: Validate WCMP2 records
       run: |
         find . -type f -name "*.json" -exec pywcmp ets validate {} \;
