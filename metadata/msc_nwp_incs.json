@@ -78,9 +78,6 @@
         "type": "dataset",
         "created": "2011-10-05T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
-        "formats": [
-            "ASCII"
-        ],
         "contacts": [
             {
                 "addresses": [
@@ -134,53 +131,14 @@
     },
     "links": [
         {
-            "href": "https://dd.weather.gc.ca/nowcasting/matrices/",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
-            "href": "https://dd.weather.gc.ca/nowcasting/matrices/",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
-            "href": "amqps://dd.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "nowcasting.matrices.#"
-        },
-        {
-            "href": "amqps://dd.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "nowcasting.matrices.#"
-        },
-        {
             "href": "mqtts://hpfx.collab.science.gc.ca:8883",
             "type": "application/geo+json",
             "rel": "items",
             "title": "MSC Datamart MQTT",
-            "channel": "data/core/weather/prediction/forecast/nowcasting/deterministic/limited-area"
-        },
-        {
-            "href": "mqtts://hpfx.collab.science.gc.ca:8883",
-            "type": "application/geo+json",
-            "rel": "items",
-            "title": "MSC Datamart MQTT",
-            "channel": "data/core/weather/prediction/forecast/nowcasting/deterministic/limited-area"
+            "channel": "origin/a/wis2/data/core/weather/prediction/forecast/nowcasting/deterministic/limited-area"
         },
         {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
-            "type": "text/html",
-            "rel": "license",
-            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
-        },
-        {
-            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
             "type": "text/html",
             "rel": "license",
             "title": "Environment and Climate Change Canada Data Servers End-use Licence"

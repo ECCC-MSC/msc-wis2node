@@ -64,8 +64,7 @@
         "created": "1850-01-01T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "GeoJSON",
-            "CSV"
+            "GeoJSON"
         ],
         "contacts": [
             {
@@ -125,47 +124,14 @@
     },
     "links": [
         {
-            "href": "https://dd.weather.gc.ca/hydrometric/csv/",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
-            "href": "https://dd.meteo.gc.ca/hydrometric/csv/",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
-            "href": "amqps://dd.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "hydrometric.csv.*.hourly.#"
-        },
-        {
-            "href": "amqps://dd.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "hydrometric.csv.*.hourly.#"
-        },
-        {
             "href": "mqtts://hpfx.collab.science.gc.ca:8883",
             "type": "application/geo+json",
             "rel": "items",
             "title": "MSC Datamart MQTT",
-            "channel": "data/core/hydrology/surface-based-observations/water-quantity"
+            "channel": "origin/a/wis2/data/core/hydrology/surface-based-observations/water-quantity"
         },
         {
-            "href": "mqtts://hpfx.collab.science.gc.ca:8883",
-            "type": "application/geo+json",
-            "rel": "items",
-            "title": "MSC Datamart MQTT",
-            "channel": "data/core/hydrology/surface-based-observations/water-quantity"
-        },
-        {
-            "href": "https://api.weather.gc.ca/collections/hydrometric-realtime",
+            "href": "https://api.weather.gc.ca/collections/hydrometric-realtime/items/",
             "type": "application/json",
             "rel": "collection",
             "title": "hydrometric-realtime"
@@ -177,19 +143,7 @@
             "title": "Real-Time Hydrometric Data"
         },
         {
-            "href": "https://eau.ec.gc.ca/mainmenu/real_time_data_index_f.html",
-            "type": "text/html",
-            "rel": "archives",
-            "title": "Real-Time Hydrometric Data"
-        },
-        {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
-            "type": "text/html",
-            "rel": "license",
-            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
-        },
-        {
-            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
             "type": "text/html",
             "rel": "license",
             "title": "Environment and Climate Change Canada Data Servers End-use Licence"

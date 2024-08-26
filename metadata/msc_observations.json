@@ -79,8 +79,7 @@
         "created": "2014-02-14T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "GeoJSON",
-            "XML"
+            "GeoJSON"
         ],
         "contacts": [
             {
@@ -167,32 +166,6 @@
     },
     "links": [
         {
-            "href": "https://dd.weather.gc.ca/observations/",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
-            "href": "https://dd.meteo.gc.ca/observations/",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
-            "href": "amqps://dd.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "observations.#"
-        },
-        {
-            "href": "amqps://dd.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "observations.#"
-        },
-        {
             "href": "https://api.weather.gc.ca/collections/swob-realtime",
             "type": "application/json",
             "rel": "collection",
@@ -200,12 +173,6 @@
         },
         {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
-            "type": "text/html",
-            "rel": "license",
-            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
-        },
-        {
-            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
             "type": "text/html",
             "rel": "license",
             "title": "Environment and Climate Change Canada Data Servers End-use Licence"

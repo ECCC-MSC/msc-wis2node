@@ -34,7 +34,7 @@
     "properties": {
         "identifier": "urn:wmo:md:ca-eccc-msc:a9f2828c-0d78-5eb6-a4c7-1fc1219f1e3d",
         "title": "Regional Deterministic Prediction System",
-        "description": "The Regional Deterministic Prediction System (RDPS) carries out physics calculations to arrive at deterministic predictions of atmospheric elements from the current day out to 84 hours into the future. Atmospheric elements include temperature, precipitation, cloud cover, wind speed and direction, humidity and others. This product contains raw numerical results of these calculations. Geographical coverage includes Canada and the United States. Data is available at horizontal resolution of about 10 km up to 33 vertical levels. Predictions are performed four times a day.",
+        "description": "The Regional Deterministic Prediction System (RDPS) carries out physics calculations to arrive at deterministic predictions of atmospheric elements from the current day out to 84 hours into the future. Atmospheric elements include temperature, precipitation, cloud cover, wind speed and direction, humidity and others. This product contains raw numerical results of these calculations. Geographical coverage includes Canada and the United States. Data is available for 33 vertical levels at horizontal resolution of about 10 km up. Predictions are performed four times a day. The Regional Deterministic Prediction System is a component of the Global Deterministic Prediction System (GDPS).",
         "themes": [
             {
                 "concepts": [
@@ -76,7 +76,6 @@
         "created": "1986-04-22T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "GRIB2",
             "WMS"
         ],
         "contacts": [
@@ -131,65 +130,20 @@
     },
     "links": [
         {
-            "href": "https://dd.weather.gc.ca/model_gem_regional/",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
-            "href": "https://dd.meteo.gc.ca/model_gem_regional/",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
             "href": "https://geo.weather.gc.ca/geomet?lang=en&service=WMS&request=GetCapabilities&layers=RDPS.ETA_TT",
             "type": "application/xml",
             "rel": "data",
             "title": "Air temperature [\u00b0C]"
         },
         {
-            "href": "https://geo.meteo.gc.ca/geomet?lang=fr&service=WMS&request=GetCapabilities&layers=RDPS.ETA_TT",
-            "type": "application/xml",
-            "rel": "data",
-            "title": "Air temperature [\u00b0C]"
-        },
-        {
-            "href": "amqps://dd.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "model_gem_regional.#"
-        },
-        {
-            "href": "amqps://dd.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "model_gem_regional.#"
-        },
-        {
             "href": "mqtts://hpfx.collab.science.gc.ca:8883",
             "type": "application/geo+json",
             "rel": "items",
             "title": "MSC Datamart MQTT",
-            "channel": "data/core/weather/prediction/forecast/short-range/deterministic/limited-area"
-        },
-        {
-            "href": "mqtts://hpfx.collab.science.gc.ca:8883",
-            "type": "application/geo+json",
-            "rel": "items",
-            "title": "MSC Datamart MQTT",
-            "channel": "data/core/weather/prediction/forecast/short-range/deterministic/limited-area"
+            "channel": "origin/a/wis2/data/core/weather/prediction/forecast/short-range/deterministic/limited-area"
         },
         {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
-            "type": "text/html",
-            "rel": "license",
-            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
-        },
-        {
-            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
             "type": "text/html",
             "rel": "license",
             "title": "Environment and Climate Change Canada Data Servers End-use Licence"

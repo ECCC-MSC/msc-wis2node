@@ -131,19 +131,7 @@
             "title": "Monthly average of mole fraction of ozone in air [ppbv]"
         },
         {
-            "href": "https://geo.weather.gc.ca/geomet?lang=fr&service=WMS&request=GetCapabilities&LAYERS=RDAQR.O3-MAvg",
-            "type": "application/xml",
-            "rel": "data",
-            "title": "Monthly average of mole fraction of ozone in air [ppbv]"
-        },
-        {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
-            "type": "text/html",
-            "rel": "license",
-            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
-        },
-        {
-            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
             "type": "text/html",
             "rel": "license",
             "title": "Environment and Climate Change Canada Data Servers End-use Licence"

@@ -76,7 +76,6 @@
         "created": "2022-03-16T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "NetCDF",
             "WMS"
         ],
         "contacts": [
@@ -132,51 +131,13 @@
     },
     "links": [
         {
-            "href": "https://dd.weather.gc.ca/model_wcps/ocean-atmosphere/",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
-            "href": "https://dd.meteo.gc.ca/model_wcps/ocean-atmosphere/",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
-            "href": "amqps://dd.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "model_wcps.ocean-atmosphere.#"
-        },
-        {
-            "href": "amqps://dd.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "model_wcps.ocean-atmosphere.#"
-        },
-        {
             "href": "https://geo.weather.gc.ca/geomet?lang=en&service=WMS&request=GetCapabilities&layers=WCPS_1km_Runoff",
             "type": "application/xml",
             "rel": "data",
             "title": "Runoff [mm]"
         },
         {
-            "href": "https://geo.meteo.gc.ca/geomet?lang=fr&service=WMS&request=GetCapabilities&layers=WCPS_1km_Runoff",
-            "type": "application/xml",
-            "rel": "data",
-            "title": "Runoff [mm]"
-        },
-        {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
-            "type": "text/html",
-            "rel": "license",
-            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
-        },
-        {
-            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
             "type": "text/html",
             "rel": "license",
             "title": "Environment and Climate Change Canada Data Servers End-use Licence"

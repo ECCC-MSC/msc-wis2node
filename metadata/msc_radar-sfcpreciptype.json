@@ -124,19 +124,7 @@
             "title": "Radar surface precipitation type [experimental]"
         },
         {
-            "href": "https://geo.meteo.gc.ca/geomet?lang=fr&service=WMS&request=GetCapabilities&layers=Radar_1km_SfcPrecipType",
-            "type": "application/xml",
-            "rel": "data",
-            "title": "Radar surface precipitation type [experimental]"
-        },
-        {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
-            "type": "text/html",
-            "rel": "license",
-            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
-        },
-        {
-            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
             "type": "text/html",
             "rel": "license",
             "title": "Environment and Climate Change Canada Data Servers End-use Licence"

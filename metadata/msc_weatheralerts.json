@@ -73,8 +73,7 @@
         "created": "1871-01-01T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "WMS",
-            "XML"
+            "WMS"
         ],
         "contacts": [
             {
@@ -126,65 +125,20 @@
     },
     "links": [
         {
-            "href": "https://dd.weather.gc.ca/alerts/cap/",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
-            "href": "https://dd.meteo.gc.ca/alerts/cap/",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
             "href": "https://geo.weather.gc.ca/geomet?lang=en&service=WMS&request=GetCapabilities&layers=ALERTS",
             "type": "application/xml",
             "rel": "data",
             "title": "Weather Alerts [experimental]"
         },
         {
-            "href": "https://geo.meteo.gc.ca/geomet?lang=fr&service=WMS&request=GetCapabilities&layers=ALERTS",
-            "type": "application/xml",
-            "rel": "data",
-            "title": "Weather Alerts [experimental]"
-        },
-        {
-            "href": "amqps://dd.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "alerts.cap.#"
-        },
-        {
-            "href": "amqps://dd.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "alerts.cap.#"
-        },
-        {
             "href": "mqtts://hpfx.collab.science.gc.ca:8883",
             "type": "application/geo+json",
             "rel": "items",
             "title": "MSC Datamart MQTT",
-            "channel": "data/core/weather/advisories-warnings"
-        },
-        {
-            "href": "mqtts://hpfx.collab.science.gc.ca:8883",
-            "type": "application/geo+json",
-            "rel": "items",
-            "title": "MSC Datamart MQTT",
-            "channel": "data/core/weather/advisories-warnings"
+            "channel": "origin/a/wis2/data/core/weather/advisories-warnings"
         },
         {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
-            "type": "text/html",
-            "rel": "license",
-            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
-        },
-        {
-            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
             "type": "text/html",
             "rel": "license",
             "title": "Environment and Climate Change Canada Data Servers End-use Licence"

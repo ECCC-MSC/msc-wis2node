@@ -78,9 +78,6 @@
         "type": "dataset",
         "created": "2022-11-21T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
-        "formats": [
-            "NetCDF"
-        ],
         "contacts": [
             {
                 "addresses": [
@@ -134,39 +131,7 @@
     },
     "links": [
         {
-            "href": "https://dd.alpha.weather.gc.ca/model_hrdlps/2.5km/",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
-            "href": "https://dd.alpha.meteo.gc.ca/model_hrdlps/2.5km/",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
-            "href": "amqps://dd.alpha.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "model_hrdlps.2.5km.#"
-        },
-        {
-            "href": "amqps://dd.alpha.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "model_hrdlps.2.5km.#"
-        },
-        {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
-            "type": "text/html",
-            "rel": "license",
-            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
-        },
-        {
-            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
             "type": "text/html",
             "rel": "license",
             "title": "Environment and Climate Change Canada Data Servers End-use Licence"

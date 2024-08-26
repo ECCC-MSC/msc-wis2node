@@ -76,7 +76,6 @@
         "created": "2022-09-26T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "GRIB2",
             "WMS"
         ],
         "contacts": [
@@ -144,59 +143,14 @@
             "title": "Air temperature [\u00b0C]"
         },
         {
-            "href": "https://geo.meteo.gc.ca/geomet?lang=fr&service=WMS&request=GetCapabilities&layers=RDPS-WEonG_10km_AirTemp",
-            "type": "application/xml",
-            "rel": "data",
-            "title": "Air temperature [\u00b0C]"
-        },
-        {
-            "href": "https://dd.alpha.weather.gc.ca/model_gem_regional/10km/",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
-            "href": "https://dd.alpha.meteo.gc.ca/model_gem_regional/10km/",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
-            "href": "amqps://dd.alpha.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "model_gem_regional.10km.#"
-        },
-        {
-            "href": "amqps://dd.alpha.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "model_gem_regional.10km.#"
-        },
-        {
             "href": "mqtts://hpfx.collab.science.gc.ca:8883",
             "type": "application/geo+json",
             "rel": "items",
             "title": "MSC Datamart MQTT",
-            "channel": "data/core/weather/prediction/forecast/short-range/deterministic/limited-area"
-        },
-        {
-            "href": "mqtts://hpfx.collab.science.gc.ca:8883",
-            "type": "application/geo+json",
-            "rel": "items",
-            "title": "MSC Datamart MQTT",
-            "channel": "data/core/weather/prediction/forecast/short-range/deterministic/limited-area"
+            "channel": "origin/a/wis2/data/core/weather/prediction/forecast/short-range/deterministic/limited-area"
         },
         {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
-            "type": "text/html",
-            "rel": "license",
-            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
-        },
-        {
-            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
             "type": "text/html",
             "rel": "license",
             "title": "Environment and Climate Change Canada Data Servers End-use Licence"

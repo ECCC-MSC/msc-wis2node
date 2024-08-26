@@ -117,19 +117,7 @@
             "title": "Wildfire hotspots Cumulative Effects products"
         },
         {
-            "href": "https://geo.meteo.gc.ca/geomet?lang=fr&service=WMS&request=GetCapabilities&layers=RAQDPS-FW.CE_HOTSPOTS.2019",
-            "type": "application/xml",
-            "rel": "data",
-            "title": "Wildfire hotspots Cumulative Effects products"
-        },
-        {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
-            "type": "text/html",
-            "rel": "license",
-            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
-        },
-        {
-            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
             "type": "text/html",
             "rel": "license",
             "title": "Environment and Climate Change Canada Data Servers End-use Licence"
@@ -138,7 +126,7 @@
     "time": {
         "interval": [
             "1994-05-01",
-            ".."
+            "2020-12-01"
         ]
     }
 }

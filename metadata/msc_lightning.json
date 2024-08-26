@@ -64,7 +64,6 @@
         "created": "2023-01-30T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "GeoTIF",
             "WMS"
         ],
         "contacts": [
@@ -119,53 +118,13 @@
     },
     "links": [
         {
-            "href": "https://hpfx.collab.science.gc.ca/{YYYYMMDD}/WXO-DD/lightning/",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart",
-            "templated": true
-        },
-        {
-            "href": "https://hpfx.collab.science.gc.ca/{YYYYMMDD}/WXO-DD/lightning/",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart",
-            "templated": true
-        },
-        {
-            "href": "amqps://hpfx.collab.science.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "*.WXO-DD.lightning.#"
-        },
-        {
-            "href": "amqps://hpfx.collab.science.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "*.WXO-DD.lightning.#"
-        },
-        {
             "href": "https://geo.weather.gc.ca/geomet?lang=en&service=WMS&request=GetCapabilities&layers=Lightning_2.5km_Density",
             "type": "application/xml",
             "rel": "data",
             "title": "Lightning Flash Density over Canada (2.5 km) [flash/km^2/min]"
         },
         {
-            "href": "https://geo.meteo.gc.ca/geomet?lang=fr&service=WMS&request=GetCapabilities&layers=Lightning_2.5km_Density",
-            "type": "application/xml",
-            "rel": "data",
-            "title": "Lightning Flash Density over Canada (2.5 km) [flash/km^2/min]"
-        },
-        {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
-            "type": "text/html",
-            "rel": "license",
-            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
-        },
-        {
-            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
             "type": "text/html",
             "rel": "license",
             "title": "Environment and Climate Change Canada Data Servers End-use Licence"

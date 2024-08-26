@@ -70,8 +70,7 @@
         "created": "2018-03-02T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "WMS",
-            "SHP"
+            "WMS"
         ],
         "contacts": [
             {
@@ -124,51 +123,13 @@
     },
     "links": [
         {
-            "href": "https://dd.weather.gc.ca/analysis/precip/hrdpa_watershed/shapefile/",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
-            "href": "https://dd.meteo.gc.ca/analysis/precip/hrdpa_watershed/shapefile/",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
-            "href": "amqps://dd.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "analysis.precip.hrdpa_watershed.shapefile.#"
-        },
-        {
-            "href": "amqps://dd.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "analysis.precip.hrdpa_watershed.shapefile.#"
-        },
-        {
             "href": "https://geo.weather.gc.ca/geomet?lang=en&service=WMS&request=GetCapabilities&LAYERS=HRDPA.06F_WATERSHED",
             "type": "application/xml",
             "rel": "data",
             "title": "HRDPA.06F - Average watershed precipitation [mm]"
         },
         {
-            "href": "https://geo.meteo.gc.ca/geomet?lang=fr&service=WMS&request=GetCapabilities&LAYERS=HRDPA.06F_WATERSHED",
-            "type": "application/xml",
-            "rel": "data",
-            "title": "HRDPA.06F - Average watershed precipitation [mm]"
-        },
-        {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
-            "type": "text/html",
-            "rel": "license",
-            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
-        },
-        {
-            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
             "type": "text/html",
             "rel": "license",
             "title": "Environment and Climate Change Canada Data Servers End-use Licence"

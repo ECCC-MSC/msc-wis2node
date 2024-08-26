@@ -76,7 +76,6 @@
         "created": "2016-03-09T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "GRIB2",
             "WMS"
         ],
         "contacts": [
@@ -131,44 +130,11 @@
     },
     "links": [
         {
-            "href": "https://dd.weather.gc.ca/ensemble/reps",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
-            "href": "https://dd.meteo.gc.ca/ensemble/reps",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
-            "href": "amqps://dd.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "ensemble.reps.#"
-        },
-        {
-            "href": "amqps://dd.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "ensemble.reps.#"
-        },
-        {
             "href": "mqtts://hpfx.collab.science.gc.ca:8883",
             "type": "application/geo+json",
             "rel": "items",
             "title": "MSC Datamart MQTT",
-            "channel": "data/core/weather/prediction/forecast/short-range/probabilistic/limited-area"
-        },
-        {
-            "href": "mqtts://hpfx.collab.science.gc.ca:8883",
-            "type": "application/geo+json",
-            "rel": "items",
-            "title": "MSC Datamart MQTT",
-            "channel": "data/core/weather/prediction/forecast/short-range/probabilistic/limited-area"
+            "channel": "origin/a/wis2/data/core/weather/prediction/forecast/short-range/probabilistic/limited-area"
         },
         {
             "href": "https://geo.weather.gc.ca/geomet?lang=en&service=WMS&request=GetCapabilities&layers=REPS.DIAG.6_PRMM.ERGE10",
@@ -177,19 +143,7 @@
             "title": "Quantity of precipitation >= 10 mm [probability %]"
         },
         {
-            "href": "https://geo.meteo.gc.ca/geomet?lang=fr&service=WMS&request=GetCapabilities&layers=REPS.DIAG.6_PRMM.ERGE10",
-            "type": "application/xml",
-            "rel": "data",
-            "title": "Quantity of precipitation >= 10 mm [probability %]"
-        },
-        {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
-            "type": "text/html",
-            "rel": "license",
-            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
-        },
-        {
-            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
             "type": "text/html",
             "rel": "license",
             "title": "Environment and Climate Change Canada Data Servers End-use Licence"

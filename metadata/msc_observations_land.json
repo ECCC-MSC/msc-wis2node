@@ -82,9 +82,7 @@
         "created": "2022-04-11T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "GeoJSON",
-            "BUFR",
-            "XML"
+            "GeoJSON"
         ],
         "contacts": [
             {
@@ -146,44 +144,11 @@
     },
     "links": [
         {
-            "href": "https://dd.weather.gc.ca/bulletins/alphanumeric/",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
-            "href": "https://dd.weather.gc.ca/bulletins/alphanumeric/",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
-            "href": "amqps://dd.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "bulletins.alphanumeric.*.IS.CWAO.#"
-        },
-        {
-            "href": "amqps://dd.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "bulletins.alphanumeric.*.IS.CWAO.#"
-        },
-        {
             "href": "mqtts://hpfx.collab.science.gc.ca:8883",
             "type": "application/geo+json",
             "rel": "items",
             "title": "MSC Datamart MQTT",
-            "channel": "data/core/weather/surface-based-observations/synop"
-        },
-        {
-            "href": "mqtts://hpfx.collab.science.gc.ca:8883",
-            "type": "application/geo+json",
-            "rel": "items",
-            "title": "MSC Datamart MQTT",
-            "channel": "data/core/weather/surface-based-observations/synop"
+            "channel": "origin/a/wis2/data/core/weather/surface-based-observations/synop"
         },
         {
             "href": "https://api.weather.gc.ca/collections/bulletins-realtime/items?lang=en&f=json&issuer_code=CWAO&type=IS",
@@ -193,12 +158,6 @@
         },
         {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
-            "type": "text/html",
-            "rel": "license",
-            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
-        },
-        {
-            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
             "type": "text/html",
             "rel": "license",
             "title": "Environment and Climate Change Canada Data Servers End-use Licence"

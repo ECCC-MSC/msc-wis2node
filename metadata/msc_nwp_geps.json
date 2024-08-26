@@ -34,7 +34,7 @@
     "properties": {
         "identifier": "urn:wmo:md:ca-eccc-msc:6d9dd2f8-202e-58cb-a110-e2168832aacb",
         "title": "Global Ensemble Prediction System",
-        "description": "The Global Ensemble Prediction System (GEPS) carries out physics calculations to arrive at probabilistic predictions of atmospheric elements from the current day out to 16 days into the future (up to 32 days once a week on Thursdays at 00UTC). The GEPS produces different outlooks (scenarios) to estimate the forecast uncertainties due to the nonlinear (chaotic) behaviour of the atmosphere. The probabilistic predictions are based on an ensemble of 20 scenarios that differ in their initial conditions, their physics parameters which are randomly perturbed by a Stochastic Parameter Perturbation (SPP) method, and the stochastic perturbations (kinetic energy). A control member that is not perturbed is also available. Weather elements include temperature, precipitation, cloud cover, wind speed and direction, humidity and others. This product contains raw numerical results of these calculations. Geographical coverage is global. The horizontal resolution of the system is 0.35 degree (about 39 km at equator). The system has 84 vertical levels for the forecasts and for the analyses. Predictions are performed twice a day.",
+        "description": "The Global Ensemble Prediction System (GEPS) carries out physics calculations to arrive at probabilistic predictions of atmospheric elements from the current day out to 16 days into the future (up to 39 days twice a week on Mondays and Thursdays at 00UTC for calculating forecast anomalies). The GEPS produces different outlooks (scenarios) to estimate the forecast uncertainties due to the nonlinear (chaotic) behaviour of the atmosphere. The probabilistic predictions are based on an ensemble of 20 scenarios that differ in their initial conditions, their physics parameters which are randomly perturbed by a Stochastic Parameter Perturbation (SPP) method, and the stochastic perturbations (kinetic energy). A control member that is not perturbed is also available. Weather elements include temperature, precipitation, cloud cover, wind speed and direction, humidity and others. This product contains raw numerical results of these calculations. Geographical coverage is global. The horizontal resolution of the system is 0.23 degree (about 25 km at equator). The system has 84 vertical levels for the forecasts and for the analyses. Predictions are performed twice a day.",
         "themes": [
             {
                 "concepts": [
@@ -76,7 +76,6 @@
         "created": "2010-10-25T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "GRIB2",
             "WMS"
         ],
         "contacts": [
@@ -131,65 +130,20 @@
     },
     "links": [
         {
-            "href": "https://dd.weather.gc.ca/ensemble/geps/",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
-            "href": "https://dd.meteo.gc.ca/ensemble/geps/",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
             "href": "https://geo.weather.gc.ca/geomet?lang=en&service=WMS&request=GetCapabilities&layers=GEPS.DIAG.24_PRMM.ERGE1",
             "type": "application/xml",
             "rel": "data",
             "title": "Quantity of precipitation >= 1 mm [probability %]"
         },
         {
-            "href": "https://geo.meteo.gc.ca/geomet?lang=fr&service=WMS&request=GetCapabilities&layers=GEPS.DIAG.24_PRMM.ERGE1",
-            "type": "application/xml",
-            "rel": "data",
-            "title": "Quantity of precipitation >= 1 mm [probability %]"
-        },
-        {
-            "href": "amqps://dd.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "ensemble.geps.grib2.#"
-        },
-        {
-            "href": "amqps://dd.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "ensemble.geps.grib2.#"
-        },
-        {
             "href": "mqtts://hpfx.collab.science.gc.ca:8883",
             "type": "application/geo+json",
             "rel": "items",
             "title": "MSC Datamart MQTT",
-            "channel": "data/core/weather/prediction/forecast/medium-range/probabilistic/global"
-        },
-        {
-            "href": "mqtts://hpfx.collab.science.gc.ca:8883",
-            "type": "application/geo+json",
-            "rel": "items",
-            "title": "MSC Datamart MQTT",
-            "channel": "data/core/weather/prediction/forecast/medium-range/probabilistic/global"
+            "channel": "origin/a/wis2/data/core/weather/prediction/forecast/medium-range/probabilistic/global"
         },
         {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
-            "type": "text/html",
-            "rel": "license",
-            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
-        },
-        {
-            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
             "type": "text/html",
             "rel": "license",
             "title": "Environment and Climate Change Canada Data Servers End-use Licence"

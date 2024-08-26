@@ -34,7 +34,7 @@
     "properties": {
         "identifier": "urn:wmo:md:ca-eccc-msc:bde9b113-ab40-4d7f-a501-5cbb0b55805c",
         "title": "Satellite Imagery - GOES-West",
-        "description": "These products are derived from RGB (red/green/blue) images, a satellite processing technique that uses a combination of satellite sensor bands (also called channels) and applies a red/green/blue (RGB) filter to each of them. The result is a false-color image, i.e. an image that does not correspond to what the human eye would see, but offers high contrast between different cloud types and surface features. The on-board sensor of a weather satellite obtains two basic types of information: visible light data (reflected light) reflecting off clouds and different surface types, also known as \"reflectance\", and infrared data (emitted radiation) which are long-wave radiations emitted by clouds and surface features. RGBs are specially designed to combine this type of satellite data, resulting in an information-rich final product. Four types of products are currently generated from the GOES-West and GOES-East satellites: \"NightIR\" and \"NightMicrophysics\", at 2km resolution, are generated 24 hours a day with infrared channels, so are visible both night and day, and \"NaturalColour\" and \"DayCloudConvection\", at 1km resolution, which combine visible light channels with infrared channels; their higher resolution makes the latter two products more popular, but they are not available during most of the night (between 02UTC and 07UTC for GOES-Est, and between 06UTC and 11UTC for GOES-Ouest) given the absence of reflected sunlight. Other RGB products should be added gradually in the future to meet different needs.",
+        "description": "These products are derived from RGB (red/green/blue) images, a satellite processing technique that uses a combination of satellite sensor bands (also called channels) and applies a red/green/blue (RGB) filter to each of them. The result is a false-color image, i.e. an image that does not correspond to what the human eye would see, but offers high contrast between different cloud types and surface features. The on-board sensor of a weather satellite obtains two basic types of information: visible light data (reflected light) reflecting off clouds and different surface types, also known as \"reflectance\", and infrared data (emitted radiation) which are short-wave and long-wave radiation emitted by clouds and surface features. RGBs are specially designed to combine this type of satellite data, resulting in an information-rich final product. Other products are based on the enhancement of channel data for a single wavelength, also aimed at highlighting meteorological features of the observed surface or clouds, but in a simpler way since only a single wavelength is involved. This older approach is still useful today, as its simplicity makes image interpretation easier in some cases.",
         "themes": [
             {
                 "concepts": [
@@ -64,7 +64,6 @@
         "created": "2023-11-17T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "GeoTIF",
             "WMS"
         ],
         "contacts": [
@@ -126,51 +125,13 @@
     },
     "links": [
         {
-            "href": "https://dd.weather.gc.ca/satellite/goes/west/",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
-            "href": "https://dd.meteo.gc.ca/satellite/goes/west/",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
-            "href": "amqps://dd.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "satellite.goes.west.#"
-        },
-        {
-            "href": "amqps://dd.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "satellite.goes.west.#"
-        },
-        {
             "href": "https://geo.weather.gc.ca/geomet?lang=en&service=WMS&request=GetCapabilities&layers=GOES-West_1km_NaturalColor",
             "type": "application/xml",
             "rel": "data",
             "title": "GOES-West Natural Color [1 km]"
         },
         {
-            "href": "https://geo.meteo.gc.ca/geomet?lang=fr&service=WMS&request=GetCapabilities&layers=GOES-West_1km_NaturalColor",
-            "type": "application/xml",
-            "rel": "data",
-            "title": "GOES-West Natural Color [1 km]"
-        },
-        {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
-            "type": "text/html",
-            "rel": "license",
-            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
-        },
-        {
-            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
             "type": "text/html",
             "rel": "license",
             "title": "Environment and Climate Change Canada Data Servers End-use Licence"

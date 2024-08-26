@@ -34,7 +34,7 @@
     "properties": {
         "identifier": "urn:wmo:md:ca-eccc-msc:e2233308-040e-47da-8c9d-2551ff99f810",
         "title": "Long Term Climate Extremes, Daily Extremes of Records \u2013 Temperature",
-        "description": "Anomalous weather resulting in Temperature and Precipitation extremes occurs almost every day somewhere in Canada. For the purpose of identifying and tabulating daily extremes of record for temperature, precipitation and snowfall, the Meteorological Service of Canada has threaded or put together data from closely related stations to compile a long time series of data for about 750 locations in Canada to monitor for record-breaking weather. Virtual Climate stations correspond with the city pages of weather.gc.ca. This data provides the daily extremes of record for Temperature for each day of the year. Daily elements include: High Maximum, Low Maximum, High Minimum, Low Minimum.",
+        "description": "The daily climate records database, also known as Long Term Climate Extremes (LTCE), was developed to address the fragmentation of climate information due to station changes (opening, closing, relocation, etc.) over time. For approximately 750 locations in Canada, \"virtual\" climate stations have been developed by joining (threading) climate data for an urban location, from nearby stations to make long-term records. Each long-term record consists of the extremes (record values) of daily maximum/minimum temperatures, total precipitation and snowfall for each day of the year. Many of the longest data sets of extremes date as far back as the 1800s. This data provides the daily extremes of record for Temperature for each day of the year. Daily elements include: High Maximum, Low Maximum, High Minimum, Low Minimum.",
         "themes": [
             {
                 "concepts": [
@@ -60,9 +60,6 @@
         "type": "dataset",
         "created": "2021-02-15T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
-        "formats": [
-            "CSV"
-        ],
         "contacts": [
             {
                 "addresses": [
@@ -112,32 +109,6 @@
     },
     "links": [
         {
-            "href": "https://dd.weather.gc.ca/climate/ltce/daily/temperature/",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
-            "href": "https://dd.meteo.gc.ca/climate/ltce/daily/temperature/",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
-            "href": "amqps://dd.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "climate.ltce.daily.temperature.#"
-        },
-        {
-            "href": "amqps://dd.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "climate.ltce.daily.temperature.#"
-        },
-        {
             "href": "https://api.weather.gc.ca/collections/ltce-temperature/items/",
             "type": "application/geo+json",
             "rel": "items",
@@ -145,12 +116,6 @@
         },
         {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
-            "type": "text/html",
-            "rel": "license",
-            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
-        },
-        {
-            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
             "type": "text/html",
             "rel": "license",
             "title": "Environment and Climate Change Canada Data Servers End-use Licence"

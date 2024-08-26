@@ -70,9 +70,7 @@
         "created": "1850-01-01T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "WMS",
-            "CSV",
-            "SQL"
+            "WMS"
         ],
         "contacts": [
             {
@@ -127,54 +125,16 @@
     },
     "links": [
         {
-            "href": "https://dd.weather.gc.ca/hydrometric/doc/",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
-            "href": "https://dd.meteo.gc.ca/hydrometric/doc/",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
-            "href": "amqps://dd.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "hydrometric.doc.#"
-        },
-        {
-            "href": "amqps://dd.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "hydrometric.doc.#"
-        },
-        {
             "href": "https://geo.weather.gc.ca/geomet-climate/?lang=E&service=WMS&request=GetCapabilities",
             "type": "application/xml",
             "rel": "data",
             "title": "HYDROMETRIC.STATIONS"
         },
         {
-            "href": "https://geo.meteo.gc.ca/geomet-climate/?lang=F&service=WMS&request=GetCapabilities",
-            "type": "application/xml",
-            "rel": "data",
-            "title": "HYDROMETRIC.STATIONS"
-        },
-        {
-            "href": "https://api.weather.gc.ca/collections/hydrometric-stations/",
+            "href": "https://api.weather.gc.ca/collections/hydrometric-stations/items/",
             "type": "application/json",
             "rel": "collection",
             "title": "hydrometric-stations"
-        },
-        {
-            "href": "https://collaboration.cmc.ec.gc.ca/cmc/hydrometrics/www/",
-            "type": "text/html",
-            "rel": "archives",
-            "title": "Collaboration"
         },
         {
             "href": "https://wateroffice.ec.gc.ca/mainmenu/station_and_network_data_index_e.html",
@@ -183,19 +143,7 @@
             "title": "Hydrometric Station and Network Data"
         },
         {
-            "href": "https://eau.ec.gc.ca/mainmenu/station_and_network_data_index_f.html",
-            "type": "text/html",
-            "rel": "about",
-            "title": "Hydrometric Station and Network Data"
-        },
-        {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
-            "type": "text/html",
-            "rel": "license",
-            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
-        },
-        {
-            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
             "type": "text/html",
             "rel": "license",
             "title": "Environment and Climate Change Canada Data Servers End-use Licence"

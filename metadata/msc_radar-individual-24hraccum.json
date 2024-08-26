@@ -34,7 +34,7 @@
     "properties": {
         "identifier": "urn:wmo:md:ca-eccc-msc:ce9e475b-3e3b-4b15-9ac4-165549366b09",
         "title": "Weather Radar - 24 Hour Accumulation",
-        "description": "This product shows the rain accumulation, in mm, over the last 24 hour period based on PRECIP-ET and DPQPE. For PRECIP-ET, this product is available every 10 minutes for C-Band radars and every 6 minutes for S-Band radars. For DPQPE, this product is available every 6 minutes.",
+        "description": "This product shows the rain accumulation, in mm, over the last 24 hour period based on DPQPE. This product is available every 6 minutes.",
         "themes": [
             {
                 "concepts": [
@@ -66,9 +66,6 @@
         "type": "dataset",
         "created": "1871-01-01T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
-        "formats": [
-            "GIF"
-        ],
         "contacts": [
             {
                 "addresses": [
@@ -119,39 +116,7 @@
     },
     "links": [
         {
-            "href": "https://dd.weather.gc.ca/radar/24_HR_ACCUM/",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
-            "href": "https://dd.meteo.gc.ca/radar/24_HR_ACCUM/",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
-            "href": "amqps://dd.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "radar.24_HR_ACCUM.#"
-        },
-        {
-            "href": "amqps://dd.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "radar.24_HR_ACCUM.#"
-        },
-        {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
-            "type": "text/html",
-            "rel": "license",
-            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
-        },
-        {
-            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
             "type": "text/html",
             "rel": "license",
             "title": "Environment and Climate Change Canada Data Servers End-use Licence"

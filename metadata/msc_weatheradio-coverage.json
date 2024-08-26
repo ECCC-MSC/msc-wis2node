@@ -120,19 +120,7 @@
             "title": "weatheradio"
         },
         {
-            "href": "https://geo.weather.gc.ca/geomet?lang=fr&service=WMS&request=GetCapabilities&layers=WEATHERADIO",
-            "type": "application/xml",
-            "rel": "data",
-            "title": "weatheradio"
-        },
-        {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
-            "type": "text/html",
-            "rel": "license",
-            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
-        },
-        {
-            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
             "type": "text/html",
             "rel": "license",
             "title": "Environment and Climate Change Canada Data Servers End-use Licence"

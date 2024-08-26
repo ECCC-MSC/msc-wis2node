@@ -66,9 +66,6 @@
         "type": "dataset",
         "created": "2021-12-01T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
-        "formats": [
-            "NetCDF"
-        ],
         "contacts": [
             {
                 "addresses": [
@@ -117,46 +114,21 @@
             "Deterministic",
             "Water",
             "Weather and Climate",
-            "National (CA)",
+            "International",
             "Ocean"
         ],
         "wmo:dataPolicy": "recommended"
     },
     "links": [
         {
-            "href": "https://dd.weather.gc.ca/model_gdsps/",
-            "type": "text/html",
+            "href": "mqtts://hpfx.collab.science.gc.ca:8883",
+            "type": "application/geo+json",
             "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
-            "href": "https://dd.meteo.gc.ca/model_gdsps/",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
-            "href": "amqps://dd.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "model_gdsps.#"
-        },
-        {
-            "href": "amqps://dd.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "model_gdsps.#"
+            "title": "MSC Datamart MQTT",
+            "channel": "origin/a/wis2/data/core/ocean"
         },
         {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
-            "type": "text/html",
-            "rel": "license",
-            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
-        },
-        {
-            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
             "type": "text/html",
             "rel": "license",
             "title": "Environment and Climate Change Canada Data Servers End-use Licence"

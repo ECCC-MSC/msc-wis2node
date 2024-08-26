@@ -73,7 +73,6 @@
         "created": "2011-04-06T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "GRIB2",
             "WMS"
         ],
         "contacts": [
@@ -127,54 +126,10 @@
     },
     "links": [
         {
-            "href": "https://dd.weather.gc.ca/model_rdpa/",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
-            "href": "https://dd.meteo.gc.ca/model_rdpa/",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
-            "href": "https://collaboration.cmc.ec.gc.ca/science/outgoing/capa.grib/",
-            "type": "text/html",
-            "rel": "archives",
-            "title": "Collaboration"
-        },
-        {
-            "href": "https://collaboration.cmc.ec.gc.ca/science/outgoing/capa.grib/",
-            "type": "text/html",
-            "rel": "archives",
-            "title": "Collaboration"
-        },
-        {
             "href": "https://geo.weather.gc.ca/geomet?lang=en&service=WMS&request=GetCapabilities&layers=RDPA_10km_Precip-Accum6h",
             "type": "application/xml",
             "rel": "data",
             "title": "RDPA - Quantity of precipitation over a 6h hour interval [mm] [10 km] (archive)"
-        },
-        {
-            "href": "https://geo.meteo.gc.ca/geomet?lang=fr&service=WMS&request=GetCapabilities&layers=RDPA_10km_Precip-Accum6h",
-            "type": "application/xml",
-            "rel": "data",
-            "title": "RDPA - Quantity of precipitation over a 6h hour interval [mm] [10 km] (archive)"
-        },
-        {
-            "href": "amqps://dd.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "model_rdpa.#"
-        },
-        {
-            "href": "amqps://dd.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "model_rdpa.#"
         },
         {
             "href": "https://api.weather.gc.ca/collections/weather:rdpa:10km:6p",
@@ -184,12 +139,6 @@
         },
         {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
-            "type": "text/html",
-            "rel": "license",
-            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
-        },
-        {
-            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
             "type": "text/html",
             "rel": "license",
             "title": "Environment and Climate Change Canada Data Servers End-use Licence"

@@ -9,24 +9,24 @@
         "coordinates": [
             [
                 [
-                    -141,
-                    40
+                    -140.87,
+                    41.83
                 ],
                 [
-                    -141,
-                    88
+                    -140.87,
+                    82.52
                 ],
                 [
-                    -42,
-                    88
+                    -52.75,
+                    82.52
                 ],
                 [
-                    -42,
-                    40
+                    -52.75,
+                    41.83
                 ],
                 [
-                    -141,
-                    40
+                    -140.87,
+                    41.83
                 ]
             ]
         ]
@@ -121,39 +121,13 @@
     },
     "links": [
         {
-            "href": "https://dd.weather.gc.ca/model_gem_regional/stat-post-processing/",
-            "type": "text/html",
+            "href": "https://api.weather.gc.ca/collections/umos-rdps-realtime/items/",
+            "type": "application/geo+json",
             "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
-            "href": "https://dd.meteo.gc.ca/model_gem_regional/stat-post-processing/",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
-            "href": "amqps://dd.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "model_gem_regional.stat-post-processing.#"
-        },
-        {
-            "href": "amqps://dd.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "model_gem_regional.stat-post-processing.#"
+            "title": "umos-rdps-realtime"
         },
         {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
-            "type": "text/html",
-            "rel": "license",
-            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
-        },
-        {
-            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
             "type": "text/html",
             "rel": "license",
             "title": "Environment and Climate Change Canada Data Servers End-use Licence"
@@ -161,7 +135,7 @@
     ],
     "time": {
         "interval": [
-            "..",
+            "2023-07-28",
             ".."
         ]
     }

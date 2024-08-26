@@ -61,8 +61,7 @@
         "created": "1871-01-01T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "WMS",
-            "XML"
+            "WMS"
         ],
         "contacts": [
             {
@@ -115,51 +114,13 @@
     },
     "links": [
         {
-            "href": "https://dd.weather.gc.ca/citypage_weather/xml/",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
-            "href": "https://dd.meteo.gc.ca/citypage_weather/xml/",
-            "type": "text/html",
-            "rel": "items",
-            "title": "MSC Datamart"
-        },
-        {
             "href": "https://geo.weather.gc.ca/geomet?lang=en&service=WMS&request=GetCapabilities&layers=CURRENT_CONDITIONS",
             "type": "application/xml",
             "rel": "data",
             "title": "Current Conditions"
         },
         {
-            "href": "https://geo.weather.gc.ca/geomet?lang=fr&service=WMS&request=GetCapabilities&layers=CURRENT_CONDITIONS",
-            "type": "application/xml",
-            "rel": "data",
-            "title": "Current Conditions"
-        },
-        {
-            "href": "amqps://dd.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "citypage_weather.xml.#"
-        },
-        {
-            "href": "amqps://dd.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "citypage_weather.xml.#"
-        },
-        {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
-            "type": "text/html",
-            "rel": "license",
-            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
-        },
-        {
-            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
             "type": "text/html",
             "rel": "license",
             "title": "Environment and Climate Change Canada Data Servers End-use Licence"

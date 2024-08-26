@@ -34,7 +34,7 @@
     "properties": {
         "identifier": "urn:wmo:md:ca-eccc-msc:b234671d-1720-5965-a2ea-7cd6d6b2e68a",
         "title": "Pollution from wildfires Cumulative Effects products",
-        "description": "The Regional Air Quality Deterministic Prediction System FireWork (RAQDPS-FW) carries out physics and chemistry calculations, including emissions from active wildfires, to arrive at deterministic predictions of chemical species concentration of interest to air quality, such as fine particulate matter PM2.5 (2.5 micrometers in diameter or less). Geographical coverage is Canada and the United States. Data is available at a horizontal resolution of 10 km. While the system encompasses more than 80 vertical levels, data is available only for the surface level. The products are presented as historical, annual or monthly, averages which highlight long-term trends in cumulative effects on the environment.",
+        "description": "The Regional Air Quality Deterministic Prediction System FireWork (RAQDPS-FW) carries out physics and chemistry calculations, including emissions from active wildfires, to arrive at deterministic predictions of chemical species concentration of interest to air quality, such as fine particulate matter PM2.5 (2.5 micrometers in diameter or less). Geographical coverage is Canada and the United States. Data is available at a horizontal resolution of 10 km. While the system encompasses more than 80 vertical levels, data is available only for the surface level and the total column. The products are presented as historical, annual or monthly, averages which highlight long-term trends in cumulative effects on the environment.",
         "themes": [
             {
                 "concepts": [
@@ -130,19 +130,7 @@
             "title": "Yearly average of wildfire contribution: surface PM2.5 [ug/m^3]"
         },
         {
-            "href": "https://geo.weather.gc.ca/geomet?lang=fr&service=WMS&request=GetCapabilities&LAYERS=RAQDPS-FW.CE_PM2.5-DIFF-YAvg",
-            "type": "application/xml",
-            "rel": "data",
-            "title": "Yearly average of wildfire contribution: surface PM2.5 [ug/m^3]"
-        },
-        {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
-            "type": "text/html",
-            "rel": "license",
-            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
-        },
-        {
-            "href": "https://eccc-msc.github.io/open-data/licence/readme_fr",
             "type": "text/html",
             "rel": "license",
             "title": "Environment and Climate Change Canada Data Servers End-use Licence"
@@ -151,7 +139,7 @@
     "time": {
         "interval": [
             "2013-01-01",
-            ".."
+            "2020-12-01"
         ]
     }
 }
