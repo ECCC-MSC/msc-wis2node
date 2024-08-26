@@ -128,7 +128,7 @@
             "type": "application/geo+json",
             "rel": "items",
             "title": "MSC Datamart MQTT",
-            "channel": "origin/a/wis2/data/core/hydrology/surface-based-observations/water-quantity"
+            "channel": "origin/a/wis2/ca-eccc-msc/data/core/hydrology/surface-based-observations/water-quantity"
         },
         {
             "href": "https://api.weather.gc.ca/collections/hydrometric-realtime/items/",

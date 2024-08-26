@@ -125,7 +125,7 @@
             "type": "application/geo+json",
             "rel": "items",
             "title": "MSC Datamart MQTT",
-            "channel": "origin/a/wis2/data/core/weather/prediction/forecast/medium-range/deterministic/global"
+            "channel": "origin/a/wis2/ca-eccc-msc/data/core/weather/prediction/forecast/medium-range/deterministic/global"
         },
         {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
