@@ -36,9 +36,9 @@ LOGGER = logging.getLogger(__name__)
 
 
 FORMATS = {
-    'BUFR': 'application/x-bufr',
+    'BUFR': 'application/bufr',
     'CSV': 'text/csv',
-    'GRIB2': 'application/x-grib',
+    'GRIB2': 'application/grib',
     'GeoJSON': 'application/geo+json',
     'JSON': 'application/json',
     'TXT': 'text/plain',
