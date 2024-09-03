@@ -70,7 +70,7 @@
         ],
         "language": "en",
         "type": "dataset",
-        "created": "2012-11",
+        "created": "2012-11-01T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
             "WMS"
