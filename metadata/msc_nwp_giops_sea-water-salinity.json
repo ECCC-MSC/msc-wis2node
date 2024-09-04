@@ -1,5 +1,5 @@
 {
-    "id": "urn:wmo:md:ca-eccc-msc:dc3a7022-95e8-45a7-bf63-3d45b6cda0dc",
+    "id": "urn:wmo:md:ca-eccc-msc:840f58f6-29e1-5cbd-8d1e-0997aa210aaf",
     "conformsTo": [
         "http://wis.wmo.int/spec/wcmp/2/conf/core"
     ],
@@ -32,8 +32,8 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:dc3a7022-95e8-45a7-bf63-3d45b6cda0dc",
-        "title": "Global Ice-Ocean Prediction System - Lat/lon",
+        "identifier": "urn:wmo:md:ca-eccc-msc:840f58f6-29e1-5cbd-8d1e-0997aa210aaf",
+        "title": "Sea water salinity from the Global Ice-Ocean Prediction System",
         "description": "The Global Ice-Ocean Prediction System (GIOPS) produces global sea ice and ocean analyses and 10 day forecasts daily. This product contains time-mean sea ice and ocean forecast fields interpolated to two grids. One of the grids is a 0.2\u00b0 resolution regular latitude-longitude grid covering the global ocean (north of 80\u00b0 S). The other grid is in north-polar stereographic projection with a 5-km spacing at the standard parallel 60\u00b0 N and covers the Arctic Ocean and the neighbouring sub-polar seas. Data is available for 50 depths. The data files are in netCDF format and comply with the Climate and Forecast Conventions.",
         "themes": [
             {
@@ -127,14 +127,14 @@
             "Ocean",
             "Sea ice"
         ],
-        "wmo:dataPolicy": "recommended"
+        "wmo:dataPolicy": "core"
     },
     "links": [
         {
-            "href": "https://geo.weather.gc.ca/geomet?lang=en&service=WMS&request=GetCapabilities&layers=OCEAN.GIOPS.2D_TM2",
+            "href": "https://geo.weather.gc.ca/geomet?lang=en&service=WMS&request=GetCapabilities&layers=OCEAN.GIOPS.2D_SALW",
             "type": "application/xml",
             "rel": "data",
-            "title": "Sea temperature [K]"
+            "title": "OCEAN.GIOPS.2D - Sea Water Salinity [psu]"
         },
         {
             "href": "mqtts://hpfx.collab.science.gc.ca:8883",
