@@ -34,7 +34,7 @@
     "properties": {
         "identifier": "urn:wmo:md:ca-eccc-msc:5e8247ca-891e-5686-a6a5-0631c50fe2db",
         "title": "Marine Forecasts and Warnings for Canada",
-        "description": "Environment Canada (EC) provides a marine forecasting service to mariners and marine interests. This enables them to make informed decisions about marine weather conditions that may impact their safety, security or operations. EC also provides marine forecasts in order to meet Canada\u2019s treaty obligations under the International Maritime Organization\u2019s Safety Of Life At Sea (SOLAS) Convention.",
+        "description": "Environment Canada (EC) provides a marine forecasting service to mariners and marine interests. This enables them to make informed decisions about marine weather conditions that may impact their safety, security or operations. EC also provides marine forecasts in order to meet Canada’s treaty obligations under the International Maritime Organization’s Safety Of Life At Sea (SOLAS) Convention.",
         "themes": [
             {
                 "concepts": [
@@ -73,7 +73,7 @@
         ],
         "language": "en",
         "type": "dataset",
-        "created": "2024-09-04T15:34:19Z",
+        "created": "2024-09-05T13:18:35Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "contacts": [
             {
@@ -92,7 +92,7 @@
                     "host"
                 ],
                 "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
-                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
+                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
                 "position": "National Inquiry Response Team",
                 "hoursOfService": "0700h - 1500h EST",
                 "contactInstructions": "email",

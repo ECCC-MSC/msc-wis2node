@@ -89,7 +89,7 @@
                     "host"
                 ],
                 "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
-                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
+                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
                 "position": "National Inquiry Response Team",
                 "hoursOfService": "0700h - 1500h EST",
                 "contactInstructions": "email",
@@ -127,7 +127,7 @@
             "href": "https://geo.weather.gc.ca/geomet?lang=en&service=WMS&request=GetCapabilities&LAYERS=RDAQA_10km_PM2.5",
             "type": "application/xml",
             "rel": "data",
-            "title": "Concentration: surface PM2.5 [kg/m\u00b3]"
+            "title": "Concentration: surface PM2.5 [kg/m³]"
         },
         {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",

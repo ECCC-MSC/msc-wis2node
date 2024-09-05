@@ -34,7 +34,7 @@
     "properties": {
         "identifier": "urn:wmo:md:ca-eccc-msc:d244c9fa-776f-446f-9ccf-1d575cc21a5c",
         "title": "Global Deterministic Storm Surge Prediction System",
-        "description": "The Global Deterministic storm Surge Prediction System (GDSPS) produces water level forecasts using a modified version of the NEMO ocean model (Wang et al. 2021, 2022, 2023). It provides 240 hours forecasts twice per day on a 1/12\u00b0 resolution grid (3-9 km). The model is forced by the 10 meters winds, sea level pressure, ice concentration, ice velocity and surface currents from the Global Deterministic Prediction System (GDPS). The three dimensionnal ocean temperature and salinity fields of the model are nudged to values provided by the Global Ice-Ocean Prediction System (GIOPS) and the GDPS. During the post-processing phase, storm surge elevation (ETAS) is derived from total water level (SSH) by harmonic analysis using t_tide (Foreman et al. 2009).",
+        "description": "The Global Deterministic storm Surge Prediction System (GDSPS) produces water level forecasts using a modified version of the NEMO ocean model (Wang et al. 2021, 2022, 2023). It provides 240 hours forecasts twice per day on a 1/12° resolution grid (3-9 km). The model is forced by the 10 meters winds, sea level pressure, ice concentration, ice velocity and surface currents from the Global Deterministic Prediction System (GDPS). The three dimensionnal ocean temperature and salinity fields of the model are nudged to values provided by the Global Ice-Ocean Prediction System (GIOPS) and the GDPS. During the post-processing phase, storm surge elevation (ETAS) is derived from total water level (SSH) by harmonic analysis using t_tide (Foreman et al. 2009).",
         "themes": [
             {
                 "concepts": [
@@ -83,7 +83,7 @@
                     "host"
                 ],
                 "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
-                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
+                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
                 "position": "National Inquiry Response Team",
                 "hoursOfService": "0700h - 1500h EST",
                 "contactInstructions": "email",

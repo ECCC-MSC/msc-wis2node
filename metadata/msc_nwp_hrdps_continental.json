@@ -95,7 +95,7 @@
                     "host"
                 ],
                 "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
-                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
+                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
                 "position": "National Inquiry Response Team",
                 "hoursOfService": "0700h - 1500h EST",
                 "contactInstructions": "email",
@@ -133,7 +133,7 @@
             "href": "https://geo.weather.gc.ca/geomet?lang=en&service=WMS&request=GetCapabilities&layers=HRDPS.CONTINENTAL_TT",
             "type": "application/xml",
             "rel": "data",
-            "title": "Air temperature [\u00b0C]"
+            "title": "Air temperature [°C]"
         },
         {
             "href": "mqtts://hpfx.collab.science.gc.ca:8883",
