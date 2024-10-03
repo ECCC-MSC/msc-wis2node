@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:803a6e2a-41ed-44c2-9eeb-1b5306b4048e",
         "title": "Global Deterministic Wave Prediction System",
         "description": "The Global Deterministic Wave Prediction System (GDWPS) produces wave forecasts out to 240 hours in the future using the third generation spectral wave forecast model WaveWatch III® (WW3). The model is forced by the 10 meters winds and the ice concentration from the Global Deterministic Prediction System (GDPS). The ice concentration is used by the model to attenuate wave growth in areas covered by 25% to 75% ice and to suppress it for concentration above 75%. Forecast elements include significant wave height, peak period and primary swell height, direction and period.",
         "themes": [
@@ -65,12 +64,16 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
+        "language": {
+            "code": "en"
+        },
         "type": "dataset",
         "created": "2018-02-12T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "WMS"
+            {
+                "name": "WMS"
+            }
         ],
         "contacts": [
             {

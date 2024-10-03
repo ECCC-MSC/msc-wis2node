@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:6059da1d-e1da-4f2b-a420-b5c2a130eeaa",
         "title": "Weather Radar - DPQPE",
         "description": "DPQPE product: DPQPE stands for: Dual Polarization Quantitative Precipitation Estimation. The DPQPE product is available only for S-Band radars. It is a two-dimensional representation of the precipitation rate estimated by the lowest sweep of the radar (elevation angle of 0.4 degrees for the majority of S-Band radars). Thus, the precipitation rate is estimated as close to the earth's surface as possible. The DPQPE product is based, among other things, on a series of polarimetric processing steps (quality control) to eliminate non-meteorological artifacts from the raw data (volumetric scans). It renders in mm/h for rain and cm/h for snow. This product is calculated with a maximum coverage range of 240 km.",
         "themes": [
@@ -62,7 +61,9 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
+        "language": {
+            "code": "en"
+        },
         "type": "dataset",
         "created": "1871-01-01T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",

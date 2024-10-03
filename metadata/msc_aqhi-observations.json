@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:28936e1b-681f-4c73-b04a-e86d4b3917c6",
         "title": "Air Quality Health Index Observations",
         "description": "The Air Quality Health Index (AQHI) is a scale designed to help quantify the quality of the air in a certain region on a scale from 1 to 10. When the amount of air pollution is very high, the number is reported as 10+. It also includes a category that describes the health risk associated with the index reading (e.g. Low, Moderate, High, or Very High Health Risk). The AQHI is calculated based on the relative risks of a combination of common air pollutants that are known to harm human health, including ground-level ozone, particulate matter, and nitrogen dioxide. The AQHI formulation captures only the short term or acute health risk (exposure of hour or days at a maximum). The formulation of the AQHI may change over time to reflect new understanding associated with air pollution health effects. The AQHI is calculated from data observed in real time, without being verified (quality control).",
         "themes": [
@@ -62,7 +61,9 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
+        "language": {
+            "code": "en"
+        },
         "type": "dataset",
         "created": "2014-02-14T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",

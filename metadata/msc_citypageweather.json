@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:1f864766-7f7f-4be7-8292-295065c65c78",
         "title": "Canadian Weather - City Page Weather",
         "description": "Current conditions and forecasts for selected Canadian cities",
         "themes": [
@@ -56,12 +55,16 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
+        "language": {
+            "code": "en"
+        },
         "type": "dataset",
         "created": "1871-01-01T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "WMS"
+            {
+                "name": "WMS"
+            }
         ],
         "contacts": [
             {

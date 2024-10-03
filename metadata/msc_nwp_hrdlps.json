@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:6712547a-7b6e-4746-ac51-e369a1f1f1ee",
         "title": "High Resolution Deterministic Land Surface Prediction System [experimental]",
         "description": "The High Resolution Deterministic Land Prediction System (HRDLPS) produces high-resolution medium-range forecasts of land surface, subsurface variables, and of near-surface atmospheric variables (1.5 m temperature and dewpoint, 10 m wind). HRDLPS is initialized with analysis and trial fields provided by the Canadian Land Data Assimilation System of the National Surface and River Prediction System (CaLDAS-NSRPS). The system is then driven with atmospheric forecasts provided by the HRDPS over the first two days of integration and by the GDPS over the next four days. Predictions are performed twice a day. The system runs on a grid with a 2.5 km horizontal spacing covering Canada and part of the USA.",
         "themes": [
@@ -74,7 +73,9 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
+        "language": {
+            "code": "en"
+        },
         "type": "dataset",
         "created": "2022-11-21T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",

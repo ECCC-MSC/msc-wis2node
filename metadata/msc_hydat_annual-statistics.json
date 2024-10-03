@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:0e73142b-c4a7-4bf0-8d16-72ac2df60fc1",
         "title": "Annual Maximum and Minimum Daily Water Level or Flow",
         "description": "The annual maximum and minimum daily data are the maximum and minimum daily mean values for a given year.",
         "themes": [
@@ -59,7 +58,9 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
+        "language": {
+            "code": "en"
+        },
         "type": "dataset",
         "created": "1850-01-01T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",

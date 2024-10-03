@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:5fc7ab98-afa1-427b-87b6-658565cca575",
         "title": "MetNotes",
         "description": "MetNotes are a geo- and time-referenced, free form polygon product issued by MSC that complement today’s location-based dissemination systems. The concise text of a MetNote (similar to a Tweet) is consistent with communication today where people are seeking information at a glance. Meteorologists will issue a MetNote to add contextual and/or impact information to complement the public forecast that is valid over a specific area, for a specific time range.",
         "themes": [
@@ -56,12 +55,16 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
+        "language": {
+            "code": "en"
+        },
         "type": "dataset",
         "created": "2022-06-14T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "WMS"
+            {
+                "name": "WMS"
+            }
         ],
         "contacts": [
             {

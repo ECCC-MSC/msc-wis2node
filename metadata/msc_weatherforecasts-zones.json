@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:1fb5ad1e-aa5b-468a-912f-950ca4f2c105",
         "title": "PubStdZone Shape Files",
         "description": "The PubStdZone layer is a collection of public program forecast location zone polygons that represents bounded measurable locations at the Public program Standard level. The public program standard level is used in most forecasts, warnings, watches, advisories and special weather statement. With the exception of the Manitoba Lakes, the layer is made up of mostly the land kind of polygons. The layer is made up of three depictions, cartographic detailed (with proper shorelines and high resolution polygons), cartographic coarse (with generalized shorelines and low resolution polygons), and digital exaggerated (with exaggerated shorelines and low resolution polygons). The digital layer (exaggerated) is a collection of polygons where shoreline boundaries are stretched offshore for the land polygons and inland for the water polygons. In this \"Exaggerated\" layer, the boundaries are made smooth to reduce the number of polygon vertices. The PubStdZone layer is presented in the polygon package in two coordinate systems, \"Projected\" (Lambert Conformal Conic) and \"Unprojected\" (Geographical Coordinated System).",
         "themes": [
@@ -56,7 +55,9 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
+        "language": {
+            "code": "en"
+        },
         "type": "dataset",
         "created": "2013-09-02T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",

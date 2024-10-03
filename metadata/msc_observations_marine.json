@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:fef83cf6-170d-4ab1-8694-05a25a429478",
         "title": "Hourly moored buoy marine data",
         "description": "The MSC moored buoy network operates approximately 20-40 moored buoys, varying based on seasonal changes, along the West and East coasts, and inland lakes. These buoys include 3-meter discus buoys along the coasts and both 3 and 1.7-meter Watchkeeper buoys on inland lakes. The network utilizes two types of payloads, namely Watchman100 (WM100) and Watchman500 (WM500), with a transition to the latter since 2021. WM500 payloads offer full-time Iridium data transmission with additional wave and housekeeping elements reported at regular hourly intervals. Buoys with WM100 payloads primarily use satellite telemetry (GOES) for data delivery.",
         "themes": [
@@ -74,12 +73,16 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
+        "language": {
+            "code": "en"
+        },
         "type": "dataset",
         "created": "2022-10-22T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "GeoJSON"
+            {
+                "name": "GeoJSON"
+            }
         ],
         "contacts": [
             {

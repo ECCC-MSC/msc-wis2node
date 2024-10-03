@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:574c32db-aba7-4919-9c9f-c58398754173",
         "title": "Wildfire hotspots Cumulative Effects products",
         "description": "Hotspots are locations where wildfires are actively burning, identified from infrared satellite imagery. Hotspot locations are provided by NASA and NOAA, and further processed by Natural Resources Canada's Canadian Wildland Fire Information System. This layer contains the hotspots that are selected to be used as input for the Regional Air Quality Deterministic Prediction System FireWork (RAQDPS-FW) to enable forecasting air quality while taking into account wildfire emissions. Geographical coverage is Canada and the United States. The products are presented as historical annual compilations which highlight long-term trends in cumulative effects on the environment.",
         "themes": [
@@ -53,12 +52,16 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
+        "language": {
+            "code": "en"
+        },
         "type": "dataset",
         "created": "2020-08-04T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "WMS"
+            {
+                "name": "WMS"
+            }
         ],
         "contacts": [
             {

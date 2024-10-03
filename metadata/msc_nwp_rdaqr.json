@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:ba198d6d-1c80-52f6-9801-4a444ab337a7",
         "title": "Regional Deterministic Air Quality Reanalysis",
         "description": "The Regional Deterministic Air Quality Reanalysis (RDAQR) is an objective analysis of surface pollutants which combines numerical reforecasts from the Regional Air Quality Deterministic Reforecast System (RAQDRS) and hourly observational data from monitoring surface networks over North America in order to produce a better description of the air quality at every hour. Chemical constituents include O3, SO2, and NO2 gases, as well as fine particulate matter PM2.5 (2.5 micrometers in diameter or less) and coarse particulate matter PM10 (10 micrometers in diameter or less). Geographical coverage is Canada and the United States. Data is available only for the surface level, at a horizontal resolution of 10 km.",
         "themes": [
@@ -65,12 +64,16 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
+        "language": {
+            "code": "en"
+        },
         "type": "dataset",
         "created": "2021-01-01T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "WMS"
+            {
+                "name": "WMS"
+            }
         ],
         "contacts": [
             {

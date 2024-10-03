@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:65d3a88b-eb09-4fd9-ac44-cf42dc1f7444",
         "title": "Real-time Hydrometric Data",
         "description": "Real-time water level and flow (discharge) data collected at over 2100 hydrometric stations across Canada (last 30 days).",
         "themes": [
@@ -59,12 +58,16 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
+        "language": {
+            "code": "en"
+        },
         "type": "dataset",
         "created": "1850-01-01T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "GeoJSON"
+            {
+                "name": "GeoJSON"
+            }
         ],
         "contacts": [
             {

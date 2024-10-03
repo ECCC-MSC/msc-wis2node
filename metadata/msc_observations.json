@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:e50a9544-eee2-460c-a8b1-1a92a487d060",
         "title": "Meteorological Observations",
         "description": "Meteorological Observations describe datasets that contain information about weather and climate conditions as available on the Environment Canada weather.gc.ca web site. These pages contain information about current weather conditions and past climate including temperature, wind, and humidity measurements, written descriptions of current conditions, rain and snow amounts, average and extreme temperatures, etc. The current conditions are acquired from a variety of observing system operators and are provided in near-real time with limited quality assurance. Current condition information should not be considered as quality-controlled official values. The availability of values for every observation period is not guaranteed as they may be affected by observing system operations.",
         "themes": [
@@ -74,12 +73,16 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
+        "language": {
+            "code": "en"
+        },
         "type": "dataset",
         "created": "2014-02-14T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "GeoJSON"
+            {
+                "name": "GeoJSON"
+            }
         ],
         "contacts": [
             {

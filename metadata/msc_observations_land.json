@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:c944aca6-0d59-418c-9d91-23247c8ada17",
         "title": "Hourly surface based observations",
         "description": "Hourly surface land observations support weather forecasting and climate monitoring, with meteorological data reported hourly from either data logger output tables 11 or 160. Campbell Scientific data loggers are utilized in this network to acquire, process, store, and transmit sensor data. Observations are encoded by the data loggers and transmitted individually via the Datalogger Retrieval System.",
         "themes": [
@@ -77,12 +76,16 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
+        "language": {
+            "code": "en"
+        },
         "type": "dataset",
         "created": "2022-04-11T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "GeoJSON"
+            {
+                "name": "GeoJSON"
+            }
         ],
         "contacts": [
             {

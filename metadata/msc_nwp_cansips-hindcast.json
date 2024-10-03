@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:0fe2f63a-0268-5d22-9228-e53d9f0350b3",
         "title": "Canadian Seasonal to Inter-annual Prediction System Hindcast",
         "description": "The Canadian Seasonal to Inter-annual Prediction System (CanSIPS) carries out physics calculations to arrive at probabilistic predictions of atmospheric elements from the beginning of a month out to up to 12 months into the future, resulting in seasonal forecasts. Atmospheric elements include temperature, precipitation, wind speed and direction and others. This product contains raw numerical results of these calculations. Geographical coverage is global. Data is available on a grid at a horizontal resolution of 2.5 degrees and 1 degree and for a few selected vertical levels. In addition, forecast probabilities for below, near, and above normal temperature and precipitation are available at both resolutions. Predictions and corresponding hindcast are made available monthly.",
         "themes": [
@@ -68,7 +67,9 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
+        "language": {
+            "code": "en"
+        },
         "type": "dataset",
         "created": "1990-01-01T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
@@ -126,7 +127,7 @@
             "type": "application/geo+json",
             "rel": "items",
             "title": "MSC Datamart MQTT",
-            "channel": "origin/a/wis2/ca-eccc-msc/data/core/weather/prediction/forecast/seasonal/deterministic/limited-area"
+            "channel": "origin/a/wis2/ca-eccc-msc/data/recommended/weather/prediction/forecast/seasonal/deterministic/limited-area"
         },
         {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",

@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:ca.gc.ec.msc-1.1.1.3",
         "title": "PILOT MOBIL",
         "description": "PILOT MOBIL is a numerical code (FM 34-XI) used for reporting Upper-winds from a mobile land station",
         "themes": [
@@ -56,7 +55,9 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
+        "language": {
+            "code": "en"
+        },
         "type": "dataset",
         "created": "1980-01-01T00:00:00Z",
         "rights": "Copyright (c) $year$ Government of Canada",

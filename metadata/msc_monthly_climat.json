@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:4058ed59-8d43-4e1d-b264-5dc12c97b99f",
         "title": "MSC Monthly CLIMAT data",
         "description": "CLIMAT is numerical code for reporting monthly values from a land station. Monthly values are obtained through averaging or accumulating the daily values of one month. If some daily observations were missing, interpolation and/or statistical methods were used to estimate a missing value. If observations on more than ten days are missing, or if there is a period of five consecutive days without any observations, the symbolic letters for the respective parameter are encoded as slashes.",
         "themes": [
@@ -56,12 +55,16 @@
                 "scheme": "https://codes.wmo.int/wis2/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
+        "language": {
+            "code": "en"
+        },
         "type": "dataset",
         "created": "2021-07-27T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "GeoJSON"
+            {
+                "name": "GeoJSON"
+            }
         ],
         "contacts": [
             {

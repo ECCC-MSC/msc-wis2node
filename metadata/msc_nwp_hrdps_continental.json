@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:5b401fa0-6c29-57f0-b3d5-749f301d829d",
         "title": "High Resolution Deterministic Prediction System - Continental",
         "description": "The High Resolution Deterministic Prediction System (HRDPS) carries out physics calculations to arrive at deterministic predictions of atmospheric elements from the current day out to 48 hours into the future. Atmospheric elements include temperature, precipitation, cloud cover, wind speed and direction, humidity and others. This product contains raw numerical results of these calculations. Geographical coverage of the system is most of Canada. Data is available over specific areas in the MSC Datamart and the whole coverage is available in the MSC GeoMet web services. Data is available at a horizontal resolution of about 2.5 km up to 31 vertical levels. Predictions are performed up to four times a day.",
         "themes": [
@@ -71,12 +70,16 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
+        "language": {
+            "code": "en"
+        },
         "type": "dataset",
         "created": "2014-11-18T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "WMS"
+            {
+                "name": "WMS"
+            }
         ],
         "contacts": [
             {
@@ -140,7 +143,7 @@
             "type": "application/geo+json",
             "rel": "items",
             "title": "MSC Datamart MQTT",
-            "channel": "origin/a/wis2/ca-eccc-msc/data/core/weather/prediction/forecast/short-range/deterministic/limited-area"
+            "channel": "origin/a/wis2/ca-eccc-msc/data/recommended/weather/prediction/forecast/short-range/deterministic/limited-area"
         },
         {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",

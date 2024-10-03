@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:9eaf8b65-a734-432e-925c-7fbe8fc65670",
         "title": "Weather Elements on Grid based on the High Resolution Deterministic Prediction System",
         "description": "Weather Elements on Grid (WEonG) based on the High Resolution Deterministic Prediction System (HRDPS) is a post-processing system designed to compute the weather elements required by different forecast programs (public, marine, aviation, air quality, etc.). This system amalgamates numerical and post-processed data using various diagnostic approaches. Hourly concepts are produced from different algorithms using outputs from the pan-Canadian High Resolution Deterministic Prediction System (HRDPS-NAT).",
         "themes": [
@@ -71,12 +70,16 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
+        "language": {
+            "code": "en"
+        },
         "type": "dataset",
         "created": "2022-08-29T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "WMS"
+            {
+                "name": "WMS"
+            }
         ],
         "contacts": [
             {
@@ -147,7 +150,7 @@
             "type": "application/geo+json",
             "rel": "items",
             "title": "MSC Datamart MQTT",
-            "channel": "origin/a/wis2/ca-eccc-msc/data/core/weather/prediction/forecast/short-range/deterministic/limited-area"
+            "channel": "origin/a/wis2/ca-eccc-msc/data/recommended/weather/prediction/forecast/short-range/deterministic/limited-area"
         },
         {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",

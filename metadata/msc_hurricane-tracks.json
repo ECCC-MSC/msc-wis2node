@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:3f319639-de12-57e9-8ea1-d04272333fe5",
         "title": "Hurricane Tracks",
         "description": "Hurricane tracks and response zone are issued by the Canadian Hurricane Centre as part of the regular hurricane season forecast.",
         "themes": [
@@ -65,12 +64,16 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
+        "language": {
+            "code": "en"
+        },
         "type": "dataset",
         "created": "2011-06-01T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "WMS"
+            {
+                "name": "WMS"
+            }
         ],
         "contacts": [
             {

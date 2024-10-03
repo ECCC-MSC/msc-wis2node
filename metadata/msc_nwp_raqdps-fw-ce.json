@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:b234671d-1720-5965-a2ea-7cd6d6b2e68a",
         "title": "Pollution from wildfires Cumulative Effects products",
         "description": "The Regional Air Quality Deterministic Prediction System FireWork (RAQDPS-FW) carries out physics and chemistry calculations, including emissions from active wildfires, to arrive at deterministic predictions of chemical species concentration of interest to air quality, such as fine particulate matter PM2.5 (2.5 micrometers in diameter or less). Geographical coverage is Canada and the United States. Data is available at a horizontal resolution of 10 km. While the system encompasses more than 80 vertical levels, data is available only for the surface level and the total column. The products are presented as historical, annual or monthly, averages which highlight long-term trends in cumulative effects on the environment.",
         "themes": [
@@ -65,12 +64,16 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
+        "language": {
+            "code": "en"
+        },
         "type": "dataset",
         "created": "2020-08-04T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "WMS"
+            {
+                "name": "WMS"
+            }
         ],
         "contacts": [
             {

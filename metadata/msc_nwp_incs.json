@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:f3ec3d35-e9ca-521c-998a-a88db31c6205",
         "title": "Integrated Nowcasting System",
         "description": "The Integrated Nowcasting System (INCS) aims to forecast the weather in the very short term. It produces a consistent set of observed and forecasted weather elements from the observation time up to the next 12 hours for over 500 forecast points generally corresponding to observation stations over Canada. These forecasts are updated every hour. Hourly surface observations (METAR, SPECI) and synoptic observations are processed as well as weather radar, lightning and satellite observations. Numerical weather prediction models, statistical models and nowcasting systems are used in conjunction with the observations to produce a very short term forecast at surface level.",
         "themes": [
@@ -74,7 +73,9 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
+        "language": {
+            "code": "en"
+        },
         "type": "dataset",
         "created": "2011-10-05T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
@@ -135,7 +136,7 @@
             "type": "application/geo+json",
             "rel": "items",
             "title": "MSC Datamart MQTT",
-            "channel": "origin/a/wis2/ca-eccc-msc/data/core/weather/prediction/forecast/nowcasting/deterministic/limited-area"
+            "channel": "origin/a/wis2/ca-eccc-msc/data/recommended/weather/prediction/forecast/nowcasting/deterministic/limited-area"
         },
         {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",

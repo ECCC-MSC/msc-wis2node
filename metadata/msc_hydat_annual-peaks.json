@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:49126bff-0de8-4b9d-8c03-189be2e66261",
         "title": "Annual Maximum and Minimum Instantaneous Water Level or Flow",
         "description": "The annual maximum and minimum instantaneous data are the maximum and minimum instantaneous values for a given year.",
         "themes": [
@@ -59,7 +58,9 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
+        "language": {
+            "code": "en"
+        },
         "type": "dataset",
         "created": "1850-01-01T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",

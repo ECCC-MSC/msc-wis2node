@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:79550951-6b17-49a6-9028-8ae1c21274cf",
         "title": "Weather alerts",
         "description": "Environment Canada issues weather alerts about weather related hazards in order to notify those in affected areas so that they can take steps to protect themselves and their property from harm. Alerts are classified depending on the severity and timing of the subject event and include: warnings, watches, advisories and statements. Warnings are usually issued six to 24 hours in advance, although some severe weather (such as thunderstorms and tornadoes) can occur rapidly, with less than a half hours' notice.",
         "themes": [
@@ -68,12 +67,16 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
+        "language": {
+            "code": "en"
+        },
         "type": "dataset",
         "created": "1871-01-01T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "WMS"
+            {
+                "name": "WMS"
+            }
         ],
         "contacts": [
             {

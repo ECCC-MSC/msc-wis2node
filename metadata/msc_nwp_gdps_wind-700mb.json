@@ -32,9 +32,8 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:7f9da2bb-3f63-51c8-91ee-58dbd92fe68a",
         "title": "Wind at 700 mb from the Global Deterministic Prediction System",
-        "description": "The Global Deterministic Prediction System (GDPS) is a coupled atmosphere (GEM), ocean and sea ice (NEMO-CICE) deterministic numerical weather prediction model. Forecasts are carried out twice a day for 10 days lead time. The geographical coverage is global on a native Yin-Yang grid at 15 km horizontal resolution. Data is available for 33 vertical levels and interpolated on a global latitude-longitude uniform grid with 0.2 degree horizontal resolution. Variables availability in number and time frequency is a function of forecast lead time.",
+        "description": "The Global Deterministic Prediction System (GDPS) is a coupled atmosphere (GEM), ocean and sea ice (NEMO-CICE) deterministic numerical weather prediction model. Forecasts are carried out twice a day for 10 days lead time. The geographical coverage is global at 15 km horizontal resolution. Data is available on some thirty vertical levels and interpolated on a global latitude-longitude uniform grid with 0.15 degree horizontal resolution. Variables availability in number and time frequency is a function of forecast lead time.",
         "themes": [
             {
                 "concepts": [
@@ -59,12 +58,16 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
+        "language": {
+            "code": "en"
+        },
         "type": "dataset",
         "created": "1991-03-12T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "WMS"
+            {
+                "name": "WMS"
+            }
         ],
         "contacts": [
             {
@@ -128,7 +131,7 @@
             "type": "application/geo+json",
             "rel": "items",
             "title": "MSC Datamart MQTT",
-            "channel": "origin/a/wis2/ca-eccc-msc/data/core/weather/prediction/forecast/medium-range/deterministic/global"
+            "channel": "origin/a/wis2/ca-eccc-msc/data/recommended/weather/prediction/forecast/medium-range/deterministic/global"
         },
         {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",

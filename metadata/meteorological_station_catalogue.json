@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:9764d6c6-3044-450c-ac5a-383cedbfef17",
         "title": "Meteorological Station Catalogue",
         "description": "Station Catalogue (WMO Volume A Report - Canada) lists all Canadian surface and upper air stations providing synoptic meteorological reports, their operational activities and essential detailed information.",
         "themes": [
@@ -53,9 +52,11 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
+        "language": {
+            "code": "en"
+        },
         "type": "dataset",
-        "created": "2024-09-05T13:18:43Z",
+        "created": "2024-10-03T17:41:45Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "contacts": [
             {

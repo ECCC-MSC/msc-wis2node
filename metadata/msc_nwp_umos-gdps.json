@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:7c1070fd-af7d-40fe-9e78-49d2962f0bbc",
         "title": "UMOS statistically post-processed Forecast of the Global Deterministic Prediction System (GDPS-UMOS-MLR)",
         "description": "Statistical post-processing of weather and environmental forecasts issued by numerical models, including the Global Deterministic Prediction System (GDPS), reduces systematic bias and error variance of raw numerical forecasts. This is achieved by establishing an optimal relationship between observations recorded at stations and co-located numerical model outputs. The Updatable Model Output Statistics (UMOS) system at Environment Canada carries out this task. The statistical relationships are built using the Model Output Statistics (MOS) method and a multiple linear regression (MLR) technic. The weather and environmental variable being statistically post-processed by UMOS consists of air temperature at approximately 1.5 meters above ground. The absence of a statistically post-processed forecast can be caused by a missing statistical model due to insufficient observation data quality or quantity. Geographical coverage includes weather stations across Canada. Statistically post-processed forecasts are available at the same frequency of emission as the numerical model producing the raw forecasts and at 3-hourly lead times up to 144 hours (6 days) for the GDPS.",
         "themes": [
@@ -59,12 +58,16 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
+        "language": {
+            "code": "en"
+        },
         "type": "dataset",
         "created": "2023-07-28T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "GeoJSON"
+            {
+                "name": "GeoJSON"
+            }
         ],
         "contacts": [
             {

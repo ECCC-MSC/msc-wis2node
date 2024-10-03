@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:ce9e475b-3e3b-4b15-9ac4-165549366b09",
         "title": "Weather Radar - 24 Hour Accumulation",
         "description": "This product shows the rain accumulation, in mm, over the last 24 hour period based on DPQPE. This product is available every 6 minutes.",
         "themes": [
@@ -62,7 +61,9 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
+        "language": {
+            "code": "en"
+        },
         "type": "dataset",
         "created": "1871-01-01T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",

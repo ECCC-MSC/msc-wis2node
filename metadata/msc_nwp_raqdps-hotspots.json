@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:8f86f415-7fef-5377-940c-c169c9854520",
         "title": "Wildfire hotspots ingested by RAQDPS",
         "description": "Hotspots represent active wild fires. Natural Resources Canada Canadian Wild Fire Information System identifies them by processing Infrared satellite images. This layer contains the hotspots that are selected to be used as input for the Regional Air Quality Deterministic Prediction System (RAQDPS) to enable forecasting air quality while taking into account wild fire emissions.",
         "themes": [
@@ -53,12 +52,16 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
+        "language": {
+            "code": "en"
+        },
         "type": "dataset",
         "created": "2016-05-16T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "WMS"
+            {
+                "name": "WMS"
+            }
         ],
         "contacts": [
             {

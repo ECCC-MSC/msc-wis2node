@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:37aecae5-7783-4274-b595-df02aa003ac3",
         "title": "North American Radar Composite (1 km)",
         "description": "This mosaic is calculated over the North American domain with a horizontal spatial resolution of 1 km. This mosaic therefore includes all the Canadian and American radars available in the network and which can reach a maximum of 180 contributing radars. To better represent precipitation over the different seasons, this mosaic renders in mm/h to represent rain and in cm/h to represent snow. For the two precipitation types (rain and snow), we use two different mathematical relationships to convert the reflectivity by rainfall rates (mm/h rain cm/h for snow). This mosaic is based on the DPQPE (Dual-Pol Quantitative Precipitation Estimation) product for S-Band radars. For the US Nexrad radars, ECCC uses the most similar product from the US Meteorological Service (NOAA). This product displays radar reflectivity converted into precipitation rates, using the same formulas as the Canadian radars.",
         "themes": [
@@ -59,12 +58,16 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
+        "language": {
+            "code": "en"
+        },
         "type": "dataset",
         "created": "2018-03-08T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "WMS"
+            {
+                "name": "WMS"
+            }
         ],
         "contacts": [
             {

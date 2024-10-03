@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:ffa61839-e219-5c52-9fa8-8d26447fb2bf",
         "title": "Canadian Weatheradio Network Coverage",
         "description": "Weatheradio is a network of radio transmitters covering North America. These transmitters provide continuous broadcasts of weather information and instant updates when weather threatens. Data is offered in dBm which indicates signal strength. A weather radio unit inside a house would normally be able to get a signal -90dBm or stronger while an external antenna can get  up to -110dBm.",
         "themes": [
@@ -56,12 +55,16 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
+        "language": {
+            "code": "en"
+        },
         "type": "dataset",
         "created": "2014-01-01T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "WMS"
+            {
+                "name": "WMS"
+            }
         ],
         "contacts": [
             {

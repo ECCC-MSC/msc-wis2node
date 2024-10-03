@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:df2e6e1a-6057-4c4d-a509-94aa57705a8c",
         "title": "Hourly Climate Observations",
         "description": "Canadian hourly climate data are available for public access from the ECCC/MSC's National Climate Archive. These are surface weather stations that produce hourly meteorological observations, taken each hour of the day. Only a subset of the total stations found on Environment and Climate Change Canada’s Historical Climate Data Page is shown due to size limitations.The priorities for inclusion are as follows: stations in cities with populations of 10000+, stations that are Regional Basic Climatological Network status and stations with 30+ years of data.",
         "themes": [
@@ -59,7 +58,9 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
+        "language": {
+            "code": "en"
+        },
         "type": "dataset",
         "created": "2022-03-09T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",

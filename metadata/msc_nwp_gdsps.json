@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:d244c9fa-776f-446f-9ccf-1d575cc21a5c",
         "title": "Global Deterministic Storm Surge Prediction System",
         "description": "The Global Deterministic storm Surge Prediction System (GDSPS) produces water level forecasts using a modified version of the NEMO ocean model (Wang et al. 2021, 2022, 2023). It provides 240 hours forecasts twice per day on a 1/12° resolution grid (3-9 km). The model is forced by the 10 meters winds, sea level pressure, ice concentration, ice velocity and surface currents from the Global Deterministic Prediction System (GDPS). The three dimensionnal ocean temperature and salinity fields of the model are nudged to values provided by the Global Ice-Ocean Prediction System (GIOPS) and the GDPS. During the post-processing phase, storm surge elevation (ETAS) is derived from total water level (SSH) by harmonic analysis using t_tide (Foreman et al. 2009).",
         "themes": [
@@ -62,7 +61,9 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
+        "language": {
+            "code": "en"
+        },
         "type": "dataset",
         "created": "2021-12-01T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
@@ -125,7 +126,7 @@
             "type": "application/geo+json",
             "rel": "items",
             "title": "MSC Datamart MQTT",
-            "channel": "origin/a/wis2/ca-eccc-msc/data/core/ocean"
+            "channel": "origin/a/wis2/ca-eccc-msc/data/recommended/ocean"
         },
         {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
