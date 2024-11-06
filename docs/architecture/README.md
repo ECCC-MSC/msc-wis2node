@@ -8,7 +8,7 @@ The architecture diagrams in this directory are designed using the [C4 model](ht
 
 ### Design time
 
-The msc-wis2node component uses [MSC discovery metadata Metadata Control Files](https://geopython.github.io/pygeometa/reference/mcf) (managed internally)
+The msc-wis2node component uses MSC discovery metadata [Metadata Control Files](https://geopython.github.io/pygeometa/reference/mcf) (managed internally)
 to build a table for runtime handling and publishing of MSC data to WIS2.
 
 ### Run time
