@@ -56,7 +56,7 @@
             "code": "en"
         },
         "type": "dataset",
-        "created": "2024-10-03T17:41:45Z",
+        "created": "2024-11-21T18:38:11Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "contacts": [
             {
@@ -103,7 +103,7 @@
             "National (CA)",
             "Atmosphere"
         ],
-        "wmo:dataPolicy": "recommended"
+        "wmo:dataPolicy": "core"
     },
     "links": [
         {

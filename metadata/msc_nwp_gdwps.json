@@ -126,7 +126,7 @@
             "International",
             "Ocean"
         ],
-        "wmo:dataPolicy": "recommended"
+        "wmo:dataPolicy": "core"
     },
     "links": [
         {

@@ -123,7 +123,7 @@
             "International",
             "Atmosphere"
         ],
-        "wmo:dataPolicy": "recommended"
+        "wmo:dataPolicy": "core"
     },
     "links": [
         {
@@ -137,7 +137,7 @@
             "type": "application/geo+json",
             "rel": "items",
             "title": "MSC Datamart MQTT",
-            "channel": "origin/a/wis2/ca-eccc-msc/data/recommended/weather/prediction/forecast/short-range/deterministic/limited-area"
+            "channel": "origin/a/wis2/ca-eccc-msc/data/core/weather/prediction/forecast/short-range/deterministic/limited-area"
         },
         {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",

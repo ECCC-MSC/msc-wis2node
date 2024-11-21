@@ -136,7 +136,7 @@
             "c",
             "e"
         ],
-        "wmo:dataPolicy": "recommended"
+        "wmo:dataPolicy": "core"
     },
     "links": [
         {
@@ -150,7 +150,7 @@
             "type": "application/geo+json",
             "rel": "items",
             "title": "MSC Datamart MQTT",
-            "channel": "origin/a/wis2/ca-eccc-msc/data/recommended/ocean"
+            "channel": "origin/a/wis2/ca-eccc-msc/data/core/ocean"
         },
         {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",

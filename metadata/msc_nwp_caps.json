@@ -126,7 +126,7 @@
             "Water - Ocean Basin - Hudson Bay",
             "Atmosphere"
         ],
-        "wmo:dataPolicy": "recommended"
+        "wmo:dataPolicy": "core"
     },
     "links": [
         {

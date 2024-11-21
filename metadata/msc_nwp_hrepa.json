@@ -108,7 +108,7 @@
             "International",
             "Atmosphere"
         ],
-        "wmo:dataPolicy": "recommended"
+        "wmo:dataPolicy": "core"
     },
     "links": [
         {
