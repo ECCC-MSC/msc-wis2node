@@ -56,7 +56,7 @@
             "code": "en"
         },
         "type": "dataset",
-        "created": "2024-11-21T18:38:11Z",
+        "created": "2025-01-02T14:54:53Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "contacts": [
             {
@@ -111,6 +111,13 @@
             "type": "application/geo+json",
             "rel": "items",
             "title": "climate-stations"
+        },
+        {
+            "href": "mqtts://hpfx.collab.science.gc.ca:8883",
+            "type": "application/geo+json",
+            "rel": "items",
+            "title": "MSC Datamart MQTT",
+            "channel": "origin/a/wis2/ca-eccc-msc/data/core/weather/surface-based-observations"
         },
         {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",

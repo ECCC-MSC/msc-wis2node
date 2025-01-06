@@ -1,0 +1,163 @@
+{
+    "id": "urn:wmo:md:ca-eccc-msc:fdd3446a-dc20-5bad-9755-0855e3ec9b19",
+    "conformsTo": [
+        "http://wis.wmo.int/spec/wcmp/2/conf/core"
+    ],
+    "type": "Feature",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -180,
+                    -3.856571
+                ],
+                [
+                    -180,
+                    90
+                ],
+                [
+                    180,
+                    90
+                ],
+                [
+                    180,
+                    -3.856571
+                ],
+                [
+                    -180,
+                    -3.856571
+                ]
+            ]
+        ]
+    },
+    "properties": {
+        "title": "Regional Deterministic Precipitation Analysis",
+        "description": "The Regional Deterministic Precipitation Analysis (RDPA) produces a best estimate of the amount of precipitation that occurred over recent past periods of 6 or 24 hours. The estimate integrates data from in situ precipitation gauge measurements, weather radar, satellite imagery and numerical weather prediction models. Geographic coverage is North America (Canada, United States and Mexico). Data is available at horizontal resolution of 10 km. Data is only available for the surface level. Analysis data is made available four times a day for 6h intervals and twice a day for the 24h interval. A preliminary estimate is available approximately 1h after the end of the accumulation period, and revised 7h after in order to assimilate gauge data arriving later.",
+        "themes": [
+            {
+                "concepts": [
+                    {
+                        "id": "Forecasting"
+                    },
+                    {
+                        "id": "Precipitation"
+                    },
+                    {
+                        "id": "Meteorological data"
+                    },
+                    {
+                        "id": "Measurement"
+                    },
+                    {
+                        "id": "Radar"
+                    },
+                    {
+                        "id": "Satellite imagery"
+                    }
+                ],
+                "scheme": "https://canada.multites.net/cst/EAEAD1E6-7DD2-4997-BE7F-40BFB1CBE8A2/CST20230912.rdf"
+            },
+            {
+                "concepts": [
+                    {
+                        "id": "weather"
+                    }
+                ],
+                "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
+            }
+        ],
+        "language": {
+            "code": "en"
+        },
+        "type": "dataset",
+        "created": "2011-04-06T00:00:00Z",
+        "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
+        "formats": [
+            {
+                "name": "WMS"
+            }
+        ],
+        "contacts": [
+            {
+                "addresses": [
+                    {
+                        "deliveryPoint": [
+                            "77 Westmorland Street, suite 260"
+                        ],
+                        "city": "Fredericton",
+                        "administrativeArea": "New Brunswick",
+                        "postalCode": "E3B 6Z4",
+                        "country": "Canada"
+                    }
+                ],
+                "roles": [
+                    "host"
+                ],
+                "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
+                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
+                "position": "National Inquiry Response Team",
+                "hoursOfService": "0700h - 1500h EST",
+                "contactInstructions": "email",
+                "phones": [
+                    {
+                        "value": "+18199972800"
+                    }
+                ],
+                "emails": [
+                    {
+                        "value": "ECWeather-Meteo@ec.gc.ca"
+                    }
+                ],
+                "links": [
+                    {
+                        "rel": "canonical",
+                        "type": "text/html",
+                        "href": "https://www.canada.ca/en/environment-climate-change.html"
+                    }
+                ]
+            }
+        ],
+        "keywords": [
+            "Quantity of precipitation",
+            "Analysis",
+            "Weather and Climate",
+            "International",
+            "Atmosphere"
+        ],
+        "wmo:dataPolicy": "core"
+    },
+    "links": [
+        {
+            "href": "https://geo.weather.gc.ca/geomet?lang=en&service=WMS&request=GetCapabilities&layers=RDPA_10km_Precip-Accum6h",
+            "type": "application/xml",
+            "rel": "data",
+            "title": "RDPA - Quantity of precipitation over a 6h hour interval [mm] [10 km] (archive)"
+        },
+        {
+            "href": "https://api.weather.gc.ca/collections/weather:rdpa:10km:6p",
+            "type": "application/json",
+            "rel": "collection",
+            "title": "rdpa"
+        },
+        {
+            "href": "mqtts://hpfx.collab.science.gc.ca:8883",
+            "type": "application/geo+json",
+            "rel": "items",
+            "title": "MSC Datamart MQTT",
+            "channel": "origin/a/wis2/ca-eccc-msc/data/core/weather/prediction/analysis/medium-range/deterministic/limited-area"
+        },
+        {
+            "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
+            "type": "text/html",
+            "rel": "license",
+            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
+        }
+    ],
+    "time": {
+        "interval": [
+            "2011-04-06",
+            ".."
+        ]
+    }
+}

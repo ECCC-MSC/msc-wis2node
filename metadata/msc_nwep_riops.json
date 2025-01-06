@@ -1,0 +1,163 @@
+{
+    "id": "urn:wmo:md:ca-eccc-msc:66caa8cc-0e9c-4fdb-ae40-fab9c255b811",
+    "conformsTo": [
+        "http://wis.wmo.int/spec/wcmp/2/conf/core"
+    ],
+    "type": "Feature",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -180,
+                    28.896
+                ],
+                [
+                    -180,
+                    90
+                ],
+                [
+                    180,
+                    90
+                ],
+                [
+                    180,
+                    28.896
+                ],
+                [
+                    -180,
+                    28.896
+                ]
+            ]
+        ]
+    },
+    "properties": {
+        "title": "Regional Ice-Ocean Prediction System",
+        "description": "The Regional Ice Ocean Prediction System (RIOPS) provides ice and ocean forecasts up to 84 hours, four times per day on a 1/12° resolution grid (3-8 km). RIOPS is initialized using analyses from the Global Ice-Ocean Prediction System (GIOPS). Atmospheric fluxes up to 84 hours forecasts are calculated using fields from a component of the Global Deterministic Prediction System (GDPS) at 10km horizontal resolution. RIOPS is based on the NEMO-CICE ice-ocean model and produces regional sea ice and ocean analyses and 2 day forecasts daily based at [00, 06, 12, 18] UTC. RIOPS includes a 3DVar ice concentration analysis (assimilating sattelite remote sensing and Canadian Ice Service ice charts) while the large scales of the ocean analysis are constrained by spectrally nudging the temperature and salinity fields to those of the CCMEP Global Ice Ocean Prediction System (which itself includes a full multivariate assimilation system that combines satellite observations with in situ observations).",
+        "themes": [
+            {
+                "concepts": [
+                    {
+                        "id": "Forecasting"
+                    },
+                    {
+                        "id": "Ice"
+                    },
+                    {
+                        "id": "Water"
+                    },
+                    {
+                        "id": "Arctic"
+                    },
+                    {
+                        "id": "Coastal waters"
+                    },
+                    {
+                        "id": "Oceans"
+                    },
+                    {
+                        "id": "Polar regions"
+                    }
+                ],
+                "scheme": "https://canada.multites.net/cst/EAEAD1E6-7DD2-4997-BE7F-40BFB1CBE8A2/CST20230912.rdf"
+            },
+            {
+                "concepts": [
+                    {
+                        "id": "ocean"
+                    }
+                ],
+                "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
+            }
+        ],
+        "language": {
+            "code": "en"
+        },
+        "type": "dataset",
+        "created": "2018-01-29T00:00:00Z",
+        "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
+        "formats": [
+            {
+                "name": "WMS"
+            }
+        ],
+        "contacts": [
+            {
+                "addresses": [
+                    {
+                        "deliveryPoint": [
+                            "77 Westmorland Street, suite 260"
+                        ],
+                        "city": "Fredericton",
+                        "administrativeArea": "New Brunswick",
+                        "postalCode": "E3B 6Z4",
+                        "country": "Canada"
+                    }
+                ],
+                "roles": [
+                    "host"
+                ],
+                "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
+                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
+                "position": "National Inquiry Response Team",
+                "hoursOfService": "0700h - 1500h EST",
+                "contactInstructions": "email",
+                "phones": [
+                    {
+                        "value": "+18199972800"
+                    }
+                ],
+                "emails": [
+                    {
+                        "value": "ECWeather-Meteo@ec.gc.ca"
+                    }
+                ],
+                "links": [
+                    {
+                        "rel": "canonical",
+                        "type": "text/html",
+                        "href": "https://www.canada.ca/en/environment-climate-change.html"
+                    }
+                ]
+            }
+        ],
+        "keywords": [
+            "Sea ice-ocean forecast",
+            "Prediction",
+            "Regional",
+            "Water",
+            "Weather and Climate",
+            "International",
+            "Ocean",
+            "Sea ice"
+        ],
+        "wmo:dataPolicy": "core"
+    },
+    "links": [
+        {
+            "href": "https://geo.weather.gc.ca/geomet?lang=en&service=WMS&request=GetCapabilities&layers=RIOPS_VOTEMPER_DBS-0.5m",
+            "type": "application/xml",
+            "rel": "data",
+            "title": "Sea temperature [K]"
+        },
+        {
+            "href": "mqtts://hpfx.collab.science.gc.ca:8883",
+            "type": "application/geo+json",
+            "rel": "items",
+            "title": "MSC Datamart MQTT",
+            "channel": "origin/a/wis2/ca-eccc-msc/data/core/ocean/experimental"
+        },
+        {
+            "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
+            "type": "text/html",
+            "rel": "license",
+            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
+        }
+    ],
+    "time": {
+        "interval": [
+            "2016-06-21",
+            ".."
+        ]
+    }
+}

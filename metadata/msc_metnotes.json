@@ -131,6 +131,13 @@
             "title": "MetNotes"
         },
         {
+            "href": "mqtts://hpfx.collab.science.gc.ca:8883",
+            "type": "application/geo+json",
+            "rel": "items",
+            "title": "MSC Datamart MQTT",
+            "channel": "origin/a/wis2/ca-eccc-msc/data/core/weather/experimental"
+        },
+        {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
             "type": "text/html",
             "rel": "license",
