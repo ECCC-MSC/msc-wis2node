@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# Copyright (C) 2024 Tom Kralidis
+# Copyright (C) 2025 Tom Kralidis
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -21,13 +21,10 @@ from datetime import date, datetime, timezone
 from fnmatch import fnmatch
 import json
 import logging
-import random
 import re
-import ssl
 from typing import Union
 import uuid
 
-import certifi
 from paho.mqtt import publish
 from pywis_pubsub.publish import create_message
 from sarracenia.flowcb import FlowCB
@@ -36,6 +33,7 @@ import yaml
 from msc_wis2node.env import (BROKER_HOSTNAME, BROKER_PORT, BROKER_USERNAME,
                               BROKER_PASSWORD, CENTRE_ID, DATASET_CONFIG,
                               TOPIC_PREFIX)
+from msc_wis2node.util import get_mqtt_client_id, get_mqtt_tls_settings
 
 LOGGER = logging.getLogger(__name__)
 
@@ -79,13 +77,10 @@ class WIS2Publisher:
         self.datasets = []
         self.tls = None
 
-        self.client_id = f'msc-wis2node id={random.randint(0, 1000)} (https://github.com/ECCC-MSC/msc-wis2node)'  # noqa
+        self.client_id = get_mqtt_client_id()
 
         if BROKER_PORT == 8883:
-            self.tls = {
-                'ca_certs': certifi.where(),
-                'tls_version': ssl.PROTOCOL_TLSv1_2
-            }
+            self.tls = get_mqtt_tls_settings()
 
         with open(DATASET_CONFIG) as fh:
             self.datasets = yaml.load(fh, Loader=yaml.SafeLoader)['datasets']
@@ -106,8 +101,9 @@ class WIS2Publisher:
             LOGGER.debug('Dataset not found; skipping')
             return False
 
-        relative_path2 = '/' + relative_path.lstrip('/')
-        url = f'{base_url}{relative_path2}'
+        relative_path2 = relative_path.lstrip('/')
+        base_url2 = base_url.rstrip('/')
+        url = f'{base_url2}/{relative_path2}'
 
         LOGGER.debug(f'Publishing dataset notification: {url}')
         self.publish_to_wis2(dataset, url)

@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# Copyright (C) 2024 Tom Kralidis
+# Copyright (C) 2025 Tom Kralidis
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -19,18 +19,25 @@
 ###############################################################################
 
 from io import BytesIO
+import json
 import logging
 from pathlib import Path
 import tempfile
 from typing import Union
 from urllib.request import urlopen
+import uuid
 import zipfile
 
 import click
+from paho.mqtt import publish
+from pywis_pubsub.publish import create_message
 import yaml
 
 from msc_wis2node import cli_options
-from msc_wis2node.env import DATASET_CONFIG, DISCOVERY_METADATA_ZIP_URL
+from msc_wis2node.env import (BROKER_HOSTNAME, BROKER_PORT, BROKER_USERNAME,
+                              BROKER_PASSWORD, CENTRE_ID, DATASET_CONFIG,
+                              DISCOVERY_METADATA_ZIP_URL, TOPIC_PREFIX)
+from msc_wis2node.util import get_mqtt_client_id, get_mqtt_tls_settings
 
 LOGGER = logging.getLogger(__name__)
 
@@ -157,6 +164,45 @@ def get_format(distribution: dict) -> Union[str, None]:
     return format_
 
 
+def delete_metadata_record(identifier: str) -> bool:
+    """
+    Publishes a WIS2 Notification to delete a metadata record
+
+    :param identifier: WCMP2 identifier
+
+    :returns: `bool` of message publishing result
+    """
+
+    topic = f'{TOPIC_PREFIX}/{CENTRE_ID}/metadata'
+    LOGGER.debug(f'Topic: {topic}')
+
+    message = create_message(
+        identifier=str(uuid.uuid4()),
+        metadata_id=identifier,
+        topic=topic,
+        content_type='application/geo+json',
+        url='https://dd.weather.gc.ca',
+        operation='delete'
+    )
+    LOGGER.debug(f'Message: {message}')
+
+    publish.single(
+        topic,
+        payload=json.dumps(message),
+        qos=1,
+        hostname=BROKER_HOSTNAME,
+        port=BROKER_PORT,
+        client_id=get_mqtt_client_id(),
+        tls=get_mqtt_tls_settings(),
+        auth={
+            'username': BROKER_USERNAME,
+            'password': BROKER_PASSWORD
+        }
+    )
+
+    return True
+
+
 @click.group()
 def dataset():
     """Dataset management"""
@@ -178,5 +224,25 @@ def setup(ctx, metadata_zipfile, output, verbosity):
 
     create_datasets_conf(metadata_zipfile, Path(output or DATASET_CONFIG))
 
+    click.echo('Done')
+
+
+@click.command()
+@click.pass_context
+@cli_options.OPTION_VERBOSITY
+@click.option('--identifier', '-i', help='Metadata identifier')
+def delete_metadata(ctx, identifier, verbosity):
+    """Delete metadata record"""
+
+    if identifier is None:
+        raise click.ClickException('Missing metadata identifier (-i)')
+
+    click.echo(f'Deleting metadata record {identifier}')
+
+    delete_metadata_record(identifier)
+
+    click.echo('Done')
+
 
 dataset.add_command(setup)
+dataset.add_command(delete_metadata)
