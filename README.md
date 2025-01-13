@@ -72,6 +72,10 @@ msc-wis2node dataset setup
 
 # connect to MSC Datamart notification service
 sr3 start subscribe/dd.weather.gc.ca-all
+
+# delete metadata records
+
+msc-wis2node dataset delete-metadata --metadata-id 12345
 ```
 
 ### Docker
