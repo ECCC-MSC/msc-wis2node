@@ -32,9 +32,10 @@ DATASET_CONFIG = os.environ.get('MSC_WIS2NODE_DATASET_CONFIG')
 TOPIC_PREFIX = os.environ.get('MSC_WIS2NODE_TOPIC_PREFIX', 'origin/a/wis2')
 DISCOVERY_METADATA_ZIP_URL = os.environ.get('MSC_WIS2NODE_DISCOVERY_METADATA_ZIP_URL')  # noqa
 CENTRE_ID = os.environ.get('MSC_WIS2NODE_CENTRE_ID')
+WIS2_GDC = os.environ.get('MSC_WIS2NODE_WIS2_GDC')
 
 if None in [BROKER_HOSTNAME, BROKER_PORT, BROKER_USERNAME, BROKER_PASSWORD,
-            MSC_DATAMART_AMQP, DATASET_CONFIG, TOPIC_PREFIX]:
+            MSC_DATAMART_AMQP, DATASET_CONFIG, TOPIC_PREFIX, WIS2_GDC]:
     msg = 'Environment variables not set!'
     LOGGER.error(msg)
     raise EnvironmentError(msg)

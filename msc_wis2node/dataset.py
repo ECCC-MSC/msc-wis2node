@@ -36,7 +36,8 @@ import yaml
 from msc_wis2node import cli_options
 from msc_wis2node.env import (BROKER_HOSTNAME, BROKER_PORT, BROKER_USERNAME,
                               BROKER_PASSWORD, CENTRE_ID, DATASET_CONFIG,
-                              DISCOVERY_METADATA_ZIP_URL, TOPIC_PREFIX)
+                              DISCOVERY_METADATA_ZIP_URL, TOPIC_PREFIX,
+                              WIS2_GDC)
 from msc_wis2node.util import get_mqtt_client_id, get_mqtt_tls_settings
 
 LOGGER = logging.getLogger(__name__)
@@ -173,7 +174,7 @@ def delete_metadata_record(identifier: str) -> bool:
     :returns: `bool` of message publishing result
     """
 
-    topic = f'{TOPIC_PREFIX}/{CENTRE_ID}/metadata'
+    topic = f'{TOPIC_PREFIX}/{CENTRE_ID}/metadata/{identifier}'
     LOGGER.debug(f'Topic: {topic}')
 
     message = create_message(
@@ -184,6 +185,21 @@ def delete_metadata_record(identifier: str) -> bool:
         url='https://dd.weather.gc.ca',
         operation='delete'
     )
+
+    message['properties'].pop('integrity')
+    message['properties']['data_id'] = topic
+    message.pop('links')
+
+    message['links'] = [{
+        'rel': 'canonical',
+        'type': 'application/geo+json',
+        'href': f'{WIS2_GDC}/{identifier}'
+        }, {
+        'rel': 'deletion',
+        'type': 'application/geo+json',
+        'href': f'{WIS2_GDC}/{identifier}'
+    }]
+
     LOGGER.debug(f'Message: {message}')
 
     publish.single(
