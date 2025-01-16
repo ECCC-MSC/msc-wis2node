@@ -1,51 +1,55 @@
-# =================================================================
+###############################################################################
 #
-# Authors: Tom Kralidis <tomkralidis@gmail.com>
+# Copyright (C) 2025 Tom Kralidis
 #
-# Copyright (c) 2024 Tom Kralidis
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
 #
-# Permission is hereby granted, free of charge, to any person
-# obtaining a copy of this software and associated documentation
-# files (the "Software"), to deal in the Software without
-# restriction, including without limitation the rights to use,
-# copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the
-# Software is furnished to do so, subject to the following
-# conditions:
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the 
+# GNU General Public License for more details.
 #
-# The above copyright notice and this permission notice shall be
-# included in all copies or substantial portions of the Software.
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-# OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-# NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-# HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-# WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-# OTHER DEALINGS IN THE SOFTWARE.
-#
-# =================================================================
+###############################################################################
 
-# Ubuntu
-SR3_CONFIG=${HOME}/.config/sr3
+DOCKER_COMPOSE_ARGS=--project-name msc-wis2node --file docker-compose.yml --file docker-compose.override.yml
 
-# Mac OSX
-#SR3_CONFIG=${HOME}/Library/Application\ Support/sr3
+build:
+	docker compose $(DOCKER_COMPOSE_ARGS) build
 
-check:
-	@echo "SR3 configuration directory: ${SR3_CONFIG}"
+force-build:
+	docker compose $(DOCKER_COMPOSE_ARGS) build --no-cache
 
-install: setup
-	cp msc_wis2node/publisher.py $(SR3_CONFIG)/plugins
-	cp deploy/default/sarracenia/dd.weather.gc.ca-all.conf $(SR3_CONFIG)/subscribe
+up:
+	docker compose $(DOCKER_COMPOSE_ARGS) up
 
-setup:
-	mkdir -p $(SR3_CONFIG)/plugins
-	mkdir -p $(SR3_CONFIG)/subscribe
+down:
+	docker compose $(DOCKER_COMPOSE_ARGS) down
+
+restart: down up
+
+login:
+	docker exec -it msc-wis2node-management /bin/bash
+
+dev:
+	docker compose $(DOCKER_COMPOSE_ARGS) --file docker-compose.dev.yml up
+
+reinit-backend:
+	docker exec -it msc-wis2node-management sh -c "msc-wis2node setup --force"
+
+logs:
+	docker compose $(DOCKER_COMPOSE_ARGS) logs --follow
 
 clean:
-	rm -fr $(SR3_CONFIG)/plugins/publisher.py
-	rm -fr $(SR3_CONFIG)/subscribe/dd.weather.gc.ca-all.conf
+	docker system prune -f
+	docker volume prune -f
 
-.PHONY: check install setup clean
+rm:
+	docker volume rm $(shell docker volume ls --filter name=msc-wis2node -q)
+
+.PHONY: build up dev login down restart reinit-backend force-build logs rm clean
