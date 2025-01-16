@@ -23,7 +23,6 @@ from fnmatch import fnmatch
 import json
 import logging
 import re
-import sqlite
 from typing import Union
 import uuid
 
@@ -34,8 +33,8 @@ from sarracenia.flowcb import FlowCB
 import yaml
 
 from msc_wis2node.env import (BROKER_HOSTNAME, BROKER_PORT, BROKER_USERNAME,
-                              BROKER_PASSWORD, CACHE, CENTRE_ID, DATASET_CONFIG,
-                              TOPIC_PREFIX)
+                              BROKER_PASSWORD, CACHE, CACHE_EXPIRY_SECONDS,
+                              CENTRE_ID, DATASET_CONFIG, TOPIC_PREFIX)
 from msc_wis2node.util import get_mqtt_client_id, get_mqtt_tls_settings
 
 LOGGER = logging.getLogger(__name__)
@@ -77,7 +76,7 @@ class WIS2Publisher:
     def __init__(self):
         """initialize"""
 
-        self.cache = memcache_base.Client(CACHE]
+        self.cache = memcache_base.Client(CACHE)
         self.datasets = []
         self.tls = None
 
@@ -183,12 +182,13 @@ class WIS2Publisher:
         )
 
         LOGGER.debug('Checking for data update')
-        if message['properties']['data_id'] in self.cache:
+        if self.cache.get(message['properties']['data_id']) is not None:
             update_link = deepcopy(message['links'][0])
             update_link['rel'] = 'update'
             message['links'].append(update_link)
         else:
-            self.cache.append(messages['properties']['data_id']
+            self.cache.set(message['properties']['data_id'],
+                           CACHE_EXPIRY_SECONDS)
 
         cache = dataset.get('cache', True)
         if not cache:
