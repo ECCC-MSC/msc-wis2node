@@ -17,6 +17,15 @@
 #
 ###############################################################################
 
+x-logging: &logging
+  logging:
+    driver: json-file
+    options:
+      mode: non-blocking
+      max-buffer-size: 100m
+      max-size: 10m
+      max-file: 1
+
 services:
   msc-wis2node-cache:
     image: memcached:latest
@@ -24,6 +33,8 @@ services:
     env_file:
       - msc-wis2node.env
     restart: unless-stopped
+    <<: *logging
+
   msc-wis2node-management:
     image: msc-wis2node-management
     container_name: msc-wis2node
@@ -32,3 +43,4 @@ services:
     env_file:
       - msc-wis2node.env
     restart: unless-stopped
+    <<: *logging

@@ -20,16 +20,16 @@
 DOCKER_COMPOSE_ARGS=--project-name msc-wis2node --file docker-compose.yml --file docker-compose.override.yml
 
 build:
-	sudo docker compose $(DOCKER_COMPOSE_ARGS) build
+	docker compose $(DOCKER_COMPOSE_ARGS) build
 
 force-build:
-	sudo docker compose $(DOCKER_COMPOSE_ARGS) build --no-cache
+	docker compose $(DOCKER_COMPOSE_ARGS) build --no-cache
 
 up:
-	sudo docker compose $(DOCKER_COMPOSE_ARGS) up
+	docker compose $(DOCKER_COMPOSE_ARGS) up
 
 down:
-	sudo docker compose $(DOCKER_COMPOSE_ARGS) down
+	docker compose $(DOCKER_COMPOSE_ARGS) down
 
 restart: down up
 
@@ -37,13 +37,13 @@ login:
 	docker exec -it msc-wis2node-management /bin/bash
 
 dev:
-	sudo docker compose $(DOCKER_COMPOSE_ARGS) --file docker-compose.dev.yml up
+	docker compose $(DOCKER_COMPOSE_ARGS) --file docker-compose.dev.yml up
 
 reinit-backend:
 	docker exec -it msc-wis2node-management sh -c "msc-wis2node setup --force"
 
 logs:
-	sudo docker compose $(DOCKER_COMPOSE_ARGS) logs --follow
+	docker compose $(DOCKER_COMPOSE_ARGS) logs --follow
 
 clean:
 	docker system prune -f
