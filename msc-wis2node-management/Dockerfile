@@ -47,10 +47,10 @@ RUN apt-get update -y && \
     adduser msc-wis2node sudo && \
     echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers && \
     # install sr3 components
-    mkdir -p $SR3_CONFIG/plugins && \
-    mkdir -p $SR3_CONFIG/subscribe && \
-    cp msc_wis2node/publisher.py $SR3_CONFIG/plugins && \
-    cp deploy/default/sarracenia/dd.weather.gc.ca-all.conf $SR3_CONFIG/subscribe
+    mkdir -p /home/msc-wis2node/.config/sr3/plugins && \
+    mkdir -p /home/msc-wis2node/.config/sr3/subscribe && \
+    cp msc_wis2node/publisher.py /home/msc-wis2node/.config/sr3/plugins/publisher.py && \
+    cp deploy/default/sarracenia/dd.weather.gc.ca-all.conf /home/msc-wis2node/.config/sr3/subscribe/dd.weather.gc.ca-all.conf
 
 USER msc-wis2node
 WORKDIR /home/msc-wis2node

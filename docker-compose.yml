@@ -19,14 +19,15 @@
 
 services:
   msc-wis2node-cache:
-    image: memcached
+    image: memcached:latest
     container_name: msc-wis2node-cache
     env_file:
       - msc-wis2node.env
-  msc-wis2node:
+  msc-wis2node-management:
+    image: msc-wis2node-management
     container_name: msc-wis2node
     build:
-      context: msc-wis2node-management
+      context: msc-wis2node-management/
     env_file:
       - msc-wis2node.env
     volumes:

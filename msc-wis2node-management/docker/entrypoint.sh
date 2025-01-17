@@ -1,3 +1,4 @@
+#!/bin/bash
 ###############################################################################
 #
 # Copyright (C) 2025 Tom Kralidis
@@ -19,10 +20,12 @@
 
 echo "START /entrypoint.sh"
 
-set +e
+printenv | grep -v "no_proxy" > /tmp/environment
+sudo sh -c 'cat /tmp/environment >> /etc/environment'
+rm -f /tmp/environment
 
 echo "starting sr3..."
 
-sr3 --logStdout --debug foreground subscribe/dd.weather.gc.ca-all && sleep infinity
+sr3 --logStdout start subscribe/dd.weather.gc.ca-all && sleep infinity
 
 echo "END /entrypoint.sh"
