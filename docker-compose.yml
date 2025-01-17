@@ -23,6 +23,7 @@ services:
     container_name: msc-wis2node-cache
     env_file:
       - msc-wis2node.env
+    restart: unless-stopped
   msc-wis2node-management:
     image: msc-wis2node-management
     container_name: msc-wis2node
@@ -30,5 +31,4 @@ services:
       context: msc-wis2node-management/
     env_file:
       - msc-wis2node.env
-    volumes:
-      - ./datasets.yml:/opt/msc-wis2node/conf/datasets.yml
+    restart: unless-stopped

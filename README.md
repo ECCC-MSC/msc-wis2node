@@ -28,7 +28,7 @@ source bin/activate
 
 # clone codebase and install
 git clone https://github.com/ECCC-MSC/msc-wis2node.git
-cd msc-wis2node
+cd msc-wis2node/msc-wis2node-management
 python3 setup.py install
 
 # install sarracenia configurations
@@ -55,9 +55,9 @@ vim local.env  # update accordingly
 # MSC_WIS2NODE_BROKER_USERNAME: username of the MQTT broker to publish to=admin
 # MSC_WIS2NODE_BROKER_PASSWORD: password of the MQTT broker to publish to
 # MSC_WIS2NODE_MSC_DATAMART_AMQP: URL to MSC Datamart notification service
-# MSC_WIS2NODE_DATASET_CONFIG: filepath where MSC dataset definitions are managed
 # MSC_WIS2NODE_DISCOVERY_METADATA_ZIP_URL: URL to SSC GitLab zipfile of MSC discovery metadata
 # MSC_WIS2NODE_TOPIC_PREFIX: base topic prefix for publication (i.e. origin/a/wis2/ca-eccc-msc)
+# MSC_WIS2NODE_CACHE: optional memcache instance
 
 source local.env
 
@@ -80,7 +80,46 @@ msc-wis2node dataset delete-metadata --metadata-id 12345
 
 ### Docker
 
-Instructions to run msc-wis2node via Docker can be found in the [`docker`](docker) directory.
+The Docker setup uses Docker and Docker Compose to manage the following services:
+
+- **msc-wis2node-cache**: memcache caching for data update detection (optional)
+- **msc-wis2node-management**: management service to subscribe to MSC Datamart/HPFX and re-publish to WIS2
+
+See [`msc-wis2node.env`](msc-wis2node.env) for default environment variable settings.
+
+To adjust service ports, edit [`docker-compose.override.yml`](docker-compose.override.yml) accordingly.
+
+The [`Makefile`](Makefile) in the root directory provides options to manage the Docker Compose setup.
+
+```bash
+# build all images
+make build
+
+# build all images (no cache)
+make force-build
+
+# start all containers
+make up
+
+# start all containers in dev mode
+make dev
+
+# view all container logs in realtime
+make logs
+
+# login to the msc-wis2node-management container
+make login
+
+# restart all containers
+make restart
+
+# shutdown all containers
+make down
+
+# remove all volumes
+make rm
+```
+
 
 ## Development
 
