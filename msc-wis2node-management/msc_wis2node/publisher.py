@@ -17,6 +17,7 @@
 #
 ###############################################################################
 
+from copy import deepcopy
 from datetime import date, datetime, timezone
 from fnmatch import fnmatch
 import json
@@ -26,13 +27,14 @@ from typing import Union
 import uuid
 
 from paho.mqtt import publish
+from pymemcache.client import base as memcache_base
 from pywis_pubsub.publish import create_message
 from sarracenia.flowcb import FlowCB
 import yaml
 
 from msc_wis2node.env import (BROKER_HOSTNAME, BROKER_PORT, BROKER_USERNAME,
-                              BROKER_PASSWORD, CENTRE_ID, DATASET_CONFIG,
-                              TOPIC_PREFIX)
+                              BROKER_PASSWORD, CACHE, CACHE_EXPIRY_SECONDS,
+                              CENTRE_ID, DATASET_CONFIG, TOPIC_PREFIX)
 from msc_wis2node.util import get_mqtt_client_id, get_mqtt_tls_settings
 
 LOGGER = logging.getLogger(__name__)
@@ -74,10 +76,14 @@ class WIS2Publisher:
     def __init__(self):
         """initialize"""
 
+        self.cache = None
         self.datasets = []
         self.tls = None
 
         self.client_id = get_mqtt_client_id()
+
+        if CACHE is not None:
+            self.cache = memcache_base.Client(CACHE)
 
         if BROKER_PORT == 8883:
             self.tls = get_mqtt_tls_settings()
@@ -177,6 +183,16 @@ class WIS2Publisher:
             content_type=dataset['media-type'],
             url=url
         )
+
+        if self.cache is not None:
+            LOGGER.debug('Checking for data update')
+            if self.cache.get(message['properties']['data_id']) is not None:
+                update_link = deepcopy(message['links'][0])
+                update_link['rel'] = 'update'
+                message['links'].append(update_link)
+            else:
+                self.cache.set(message['properties']['data_id'],
+                               CACHE_EXPIRY_SECONDS)
 
         cache = dataset.get('cache', True)
         if not cache:

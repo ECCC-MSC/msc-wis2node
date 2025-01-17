@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# Copyright (C) 2024 Tom Kralidis
+# Copyright (C) 2025 Tom Kralidis
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -31,6 +31,8 @@ MSC_DATAMART_AMQP = os.environ.get('MSC_WIS2NODE_MSC_DATAMART_AMQP')
 DATASET_CONFIG = os.environ.get('MSC_WIS2NODE_DATASET_CONFIG')
 TOPIC_PREFIX = os.environ.get('MSC_WIS2NODE_TOPIC_PREFIX', 'origin/a/wis2')
 DISCOVERY_METADATA_ZIP_URL = os.environ.get('MSC_WIS2NODE_DISCOVERY_METADATA_ZIP_URL')  # noqa
+CACHE = os.environ.get('MSC_WIS2NODE_CACHE')
+CACHE_EXPIRY_SECONDS = int(os.environ.get('MSC_WIS2NODE_CACHE_EXPIRY_SECONDS', 86400))  # noqa
 CENTRE_ID = os.environ.get('MSC_WIS2NODE_CENTRE_ID')
 WIS2_GDC = os.environ.get('MSC_WIS2NODE_WIS2_GDC')
 
