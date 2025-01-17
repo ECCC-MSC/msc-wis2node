@@ -76,11 +76,14 @@ class WIS2Publisher:
     def __init__(self):
         """initialize"""
 
-        self.cache = memcache_base.Client(CACHE)
+        self.cache = None
         self.datasets = []
         self.tls = None
 
         self.client_id = get_mqtt_client_id()
+
+        if CACHE is not None:
+            self.cache = memcache_base.Client(CACHE)
 
         if BROKER_PORT == 8883:
             self.tls = get_mqtt_tls_settings()
@@ -181,14 +184,15 @@ class WIS2Publisher:
             url=url
         )
 
-        LOGGER.debug('Checking for data update')
-        if self.cache.get(message['properties']['data_id']) is not None:
-            update_link = deepcopy(message['links'][0])
-            update_link['rel'] = 'update'
-            message['links'].append(update_link)
-        else:
-            self.cache.set(message['properties']['data_id'],
-                           CACHE_EXPIRY_SECONDS)
+        if self.cache is not None:
+            LOGGER.debug('Checking for data update')
+            if self.cache.get(message['properties']['data_id']) is not None:
+                update_link = deepcopy(message['links'][0])
+                update_link['rel'] = 'update'
+                message['links'].append(update_link)
+            else:
+                self.cache.set(message['properties']['data_id'],
+                               CACHE_EXPIRY_SECONDS)
 
         cache = dataset.get('cache', True)
         if not cache:

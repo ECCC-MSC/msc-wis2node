@@ -25,7 +25,8 @@ ARG SR3_CONFIG /home/msc-wis2node/.config/sr3
 
 ENV TZ="Etc/UTC" \
     DEBIAN_FRONTEND="noninteractive" \
-    DEBIAN_PACKAGES="bash curl git python3-pip python3-setuptools sudo vim"
+    DEBIAN_PACKAGES="bash curl git python3-pip python3-setuptools sudo vim" \
+    MSC_WIS2NODE_DATASET_CONFIG=/home/msc-wis2node/datasets.yml
 
 # copy the app 
 COPY ./ /app
