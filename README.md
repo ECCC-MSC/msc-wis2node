@@ -57,7 +57,7 @@ vim local.env  # update accordingly
 # MSC_WIS2NODE_MSC_DATAMART_AMQP: URL to MSC Datamart notification service
 # MSC_WIS2NODE_DISCOVERY_METADATA_ZIP: zipfile of MSC discovery metadata (file or URL)
 # MSC_WIS2NODE_TOPIC_PREFIX: base topic prefix for publication (i.e. origin/a/wis2/ca-eccc-msc)
-# MSC_WIS2NODE_CACHE: optional memcache instance
+# MSC_WIS2NODE_CACHE: optional redis instance
 # MSC_WIS2NODE_CACHE_EXPIRY_SECONDS: number of seconds for cache items to expire (default 86400 [1 day])
 # MSC_WIS2NODE_CENTRE_ID: centre identifier
 # MSC_WIS2NODE_WIS2_GDC: URL to a WIS2 GDC (default is Canada GDC)
@@ -85,7 +85,7 @@ msc-wis2node dataset delete-metadata --metadata-id 12345
 
 The Docker setup uses Docker and Docker Compose to manage the following services:
 
-- **msc-wis2node-cache**: memcache caching for data update detection (optional)
+- **msc-wis2node-cache**: redis instance for data update detection (optional)
 - **msc-wis2node-management**: management service to subscribe to MSC Datamart/HPFX and re-publish to WIS2
 
 See [`msc-wis2node.env`](msc-wis2node.env) for default environment variable settings.

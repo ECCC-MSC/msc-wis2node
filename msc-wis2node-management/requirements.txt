@@ -3,4 +3,4 @@ certifi
 click
 metpx-sr3
 pywis-pubsub
-pymemcache
+redis[hiredis]

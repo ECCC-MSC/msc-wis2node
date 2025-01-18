@@ -27,8 +27,8 @@ from typing import Union
 import uuid
 
 from paho.mqtt import publish
-from pymemcache.client import base as memcache_base
 from pywis_pubsub.publish import create_message
+import redis
 from sarracenia.flowcb import FlowCB
 import yaml
 
@@ -83,7 +83,7 @@ class WIS2Publisher:
         self.client_id = get_mqtt_client_id()
 
         if CACHE is not None:
-            self.cache = memcache_base.Client(CACHE)
+            self.cache = redis.Redis().from_url(CACHE)
 
         if BROKER_PORT == 8883:
             self.tls = get_mqtt_tls_settings()
@@ -191,8 +191,8 @@ class WIS2Publisher:
                 update_link['rel'] = 'update'
                 message['links'].append(update_link)
             else:
-                self.cache.set(message['properties']['data_id'],
-                               CACHE_EXPIRY_SECONDS)
+                self.cache.set(message['properties']['data_id'], 'published',
+                               ex=CACHE_EXPIRY_SECONDS)
 
         cache = dataset.get('cache', True)
         if not cache:

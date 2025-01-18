@@ -20,4 +20,4 @@
 services:
   msc-wis2node-cache:
     ports:
-        - 11211:11211
+        - 6379:6379

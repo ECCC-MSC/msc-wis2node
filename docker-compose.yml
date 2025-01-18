@@ -28,7 +28,7 @@ x-logging: &logging
 
 services:
   msc-wis2node-cache:
-    image: memcached:latest
+    image: redis:latest
     container_name: msc-wis2node-cache
     env_file:
       - msc-wis2node.env
