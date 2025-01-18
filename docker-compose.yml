@@ -37,7 +37,7 @@ services:
 
   msc-wis2node-management:
     image: msc-wis2node-management
-    container_name: msc-wis2node
+    container_name: msc-wis2node-management
     build:
       context: msc-wis2node-management/
     env_file:

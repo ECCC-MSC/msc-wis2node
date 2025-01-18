@@ -36,7 +36,7 @@ import yaml
 from msc_wis2node import cli_options
 from msc_wis2node.env import (BROKER_HOSTNAME, BROKER_PORT, BROKER_USERNAME,
                               BROKER_PASSWORD, CENTRE_ID, DATASET_CONFIG,
-                              DISCOVERY_METADATA_ZIP_URL, TOPIC_PREFIX,
+                              DISCOVERY_METADATA_ZIP, TOPIC_PREFIX,
                               WIS2_GDC)
 from msc_wis2node.util import get_mqtt_client_id, get_mqtt_tls_settings
 
@@ -71,11 +71,13 @@ def create_datasets_conf(metadata_zipfile: Union[Path, None],
         'datasets': []
     }
 
-    if metadata_zipfile is not None:
+    if metadata_zipfile is not None or not DISCOVERY_METADATA_ZIP.startswith('http'):  # noqa
+        LOGGER.debug('zipfile is a local file')
         with metadata_zipfile.open('rb') as fh:
             zipfile_content = fh.read()
     else:
-        zipfile_content = urlopen(DISCOVERY_METADATA_ZIP_URL).read()
+        LOGGER.debug('zipfile is a URL')
+        zipfile_content = urlopen(DISCOVERY_METADATA_ZIP).read()
 
     with tempfile.TemporaryDirectory() as td:
         fh = BytesIO(zipfile_content)

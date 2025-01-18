@@ -55,14 +55,17 @@ vim local.env  # update accordingly
 # MSC_WIS2NODE_BROKER_USERNAME: username of the MQTT broker to publish to=admin
 # MSC_WIS2NODE_BROKER_PASSWORD: password of the MQTT broker to publish to
 # MSC_WIS2NODE_MSC_DATAMART_AMQP: URL to MSC Datamart notification service
-# MSC_WIS2NODE_DISCOVERY_METADATA_ZIP_URL: URL to SSC GitLab zipfile of MSC discovery metadata
+# MSC_WIS2NODE_DISCOVERY_METADATA_ZIP: zipfile of MSC discovery metadata (file or URL)
 # MSC_WIS2NODE_TOPIC_PREFIX: base topic prefix for publication (i.e. origin/a/wis2/ca-eccc-msc)
 # MSC_WIS2NODE_CACHE: optional memcache instance
+# MSC_WIS2NODE_CACHE_EXPIRY_SECONDS: number of seconds for cache items to expire (default 86400 [1 day])
+# MSC_WIS2NODE_CENTRE_ID: centre identifier
+# MSC_WIS2NODE_WIS2_GDC: URL to a WIS2 GDC (default is Canada GDC)
 
 source local.env
 
-# setup dataset configuration based on zipfile defined in $MSC_WIS2NODE_DISCOVERY_METADATA_ZIP_URL
-# note: $MSC_WIS2NODE_DISCOVERY_METADATA_ZIP_URL can be overridden with the --metadata-zipfile option
+# setup dataset configuration based on zipfile defined in $MSC_WIS2NODE_DISCOVERY_METADATA_ZIP
+# note: $MSC_WIS2NODE_DISCOVERY_METADATA_ZIP can be overridden with the --metadata-zipfile option
 # on the command line
 #
 # the output is written to $MSC_WIS2NODE_DATASET_CONFIG by default, and can be overriden with the --output
