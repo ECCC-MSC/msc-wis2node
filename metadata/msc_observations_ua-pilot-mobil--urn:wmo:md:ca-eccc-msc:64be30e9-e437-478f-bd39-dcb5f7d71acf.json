@@ -1,5 +1,5 @@
 {
-    "id": "urn:wmo:md:ca-eccc-msc:ca.gc.ec.msc-1.1.1.3",
+    "id": "urn:wmo:md:ca-eccc-msc:64be30e9-e437-478f-bd39-dcb5f7d71acf",
     "conformsTo": [
         "http://wis.wmo.int/spec/wcmp/2/conf/core"
     ],
@@ -33,7 +33,7 @@
     },
     "properties": {
         "title": "PILOT MOBIL",
-        "description": "PILOT MOBIL is a numerical code (FM 34-XI) used for reporting Upper-winds from a mobile land station",
+        "description": "PILOT MOBIL is a numerical code (FM 34-XI) used for reporting Upper-winds from a mobile land station.",
         "themes": [
             {
                 "concepts": [
@@ -60,43 +60,48 @@
         },
         "type": "dataset",
         "created": "1980-01-01T00:00:00Z",
-        "rights": "Copyright (c) $year$ Government of Canada",
+        "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
+        "formats": [
+            {
+                "name": "GeoJSON"
+            }
+        ],
         "contacts": [
             {
                 "addresses": [
                     {
                         "deliveryPoint": [
-                            "4905 Dufferin Street"
+                            "77 Westmorland Street, suite 260"
                         ],
-                        "city": "Toronto",
-                        "administrativeArea": "Ontario",
-                        "postalCode": "M3H 5T4",
+                        "city": "Fredericton",
+                        "administrativeArea": "New Brunswick",
+                        "postalCode": "E3B 6Z4",
                         "country": "Canada"
                     }
                 ],
                 "roles": [
                     "host"
                 ],
-                "organization": "Environment Canada",
-                "name": "Tom Kralidis",
-                "position": "Senior Systems Scientist",
+                "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
+                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
+                "position": "National Inquiry Response Team",
                 "hoursOfService": "0700h - 1500h EST",
                 "contactInstructions": "email",
                 "phones": [
                     {
-                        "value": "+11234567890"
+                        "value": "+18199972800"
                     }
                 ],
                 "emails": [
                     {
-                        "value": "foo@bar.tld"
+                        "value": "ECWeather-Meteo@ec.gc.ca"
                     }
                 ],
                 "links": [
                     {
                         "rel": "canonical",
                         "type": "text/html",
-                        "href": "http://www.ec.gc.ca/"
+                        "href": "https://www.canada.ca/en/environment-climate-change.html"
                     }
                 ]
             }
@@ -110,15 +115,16 @@
     },
     "links": [
         {
-            "href": "http://dd.weather.gc.ca/cgi-bin/bulletin_search.pl?product=UG,UH,UI,UP,UQ,UY&location=cn",
-            "type": "text/plain",
-            "rel": "items",
-            "title": "pilot-mobil"
-        },
-        {
-            "href": "https://api.weather.gc.ca/collections/bulletins-realtime/items?type=UG|UH|UI|UP|UQ|UY&f=json",
+            "href": "mqtts://hpfx.collab.science.gc.ca:8883",
             "type": "application/geo+json",
             "rel": "items",
+            "title": "MSC Datamart MQTT",
+            "channel": "origin/a/wis2/ca-eccc-msc/data/core/climate/surface-based-observations/monthly"
+        },
+        {
+            "href": "https://api.weather.gc.ca/collections/bulletins-realtime/items?lang=en&f=json&issuer_code=CWAO&type=UG|UH|UI|UP|UQ|UY",
+            "type": "application/geo+json",
+            "rel": "collection",
             "title": "bulletins-realtime"
         },
         {

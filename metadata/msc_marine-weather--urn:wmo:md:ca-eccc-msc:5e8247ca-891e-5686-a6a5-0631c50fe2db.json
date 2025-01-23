@@ -1,5 +1,5 @@
 {
-    "id": "urn:wmo:md:ca-eccc-msc:1fb5ad1e-aa5b-468a-912f-950ca4f2c105",
+    "id": "urn:wmo:md:ca-eccc-msc:5e8247ca-891e-5686-a6a5-0631c50fe2db",
     "conformsTo": [
         "http://wis.wmo.int/spec/wcmp/2/conf/core"
     ],
@@ -32,16 +32,31 @@
         ]
     },
     "properties": {
-        "title": "PubStdZone Shape Files",
-        "description": "The PubStdZone layer is a collection of public program forecast location zone polygons that represents bounded measurable locations at the Public program Standard level. The public program standard level is used in most forecasts, warnings, watches, advisories and special weather statement. With the exception of the Manitoba Lakes, the layer is made up of mostly the land kind of polygons. The layer is made up of three depictions, cartographic detailed (with proper shorelines and high resolution polygons), cartographic coarse (with generalized shorelines and low resolution polygons), and digital exaggerated (with exaggerated shorelines and low resolution polygons). The digital layer (exaggerated) is a collection of polygons where shoreline boundaries are stretched offshore for the land polygons and inland for the water polygons. In this \"Exaggerated\" layer, the boundaries are made smooth to reduce the number of polygon vertices. The PubStdZone layer is presented in the polygon package in two coordinate systems, \"Projected\" (Lambert Conformal Conic) and \"Unprojected\" (Geographical Coordinated System).",
+        "title": "Marine Forecasts and Warnings for Canada",
+        "description": "Environment Canada (EC) provides a marine forecasting service to mariners and marine interests. This enables them to make informed decisions about marine weather conditions that may impact their safety, security or operations. EC also provides marine forecasts in order to meet Canada’s treaty obligations under the International Maritime Organization’s Safety Of Life At Sea (SOLAS) Convention.",
         "themes": [
             {
                 "concepts": [
                     {
-                        "id": "Geographic data"
+                        "id": "Weather forecasts"
                     },
                     {
-                        "id": "Boundaries"
+                        "id": "Precipitation"
+                    },
+                    {
+                        "id": "Air temperature"
+                    },
+                    {
+                        "id": "Humidity"
+                    },
+                    {
+                        "id": "Snow"
+                    },
+                    {
+                        "id": "Wind"
+                    },
+                    {
+                        "id": "Meteorological data"
                     }
                 ],
                 "scheme": "https://canada.multites.net/cst/EAEAD1E6-7DD2-4997-BE7F-40BFB1CBE8A2/CST20230912.rdf"
@@ -49,7 +64,7 @@
             {
                 "concepts": [
                     {
-                        "id": "weather"
+                        "id": "ocean"
                     }
                 ],
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
@@ -59,7 +74,7 @@
             "code": "en"
         },
         "type": "dataset",
-        "created": "2013-09-02T00:00:00Z",
+        "created": "2025-01-23T13:46:48Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "contacts": [
             {
@@ -102,11 +117,10 @@
             }
         ],
         "keywords": [
-            "Location zone polygons",
-            "Other",
+            "Marine forecasts and warnings",
             "Weather and Climate",
             "National (CA)",
-            "Geography"
+            "Atmosphere"
         ],
         "wmo:dataPolicy": "core"
     },
@@ -116,7 +130,7 @@
             "type": "application/geo+json",
             "rel": "items",
             "title": "MSC Datamart MQTT",
-            "channel": "origin/a/wis2/ca-eccc-msc/data/core/weather/experimental"
+            "channel": "origin/a/wis2/ca-eccc-msc/data/core/ocean/experimental"
         },
         {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
@@ -127,7 +141,7 @@
     ],
     "time": {
         "interval": [
-            "2013-08-02",
+            "..",
             ".."
         ]
     }

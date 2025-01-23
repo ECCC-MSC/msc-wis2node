@@ -1,5 +1,5 @@
 {
-    "id": "urn:wmo:md:ca-eccc-msc:5e8247ca-891e-5686-a6a5-0631c50fe2db",
+    "id": "urn:wmo:md:ca-eccc-msc:62667506-4f95-4bae-a841-0b63b08af701",
     "conformsTo": [
         "http://wis.wmo.int/spec/wcmp/2/conf/core"
     ],
@@ -9,54 +9,48 @@
         "coordinates": [
             [
                 [
-                    -172.17,
-                    36.5
+                    -140.8,
+                    41.83
                 ],
                 [
-                    -172.17,
-                    83.6
+                    -140.8,
+                    82.5
                 ],
                 [
-                    -10.42,
-                    83.6
+                    -52.6,
+                    82.5
                 ],
                 [
-                    -10.42,
-                    36.5
+                    -52.6,
+                    41.83
                 ],
                 [
-                    -172.17,
-                    36.5
+                    -140.8,
+                    41.83
                 ]
             ]
         ]
     },
     "properties": {
-        "title": "Marine Forecasts and Warnings for Canada",
-        "description": "Environment Canada (EC) provides a marine forecasting service to mariners and marine interests. This enables them to make informed decisions about marine weather conditions that may impact their safety, security or operations. EC also provides marine forecasts in order to meet Canada’s treaty obligations under the International Maritime Organization’s Safety Of Life At Sea (SOLAS) Convention.",
+        "title": "Upper air temperature, pressure, humidity, and wind observations",
+        "description": "Upper Air data are reports gathered by balloons which measure upper air conditions over particular location. This is the TEMP format from fixed land station, with the following observations Upper-level pressure, temperature, humidity and wind report. These BUFR products can be found under the bulletin headers - UE UK UL US [A/B][01-06] CWAO [01-31][0000-2300] [RRx/CCx].",
         "themes": [
             {
                 "concepts": [
                     {
-                        "id": "Weather forecasts"
+                        "id": "Pressure"
                     },
                     {
-                        "id": "Precipitation"
-                    },
-                    {
-                        "id": "Air temperature"
+                        "id": "Temperature"
                     },
                     {
                         "id": "Humidity"
                     },
                     {
-                        "id": "Snow"
-                    },
-                    {
                         "id": "Wind"
                     },
                     {
-                        "id": "Meteorological data"
+                        "id": "Upper Air"
                     }
                 ],
                 "scheme": "https://canada.multites.net/cst/EAEAD1E6-7DD2-4997-BE7F-40BFB1CBE8A2/CST20230912.rdf"
@@ -64,7 +58,7 @@
             {
                 "concepts": [
                     {
-                        "id": "ocean"
+                        "id": "weather"
                     }
                 ],
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
@@ -74,8 +68,13 @@
             "code": "en"
         },
         "type": "dataset",
-        "created": "2025-01-02T14:54:48Z",
+        "created": "2018-11-16T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
+        "formats": [
+            {
+                "name": "GeoJSON"
+            }
+        ],
         "contacts": [
             {
                 "addresses": [
@@ -117,7 +116,14 @@
             }
         ],
         "keywords": [
-            "Marine forecasts and warnings",
+            "TEMP",
+            "Station pressure",
+            "Maximum temperature",
+            "Minimum temperature",
+            "Mean temperature",
+            "Average temperature",
+            "Wind direction",
+            "Wind speed",
             "Weather and Climate",
             "National (CA)",
             "Atmosphere"
@@ -130,7 +136,13 @@
             "type": "application/geo+json",
             "rel": "items",
             "title": "MSC Datamart MQTT",
-            "channel": "origin/a/wis2/ca-eccc-msc/data/core/ocean/experimental"
+            "channel": "origin/a/wis2/ca-eccc-msc/data/core/weather/surface-based-observations/temp"
+        },
+        {
+            "href": "https://api.weather.gc.ca/collections/bulletins-realtime/items?lang=en&f=json&type=IU",
+            "type": "application/geo+json",
+            "rel": "collection",
+            "title": "bulletins-realtime"
         },
         {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
@@ -141,7 +153,7 @@
     ],
     "time": {
         "interval": [
-            "..",
+            "2018-11-16",
             ".."
         ]
     }

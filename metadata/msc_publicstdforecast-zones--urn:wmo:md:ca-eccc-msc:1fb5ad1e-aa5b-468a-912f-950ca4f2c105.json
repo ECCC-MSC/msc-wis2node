@@ -42,6 +42,12 @@
                     },
                     {
                         "id": "Weather warnings"
+                    },
+                    {
+                        "id": "Geographic data"
+                    },
+                    {
+                        "id": "Boundaries"
                     }
                 ],
                 "scheme": "https://canada.multites.net/cst/EAEAD1E6-7DD2-4997-BE7F-40BFB1CBE8A2/CST20230912.rdf"
