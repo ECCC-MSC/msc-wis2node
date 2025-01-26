@@ -136,14 +136,13 @@ class WIS2Publisher:
                 LOGGER.debug('Found matching subtopic')
                 match = True
 
-                LOGGER.debug('Matching any regexes')
                 for regex in dataset.get('regexes', []):
-                    pass
+                    match = False
                     LOGGER.debug(f'Testing regex match: {regex}')
                     if re.search(regex, path) is not None:
                         LOGGER.debug('Found matching regex')
-                    else:
-                        match = False
+                        match = True
+                        break
 
                 if match:
                     LOGGER.debug('Found matching dataset definition')
