@@ -183,13 +183,6 @@ class WIS2Publisher:
             url=url
         )
 
-        if self.cache is not None:
-            LOGGER.debug('Checking for data update')
-            if self.cache.get(message['properties']['data_id']) is not None:
-                update_link = deepcopy(message['links'][0])
-                update_link['rel'] = 'update'
-                message['links'].append(update_link)
-
         cache = dataset.get('cache', True)
         if not cache:
             LOGGER.info(f'Setting properties.cache={cache}')
@@ -199,6 +192,13 @@ class WIS2Publisher:
         data_id = message['properties']['data_id']
         tokens = data_id.split('/')
         message['properties']['data_id'] = '/'.join(tokens[2:])
+
+        if self.cache is not None:
+            LOGGER.info(f"Checking for duplicate: {message['properties']['data_id']}")  # noqa
+            if self.cache.get(message['properties']['data_id']) is not None:
+                update_link = deepcopy(message['links'][0])
+                update_link['rel'] = 'update'
+                message['links'].append(update_link)
 
         LOGGER.info(json.dumps(message, indent=4))
         msg = (f'Publishing WIS2 notification message to '
@@ -220,7 +220,7 @@ class WIS2Publisher:
         )
 
         if self.cache is not None:
-            LOGGER.debug('Setting cache key')
+            LOGGER.info(f"Setting cache key for {message['properties']['data_id']}")  # noqa
             self.cache.set(message['properties']['data_id'], 'published',
                            ex=CACHE_EXPIRY_SECONDS)
 

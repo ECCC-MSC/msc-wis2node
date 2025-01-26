@@ -2,5 +2,6 @@ amqp
 certifi
 click
 metpx-sr3
+paramiko
 pywis-pubsub
 redis[hiredis]
