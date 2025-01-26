@@ -33,6 +33,10 @@ services:
     env_file:
       - msc-wis2node.env
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      retries: 100
     <<: *logging
 
   msc-wis2node-management:
