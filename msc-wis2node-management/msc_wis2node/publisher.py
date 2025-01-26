@@ -189,9 +189,6 @@ class WIS2Publisher:
                 update_link = deepcopy(message['links'][0])
                 update_link['rel'] = 'update'
                 message['links'].append(update_link)
-            else:
-                self.cache.set(message['properties']['data_id'], 'published',
-                               ex=CACHE_EXPIRY_SECONDS)
 
         cache = dataset.get('cache', True)
         if not cache:
@@ -221,6 +218,11 @@ class WIS2Publisher:
                 'password': BROKER_PASSWORD
             }
         )
+
+        if self.cache is not None:
+            LOGGER.debug('Setting cache key')
+            self.cache.set(message['properties']['data_id'], 'published',
+                           ex=CACHE_EXPIRY_SECONDS)
 
     def _subtopic2dirpath(self, subtopic: str) -> str:
         """
