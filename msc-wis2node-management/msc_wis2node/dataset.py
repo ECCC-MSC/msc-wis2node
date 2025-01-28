@@ -65,7 +65,7 @@ def create_datasets_conf(metadata_zipfile: Union[Path, None],
     :returns: `None`
     """
 
-    skips = ['other', 'shared', 'template']
+    skips = ['decommissioned', 'other', 'shared', 'template']
 
     datasets_conf = {
         'datasets': []
