@@ -26,7 +26,7 @@ force-build:
 	docker compose $(DOCKER_COMPOSE_ARGS) build --no-cache
 
 up:
-	docker compose $(DOCKER_COMPOSE_ARGS) up
+	docker compose $(DOCKER_COMPOSE_ARGS) up -d
 
 down:
 	docker compose $(DOCKER_COMPOSE_ARGS) down
