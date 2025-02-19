@@ -25,7 +25,7 @@ sudo sh -c 'cat /tmp/environment >> /etc/environment'
 rm -f /tmp/environment
 
 echo "Setting up MSC dataset config"
-msc-wis2node dataset setup
+#msc-wis2node dataset setup
 
 echo "starting sr3..."
 sr3 --logStdout start subscribe/dd.weather.gc.ca-all && sleep infinity

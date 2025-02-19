@@ -47,4 +47,6 @@ services:
     env_file:
       - msc-wis2node.env
     restart: unless-stopped
+    volumes:
+      - ./datasets.yml:/home/msc-wis2node/datasets.yml
     <<: *logging
