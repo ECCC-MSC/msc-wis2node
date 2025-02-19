@@ -235,7 +235,8 @@ class WIS2Publisher:
 
         LOGGER.debug(f'AMQP subtopic: {subtopic}')
 
-        dirpath = '/' + subtopic.replace('.', '/').rstrip('/#')
+        dirpath = '/' + subtopic.replace('*.', '/').replace('.', '/').rstrip('/#')
+        dirpath = dirpath.replace('//', '/')
         dirpath = f'*{dirpath}*'
 
         LOGGER.debug(f'directory path: {dirpath}')
