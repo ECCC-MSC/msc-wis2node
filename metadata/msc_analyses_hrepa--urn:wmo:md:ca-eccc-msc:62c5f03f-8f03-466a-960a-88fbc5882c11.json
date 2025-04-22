@@ -55,10 +55,10 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
+        "type": "dataset",
         "language": {
             "code": "en"
         },
-        "type": "dataset",
         "created": "2019-04-15T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "contacts": [

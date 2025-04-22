@@ -32,7 +32,7 @@
         ]
     },
     "properties": {
-        "title": "Marine Forecasts and Warnings for Canada",
+        "title": "Marine Forecasts and Warnings",
         "description": "Environment Canada (EC) provides a marine forecasting service to mariners and marine interests. This enables them to make informed decisions about marine weather conditions that may impact their safety, security or operations. EC also provides marine forecasts in order to meet Canada’s treaty obligations under the International Maritime Organization’s Safety Of Life At Sea (SOLAS) Convention.",
         "themes": [
             {
@@ -70,11 +70,11 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
+        "type": "dataset",
         "language": {
             "code": "en"
         },
-        "type": "dataset",
-        "created": "2025-01-23T13:46:48Z",
+        "created": "2010-09-23T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "contacts": [
             {
@@ -126,6 +126,18 @@
     },
     "links": [
         {
+            "href": "https://www.canada.ca/en/environment-climate-change/services/general-marine-weather-information/publications/guide-forecasts.html",
+            "type": "text/html",
+            "rel": "about",
+            "title": "Guide to marine weather forecasts"
+        },
+        {
+            "href": "https://www.canada.ca/en/environment-climate-change/services/general-marine-weather-information.html",
+            "type": "text/html",
+            "rel": "about",
+            "title": "General marine weather information"
+        },
+        {
             "href": "mqtts://hpfx.collab.science.gc.ca:8883",
             "type": "application/geo+json",
             "rel": "items",
@@ -141,7 +153,7 @@
     ],
     "time": {
         "interval": [
-            "..",
+            "1871-01-01",
             ".."
         ]
     }

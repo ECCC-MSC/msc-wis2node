@@ -33,7 +33,7 @@
     },
     "properties": {
         "title": "Canadian Weather - City Page Weather",
-        "description": "Current conditions and forecasts for selected Canadian cities",
+        "description": "Current conditions and forecasts for selected Canadian cities. Raw XML data are used to generate each city page on the Environment Canada web site https://www.weather.gc.ca/.",
         "themes": [
             {
                 "concepts": [
@@ -55,11 +55,11 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
+        "type": "dataset",
         "language": {
             "code": "en"
         },
-        "type": "dataset",
-        "created": "1871-01-01T00:00:00Z",
+        "created": "2010-09-23T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
             {

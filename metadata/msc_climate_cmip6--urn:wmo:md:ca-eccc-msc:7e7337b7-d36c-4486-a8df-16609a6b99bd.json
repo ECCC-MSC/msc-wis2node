@@ -9,24 +9,24 @@
         "coordinates": [
             [
                 [
-                    -180,
-                    -90
+                    -146.0,
+                    35.0
                 ],
                 [
-                    -180,
-                    90
+                    -146.0,
+                    90.0
                 ],
                 [
-                    180,
-                    90
+                    -44.0,
+                    90.0
                 ],
                 [
-                    180,
-                    -90
+                    -44.0,
+                    35.0
                 ],
                 [
-                    -180,
-                    -90
+                    -146.0,
+                    35.0
                 ]
             ]
         ]
@@ -61,10 +61,10 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
+        "type": "dataset",
         "language": {
             "code": "en"
         },
-        "type": "dataset",
         "created": "2021-04-30T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [

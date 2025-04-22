@@ -1,5 +1,5 @@
 {
-    "id": "urn:wmo:md:ca-eccc-msc:1ee9e14d-0814-5201-a3be-705809d8ee0e",
+    "id": "urn:wmo:md:ca-eccc-msc:4564cbf5-9de5-4521-b007-a20d73ad6f89",
     "conformsTo": [
         "http://wis.wmo.int/spec/wcmp/2/conf/core"
     ],
@@ -9,42 +9,42 @@
         "coordinates": [
             [
                 [
-                    -141.01,
-                    41.67
+                    -150,
+                    -64
                 ],
                 [
-                    -141.01,
-                    82.12
+                    -150,
+                    64
                 ],
                 [
-                    -52.62,
-                    82.12
+                    0,
+                    64
                 ],
                 [
-                    -52.62,
-                    41.67
+                    0,
+                    -64
                 ],
                 [
-                    -141.01,
-                    41.67
+                    -150,
+                    -64
                 ]
             ]
         ]
     },
     "properties": {
-        "title": "Historical Hydrometric Data",
-        "description": "Historical hydrometric data are standardized water resource data and information. They are collected, interpreted and disseminated by the National Hydrological Services (NHS) in partnership with the provinces, territories and other agencies through the National Hydrometric Program. These data sets include daily mean, monthly mean, annual maximum and minimum daily mean and instantaneous peak water level and discharge information for over 2700 active and 5100 discontinued hydrometric monitoring stations across Canada.",
+        "title": "Satellite Imagery - GOES-East",
+        "description": "These products are derived from RGB (red/green/blue) images, a satellite processing technique that uses a combination of satellite sensor bands (also called channels) and applies a red/green/blue (RGB) filter to each of them. The result is a false-color image, i.e. an image that does not correspond to what the human eye would see, but offers high contrast between different cloud types and surface features. The on-board sensor of a weather satellite obtains two basic types of information: visible light data (reflected light) reflecting off clouds and different surface types, also known as \"reflectance\", and infrared data (emitted radiation) which are short-wave and long-wave radiation emitted by clouds and surface features. RGBs are specially designed to combine this type of satellite data, resulting in an information-rich final product. Other products are based on the enhancement of channel data for a single wavelength, also aimed at highlighting meteorological features of the observed surface or clouds, but in a simpler way since only a single wavelength is involved. This older approach is still useful today, as its simplicity makes image interpretation easier in some cases.",
         "themes": [
             {
                 "concepts": [
                     {
-                        "id": "Water"
+                        "id": "Satellite images"
                     },
                     {
-                        "id": "Inland waters"
+                        "id": "Remote sensing"
                     },
                     {
-                        "id": "Water management"
+                        "id": "Meteorology"
                     }
                 ],
                 "scheme": "https://canada.multites.net/cst/EAEAD1E6-7DD2-4997-BE7F-40BFB1CBE8A2/CST20230912.rdf"
@@ -52,7 +52,7 @@
             {
                 "concepts": [
                     {
-                        "id": "hydrology"
+                        "id": "weather"
                     }
                 ],
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
@@ -62,8 +62,13 @@
         "language": {
             "code": "en"
         },
-        "created": "1850-01-01T00:00:00Z",
+        "created": "2023-11-17T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
+        "formats": [
+            {
+                "name": "WMS"
+            }
+        ],
         "contacts": [
             {
                 "addresses": [
@@ -105,71 +110,35 @@
             }
         ],
         "keywords": [
-            "Historical",
-            "Archive",
-            "Hydrology",
-            "Hydrometric",
-            "Streamflow",
-            "Discharge",
-            "Water level",
-            "Water quantity",
-            "Sediment concentration",
-            "Water",
-            "National (CA)",
-            "Observation",
-            "Measurement"
+            "Atmospheric conditions",
+            "Visible",
+            "Infrared",
+            "Clouds and weather",
+            "Aviation weather",
+            "Convective weather",
+            "Fire weather",
+            "Fog and low stratus",
+            "Snow and ice",
+            "Earth observation",
+            "Weather and Climate",
+            "International",
+            "Atmosphere"
         ],
         "wmo:dataPolicy": "core"
     },
     "links": [
         {
-            "href": "https://api.weather.gc.ca/collections/hydrometric-stations/items/",
-            "type": "application/geo+json",
-            "rel": "items",
-            "title": "hydrometric-stations"
-        },
-        {
-            "href": "https://api.weather.gc.ca/collections/hydrometric-daily-mean/items/",
-            "type": "application/geo+json",
-            "rel": "items",
-            "title": "hydrometric-daily-mean"
-        },
-        {
-            "href": "https://api.weather.gc.ca/collections/hydrometric-monthly-mean/items/",
-            "type": "application/geo+json",
-            "rel": "items",
-            "title": "hydrometric-monthly-mean"
-        },
-        {
-            "href": "https://api.weather.gc.ca/collections/hydrometric-annual-statistics/items/",
-            "type": "application/geo+json",
-            "rel": "items",
-            "title": "hydrometric-annual-statistics"
-        },
-        {
-            "href": "https://api.weather.gc.ca/collections/hydrometric-annual-peaks/items/",
-            "type": "application/geo+json",
-            "rel": "items",
-            "title": "hydrometric-annual-peaks"
-        },
-        {
-            "href": "https://wateroffice.ec.gc.ca/mainmenu/historical_data_index_e.html",
-            "type": "text/html",
-            "rel": "about",
-            "title": "Historical Hydrometric Data"
-        },
-        {
-            "href": "https://www.canada.ca/en/environment-climate-change/services/water-overview/quantity/monitoring/survey/data-products-services/national-archive-hydat.html",
-            "type": "text/html",
-            "rel": "about",
-            "title": "National Water Data Archive"
+            "href": "https://geo.weather.gc.ca/geomet?lang=en&service=WMS&request=GetCapabilities&layers=GOES-East_1km_NaturalColor",
+            "type": "application/xml",
+            "rel": "data",
+            "title": "GOES-East Natural Color [1 km]"
         },
         {
             "href": "mqtts://hpfx.collab.science.gc.ca:8883",
             "type": "application/geo+json",
             "rel": "items",
             "title": "MSC Datamart MQTT",
-            "channel": "origin/a/wis2/ca-eccc-msc/data/core/hydrology/experimental"
+            "channel": "origin/a/wis2/ca-eccc-msc/data/core/weather/space-based-observations/goes-18/abi"
         },
         {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
@@ -180,7 +149,7 @@
     ],
     "time": {
         "interval": [
-            "1850-01-01",
+            "2023-11-17",
             ".."
         ]
     }

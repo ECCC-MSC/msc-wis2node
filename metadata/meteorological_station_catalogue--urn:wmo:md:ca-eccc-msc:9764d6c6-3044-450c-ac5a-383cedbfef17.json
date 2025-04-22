@@ -52,11 +52,11 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
+        "type": "dataset",
         "language": {
             "code": "en"
         },
-        "type": "dataset",
-        "created": "2025-01-23T13:46:53Z",
+        "created": "2014-02-14T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "contacts": [
             {
@@ -117,7 +117,7 @@
             "type": "application/geo+json",
             "rel": "items",
             "title": "MSC Datamart MQTT",
-            "channel": "origin/a/wis2/ca-eccc-msc/data/core/weather/surface-based-observations"
+            "channel": "origin/a/wis2/ca-eccc-msc/data/recommended/weather/surface-based-observations"
         },
         {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
@@ -128,7 +128,7 @@
     ],
     "time": {
         "interval": [
-            "..",
+            "2014-01-01",
             ".."
         ]
     }
