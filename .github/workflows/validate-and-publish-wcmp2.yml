@@ -37,4 +37,4 @@ jobs:
         bash validate-wcmp2.sh
     - name: Publish WNMs of WCMP2 records
       run: |
-        for i in metadata/*.json; do sleep 5 && pywis-pubsub publish --topic origin/a/wis2/${CENTRE_ID}/metadata --config config/pywis-pubsub-publish.yml -u https://eccc-msc.github.io/msc-wis2node/$i -i `cat /proc/sys/kernel/random/uuid` -op update -v DEBUG; done
+        for i in metadata/*.json; do sleep 5 && pywis-pubsub publish --topic origin/a/wis2/${CENTRE_ID}/metadata --config config/pywis-pubsub-publish.yml -u https://eccc-msc.github.io/msc-wis2node/$i -i `uuidgen` -op update -v DEBUG; done
