@@ -102,7 +102,7 @@ def create_datasets_conf(metadata_zipfile: Union[Path, None],
                     try:
                         _ = mcf['msc-metadata']['publish-to']['wmo-wis2']
                     except KeyError:
-                        LOGGER.info('Metadata not in scope for publishing to WIS2')
+                        LOGGER.info('Metadata not in scope for publishing to WIS2')  # noqa
                         continue
 
                     if mcf['msc-metadata']['status'] not in ['completed', 'published']:  # noqa
