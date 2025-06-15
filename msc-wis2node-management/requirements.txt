@@ -3,5 +3,6 @@ certifi
 click
 metpx-sr3
 paramiko
+pygeometa
 pywis-pubsub
 redis[hiredis]

@@ -30,6 +30,7 @@ import zipfile
 
 import click
 from paho.mqtt import publish
+from pygeometa.core import read_mcf
 from pywis_pubsub.publish import create_message
 import yaml
 
@@ -95,42 +96,47 @@ def create_datasets_conf(metadata_zipfile: Union[Path, None],
                     continue
 
                 try:
-                    with path_object.open() as fh2:
-                        LOGGER.debug(f'Processing {path_object}')
-                        mcf = yaml.load(fh2, Loader=yaml.SafeLoader)
+                    LOGGER.info(f'Processing {path_object}')
+                    mcf = read_mcf(path_object)
 
-                        if mcf['msc-metadata']['status'] not in ['completed', 'published']:  # noqa
-                            LOGGER.info('Metadata not completed or published')
-                            continue
+                    try:
+                        _ = mcf['msc-metadata']['publish-to']['wmo-wis2']
+                    except KeyError:
+                        LOGGER.info('Metadata not in scope for publishing to WIS2')
+                        continue
 
-                        dataset = {
-                            'metadata-id': mcf['metadata']['identifier'],
-                            'regexes': []
-                        }
+                    if mcf['msc-metadata']['status'] not in ['completed', 'published']:  # noqa
+                        LOGGER.info('Metadata not completed or published')
+                        continue
 
-                        if mcf['metadata'].get('identifier') is None:
-                            msg = f'No metadata identifier in {path_object}'
-                            LOGGER.error(msg)
+                    dataset = {
+                        'metadata-id': mcf['metadata']['identifier'],
+                        'regexes': []
+                    }
 
-                        dataset['title'] = mcf['identification']['title']['en']
-                        dataset['subtopic'] = mcf['distribution']['amqps_eng-CAN']['channel']  # noqa
-                        dataset['wis2-topic'] = mcf['distribution']['mqtt_eng-CAN']['channel']  # noqa
-                        dataset['media-type'] = get_format(mcf['distribution'])
+                    if mcf['metadata'].get('identifier') is None:
+                        msg = f'No metadata identifier in {path_object}'
+                        LOGGER.error(msg)
 
-                        LOGGER.debug('Handling regular expressions')
-                        try:
-                            for regex in mcf['distribution']['amqps_eng-CAN']['msc-regex-filters']:  # noqa
-                                dataset['regexes'].append(regex)
-                        except KeyError:
-                            pass
+                    dataset['title'] = mcf['identification']['title']['en']
+                    dataset['subtopic'] = mcf['distribution']['amqps_eng-CAN']['channel']  # noqa
+                    dataset['wis2-topic'] = mcf['distribution']['mqtt_eng-CAN']['channel']  # noqa
+                    dataset['media-type'] = get_format(mcf['distribution'])
 
-                        LOGGER.debug('Handling caching')
-                        try:
-                            dataset['cache'] = mcf['msc-metadata']['publish-to']['wmo-wis2'].get('cache', True)  # noqa
-                        except KeyError:
-                            pass
+                    LOGGER.debug('Handling regular expressions')
+                    try:
+                        for regex in mcf['distribution']['amqps_eng-CAN']['msc-regex-filters']:  # noqa
+                            dataset['regexes'].append(regex)
+                    except KeyError:
+                        pass
 
-                        datasets_conf['datasets'].append(dataset)
+                    LOGGER.debug('Handling caching')
+                    try:
+                        dataset['cache'] = mcf['msc-metadata']['publish-to']['wmo-wis2'].get('cache', True)  # noqa
+                    except KeyError:
+                        pass
+
+                    datasets_conf['datasets'].append(dataset)
 
                 except (yaml.parser.ParserError, yaml.scanner.ScannerError) as err:  # noqa
                     LOGGER.warning(f'{path_object.name} YAML parsing error: {err}')  # noqa
