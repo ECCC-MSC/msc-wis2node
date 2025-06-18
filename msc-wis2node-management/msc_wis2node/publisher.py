@@ -252,7 +252,9 @@ class WIS2Publisher:
         if dataset_bytes is None:
             self.cache.set(dataset_bytes_cache_key, filesize)
         else:
-            self.cache.set(dataset_bytes_cache_key, int(dataset_bytes) + filesize)
+            self.cache.set(
+                dataset_bytes_cache_key, int(dataset_bytes) + filesize
+            )
 
         return None
 
