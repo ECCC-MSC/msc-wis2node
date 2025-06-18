@@ -26,7 +26,7 @@ import redis
 import yaml
 
 from msc_wis2node import cli_options
-from msc_wis2node.env import CACHE, DATASET_CONFIG
+from msc_wis2node.env import CACHE, DATASET_CONFIG, WIS2_GDC
 
 LOGGER = logging.getLogger(__name__)
 
@@ -41,6 +41,7 @@ def get_metrics() -> dict:
     """
 
     metrics = {}
+    gdc_baseurl = f'{WIS2_GDC}/items/urn:wmo:md:ca-eccc-msc:'
 
     r = redis.Redis().from_url(CACHE)
 
@@ -68,8 +69,11 @@ def get_metrics() -> dict:
 
         for ds in dataset_config['datasets']:
             if ds['metadata-id'] in metrics:
+                url = f"{gdc_baseurl}{ds['metadata-id']}"
+                topic = f"origin/a/wis2/ca-eccc-msc/{ds['wis2-topic']}"
                 metrics[ds['metadata-id']]['title'] = ds['title']
-                metrics[ds['metadata-id']]['wis2-topic'] = ds['wis2-topic']
+                metrics[ds['metadata-id']]['wis2-topic'] = topic
+                metrics[ds['metadata-id']]['gdc-url'] = url
 
     return metrics
 
