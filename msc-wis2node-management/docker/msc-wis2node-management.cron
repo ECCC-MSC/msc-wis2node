@@ -1,1 +1,1 @@
-#* * * * * msc-wis2node metrics collect-metrics
+0 0 * * * msc-wis2node metrics collect-metrics

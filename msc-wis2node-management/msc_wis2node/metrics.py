@@ -42,7 +42,7 @@ def get_metrics() -> dict:
 
     for key in r.scan_iter('metrics_20*'):
         LOGGER.debug(f'Key: {key}')
-        _, _, dataset, metric = key.split('_')
+        _, _, dataset, metric = str(key).split('_')
 
         if dataset not in metrics:
             metrics[dataset] = {

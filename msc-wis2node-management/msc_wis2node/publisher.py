@@ -225,12 +225,12 @@ class WIS2Publisher:
                            ex=CACHE_EXPIRY_SECONDS)
 
         LOGGER.debug('Updating dataset distribution metrics')
-        self._increment_dataset_distribution_metrics(
+        self._update_dataset_distribution_metrics(
             metadata_id, message['links'][0]['length'])
 
-    def _increment_dataset_distribution_metrics(self, metadata_id, filesize) -> None:  # noqa
+    def _update_dataset_distribution_metrics(self, metadata_id, filesize) -> None:  # noqa
         """
-        Set/increment dataset distrubution metrics
+        Set/update dataset distrubution metrics
 
         :param metadata_id: metadata identifier
         :param length: metadata identifier
@@ -247,12 +247,12 @@ class WIS2Publisher:
         self.cache.incr(dataset_files_cache_key)
 
         LOGGER.debug('Updating total bytes')
-        dataset_bytes = self.get(dataset_bytes_cache_key)
+        dataset_bytes = self.cache.get(dataset_bytes_cache_key)
 
         if dataset_bytes is None:
-            self.set(dataset_bytes_cache_key, filesize)
+            self.cache.set(dataset_bytes_cache_key, filesize)
         else:
-            self.set(dataset_bytes_cache_key, dataset_bytes + filesize)
+            self.cache.set(dataset_bytes_cache_key, int(dataset_bytes) + filesize)
 
         return None
 
