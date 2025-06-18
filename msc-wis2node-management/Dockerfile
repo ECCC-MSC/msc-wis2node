@@ -25,11 +25,12 @@ ARG SR3_CONFIG /home/msc-wis2node/.config/sr3
 
 ENV TZ="Etc/UTC" \
     DEBIAN_FRONTEND="noninteractive" \
-    DEBIAN_PACKAGES="bash curl git python3-pip python3-setuptools sudo vim" \
+    DEBIAN_PACKAGES="bash cron curl git python3-pip python3-setuptools sudo vim" \
     MSC_WIS2NODE_DATASET_CONFIG=/home/msc-wis2node/datasets.yml
 
 # copy the app 
 COPY ./ /app
+COPY ./docker/msc-wis2node-management.cron /var/spool/cron/crontabs/msc-wis2node
 
 RUN apt-get update -y && \
     # install dependencies
@@ -43,6 +44,9 @@ RUN apt-get update -y && \
     apt autoremove -y && \
     apt-get -q clean && \
     rm -rf /var/lib/apt/lists/* && \
+    # setup cron
+    chmod 0644 /var/spool/cron/crontabs/msc-wis2node && \
+    crontab /var/spool/cron/crontabs/msc-wis2node && \
     # add msc-wis2node user
     useradd -ms /bin/bash msc-wis2node && \
     adduser msc-wis2node sudo && \

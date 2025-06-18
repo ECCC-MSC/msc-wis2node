@@ -23,6 +23,7 @@ __version__ = '0.1.0'
 import click
 
 from msc_wis2node.dataset import dataset
+from msc_wis2node.metrics import metrics
 
 
 @click.group()
@@ -34,3 +35,4 @@ def cli():
 
 
 cli.add_command(dataset)
+cli.add_command(metrics)

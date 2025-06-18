@@ -24,6 +24,10 @@ printenv | grep -v "no_proxy" > /tmp/environment
 sudo sh -c 'cat /tmp/environment >> /etc/environment'
 rm -f /tmp/environment
 
+echo "Starting cron"
+sudo service cron start
+service cron status
+
 echo "Setting up MSC dataset config"
 msc-wis2node dataset setup
 

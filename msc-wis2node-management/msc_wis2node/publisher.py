@@ -224,6 +224,38 @@ class WIS2Publisher:
             self.cache.set(message['properties']['data_id'], 'published',
                            ex=CACHE_EXPIRY_SECONDS)
 
+        LOGGER.debug('Updating dataset distribution metrics')
+        self._increment_dataset_distribution_metrics(
+            metadata_id, message['links'][0]['length'])
+
+    def _increment_dataset_distribution_metrics(self, metadata_id, filesize) -> None:  # noqa
+        """
+        Set/increment dataset distrubution metrics
+
+        :param metadata_id: metadata identifier
+        :param length: metadata identifier
+
+        :returns: `None`
+        """
+
+        today = datetime.today().strftime('%Y-%m-%d')
+
+        dataset_files_cache_key = f'metrics_{today}_{metadata_id}_files'
+        dataset_bytes_cache_key = f'metrics_{today}_{metadata_id}_bytes'
+
+        LOGGER.debug('Incrementing number of files published')
+        self.cache.incr(dataset_files_cache_key)
+
+        LOGGER.debug('Updating total bytes')
+        dataset_bytes = self.get(dataset_bytes_cache_key)
+
+        if dataset_bytes is None:
+            self.set(dataset_bytes_cache_key, filesize)
+        else:
+            self.set(dataset_bytes_cache_key, dataset_bytes + filesize)
+
+        return None
+
     def _subtopic2dirpath(self, subtopic: str) -> str:
         """
         Transforms AMQP subtopic to directory path
