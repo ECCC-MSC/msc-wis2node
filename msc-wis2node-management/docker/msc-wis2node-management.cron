@@ -1,1 +1,4 @@
-0 0 * * * msc-wis2node metrics collect-metrics
+# get metrics daily at 23:59Z
+59 23 * * * msc-wis2node metrics get
+# delete metrics daily at 0Z
+0 0 * * * msc-wis2node metrics delete

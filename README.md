@@ -79,6 +79,15 @@ sr3 start subscribe/dd.weather.gc.ca-all
 # delete metadata records
 
 msc-wis2node dataset delete-metadata --metadata-id 12345
+
+# manage data distribution metrics
+# NOTE: adjust cron to desired reporting frequency/retention
+
+# get all data distribution metrics
+msc-wis2node metrics get
+
+# delete all data distribution metrics
+msc-wis2node metrics delete
 ```
 
 ### Docker

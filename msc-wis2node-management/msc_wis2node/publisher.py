@@ -224,7 +224,7 @@ class WIS2Publisher:
             self.cache.set(message['properties']['data_id'], 'published',
                            ex=CACHE_EXPIRY_SECONDS)
 
-        LOGGER.debug('Updating dataset distribution metrics')
+        LOGGER.info('Updating dataset distribution metrics')
         self._update_dataset_distribution_metrics(
             metadata_id, message['links'][0]['length'])
 

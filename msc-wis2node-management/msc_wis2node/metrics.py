@@ -18,15 +18,19 @@
 
 ###############################################################################
 
+import json
 import logging
 
 import click
 import redis
+import yaml
 
 from msc_wis2node import cli_options
-from msc_wis2node.env import CACHE
+from msc_wis2node.env import CACHE, DATASET_CONFIG
 
 LOGGER = logging.getLogger(__name__)
+
+METRICS_KEY_PATTERN = 'metrics_20*'
 
 
 def get_metrics() -> dict:
@@ -40,21 +44,82 @@ def get_metrics() -> dict:
 
     r = redis.Redis().from_url(CACHE)
 
-    for key in r.scan_iter('metrics_20*'):
+    for key in r.scan_iter(METRICS_KEY_PATTERN):
         LOGGER.debug(f'Key: {key}')
-        _, _, dataset, metric = str(key).split('_')
+
+        _, _, dataset, metric = key.decode().split('_')
+
+        dataset = dataset.split(':')[-1]
+
+        if metric.endswith('bytes'):
+            value = prettybytes(int(r.get(key)))
+        else:
+            value = int(r.get(key))
 
         if dataset not in metrics:
             metrics[dataset] = {
-                metric: r.get(key)
+                metric: value
             }
         else:
-            metrics[dataset][metric] = r.get(key)
+            metrics[dataset][metric] = value
 
+    with open(DATASET_CONFIG) as fh:
+        dataset_config = yaml.safe_load(fh)
+
+        for ds in dataset_config['datasets']:
+            if ds['metadata-id'] in metrics:
+                metrics[ds['metadata-id']]['title'] = ds['title']
+                metrics[ds['metadata-id']]['wis2-topic'] = ds['wis2-topic']
+
+    return metrics
+
+
+def delete_metrics() -> None:
+    """
+    Delete metrics against a given pattern
+
+    :returns: `None`
+    """
+
+    r = redis.Redis().from_url(CACHE)
+    for key in r.scan_iter(METRICS_KEY_PATTERN):
         LOGGER.debug(f'Deleting key: {key}')
         r.delete(key)
 
-    return metrics
+
+def prettybytes(numbytes: int) -> str:
+    """
+    Convert bytes to human readable value
+
+    modified from: https://gist.github.com/shawnbutts/3906915
+
+    :param numbytes: number of bytes
+
+    :returns: `str` of human readable bytesize
+
+    """
+
+    a = {'Kb': 1, 'Mb': 2, 'Gb': 3, 'Tb': 4, 'Pb': 5, 'Eb': 6}
+
+    r = float(numbytes)
+
+    length = len(str(numbytes))
+
+    if 14 >= length > 12:
+        to = 'Tb'
+    if 12 >= length > 9:
+        to = 'Gb'
+    elif 9 >= length > 7:
+        to = 'Mb'
+    elif 7 >= length:
+        to = 'Kb'
+
+    for i in range(a[to]):
+        r = r / 1024
+
+    value = round(r, 2)
+
+    return f'{value} {to}'
 
 
 @click.group()
@@ -67,14 +132,28 @@ def metrics():
 @click.command()
 @click.pass_context
 @cli_options.OPTION_VERBOSITY
-def collect_metrics(ctx, verbosity):
-    """Setup dataset definitions"""
+def get(ctx, verbosity):
+    """Get data distribution metrics"""
 
     click.echo('Collecting metrics')
 
-    click.echo(get_metrics())
+    click.echo(json.dumps(get_metrics(), indent=4))
 
     click.echo('Done')
 
 
-metrics.add_command(collect_metrics)
+@click.command()
+@click.pass_context
+@cli_options.OPTION_VERBOSITY
+def delete(ctx, verbosity):
+    """Delete data distribution metrics"""
+
+    click.echo('Collecting metrics')
+
+    delete_metrics()
+
+    click.echo('Done')
+
+
+metrics.add_command(get)
+metrics.add_command(delete)
