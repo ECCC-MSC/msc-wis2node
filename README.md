@@ -96,7 +96,7 @@ The Docker setup uses Docker and Docker Compose to manage the following services
 
 - **msc-wis2node-cache**: Redis instance for data update detection (optional)
 - **msc-wis2node-management**: management service to subscribe to MSC Datamart/HPFX and re-publish to WIS2
-- **nginx**: simple web proxy for viewing data distribution metrics
+- **nginx**: simple web proxy for viewing data distribution metrics via port 4326
 
 See [`msc-wis2node.env`](msc-wis2node.env) for default environment variable settings.
 
