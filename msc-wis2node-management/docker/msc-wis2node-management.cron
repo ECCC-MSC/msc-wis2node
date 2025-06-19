@@ -1,4 +1,6 @@
-# get metrics daily at 23:59Z
-59 23 * * * msc-wis2node metrics get
-# delete metrics daily at 0Z
+# get metrics and save/update to web proxy hourly
+59 * * * * msc-wis2node metrics get > /data-distribution-metrics/$(date +%F).json
+# delete metrics from cache daily at 0Z
 0 0 * * * msc-wis2node metrics delete
+# delete data distribution metrics files older than 30 days daily at 1Z
+0 1 * * * /usr/bin/find /data-distribution-metrics -type f -name "*.json" -mtime +30 -exec rm -f {} \;

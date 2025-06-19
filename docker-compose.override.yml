@@ -21,3 +21,6 @@ services:
   msc-wis2node-cache:
     ports:
         - 6379:6379
+  msc-wis2node-web-proxy:
+    ports:
+        - 4326:80

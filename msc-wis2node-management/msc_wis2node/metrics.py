@@ -139,11 +139,7 @@ def metrics():
 def get(ctx, verbosity):
     """Get data distribution metrics"""
 
-    click.echo('Collecting metrics')
-
     click.echo(json.dumps(get_metrics(), indent=4))
-
-    click.echo('Done')
 
 
 @click.command()
@@ -152,10 +148,8 @@ def get(ctx, verbosity):
 def delete(ctx, verbosity):
     """Delete data distribution metrics"""
 
-    click.echo('Collecting metrics')
-
+    click.echo('Deleting metrics')
     delete_metrics()
-
     click.echo('Done')
 
 
