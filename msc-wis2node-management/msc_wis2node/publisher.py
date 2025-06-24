@@ -243,10 +243,16 @@ class WIS2Publisher:
         dataset_files_cache_key = f'metrics_{today}_{metadata_id}_files'
         dataset_bytes_cache_key = f'metrics_{today}_{metadata_id}_bytes'
 
-        LOGGER.debug('Incrementing number of files published')
+        total_files_cache_key = f'metrics_total_{today}_files'
+        total_bytes_cache_key = f'metrics_total_{today}_bytes'
+
+        LOGGER.debug('Incrementing dataset number of files published')
         self.cache.incr(dataset_files_cache_key)
 
-        LOGGER.debug('Updating total bytes')
+        LOGGER.debug('Incrementing all total number of files published')
+        self.cache.incr(total_files_cache_key)
+
+        LOGGER.debug('Updating dataset total bytes')
         dataset_bytes = self.cache.get(dataset_bytes_cache_key)
 
         if dataset_bytes is None:
@@ -254,6 +260,16 @@ class WIS2Publisher:
         else:
             self.cache.set(
                 dataset_bytes_cache_key, int(dataset_bytes) + filesize
+            )
+
+        LOGGER.debug('Updating all total bytes')
+        total_bytes = self.cache.get(total_bytes_cache_key)
+
+        if total_bytes is None:
+            self.cache.set(total_bytes_cache_key, total_bytes)
+        else:
+            self.cache.set(
+                total_bytes_cache_key, int(total_bytes) + filesize
             )
 
         return None

@@ -30,7 +30,8 @@ from msc_wis2node.env import CACHE, DATASET_CONFIG, WIS2_GDC
 
 LOGGER = logging.getLogger(__name__)
 
-METRICS_KEY_PATTERN = 'metrics_20*'
+DATASET_METRICS_KEY_PATTERN = 'metrics_20*'
+TOTAL_METRICS_KEY_PATTERN = 'metrics_total_20*'
 
 
 def get_metrics() -> dict:
@@ -40,12 +41,15 @@ def get_metrics() -> dict:
     :returns: `None`
     """
 
-    metrics = {}
+    metrics = {
+        'total': {}
+    }
+
     gdc_baseurl = f'{WIS2_GDC}/items/urn:wmo:md:ca-eccc-msc:'
 
     r = redis.Redis().from_url(CACHE)
 
-    for key in r.scan_iter(METRICS_KEY_PATTERN):
+    for key in r.scan_iter(DATASET_METRICS_KEY_PATTERN):
         LOGGER.debug(f'Key: {key}')
 
         _, _, dataset, metric = key.decode().split('_')
@@ -64,6 +68,12 @@ def get_metrics() -> dict:
         else:
             metrics[dataset][metric] = value
 
+    for key in r.scan_iter(f'{DATASET_METRICS_KEY_PATTERN}files'):
+        metrics['total']['files'] = int(r.get(key))
+
+    for key in r.scan_iter(f'{DATASET_METRICS_KEY_PATTERN}bytes'):
+        metrics['total']['bytes'] = prettybytes(int(r.get(key)))
+
     with open(DATASET_CONFIG) as fh:
         dataset_config = yaml.safe_load(fh)
 
@@ -71,22 +81,28 @@ def get_metrics() -> dict:
             if ds['metadata-id'] in metrics:
                 url = f"{gdc_baseurl}{ds['metadata-id']}"
                 topic = f"origin/a/wis2/ca-eccc-msc/{ds['wis2-topic']}"
-                metrics[ds['metadata-id']]['title'] = ds['title']
-                metrics[ds['metadata-id']]['wis2-topic'] = topic
-                metrics[ds['metadata-id']]['gdc-url'] = url
+
+                metrics[ds['metadata-id']] = {
+                    'title': ds['title'],
+                    'wis2-topic': topic,
+                    'gdc-url': url,
+                    'cache': ds.get('cache', True)
+                }
 
     return metrics
 
 
-def delete_metrics() -> None:
+def delete_metrics(pattern: str) -> None:
     """
     Delete metrics against a given pattern
 
+    :param pattern: `str` of key pattern to delete
     :returns: `None`
     """
 
     r = redis.Redis().from_url(CACHE)
-    for key in r.scan_iter(METRICS_KEY_PATTERN):
+
+    for key in r.scan_iter(pattern):
         LOGGER.debug(f'Deleting key: {key}')
         r.delete(key)
 
@@ -149,7 +165,8 @@ def delete(ctx, verbosity):
     """Delete data distribution metrics"""
 
     click.echo('Deleting metrics')
-    delete_metrics()
+    delete_metrics(DATASET_METRICS_KEY_PATTERN)
+    delete_metrics(TOTAL_METRICS_KEY_PATTERN)
     click.echo('Done')
 
 
