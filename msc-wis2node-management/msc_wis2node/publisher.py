@@ -266,7 +266,7 @@ class WIS2Publisher:
         total_bytes = self.cache.get(total_bytes_cache_key)
 
         if total_bytes is None:
-            self.cache.set(total_bytes_cache_key, total_bytes)
+            self.cache.set(total_bytes_cache_key, filesize)
         else:
             self.cache.set(
                 total_bytes_cache_key, int(total_bytes) + filesize
