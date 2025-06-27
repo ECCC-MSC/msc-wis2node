@@ -1,5 +1,5 @@
 {
-    "id": "urn:wmo:md:ca-eccc-msc:cd41b178-b58d-4dd2-8b32-8e567ff6baed",
+    "id": "urn:wmo:md:ca-eccc-msc:ee98e87e-3cce-4f88-86de-6ad4817aa246",
     "conformsTo": [
         "http://wis.wmo.int/spec/wcmp/2/conf/core"
     ],
@@ -10,7 +10,7 @@
             [
                 [
                     -180,
-                    57.937528
+                    -90
                 ],
                 [
                     -180,
@@ -22,41 +22,35 @@
                 ],
                 [
                     180,
-                    57.937528
+                    -90
                 ],
                 [
                     -180,
-                    57.937528
+                    -90
                 ]
             ]
         ]
     },
     "properties": {
-        "title": "High Resolution Deterministic Prediction System - North [experimental]",
-        "description": "High Resolution Deterministic Prediction System North (HRDPS-North) on 2.5km polar stereographic grid",
+        "title": "Hurricane Tracks",
+        "description": "Hurricane tracks and the hurricane response zone are issued by the Canadian Hurricane Centre, which provides track forecasts for tropical and post-tropical cyclones that pose a threat to Canada during the hurricane season, from June to November.",
         "themes": [
             {
                 "concepts": [
                     {
-                        "id": "Weather forecasts"
+                        "id": "Weather warnings"
                     },
                     {
                         "id": "Precipitation"
                     },
                     {
-                        "id": "Air temperature"
-                    },
-                    {
-                        "id": "Humidity"
-                    },
-                    {
-                        "id": "Snow"
-                    },
-                    {
                         "id": "Wind"
                     },
                     {
-                        "id": "Meteorological data"
+                        "id": "Storms"
+                    },
+                    {
+                        "id": "Floods"
                     }
                 ],
                 "scheme": "https://canada.multites.net/cst/EAEAD1E6-7DD2-4997-BE7F-40BFB1CBE8A2/CST20230912.rdf"
@@ -74,11 +68,17 @@
         "language": {
             "code": "en"
         },
-        "created": "2021-12-01T00:00:00Z",
+        "created": "2011-06-01T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
             {
                 "name": "WMS"
+            },
+            {
+                "name": "GeoJSON"
+            },
+            {
+                "name": "SHP"
             }
         ],
         "contacts": [
@@ -122,9 +122,7 @@
             }
         ],
         "keywords": [
-            "Prediction",
-            "High resolution",
-            "Deterministic",
+            "Hurricane centre",
             "Weather and Climate",
             "International",
             "Atmosphere"
@@ -133,17 +131,37 @@
     },
     "links": [
         {
-            "href": "https://geo.weather.gc.ca/geomet?lang=en&service=WMS&request=GetCapabilities&layers=HRDPS.NORTH_TT",
+            "href": "amqps://dd.weather.gc.ca/",
+            "type": "application/json",
+            "rel": "items",
+            "title": "MSC Datamart AMQP",
+            "channel": "trajectoires.hurricane.#"
+        },
+        {
+            "href": "amqps://dd.alpha.weather.gc.ca/",
+            "type": "application/json",
+            "rel": "items",
+            "title": "MSC Datamart AMQP",
+            "channel": "hurricanes.#"
+        },
+        {
+            "href": "https://geo.weather.gc.ca/geomet?lang=en&service=WMS&request=GetCapabilities&layers=HURRICANE_CENTRE",
             "type": "application/xml",
             "rel": "data",
-            "title": "Air temperature [°C]"
+            "title": "Hurricane Forecast Location"
+        },
+        {
+            "href": "https://api.weather.gc.ca/collections/hurricanes-track-realtime/items/",
+            "type": "application/geo+json",
+            "rel": "items",
+            "title": "hurricanes-track-realtime"
         },
         {
             "href": "mqtts://hpfx.collab.science.gc.ca:8883",
             "type": "application/geo+json",
             "rel": "items",
             "title": "MSC Datamart MQTT",
-            "channel": "origin/a/wis2/ca-eccc-msc/data/core/weather/prediction/forecast/short-range/deterministic/limited-area"
+            "channel": "origin/a/wis2/ca-eccc-msc/data/core/weather/prediction/forecast/medium-range/deterministic/trajectory"
         },
         {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
@@ -154,8 +172,9 @@
     ],
     "time": {
         "interval": [
-            "2021-12-01",
+            "2011-06-01",
             ".."
         ]
-    }
+    },
+    "generated_by": "pygeometa 0.17.dev1"
 }

@@ -9,31 +9,31 @@
         "coordinates": [
             [
                 [
-                    -152.7685268,
-                    27.2840148
+                    -152.7685111,
+                    27.2689694
                 ],
                 [
-                    -152.7685268,
+                    -152.7685111,
                     70.6164825
                 ],
                 [
-                    -40.6938032,
+                    -40.6855552,
                     70.6164825
                 ],
                 [
-                    -40.6938032,
-                    27.2840148
+                    -40.6855552,
+                    27.2689694
                 ],
                 [
-                    -152.7685268,
-                    27.2840148
+                    -152.7685111,
+                    27.2689694
                 ]
             ]
         ]
     },
     "properties": {
-        "title": "High Resolution Deterministic Land Surface Prediction System [experimental]",
-        "description": "The High Resolution Deterministic Land Prediction System (HRDLPS) produces high-resolution medium-range forecasts of land surface, subsurface variables, and of near-surface atmospheric variables (1.5 m temperature and dewpoint, 10 m wind). HRDLPS is initialized with analysis and trial fields provided by the Canadian Land Data Assimilation System of the National Surface and River Prediction System (CaLDAS-NSRPS). The system is then driven with atmospheric forecasts provided by the HRDPS over the first two days of integration and by the GDPS over the next four days. Predictions are performed twice a day. The system runs on a grid with a 2.5 km horizontal spacing covering Canada and part of the USA.",
+        "title": "High Resolution Deterministic Land Surface Prediction System",
+        "description": "The High Resolution Deterministic Land Prediction System (HRDLPS) produces high-resolution medium-range forecasts of land surface, subsurface variables, and of near-surface atmospheric variables (1.5 m temperature and dewpoint). HRDLPS is initialized with analysis and trial fields provided by the Canadian Land Data Assimilation System of the National Surface and River Prediction System (CaLDAS-NSRPS). The system is then driven with atmospheric forecasts provided by the HRDPS over the first two days of integration and by the GDPS over the next four days. Predictions are performed twice a day. The system runs on a grid with a 2.5 km horizontal spacing covering Canada and part of the USA.",
         "themes": [
             {
                 "concepts": [
@@ -79,6 +79,11 @@
         },
         "created": "2022-11-21T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
+        "formats": [
+            {
+                "name": "WMS"
+            }
+        ],
         "contacts": [
             {
                 "addresses": [
@@ -132,6 +137,12 @@
     },
     "links": [
         {
+            "href": "https://geo.weather.gc.ca/geomet?lang=en&service=WMS&request=GetCapabilities&layers=HRDLPS_2.5km_AirTemp",
+            "type": "application/xml",
+            "rel": "data",
+            "title": "HRDLPS - Air Temperature [K]"
+        },
+        {
             "href": "mqtts://hpfx.collab.science.gc.ca:8883",
             "type": "application/geo+json",
             "rel": "items",
@@ -150,5 +161,6 @@
             "2022-11-21",
             ".."
         ]
-    }
+    },
+    "generated_by": "pygeometa 0.17.dev1"
 }

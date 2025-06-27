@@ -10,7 +10,7 @@
             [
                 [
                     -154.2146374,
-                    26.6907357
+                    26.6753927
                 ],
                 [
                     -154.2146374,
@@ -22,18 +22,18 @@
                 ],
                 [
                     -39.8234389,
-                    26.6907357
+                    26.6753927
                 ],
                 [
                     -154.2146374,
-                    26.6907357
+                    26.6753927
                 ]
             ]
         ]
     },
     "properties": {
-        "title": "Canadian Land Data Assimilation System in the National Surface and River Prediction System [experimental]",
-        "description": "CaLDAS-NSRPS was installed as an experimental system within the National Surface and River Prediction System (NSRPS) at Environment and Climate Change Canada's (ECCC) Canadian Centre for Meteorological and Environmental Prediction (CCMEP) in July 2019. CaLDAS-NSRPS is a continuous offline land-surface assimilation system, which provides analyses of the land surface every 3 h over the domain of the High-Resolution Deterministic Prediction System (HRDPS) at a 2.5 km grid spacing. The emphasis in CaLDAS-NSRPS is to focus upon the assimilation of satellite based remote sensing observations to provide the optimal initial conditions for the predictive components of the NSRPS, the High Resolution Deterministic/Ensemble Land Surface Prediction System (HRDLPS/HRELPS) and the Deterministic/Ensemble Hydrological Prediction Systems (DHPS/EHPS). CaLDAS-NSRPS is launched 4 times per day, at 0000, 0600, 1200, and 1800 UTC.",
+        "title": "Canadian Land Data Assimilation System in the National Surface and River Prediction System",
+        "description": "CaLDAS-NSRPS was installed within the National Surface and River Prediction System (NSRPS) at Environment and Climate Change Canada's (ECCC) Canadian Centre for Meteorological and Environmental Prediction (CCMEP) in July 2019. CaLDAS-NSRPS is a continuous offline land-surface assimilation system, which provides analyses of the land surface every 3 h over the domain of the High-Resolution Deterministic Prediction System (HRDPS) at a 2.5 km grid spacing. The emphasis in CaLDAS-NSRPS is to focus upon the assimilation of satellite based remote sensing observations to provide the optimal initial conditions for the predictive components of the NSRPS, the High Resolution Deterministic/Ensemble Land Surface Prediction System (HRDLPS/HRELPS) and the Deterministic/Ensemble Hydrological Prediction Systems (DHPS/EHPS). CaLDAS-NSRPS is launched 4 times per day, at 0000, 0600, 1200, and 1800 UTC.",
         "themes": [
             {
                 "concepts": [
@@ -148,5 +148,6 @@
             "2022-11-16",
             ".."
         ]
-    }
+    },
+    "generated_by": "pygeometa 0.17.dev1"
 }
