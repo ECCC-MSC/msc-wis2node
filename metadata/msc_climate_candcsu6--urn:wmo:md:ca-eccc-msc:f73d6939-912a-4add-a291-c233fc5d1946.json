@@ -32,8 +32,9 @@
         ]
     },
     "properties": {
+        "identifier": "urn:wmo:md:ca-eccc-msc:f73d6939-912a-4add-a291-c233fc5d1946",
         "title": "Statistically downscaled climate scenarios from CMIP6 global climate models (CanDCS-U6)",
-        "description": "Environment and Climate Change Canada’s (ECCC) Climate Research Division (CRD) and the Pacific Climate Impacts Consortium (PCIC) previously produced statistically downscaled climate scenarios based on simulations from climate models that participated in the Coupled Model Intercomparison Project phase 5 (CMIP5) in 2015. ECCC and PCIC have now updated the CMIP5-based downscaled scenarios with two new sets of downscaled scenarios based on the next generation of climate projections from the Coupled Model Intercomparison Project phase 6 (CMIP6). The scenarios are named Canadian Downscaled Climate Scenarios–Univariate method from CMIP6 (CanDCS-U6) and Canadian Downscaled Climate Scenarios–Multivariate method from CMIP6 (CanDCS-M6). CMIP6 climate projections are based on both updated global climate models and new emissions scenarios called “Shared Socioeconomic Pathways” (SSPs). Statistically downscaled datasets have been produced from 26 CMIP6 global climate models (GCMs) under three different emission scenarios (i.e., SSP1-2.6, SSP2-4.5, and SSP5-8.5). The CanDCS-U6 was downscaled using the Bias Correction/Constructed Analogues with Quantile mapping version 2 (BCCAQv2) procedure, and the CanDCS-M6 was downscaled using the N-dimensional Multivariate Bias Correction (MBCn) method. The CanDCS-U6 dataset was produced using the same downscaling target data (NRCANmet) as the CMIP5-based downscaled scenarios, while the CanDCS-M6 dataset implements a new target dataset (ANUSPLIN and PNWNAmet blended dataset). Statistically downscaled individual model output are available for download. Downscaled climate indices are available across Canada at 10km grid spatial resolution for the 1950-2014 historical period and for the 2015-2100 period following each of the three emission scenarios.",
+        "description": "Environment and Climate Change Canada\u2019s (ECCC) Climate Research Division (CRD) and the Pacific Climate Impacts Consortium (PCIC) previously produced statistically downscaled climate scenarios based on simulations from climate models that participated in the Coupled Model Intercomparison Project phase 5 (CMIP5) in 2015. ECCC and PCIC have now updated the CMIP5-based downscaled scenarios with two new sets of downscaled scenarios based on the next generation of climate projections from the Coupled Model Intercomparison Project phase 6 (CMIP6). The scenarios are named Canadian Downscaled Climate Scenarios\u2013Univariate method from CMIP6 (CanDCS-U6) and Canadian Downscaled Climate Scenarios\u2013Multivariate method from CMIP6 (CanDCS-M6). CMIP6 climate projections are based on both updated global climate models and new emissions scenarios called \u201cShared Socioeconomic Pathways\u201d (SSPs). Statistically downscaled datasets have been produced from 26 CMIP6 global climate models (GCMs) under three different emission scenarios (i.e., SSP1-2.6, SSP2-4.5, and SSP5-8.5). The CanDCS-U6 was downscaled using the Bias Correction/Constructed Analogues with Quantile mapping version 2 (BCCAQv2) procedure, and the CanDCS-M6 was downscaled using the N-dimensional Multivariate Bias Correction (MBCn) method. The CanDCS-U6 dataset was produced using the same downscaling target data (NRCANmet) as the CMIP5-based downscaled scenarios, while the CanDCS-M6 dataset implements a new target dataset (ANUSPLIN and PNWNAmet blended dataset). Statistically downscaled individual model output are available for download. Downscaled climate indices are available across Canada at 10km grid spatial resolution for the 1950-2014 historical period and for the 2015-2100 period following each of the three emission scenarios.",
         "themes": [
             {
                 "concepts": [
@@ -64,16 +65,12 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
+        "language": "en",
         "type": "dataset",
-        "language": {
-            "code": "en"
-        },
         "created": "2021-01-21T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            {
-                "name": "WMS"
-            }
+            "WMS"
         ],
         "contacts": [
             {
@@ -92,7 +89,7 @@
                     "host"
                 ],
                 "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
-                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
+                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
                 "position": "National Inquiry Response Team",
                 "hoursOfService": "0700h - 1500h EST",
                 "contactInstructions": "email",
@@ -155,6 +152,5 @@
             "1951-01-01",
             "2100-12-31"
         ]
-    },
-    "generated_by": "pygeometa 0.17.dev1"
+    }
 }

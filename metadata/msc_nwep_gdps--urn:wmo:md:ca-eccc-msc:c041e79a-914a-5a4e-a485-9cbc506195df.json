@@ -32,6 +32,7 @@
         ]
     },
     "properties": {
+        "identifier": "urn:wmo:md:ca-eccc-msc:c041e79a-914a-5a4e-a485-9cbc506195df",
         "title": "Global Deterministic Prediction System",
         "description": "The Global Deterministic Prediction System (GDPS) is a coupled atmosphere (GEM), ocean and sea ice (NEMO-CICE) deterministic numerical weather prediction model. Forecasts are carried out twice a day for 10 days lead time. The geographical coverage is global at 15 km horizontal resolution. Data is available on some thirty vertical levels and interpolated on a global latitude-longitude uniform grid with 0.15 degree horizontal resolution. Variables availability in number and time frequency is a function of forecast lead time. The experimental Global Deterministic Prediction System (GDPS) is a coupled atmosphere (GEM), ocean and sea ice (NEMO-CICE) deterministic numerical weather prediction model where the GEM-predicted large-scale temperature and horizontal wind components are spectrally nudged toward the Global Environmental eMuLator (GEML) predictions, ECCC's data-driven artificial intelligence (AI)-based weather model. Forecasts are carried out twice a day for 10 days lead time. The geographical coverage is global at 15 km horizontal resolution. Data is available on some thirty vertical levels and interpolated on a global latitude-longitude uniform grid with 0.15 degree horizontal resolution. Variables availability in number and time frequency is a function of forecast lead time.",
         "themes": [
@@ -70,19 +71,13 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
+        "language": "en",
         "type": "dataset",
-        "language": {
-            "code": "en"
-        },
-        "created": "1991-03-12T00:00:00Z",
+        "created": "2018-03-16T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            {
-                "name": "GRIB2"
-            },
-            {
-                "name": "WMS"
-            }
+            "GRIB2",
+            "WMS"
         ],
         "contacts": [
             {
@@ -101,7 +96,7 @@
                     "host"
                 ],
                 "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
-                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
+                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
                 "position": "National Inquiry Response Team",
                 "hoursOfService": "0700h - 1500h EST",
                 "contactInstructions": "email",
@@ -139,13 +134,13 @@
             "href": "https://geo.weather.gc.ca/geomet?lang=en&service=WMS&request=GetCapabilities&layers=GDPS.ETA_TT",
             "type": "application/xml",
             "rel": "data",
-            "title": "Air temperature [°C]"
+            "title": "Air temperature [\u00b0C]"
         },
         {
             "href": "https://geo.weather.gc.ca/geomet?lang=en&service=WMS&request=GetCapabilities&layers=GDPS_15km_AirTemp_2m",
             "type": "application/xml",
             "rel": "data",
-            "title": "GDPS - Air temperature at 2m above ground [°C] [experimental]"
+            "title": "GDPS - Air temperature at 2m above ground [\u00b0C] [experimental]"
         },
         {
             "href": "amqps://dd.weather.gc.ca/",
@@ -180,6 +175,5 @@
             "1963-10-01",
             ".."
         ]
-    },
-    "generated_by": "pygeometa 0.17.dev1"
+    }
 }

@@ -32,6 +32,7 @@
         ]
     },
     "properties": {
+        "identifier": "urn:wmo:md:ca-eccc-msc:68d21caf-82f6-4559-ba6f-4200a117a22d",
         "title": "Weather Elements on Grid based on the Regional Deterministic Prediction System [experimental]",
         "description": "Weather Elements on Grid (WEonG) based on the Regional Deterministic Prediction System (RDPS) is a post-processing system designed to compute the weather elements required by different forecast programs (public, marine, aviation, air quality, etc.). This system amalgamates numerical and post-processed data using various diagnostic approaches. Hourly concepts are produced from different algorithms using outputs from the Regional Deterministic Prediction System (RDPS).",
         "themes": [
@@ -70,16 +71,12 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
+        "language": "en",
         "type": "dataset",
-        "language": {
-            "code": "en"
-        },
         "created": "2022-09-26T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            {
-                "name": "WMS"
-            }
+            "WMS"
         ],
         "contacts": [
             {
@@ -98,7 +95,7 @@
                     "host"
                 ],
                 "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
-                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
+                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
                 "position": "National Inquiry Response Team",
                 "hoursOfService": "0700h - 1500h EST",
                 "contactInstructions": "email",
@@ -143,7 +140,7 @@
             "href": "https://geo.weather.gc.ca/geomet?lang=en&service=WMS&request=GetCapabilities&layers=RDPS-WEonG_10km_AirTemp",
             "type": "application/xml",
             "rel": "data",
-            "title": "Air temperature [°C]"
+            "title": "Air temperature [\u00b0C]"
         },
         {
             "href": "mqtts://hpfx.collab.science.gc.ca:8883",
@@ -164,6 +161,5 @@
             "2022-09-26",
             ".."
         ]
-    },
-    "generated_by": "pygeometa 0.17.dev1"
+    }
 }

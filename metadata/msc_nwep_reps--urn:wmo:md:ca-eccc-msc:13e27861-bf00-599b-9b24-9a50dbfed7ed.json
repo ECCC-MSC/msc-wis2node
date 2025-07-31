@@ -32,6 +32,7 @@
         ]
     },
     "properties": {
+        "identifier": "urn:wmo:md:ca-eccc-msc:13e27861-bf00-599b-9b24-9a50dbfed7ed",
         "title": "Regional Ensemble Prediction System",
         "description": "The Regional Ensemble Prediction System (REPS) carries out physics calculations to arrive at probabilistic predictions of atmospheric elements from the current day out to 3 days into the future. The probabilistic predictions are based on 20 ensemble members that are perturbed through their initial and boundary conditions as well as physical tendencies. A control member that is not perturbed is also available. Atmospheric elements include temperature, precipitation, cloud cover, wind speed and direction, humidity and others. This product contains raw numerical results of these calculations. Geographical coverage includes Canada and the United States. Data is available at a horizontal resolution of 10 km. Data is available on ten vertical levels. Predictions are performed four times a day.",
         "themes": [
@@ -70,16 +71,12 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
+        "language": "en",
         "type": "dataset",
-        "language": {
-            "code": "en"
-        },
         "created": "2016-03-09T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            {
-                "name": "WMS"
-            }
+            "WMS"
         ],
         "contacts": [
             {
@@ -98,7 +95,7 @@
                     "host"
                 ],
                 "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
-                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
+                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
                 "position": "National Inquiry Response Team",
                 "hoursOfService": "0700h - 1500h EST",
                 "contactInstructions": "email",
@@ -157,6 +154,5 @@
             "2011-09-22",
             ".."
         ]
-    },
-    "generated_by": "pygeometa 0.17.dev1"
+    }
 }

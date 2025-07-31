@@ -32,6 +32,7 @@
         ]
     },
     "properties": {
+        "identifier": "urn:wmo:md:ca-eccc-msc:12b3eba5-319b-4aa1-8e38-e88ad51dfc51",
         "title": "Upper Air - PILOT",
         "description": "Upper Air data are reports gathered by balloons which measure upper air conditions over particular location. PILOT is a numerical code (FM 32-XI) used for reporting Upper-winds from a fixed land station. PILOT reports are typically sent every twelve hours and consist of groups of numbers (and slashes where data is not available) describing wind velocities and geopotential height at several pressure levels. Mandatory pressure levels are the standard levels of 850, 700, 500, 400, 300, 250, 200, 150, 100, 70, 50, 30, 20 and 10 hPa.",
         "themes": [
@@ -55,16 +56,12 @@
                 "scheme": "https://codes.wmo.int/wis2/topic-hierarchy/earth-system-discipline"
             }
         ],
+        "language": "en",
         "type": "dataset",
-        "language": {
-            "code": "en"
-        },
         "created": "2018-12-19T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            {
-                "name": "GeoJSON"
-            }
+            "GeoJSON"
         ],
         "contacts": [
             {
@@ -83,7 +80,7 @@
                     "host"
                 ],
                 "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
-                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
+                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
                 "position": "National Inquiry Response Team",
                 "hoursOfService": "0700h - 1500h EST",
                 "contactInstructions": "email",
@@ -141,6 +138,5 @@
             "2018-12-19",
             ".."
         ]
-    },
-    "generated_by": "pygeometa 0.17.dev1"
+    }
 }

@@ -32,6 +32,7 @@
         ]
     },
     "properties": {
+        "identifier": "urn:wmo:md:ca-eccc-msc:d56bdd04-fcb7-52fb-b04f-dc0ad3d82f64",
         "title": "Regional Deterministic Air Quality Analysis Cumulative Effects products",
         "description": "The Regional Deterministic Air Quality Analysis (RDAQA) is an objective analysis of surface pollutants which combines numerical forecasts from the Regional Air Quality Deterministic Prediction System (RAQDPS) and hourly observational data from monitoring surface networks over North America in order to produce a better description of the air quality at every hour. Chemical constituents include O3, SO2, and NO2 gases, as well as fine particulate matter PM2.5 (2.5 micrometers in diameter or less) and coarse particulate matter PM10 (10 micrometers in diameter or less). Geographical coverage is Canada and the United States. Data is available only for the surface level, at a horizontal resolution of 10 km. The products are presented as historical, annual or monthly, averages which highlight long-term trends in cumulative effects on the environment.",
         "themes": [
@@ -64,16 +65,12 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
+        "language": "en",
         "type": "dataset",
-        "language": {
-            "code": "en"
-        },
         "created": "2020-08-04T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            {
-                "name": "WMS"
-            }
+            "WMS"
         ],
         "contacts": [
             {
@@ -92,7 +89,7 @@
                     "host"
                 ],
                 "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
-                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
+                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
                 "position": "National Inquiry Response Team",
                 "hoursOfService": "0700h - 1500h EST",
                 "contactInstructions": "email",
@@ -151,6 +148,5 @@
             "2013-03-01",
             ".."
         ]
-    },
-    "generated_by": "pygeometa 0.17.dev1"
+    }
 }

@@ -32,6 +32,7 @@
         ]
     },
     "properties": {
+        "identifier": "urn:wmo:md:ca-eccc-msc:6d9dd2f8-202e-58cb-a110-e2168832aacb",
         "title": "Global Ensemble Prediction System",
         "description": "The Global Ensemble Prediction System (GEPS) carries out physics calculations to arrive at probabilistic predictions of atmospheric elements from the current day out to 16 days into the future (up to 39 days twice a week on Mondays and Thursdays at 00UTC for calculating forecast anomalies). The GEPS produces different outlooks (scenarios) to estimate the forecast uncertainties due to the nonlinear (chaotic) behaviour of the atmosphere. The probabilistic predictions are based on an ensemble of 20 scenarios that differ in their initial conditions, their physics parameters which are randomly perturbed by a Stochastic Parameter Perturbation (SPP) method, and the stochastic perturbations (kinetic energy). A control member that is not perturbed is also available. Weather elements include temperature, precipitation, cloud cover, wind speed and direction, humidity and others. This product contains raw numerical results of these calculations. Geographical coverage is global. Data is available on some fifteen vertical levels on a global latitude-longitude uniform grid with 0.5 degree horizontal resolution (about 39km). Predictions are performed twice a day.",
         "themes": [
@@ -70,16 +71,12 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
+        "language": "en",
         "type": "dataset",
-        "language": {
-            "code": "en"
-        },
         "created": "2010-10-25T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            {
-                "name": "WMS"
-            }
+            "WMS"
         ],
         "contacts": [
             {
@@ -98,7 +95,7 @@
                     "host"
                 ],
                 "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
-                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
+                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
                 "position": "National Inquiry Response Team",
                 "hoursOfService": "0700h - 1500h EST",
                 "contactInstructions": "email",
@@ -157,6 +154,5 @@
             "1996-01-24",
             ".."
         ]
-    },
-    "generated_by": "pygeometa 0.17.dev1"
+    }
 }

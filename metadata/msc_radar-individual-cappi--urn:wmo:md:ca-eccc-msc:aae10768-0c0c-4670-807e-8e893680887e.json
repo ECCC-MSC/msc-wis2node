@@ -32,6 +32,7 @@
         ]
     },
     "properties": {
+        "identifier": "urn:wmo:md:ca-eccc-msc:aae10768-0c0c-4670-807e-8e893680887e",
         "title": "Weather Radar - CAPPI",
         "description": "Due to the curvature of the Earth, the height of a radar beam, in relation to the ground, increases as it travels further from the radar. When the radar is pointed down near the ground (a low elevation angle), the beam starts off near the ground but then its height above the ground slowly increases. By the time that same beam is 200 km from the radar, it is at a height of around 4 km above the ground. In order to get a better sense of what is happening at one approximate height above the ground (i.e. 1.5 km), a whole series of radar beams with different elevation angles (low, medium, high) are used to create one radar product. This type of radar product is called a CAPPI (Constant Altitude Plan Position Indicator). Since the CAPPI products do not use Doppler processing to filter out clutter like tall trees, hills and buildings, it can sometimes be contaminated by non meteorological echoes.",
         "themes": [
@@ -61,11 +62,9 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
+        "language": "en",
         "type": "dataset",
-        "language": {
-            "code": "en"
-        },
-        "created": "1871-01-01T00:00:00Z",
+        "created": "2023-03-21T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "contacts": [
             {
@@ -84,7 +83,7 @@
                     "host"
                 ],
                 "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
-                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
+                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
                 "position": "National Inquiry Response Team",
                 "hoursOfService": "0700h - 1500h EST",
                 "contactInstructions": "email",
@@ -135,6 +134,5 @@
             "1871-01-01",
             ".."
         ]
-    },
-    "generated_by": "pygeometa 0.17.dev1"
+    }
 }

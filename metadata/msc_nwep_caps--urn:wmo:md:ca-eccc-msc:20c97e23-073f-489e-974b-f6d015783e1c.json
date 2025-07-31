@@ -32,6 +32,7 @@
         ]
     },
     "properties": {
+        "identifier": "urn:wmo:md:ca-eccc-msc:20c97e23-073f-489e-974b-f6d015783e1c",
         "title": "Canadian Arctic Prediction System [experimental]",
         "description": "The Canadian Arctic Prediction System (CAPS) is an experimental coupled atmosphere-ocean-ice prediction system based on a limited-area configuration (LAM) of the Global Environmental Multiscale (GEM) model, coupled with the Nucleus of European Modeling of the Ocean (NEMO) and the Community ICe Code (CICE). It covers the entire Arctic basin with a horizontal grid resolution of approximately 3 km. The system CAPS is driven by ECCC's Global Deterministic Prediction System (GDPS), which provides initial and lateral boundary conditions for atmospheric fields. Initial hydrometeorological fields are recycled from the 12-hour forecast of the previous CAPS integration. In addition, the GDPS is used to force the ocean-ice model outside the coupled regions. Initial conditions for ocean-ice fields are taken from the Regional Ocean-Ice Prediction System (RIOPS). Ocean boundary conditions in the North Atlantic and North Pacific come from the GDPS. The system CAPS runs twice a day and is initialized at 00 and 12 UTC, respectively, with a 48-hour integration.",
         "themes": [
@@ -70,16 +71,12 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
+        "language": "en",
         "type": "dataset",
-        "language": {
-            "code": "en"
-        },
         "created": "2018-01-24T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            {
-                "name": "WMS"
-            }
+            "WMS"
         ],
         "contacts": [
             {
@@ -98,7 +95,7 @@
                     "host"
                 ],
                 "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
-                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
+                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
                 "position": "National Inquiry Response Team",
                 "hoursOfService": "0700h - 1500h EST",
                 "contactInstructions": "email",
@@ -134,7 +131,7 @@
             "href": "https://geo.weather.gc.ca/geomet?lang=en&service=WMS&request=GetCapabilities&layers=CAPS_3km_AirTemp_2m",
             "type": "application/xml",
             "rel": "data",
-            "title": "CAPS - Air temperature at 2m above ground [°C]"
+            "title": "CAPS - Air temperature at 2m above ground [\u00b0C]"
         },
         {
             "href": "mqtts://hpfx.collab.science.gc.ca:8883",
@@ -155,6 +152,5 @@
             "2018-01-24",
             ".."
         ]
-    },
-    "generated_by": "pygeometa 0.17.dev1"
+    }
 }

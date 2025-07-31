@@ -32,6 +32,7 @@
         ]
     },
     "properties": {
+        "identifier": "urn:wmo:md:ca-eccc-msc:a3bef0b5-1f91-4e9f-8b9d-2d48c6a5914c",
         "title": "Standardized Precipitation Evapotranspiration Index (SPEI)",
         "description": "Standardized Precipitation Evapotranspiration Index (SPEI) calculated using global climate model projections from the Coupled Model Intercomparison Project Phase 5 (CMIP5) are provided. SPEI is a multiscalar index frequently used to quantify drought and is based on a climate water balance.",
         "themes": [
@@ -55,16 +56,12 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
+        "language": "en",
         "type": "dataset",
-        "language": {
-            "code": "en"
-        },
         "created": "2018-01-01T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            {
-                "name": "WMS"
-            }
+            "WMS"
         ],
         "contacts": [
             {
@@ -83,7 +80,7 @@
                     "host"
                 ],
                 "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
-                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
+                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
                 "position": "National Inquiry Response Team",
                 "hoursOfService": "0700h - 1500h EST",
                 "contactInstructions": "email",
@@ -140,6 +137,5 @@
             "1900-01-01",
             "2100-12-31"
         ]
-    },
-    "generated_by": "pygeometa 0.17.dev1"
+    }
 }

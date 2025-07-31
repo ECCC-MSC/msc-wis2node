@@ -32,6 +32,7 @@
         ]
     },
     "properties": {
+        "identifier": "urn:wmo:md:ca-eccc-msc:75dfb8cb-9efc-4c15-bcb5-7562f89517ce",
         "title": "Lightning Density Data",
         "description": "The Canadian Lightning Detection Network (CLDN) provides lightning monitoring across most of Canada. The data distributed here represents a spatio-temporal aggregation of the observations of this network available with an accuracy of a few hundred meters. More precisely, every 10 minutes, the reported observations are processed in the following way: The location of observed lightning (cloud-to-ground and intra-cloud) in the last 10 minutes is extracted. Using a regular horizontal grid of about 2.5km by 2.5km, the number of observed lightning flashes within each grid cell is calculated. These grid data are normalized by the exact area of each cell (in km2) and by the accumulation period (10min) to obtain an observed flash density expressed in km-2 and min-1. A mask is applied to remove data located more than 250km from Canadian land or sea borders.",
         "themes": [
@@ -58,16 +59,12 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
+        "language": "en",
         "type": "dataset",
-        "language": {
-            "code": "en"
-        },
         "created": "2023-01-30T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            {
-                "name": "WMS"
-            }
+            "WMS"
         ],
         "contacts": [
             {
@@ -86,7 +83,7 @@
                     "host"
                 ],
                 "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
-                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
+                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
                 "position": "National Inquiry Response Team",
                 "hoursOfService": "0700h - 1500h EST",
                 "contactInstructions": "email",
@@ -145,6 +142,5 @@
             "2023-01-30",
             ".."
         ]
-    },
-    "generated_by": "pygeometa 0.17.dev1"
+    }
 }

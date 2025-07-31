@@ -32,6 +32,7 @@
         ]
     },
     "properties": {
+        "identifier": "urn:wmo:md:ca-eccc-msc:2280b47c-fb7c-4bab-a632-33f59eb82385",
         "title": "North American Radar Extrapolation Composite",
         "description": "This product is the Radar Extrapolation Composite at 1 km resolution over the North American domain. It uses only the 6-minute high-resolution (1 km) radar composite (the one displayed on the different government public platforms) as input. Using a modification of the open source PySTEPS library, a motion field is computed, and radar echoes are projected forward in time. The motion is based on similarities between radar reflectivity in a time sequence at multiple spatial scales. Future radar reflectivity is extrapolated, followed by conversion to precipitation rates of MM/HR (Rain) or CM/HR (Snow). An output sequence of future radar is generated every 6 minutes. It is important to note that this output is only a projection of existing echoes with no account for the growth and decay that is expected in a real radar sequence. Errors will exist, especially near the edges of radar coverage, or near geographic features. Therefore, the product should be used with caution considering that no perfect solution can exist given the limits of predictability.",
         "themes": [
@@ -58,16 +59,12 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
+        "language": "en",
         "type": "dataset",
-        "language": {
-            "code": "en"
-        },
         "created": "2023-01-30T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            {
-                "name": "WMS"
-            }
+            "WMS"
         ],
         "contacts": [
             {
@@ -86,7 +83,7 @@
                     "host"
                 ],
                 "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
-                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
+                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
                 "position": "National Inquiry Response Team",
                 "hoursOfService": "0700h - 1500h EST",
                 "contactInstructions": "email",
@@ -138,6 +135,5 @@
             "2023-01-30",
             ".."
         ]
-    },
-    "generated_by": "pygeometa 0.17.dev1"
+    }
 }

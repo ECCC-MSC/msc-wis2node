@@ -32,6 +32,7 @@
         ]
     },
     "properties": {
+        "identifier": "urn:wmo:md:ca-eccc-msc:ee98e87e-3cce-4f88-86de-6ad4817aa246",
         "title": "Hurricane Tracks",
         "description": "Hurricane tracks and the hurricane response zone are issued by the Canadian Hurricane Centre, which provides track forecasts for tropical and post-tropical cyclones that pose a threat to Canada during the hurricane season, from June to November.",
         "themes": [
@@ -64,22 +65,14 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
+        "language": "en",
         "type": "dataset",
-        "language": {
-            "code": "en"
-        },
         "created": "2011-06-01T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            {
-                "name": "WMS"
-            },
-            {
-                "name": "GeoJSON"
-            },
-            {
-                "name": "SHP"
-            }
+            "SHP",
+            "WMS",
+            "GeoJSON"
         ],
         "contacts": [
             {
@@ -98,7 +91,7 @@
                     "host"
                 ],
                 "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
-                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
+                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
                 "position": "National Inquiry Response Team",
                 "hoursOfService": "0700h - 1500h EST",
                 "contactInstructions": "email",
@@ -175,6 +168,5 @@
             "2011-06-01",
             ".."
         ]
-    },
-    "generated_by": "pygeometa 0.17.dev1"
+    }
 }

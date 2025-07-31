@@ -32,6 +32,7 @@
         ]
     },
     "properties": {
+        "identifier": "urn:wmo:md:ca-eccc-msc:62667506-4f95-4bae-a841-0b63b08af701",
         "title": "Upper air temperature, pressure, humidity, and wind observations",
         "description": "Upper Air data are reports gathered by balloons which measure upper air conditions over particular location. This is the TEMP format from fixed land station, with the following observations Upper-level pressure, temperature, humidity and wind report. These BUFR products can be found under the bulletin headers - UE UK UL US [A/B][01-06] CWAO [01-31][0000-2300] [RRx/CCx].",
         "themes": [
@@ -64,16 +65,12 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
+        "language": "en",
         "type": "dataset",
-        "language": {
-            "code": "en"
-        },
         "created": "2018-11-16T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            {
-                "name": "GeoJSON"
-            }
+            "GeoJSON"
         ],
         "contacts": [
             {
@@ -92,7 +89,7 @@
                     "host"
                 ],
                 "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
-                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
+                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
                 "position": "National Inquiry Response Team",
                 "hoursOfService": "0700h - 1500h EST",
                 "contactInstructions": "email",
@@ -156,6 +153,5 @@
             "2018-11-16",
             ".."
         ]
-    },
-    "generated_by": "pygeometa 0.17.dev1"
+    }
 }

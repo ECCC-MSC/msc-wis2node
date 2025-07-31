@@ -32,6 +32,7 @@
         ]
     },
     "properties": {
+        "identifier": "urn:wmo:md:ca-eccc-msc:f3ec3d35-e9ca-521c-998a-a88db31c6205",
         "title": "Integrated Nowcasting System",
         "description": "The Integrated Nowcasting System (INCS) aims to forecast the weather in the very short term. It produces a consistent set of observed and forecasted weather elements from the observation time up to the next 12 hours for over 500 forecast points generally corresponding to observation stations over Canada. These forecasts are updated every hour. Hourly surface observations (METAR, SPECI) and synoptic observations are processed as well as weather radar, lightning and satellite observations. Numerical weather prediction models, statistical models and nowcasting systems are used in conjunction with the observations to produce a very short term forecast at surface level.",
         "themes": [
@@ -73,10 +74,8 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
+        "language": "en",
         "type": "dataset",
-        "language": {
-            "code": "en"
-        },
         "created": "2011-10-05T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "contacts": [
@@ -96,7 +95,7 @@
                     "host"
                 ],
                 "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
-                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
+                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
                 "position": "National Inquiry Response Team",
                 "hoursOfService": "0700h - 1500h EST",
                 "contactInstructions": "email",
@@ -150,6 +149,5 @@
             "2011-10-05",
             ".."
         ]
-    },
-    "generated_by": "pygeometa 0.17.dev1"
+    }
 }

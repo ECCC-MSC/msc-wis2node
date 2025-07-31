@@ -32,8 +32,9 @@
         ]
     },
     "properties": {
+        "identifier": "urn:wmo:md:ca-eccc-msc:803a6e2a-41ed-44c2-9eeb-1b5306b4048e",
         "title": "Global Deterministic Wave Prediction System",
-        "description": "The Global Deterministic Wave Prediction System (GDWPS) produces wave forecasts out to 240 hours in the future using the third generation spectral wave forecast model WaveWatch III® (WW3). The model is forced by the 10 meters winds and the ice concentration from the Global Deterministic Prediction System (GDPS). The ice concentration is used by the model to attenuate wave growth in areas covered by 25% to 75% ice and to suppress it for concentration above 75%. Forecast elements include significant wave height, peak period and primary swell height, direction and period.",
+        "description": "The Global Deterministic Wave Prediction System (GDWPS) produces wave forecasts out to 240 hours in the future using the third generation spectral wave forecast model WaveWatch III\u00ae (WW3). The model is forced by the 10 meters winds and the ice concentration from the Global Deterministic Prediction System (GDPS). The ice concentration is used by the model to attenuate wave growth in areas covered by 25% to 75% ice and to suppress it for concentration above 75%. Forecast elements include significant wave height, peak period and primary swell height, direction and period.",
         "themes": [
             {
                 "concepts": [
@@ -64,16 +65,12 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
+        "language": "en",
         "type": "dataset",
-        "language": {
-            "code": "en"
-        },
         "created": "2018-02-12T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            {
-                "name": "WMS"
-            }
+            "WMS"
         ],
         "contacts": [
             {
@@ -92,7 +89,7 @@
                     "host"
                 ],
                 "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
-                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
+                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
                 "position": "National Inquiry Response Team",
                 "hoursOfService": "0700h - 1500h EST",
                 "contactInstructions": "email",
@@ -154,6 +151,5 @@
             "2017-11-01",
             ".."
         ]
-    },
-    "generated_by": "pygeometa 0.17.dev1"
+    }
 }

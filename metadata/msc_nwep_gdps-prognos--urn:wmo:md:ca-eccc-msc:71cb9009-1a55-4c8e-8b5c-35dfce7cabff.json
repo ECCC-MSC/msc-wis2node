@@ -1,5 +1,5 @@
 {
-    "id": "urn:wmo:md:ca-eccc-msc:76747350-2faa-490e-90d1-0e5af6e66027",
+    "id": "urn:wmo:md:ca-eccc-msc:71cb9009-1a55-4c8e-8b5c-35dfce7cabff",
     "conformsTo": [
         "http://wis.wmo.int/spec/wcmp/2/conf/core"
     ],
@@ -9,43 +9,40 @@
         "coordinates": [
             [
                 [
-                    -141.01,
-                    41.67
+                    -149,
+                    40
                 ],
                 [
-                    -141.01,
-                    82.12
+                    -149,
+                    88
                 ],
                 [
-                    -52.62,
-                    82.12
+                    -42,
+                    88
                 ],
                 [
-                    -52.62,
-                    41.67
+                    -42,
+                    40
                 ],
                 [
-                    -141.01,
-                    41.67
+                    -149,
+                    40
                 ]
             ]
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:76747350-2faa-490e-90d1-0e5af6e66027",
-        "title": "Monthly Mean of Water Level or Flow",
-        "description": "The monthly mean is the average of daily mean values for a given month.",
+        "identifier": "urn:wmo:md:ca-eccc-msc:71cb9009-1a55-4c8e-8b5c-35dfce7cabff",
+        "title": "Global Deterministic Prediction System (GDPS) statistically post-processed by PROGNOS-MLR",
+        "description": "Statistical post-processing of forecasts from numerical weather and environmental models, including the Global Deterministic Prediction System (GDPS), helps reduce systematic biases and error variance in raw forecasts. This is achieved by establishing optimized statistical relationships between observations recorded at stations and numerical model outputs at nearby grid points. The PROGNOS system is a software package developed by Environment and Climate Change Canada that enables this. Relationships are built using the 'Model Output Statistics' (MOS) method and multiple linear regression (MLR). Currently, only the air temperature at 1.5 meters above the Earth's surface is statistically post-processed. The absence of statistically post-processed forecasts can be due to the unavailability of a statistical model caused by insufficient observation quality or quantity. The geographical region covered by this data includes the territory covered by Canadian meteorological stations and some American buoys. For the GDPS, statistically post-processed forecasts are available at the same issuance frequency as the raw forecasts produced by numerical models (e.g., 00Z, 12Z) and at hourly forecast lead times, from 00 to 84 hours, and then every 3 hours, from 87 to 168 hours.",
         "themes": [
             {
                 "concepts": [
                     {
-                        "id": "Water"
+                        "id": "Weather forecasts"
                     },
                     {
-                        "id": "Inland waters"
-                    },
-                    {
-                        "id": "Water management"
+                        "id": "Air temperature"
                     }
                 ],
                 "scheme": "https://canada.multites.net/cst/EAEAD1E6-7DD2-4997-BE7F-40BFB1CBE8A2/CST20230912.rdf"
@@ -53,7 +50,7 @@
             {
                 "concepts": [
                     {
-                        "id": "hydrology"
+                        "id": "weather"
                     }
                 ],
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
@@ -61,7 +58,7 @@
         ],
         "language": "en",
         "type": "dataset",
-        "created": "2018-09-27T00:00:00Z",
+        "created": "2025-07-23T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "contacts": [
             {
@@ -104,71 +101,22 @@
             }
         ],
         "keywords": [
-            "Historical",
-            "Archive",
-            "Hydrology",
-            "Hydrometric",
-            "Streamflow",
-            "Discharge",
-            "Water level",
-            "Water quantity",
-            "Sediment concentration",
-            "Water",
-            "National (CA)",
-            "Observation",
-            "Measurement"
+            "Statistical post-processing",
+            "Machine learning",
+            "Multiple Linear Regression",
+            "PROGNOS",
+            "Environmental forecast",
+            "Point forecast"
         ],
         "wmo:dataPolicy": "core"
     },
     "links": [
         {
-            "href": "https://api.weather.gc.ca/collections/hydrometric-monthly-mean/items/",
-            "type": "application/geo+json",
-            "rel": "items",
-            "title": "hydrometric-monthly-mean"
-        },
-        {
-            "href": "https://api.weather.gc.ca/collections/hydrometric-stations/items/",
-            "type": "application/geo+json",
-            "rel": "items",
-            "title": "hydrometric-stations"
-        },
-        {
-            "href": "https://api.weather.gc.ca/collections/hydrometric-daily-mean/items/",
-            "type": "application/geo+json",
-            "rel": "items",
-            "title": "hydrometric-daily-mean"
-        },
-        {
-            "href": "https://api.weather.gc.ca/collections/hydrometric-annual-statistics/items/",
-            "type": "application/geo+json",
-            "rel": "items",
-            "title": "hydrometric-annual-statistics"
-        },
-        {
-            "href": "https://api.weather.gc.ca/collections/hydrometric-annual-peaks/items/",
-            "type": "application/geo+json",
-            "rel": "items",
-            "title": "hydrometric-annual-peaks"
-        },
-        {
-            "href": "https://wateroffice.ec.gc.ca/mainmenu/historical_data_index_e.html",
-            "type": "text/html",
-            "rel": "about",
-            "title": "Historical Hydrometric Data"
-        },
-        {
-            "href": "https://www.canada.ca/en/environment-climate-change/services/water-overview/quantity/monitoring/survey/data-products-services/national-archive-hydat.html",
-            "type": "text/html",
-            "rel": "about",
-            "title": "National Water Data Archive"
-        },
-        {
             "href": "mqtts://hpfx.collab.science.gc.ca:8883",
             "type": "application/geo+json",
             "rel": "items",
             "title": "MSC Datamart MQTT",
-            "channel": "origin/a/wis2/ca-eccc-msc/data/core/hydrology/experimental"
+            "channel": "origin/a/wis2/ca-eccc-msc/data/core/weather/prediction/forecast/medium-range/deterministic/global"
         },
         {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
@@ -179,7 +127,7 @@
     ],
     "time": {
         "interval": [
-            "1850-01-01",
+            "2025-07-23",
             ".."
         ]
     }

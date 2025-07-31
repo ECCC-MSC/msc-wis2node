@@ -32,6 +32,7 @@
         ]
     },
     "properties": {
+        "identifier": "urn:wmo:md:ca-eccc-msc:36129cbc-3997-4b8e-a8bf-5fb44492134d",
         "title": "Water Cycle Prediction System - Ocean-Atmosphere",
         "description": "WCPS-coupled forecast is the component in the Water Cycle Prediction System (WCPS) that provides the coupled atmosphere-ocean-sea ice forecasts at a 1km resolution (0.008 x 0.008 degree) over the Great Lakes, St. Lawrence River and the Gulf of St. Lawrence. It launches 4 times a day at 00, 06, 12, and 18 UTC and produces 84 hours forecast, based on the atmospheric model GEM, coupled with the ocean-ice model NEMO-CICE. The products from WCPS-coupled forecasts are (1) GEM : surface air temperatures, surface wind velocities, and surface runoff (2) NEMO-CICE : variety of lake/ocean sea ice variables, for example, lake levels and temperatures. They are designed to help forecasters issuing bulletins and warnings in ice-infestested waters for navigation, water level alert, emergency response, Search and Rescue, and CIS Sea Ice forecast.",
         "themes": [
@@ -70,16 +71,12 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
+        "language": "en",
         "type": "dataset",
-        "language": {
-            "code": "en"
-        },
         "created": "2022-03-16T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            {
-                "name": "WMS"
-            }
+            "WMS"
         ],
         "contacts": [
             {
@@ -98,7 +95,7 @@
                     "host"
                 ],
                 "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
-                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
+                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
                 "position": "National Inquiry Response Team",
                 "hoursOfService": "0700h - 1500h EST",
                 "contactInstructions": "email",
@@ -158,6 +155,5 @@
             "2019-03-04",
             ".."
         ]
-    },
-    "generated_by": "pygeometa 0.17.dev1"
+    }
 }
