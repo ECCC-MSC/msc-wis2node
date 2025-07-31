@@ -102,7 +102,7 @@
             "National (CA)",
             "Atmosphere"
         ],
-        "wmo:dataPolicy": "core"
+        "wmo:dataPolicy": "recommended"
     },
     "links": [
         {
