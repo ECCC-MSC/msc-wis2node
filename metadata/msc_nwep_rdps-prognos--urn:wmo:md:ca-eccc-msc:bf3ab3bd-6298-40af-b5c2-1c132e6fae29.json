@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:bf3ab3bd-6298-40af-b5c2-1c132e6fae29",
         "title": "Regional Deterministic Prediction System (RDPS) statistically post-processed by PROGNOS-MLR",
         "description": "Statistical post-processing of forecasts from numerical weather and environmental models, including the Regional Deterministic Prediction System (RDPS), helps reduce systematic biases and error variance in raw forecasts. This is achieved by establishing optimized statistical relationships between observations recorded at stations and numerical model outputs at nearby grid points. The PROGNOS system is a software package developed by Environment and Climate Change Canada that enables this. Relationships are built using the 'Model Output Statistics' (MOS) method and multiple linear regression (MLR). The statistically post-processed weather and environmental variables include air and dew point temperatures at 1.5 meters above the Earth's surface, as well as wind speed and direction at 10 meters above the Earth's surface or at anemometer level in the case of a buoy. The absence of statistically post-processed forecasts can be due to the unavailability of a statistical model caused by insufficient observation quality or quantity. Furthermore, the absence of wind direction forecasts can also be due to predicted wind components being too weak to provide a reliable result. Wind direction and speed forecasts are derived from independent statistical post-processing models. The geographical region covered by this data includes the territory covered by Canadian meteorological stations and some American buoys. The geographical region covered by this data includes the territory covered by Canadian meteorological stations and some American buoys. For the RDPS, statistically post-processed forecasts are available at the same issuance frequency as the raw forecasts produced by numerical models (e.g., 00Z, 06Z, 12Z, 18Z) and at hourly forecast lead times, from 00 to 84 hours.",
         "themes": [
@@ -56,8 +55,10 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
         "type": "dataset",
+        "language": {
+            "code": "en"
+        },
         "created": "2025-07-23T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "contacts": [
@@ -77,7 +78,7 @@
                     "host"
                 ],
                 "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
-                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
+                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
                 "position": "National Inquiry Response Team",
                 "hoursOfService": "0700h - 1500h EST",
                 "contactInstructions": "email",
@@ -130,5 +131,6 @@
             "2025-07-23",
             ".."
         ]
-    }
+    },
+    "generated_by": "pygeometa 0.17.0"
 }

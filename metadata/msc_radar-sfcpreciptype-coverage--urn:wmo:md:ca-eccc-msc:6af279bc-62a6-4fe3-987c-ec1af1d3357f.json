@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:6af279bc-62a6-4fe3-987c-ec1af1d3357f",
         "title": "Dynamic radar coverage for surface precipitation type",
         "description": "Radar coverage is provided to dynamically display the zones covered by the radars every 6 minutes, and to provide information on the availability (or not) of the contributing radars as well as on the areas of overlap.",
         "themes": [
@@ -59,12 +58,16 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
         "type": "dataset",
+        "language": {
+            "code": "en"
+        },
         "created": "2023-01-30T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "WMS"
+            {
+                "name": "WMS"
+            }
         ],
         "contacts": [
             {
@@ -83,7 +86,7 @@
                     "host"
                 ],
                 "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
-                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
+                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
                 "position": "National Inquiry Response Team",
                 "hoursOfService": "0700h - 1500h EST",
                 "contactInstructions": "email",
@@ -135,5 +138,6 @@
             "2023-01-30",
             ".."
         ]
-    }
+    },
+    "generated_by": "pygeometa 0.17.0"
 }

@@ -32,9 +32,8 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:5e8247ca-891e-5686-a6a5-0631c50fe2db",
         "title": "Marine Forecasts and Warnings",
-        "description": "Environment Canada (EC) provides a marine forecasting service to mariners and marine interests. This enables them to make informed decisions about marine weather conditions that may impact their safety, security or operations. EC also provides marine forecasts in order to meet Canada\u2019s treaty obligations under the International Maritime Organization\u2019s Safety Of Life At Sea (SOLAS) Convention.",
+        "description": "Environment Canada (EC) provides a marine forecasting service to mariners and marine interests. This enables them to make informed decisions about marine weather conditions that may impact their safety, security or operations. EC also provides marine forecasts in order to meet Canada’s treaty obligations under the International Maritime Organization’s Safety Of Life At Sea (SOLAS) Convention.",
         "themes": [
             {
                 "concepts": [
@@ -71,8 +70,10 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
         "type": "dataset",
+        "language": {
+            "code": "en"
+        },
         "created": "2010-09-23T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "contacts": [
@@ -92,7 +93,7 @@
                     "host"
                 ],
                 "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
-                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
+                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
                 "position": "National Inquiry Response Team",
                 "hoursOfService": "0700h - 1500h EST",
                 "contactInstructions": "email",
@@ -155,5 +156,6 @@
             "1871-01-01",
             ".."
         ]
-    }
+    },
+    "generated_by": "pygeometa 0.17.0"
 }

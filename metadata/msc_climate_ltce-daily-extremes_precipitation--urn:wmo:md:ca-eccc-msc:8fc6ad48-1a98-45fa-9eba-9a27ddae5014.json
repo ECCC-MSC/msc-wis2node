@@ -32,8 +32,7 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:8fc6ad48-1a98-45fa-9eba-9a27ddae5014",
-        "title": "Long Term Climate Extremes, Daily Extremes of Records \u2013 Precipitation",
+        "title": "Long Term Climate Extremes, Daily Extremes of Records – Precipitation",
         "description": "The daily climate records database, also known as Long Term Climate Extremes (LTCE), was developed to address the fragmentation of climate information due to station changes (opening, closing, relocation, etc.) over time. For approximately 750 locations in Canada, \"virtual\" climate stations have been developed by joining (threading) climate data for an urban location, from nearby stations to make long-term records. Each long-term record consists of the extremes (record values) of daily maximum/minimum temperatures, total precipitation and snowfall for each day of the year. Many of the longest data sets of extremes date as far back as the 1800s. This data provides the daily extremes of record for Precipitation for each day of the year. Daily elements include: Greatest Precipitation.",
         "themes": [
             {
@@ -56,8 +55,10 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
         "type": "dataset",
+        "language": {
+            "code": "en"
+        },
         "created": "2021-02-15T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "contacts": [
@@ -77,7 +78,7 @@
                     "host"
                 ],
                 "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
-                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
+                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
                 "position": "National Inquiry Response Team",
                 "hoursOfService": "0700h - 1500h EST",
                 "contactInstructions": "email",
@@ -133,5 +134,6 @@
             "1840-05-01",
             ".."
         ]
-    }
+    },
+    "generated_by": "pygeometa 0.17.0"
 }

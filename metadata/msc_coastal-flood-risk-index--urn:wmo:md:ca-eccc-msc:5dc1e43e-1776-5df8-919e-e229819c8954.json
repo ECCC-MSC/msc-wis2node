@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:5dc1e43e-1776-5df8-919e-e229819c8954",
         "title": "Coastal Flooding Risk Index [experimental]",
         "description": "The Coastal Flooding Risk Index is a geo- and time-referenced polygon product issued by the Meteorological Service of Canada (MSC) to articulate the coastal flooding risk, impact and probability. Products are issued daily by Storm Prediction Centres and are intended to provide early notification, out to 5 days, of coastal flooding due to astronomical tide, storm surge and wave impacts.",
         "themes": [
@@ -59,8 +58,10 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
         "type": "dataset",
+        "language": {
+            "code": "en"
+        },
         "created": "2024-06-28T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "contacts": [
@@ -80,7 +81,7 @@
                     "host"
                 ],
                 "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
-                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
+                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
                 "position": "National Inquiry Response Team",
                 "hoursOfService": "0700h - 1500h EST",
                 "contactInstructions": "email",
@@ -136,5 +137,6 @@
             "2024-06-28",
             ".."
         ]
-    }
+    },
+    "generated_by": "pygeometa 0.17.0"
 }

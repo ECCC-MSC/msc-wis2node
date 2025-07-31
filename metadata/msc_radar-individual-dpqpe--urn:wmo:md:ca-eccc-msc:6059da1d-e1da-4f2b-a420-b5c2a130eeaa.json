@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:6059da1d-e1da-4f2b-a420-b5c2a130eeaa",
         "title": "Weather Radar - DPQPE",
         "description": "DPQPE product: DPQPE stands for: Dual Polarization Quantitative Precipitation Estimation. The DPQPE product is available only for S-Band radars. It is a two-dimensional representation of the precipitation rate estimated by the lowest sweep of the radar (elevation angle of 0.4 degrees for the majority of S-Band radars). Thus, the precipitation rate is estimated as close to the earth's surface as possible. The DPQPE product is based, among other things, on a series of polarimetric processing steps (quality control) to eliminate non-meteorological artifacts from the raw data (volumetric scans). It renders in mm/h for rain and cm/h for snow. This product is calculated with a maximum coverage range of 240 km.",
         "themes": [
@@ -62,8 +61,10 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
         "type": "dataset",
+        "language": {
+            "code": "en"
+        },
         "created": "2023-03-21T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "contacts": [
@@ -83,7 +84,7 @@
                     "host"
                 ],
                 "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
-                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
+                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
                 "position": "National Inquiry Response Team",
                 "hoursOfService": "0700h - 1500h EST",
                 "contactInstructions": "email",
@@ -134,5 +135,6 @@
             "1871-01-01",
             ".."
         ]
-    }
+    },
+    "generated_by": "pygeometa 0.17.0"
 }

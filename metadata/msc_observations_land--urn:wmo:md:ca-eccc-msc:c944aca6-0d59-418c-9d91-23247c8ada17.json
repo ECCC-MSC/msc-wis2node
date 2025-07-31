@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:c944aca6-0d59-418c-9d91-23247c8ada17",
         "title": "Hourly surface based observations",
         "description": "Hourly surface land observations support weather forecasting and climate monitoring, with meteorological data reported hourly from either data logger output tables 11 or 160. Campbell Scientific data loggers are utilized in this network to acquire, process, store, and transmit sensor data. Observations are encoded by the data loggers and transmitted individually via the Datalogger Retrieval System.",
         "themes": [
@@ -77,12 +76,16 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
         "type": "dataset",
+        "language": {
+            "code": "en"
+        },
         "created": "2022-04-11T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "GeoJSON"
+            {
+                "name": "GeoJSON"
+            }
         ],
         "contacts": [
             {
@@ -101,7 +104,7 @@
                     "host"
                 ],
                 "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
-                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
+                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
                 "position": "National Inquiry Response Team",
                 "hoursOfService": "0700h - 1500h EST",
                 "contactInstructions": "email",
@@ -168,5 +171,6 @@
             "2022-04-11",
             ".."
         ]
-    }
+    },
+    "generated_by": "pygeometa 0.17.0"
 }

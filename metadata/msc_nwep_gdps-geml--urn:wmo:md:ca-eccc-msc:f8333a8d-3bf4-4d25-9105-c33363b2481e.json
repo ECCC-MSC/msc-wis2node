@@ -32,9 +32,8 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:f8333a8d-3bf4-4d25-9105-c33363b2481e",
         "title": "Global Environmental eMuLator [experimental]",
-        "description": "The Global Environmental eMuLator (GEML) is a component of the experimental Global Deterministic Prediction System (GDPS) and is an artificial intelligence (AI)-based weather emulator trained on past atmospheric states. More specifically, this GEML model is based on data compatible with the \u00bc\u00b0, 13-level version of the GraphCast model (Lam et al. 2023) from DeepMind. It was trained and refined by ECCC, using ECMWF's ERA5 data (1979-2016) and operational analyses (2016-2021). The weights have been recalculated and are also available to the public. Forecasts are carried out twice daily, each with a 10-day lead time. It generates the reference large-scale temperature and horizontal wind fields, toward which GDPS's GEM forecasts are spectrally nudged. The geographical coverage is global with a horizontal resolution of 28 km. Data is available on 13 pressure levels, and employs a uniform latitude-longitude grid with 0.25-degree grid resolution. Six atmospheric variables defined on the 13 pressure levels, along with 4 surface variables are available every 6 hours.",
+        "description": "The Global Environmental eMuLator (GEML) is a component of the experimental Global Deterministic Prediction System (GDPS) and is an artificial intelligence (AI)-based weather emulator trained on past atmospheric states. More specifically, this GEML model is based on data compatible with the ¼°, 13-level version of the GraphCast model (Lam et al. 2023) from DeepMind. It was trained and refined by ECCC, using ECMWF's ERA5 data (1979-2016) and operational analyses (2016-2021). The weights have been recalculated and are also available to the public. Forecasts are carried out twice daily, each with a 10-day lead time. It generates the reference large-scale temperature and horizontal wind fields, toward which GDPS's GEM forecasts are spectrally nudged. The geographical coverage is global with a horizontal resolution of 28 km. Data is available on 13 pressure levels, and employs a uniform latitude-longitude grid with 0.25-degree grid resolution. Six atmospheric variables defined on the 13 pressure levels, along with 4 surface variables are available every 6 hours.",
         "themes": [
             {
                 "concepts": [
@@ -71,12 +70,16 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
         "type": "dataset",
+        "language": {
+            "code": "en"
+        },
         "created": "2025-06-12T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "WMS"
+            {
+                "name": "WMS"
+            }
         ],
         "contacts": [
             {
@@ -95,7 +98,7 @@
                     "host"
                 ],
                 "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
-                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
+                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
                 "position": "National Inquiry Response Team",
                 "hoursOfService": "0700h - 1500h EST",
                 "contactInstructions": "email",
@@ -133,7 +136,7 @@
             "href": "https://geo.weather.gc.ca/geomet?lang=en&service=WMS&request=GetCapabilities&layers=GDPS-GEML_25km_AirTemp_2m",
             "type": "application/xml",
             "rel": "data",
-            "title": "GDPS-GEML - Air temperature at 2m above ground [\u00b0C] [experimental]"
+            "title": "GDPS-GEML - Air temperature at 2m above ground [°C] [experimental]"
         },
         {
             "href": "mqtts://hpfx.collab.science.gc.ca:8883",
@@ -154,5 +157,6 @@
             "2025-06-12",
             ".."
         ]
-    }
+    },
+    "generated_by": "pygeometa 0.17.0"
 }

@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:37d76d67-0304-4e79-8a56-a839097ddd3d",
         "title": "North American radar surface precipitation type [1 km]",
         "description": "This product is a composite at 1 km resolution over the North American domain, which, for areas with radar coverage, can distinguish occurrence and type of precipitation and can recognize several levels of precipitation intensity. This product uses as input two high-resolution radar composites namely a North American composite cleaned using dual-polarization technology, another radar composite of particle (precipitation) classification as well as the surface temperature from the CMC High Regional Deterministic Prediction System (HRDPS) model. The SPTP product is produced every 6 minutes.",
         "themes": [
@@ -59,12 +58,16 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
         "type": "dataset",
+        "language": {
+            "code": "en"
+        },
         "created": "2023-01-30T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "WMS"
+            {
+                "name": "WMS"
+            }
         ],
         "contacts": [
             {
@@ -83,7 +86,7 @@
                     "host"
                 ],
                 "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
-                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
+                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
                 "position": "National Inquiry Response Team",
                 "hoursOfService": "0700h - 1500h EST",
                 "contactInstructions": "email",
@@ -135,5 +138,6 @@
             "2023-01-30",
             ".."
         ]
-    }
+    },
+    "generated_by": "pygeometa 0.17.0"
 }

@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:a99e4f08-65ad-532a-997d-3c3687253202",
         "title": "Thunderstorm Outlook [experimental]",
         "description": "The thunderstorm outlook data is a forecast product, which depicts the expected geographic areas of thunderstorms in Canada. Thunderstorm outlooks are issued by storm prediction centres across Canada during the convective season (May to October) each year. The product use the same source data that forecasters used in the prediction centres. Thunderstorm outlooks are issued once per day at around 12:00 pm regional local time. Since each office has their own standards of procedure, the forecasters are not required to send it at 12:00 pm. Nonetheless, the timestamp in the data is preconfigured to say it is issued at 12:00 pm. Subsequent amendments to existing thunderstorm outlooks are issued on an as-needed basis during the day and each amendment generates a new file. The thunderstorm outlook may not be updated with active severe weather alerts. Users are asked to check with the latest watches and warnings for the most current conditions.",
         "themes": [
@@ -59,8 +58,10 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
         "type": "dataset",
+        "language": {
+            "code": "en"
+        },
         "created": "2024-06-28T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "contacts": [
@@ -80,7 +81,7 @@
                     "host"
                 ],
                 "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
-                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
+                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
                 "position": "National Inquiry Response Team",
                 "hoursOfService": "0700h - 1500h EST",
                 "contactInstructions": "email",
@@ -138,5 +139,6 @@
             "2024-06-28",
             ".."
         ]
-    }
+    },
+    "generated_by": "pygeometa 0.17.0"
 }

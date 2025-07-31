@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:25106965-dc25-4399-8ad7-da0f47ce80e8",
         "title": "Weather Elements on Grid based on the Canadian Arctic Prediction System [experimental]",
         "description": "As part of a larger modernization plan for the Meteorological Service of Canada (MSC), Weather Elements on the Grid ('WEonG') based on the Canadian Arctic Prediction System (CAPS), amalgaming numerical and post-processed data using various diagnostic approaches are available to serve different forecasting programs (public, marine, aviation, air quality, etc.). Hourly concepts are thus produced from different algorithms using outputs from the CAPS. This data is available on the system's rotated lat-lon grid.",
         "themes": [
@@ -71,12 +70,16 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
         "type": "dataset",
+        "language": {
+            "code": "en"
+        },
         "created": "2025-06-19T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
-            "WMS"
+            {
+                "name": "WMS"
+            }
         ],
         "contacts": [
             {
@@ -95,7 +98,7 @@
                     "host"
                 ],
                 "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
-                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
+                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
                 "position": "National Inquiry Response Team",
                 "hoursOfService": "0700h - 1500h EST",
                 "contactInstructions": "email",
@@ -138,7 +141,7 @@
             "href": "https://geo.weather.gc.ca/geomet?lang=en&service=WMS&request=GetCapabilities&layers=CAPS-WEonG_3km_AirTemp",
             "type": "application/xml",
             "rel": "data",
-            "title": "CAPS-WEonG - Temperature [\u00b0C]"
+            "title": "CAPS-WEonG - Temperature [°C]"
         },
         {
             "href": "mqtts://hpfx.collab.science.gc.ca:8883",
@@ -159,5 +162,6 @@
             "2025-06-19",
             ".."
         ]
-    }
+    },
+    "generated_by": "pygeometa 0.17.0"
 }

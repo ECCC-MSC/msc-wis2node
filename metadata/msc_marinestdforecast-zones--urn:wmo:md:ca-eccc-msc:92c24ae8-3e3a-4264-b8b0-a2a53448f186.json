@@ -32,7 +32,6 @@
         ]
     },
     "properties": {
-        "identifier": "urn:wmo:md:ca-eccc-msc:92c24ae8-3e3a-4264-b8b0-a2a53448f186",
         "title": "Marine Standard Forecast Zones",
         "description": "The Marine Standard Forecast Zones layer is a collection of forecast location polygons that represents bounded (zone) locations at the Marine Program Standard level. The Marine Program standard level is used in most forecasts, warnings, watches, advisories and special marine weather statements. This layer is comprised mainly of water based Marine regions, Met Areas, Lakes, Great Lakes and many of the larger Inland water bodies. The layer is further comprised of four depictions, cartographic detailed (with proper shorelines and high resolution polygons), cartographic coarse (with generalized shorelines and low resolution polygons), and digital exaggerated (with exaggerated shorelines and low resolution polygons) and the hybrid (mix of cartographic detail and exaggerated). The digital layer (exaggerated) is a collection of polygons where shoreline boundaries are stretched inland. In this \"Exaggerated\" part of the layer, the boundaries are made smooth to reduce the number of polygon vertices. Boundaries of the forecast regions of this hybrid set are derived from the polygon boundaries of both the exaggerated digital, and the cartographic detailed set. Polygon boundaries along the shoreline of this set follow the exaggerated boundaries while the inland boundaries follow the detailed lines. The Marine Standard Forecast Zones layer is also presented in the polygon package in two coordinate systems, \"Projected\" (Lambert Conic Conformal) and \"Unprojected\" (Geographical Coordinated System).",
         "themes": [
@@ -56,8 +55,10 @@
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
             }
         ],
-        "language": "en",
         "type": "dataset",
+        "language": {
+            "code": "en"
+        },
         "created": "2013-08-02T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "contacts": [
@@ -77,7 +78,7 @@
                     "host"
                 ],
                 "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
-                "name": "National Inquiry Response Team / \u00c9quipe nationale de r\u00e9ponse des demandes du public",
+                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
                 "position": "National Inquiry Response Team",
                 "hoursOfService": "0700h - 1500h EST",
                 "contactInstructions": "email",
@@ -138,5 +139,6 @@
             "2013-08-02",
             ".."
         ]
-    }
+    },
+    "generated_by": "pygeometa 0.17.0"
 }
