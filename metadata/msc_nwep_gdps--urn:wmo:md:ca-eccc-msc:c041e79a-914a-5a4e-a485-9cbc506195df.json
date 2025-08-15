@@ -78,10 +78,10 @@
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "formats": [
             {
-                "name": "GRIB2"
+                "name": "WMS"
             },
             {
-                "name": "WMS"
+                "name": "GRIB2"
             }
         ],
         "contacts": [
