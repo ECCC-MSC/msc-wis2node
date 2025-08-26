@@ -73,7 +73,7 @@ make force-build
 make down
 make up
 
-cat > $NIGHTLYDIR/msc-wis2node-nightly.conf <<EOF
+cat > $BASEDIR/$NIGHTLYDIR/msc-wis2node-nightly.conf <<EOF
 <Location /msc-wis2node>
   ProxyPass http://localhost:4326/
   ProxyPassReverse http://localhost:4326/
