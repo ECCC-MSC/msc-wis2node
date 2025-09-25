@@ -1,5 +1,5 @@
 {
-    "id": "urn:wmo:md:ca-eccc-msc:ee98e87e-3cce-4f88-86de-6ad4817aa246",
+    "id": "urn:wmo:md:ca-eccc-msc:b2634521-33fe-4223-ba63-b4d14779bfe9",
     "conformsTo": [
         "http://wis.wmo.int/spec/wcmp/2/conf/core"
     ],
@@ -9,48 +9,45 @@
         "coordinates": [
             [
                 [
-                    -180,
-                    -90
+                    -126.539629,
+                    42.552435
                 ],
                 [
-                    -180,
-                    90
+                    -126.539629,
+                    57.880894
                 ],
                 [
-                    180,
-                    90
+                    -51.47535,
+                    57.880894
                 ],
                 [
-                    180,
-                    -90
+                    -51.47535,
+                    42.552435
                 ],
                 [
-                    -180,
-                    -90
+                    -126.539629,
+                    42.552435
                 ]
             ]
         ]
     },
     "properties": {
-        "title": "Hurricane Tracks",
-        "description": "Hurricane tracks and the hurricane response zone are issued by the Canadian Hurricane Centre, which provides track forecasts for tropical and post-tropical cyclones that pose a threat to Canada during the hurricane season, from June to November.",
+        "title": "Canadian Weather Radar Visibility",
+        "description": "Wind turbines can contaminate weather radar data which can compromise Environment and Climate Change Canada’s (ECCC) ability to provide quality weather forecasts and warnings to Canadians. In support of ECCC’s wind farm and weather radar siting guidelines, weather radar visibility layers were created for 150, 200 and 250 meters above ground level (mAGL) surface heights, which are representative of typical past and present wind turbine heights (base-to-tip or total) as well as potential future turbine heights given the trend. These visibility layers were generated from a viewshed analysis using ECCC’s 32 operational S-Band weather radars as observers and the three abovementioned heights as surface offsets. Within these visibility layers, turbines that are 150, 200 and 250 mAGL tall are likely to be visible to ECCC’s operational weather radars and therefore have the potential to contaminate weather radar data. A polygon layer containing 10 and 60 kilometer radius buffers around each radar denoting the turbine-radar impact zones are also included in this dataset.",
         "themes": [
             {
                 "concepts": [
                     {
-                        "id": "Weather warnings"
+                        "id": "Radar"
                     },
                     {
-                        "id": "Precipitation"
+                        "id": "Weather"
                     },
                     {
-                        "id": "Wind"
+                        "id": "Wind Energy"
                     },
                     {
-                        "id": "Storms"
-                    },
-                    {
-                        "id": "Floods"
+                        "id": "Cartography"
                     }
                 ],
                 "scheme": "https://canada.multites.net/cst/EAEAD1E6-7DD2-4997-BE7F-40BFB1CBE8A2/CST20230912.rdf"
@@ -68,19 +65,8 @@
         "language": {
             "code": "en"
         },
-        "created": "2011-06-01T00:00:00Z",
+        "created": "2025-09-15T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
-        "formats": [
-            {
-                "name": "SHP"
-            },
-            {
-                "name": "GeoJSON"
-            },
-            {
-                "name": "WMS"
-            }
-        ],
         "contacts": [
             {
                 "addresses": [
@@ -122,46 +108,32 @@
             }
         ],
         "keywords": [
-            "Hurricane centre",
-            "Weather and Climate",
-            "International",
-            "Atmosphere"
+            "Weather radar",
+            "Wind farm",
+            "Wind turbine",
+            "Interference"
         ],
         "wmo:dataPolicy": "core"
     },
     "links": [
         {
-            "href": "amqps://dd.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "trajectoires.hurricane.#"
+            "href": "https://www.canada.ca/en/environment-climate-change/services/weather-general-tools-resources/radar-overview/canada-visibility-maps.html",
+            "type": "text/html",
+            "rel": "about",
+            "title": "Canada radar visibility maps"
         },
         {
-            "href": "amqps://dd.alpha.weather.gc.ca/",
-            "type": "application/json",
-            "rel": "items",
-            "title": "MSC Datamart AMQP",
-            "channel": "hurricanes.#"
-        },
-        {
-            "href": "https://geo.weather.gc.ca/geomet?lang=en&service=WMS&request=GetCapabilities&layers=HURRICANE_CENTRE",
-            "type": "application/xml",
-            "rel": "data",
-            "title": "Hurricane Forecast Location"
-        },
-        {
-            "href": "https://api.weather.gc.ca/collections/hurricanes-track-realtime/items/",
-            "type": "application/geo+json",
-            "rel": "items",
-            "title": "hurricanes-track-realtime"
+            "href": "https://www.canada.ca/en/environment-climate-change/services/weather-general-tools-resources/radar-overview/wind-turbine-interference/guidelines-for-wind-turbine-weather-radar-siting.html",
+            "type": "text/html",
+            "rel": "about",
+            "title": "Guidelines for wind turbine and weather radar siting"
         },
         {
             "href": "mqtts://hpfx.collab.science.gc.ca:8883",
             "type": "application/geo+json",
             "rel": "items",
             "title": "MSC Datamart MQTT",
-            "channel": "origin/a/wis2/ca-eccc-msc/data/core/weather/prediction/forecast/medium-range/deterministic/trajectory"
+            "channel": "origin/a/wis2/ca-eccc-msc/data/core/weather/experimental"
         },
         {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
@@ -172,7 +144,7 @@
     ],
     "time": {
         "interval": [
-            "2011-06-01",
+            "2024-09-05",
             ".."
         ]
     },
