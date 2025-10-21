@@ -18,7 +18,7 @@ For more information, see the [architecture documentation](https://github.com/EC
 Dependencies are listed in [requirements.txt](requirements.txt). Dependencies
 are automatically installed during msc-wis2node installation.
 
-### Installing msc-wis2node
+### Installing and running msc-wis2node-management
 
 ```bash
 # setup virtualenv
@@ -29,16 +29,7 @@ source bin/activate
 # clone codebase and install
 git clone https://github.com/ECCC-MSC/msc-wis2node.git
 cd msc-wis2node/msc-wis2node-management
-python3 setup.py install
-
-# install sarracenia configurations
-# verify configuration directory (default is based on $HOME/.config/sr3)
-make check
-# install configurations
-make install
-
-# override the configuration default installation location
-make install SR3_CONFIG=/path/to/foo
+pip3 install .
 ```
 
 ## Running
@@ -144,9 +135,6 @@ pip3 install -r requirements-dev.txt
 
 # run tests like this:
 python3 tests/run_tests.py
-
-# or this:
-python3 setup.py test
 ```
 
 ### Code Conventions
