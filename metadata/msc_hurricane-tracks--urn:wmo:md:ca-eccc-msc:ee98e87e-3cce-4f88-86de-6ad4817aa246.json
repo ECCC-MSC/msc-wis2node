@@ -75,10 +75,10 @@
                 "name": "SHP"
             },
             {
-                "name": "GeoJSON"
+                "name": "WMS"
             },
             {
-                "name": "WMS"
+                "name": "GeoJSON"
             }
         ],
         "contacts": [
