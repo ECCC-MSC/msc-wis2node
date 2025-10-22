@@ -181,7 +181,7 @@ def delete_metadata_record(identifier: str) -> bool:
     :returns: `bool` of message publishing result
     """
 
-    topic = f'{TOPIC_PREFIX}/{CENTRE_ID}/metadata/{identifier}'
+    topic = f'{TOPIC_PREFIX}/{CENTRE_ID}/metadata'
     LOGGER.debug(f'Topic: {topic}')
 
     message = create_message(
