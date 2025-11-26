@@ -1,5 +1,5 @@
 {
-    "id": "urn:wmo:md:ca-eccc-msc:df2e6e1a-6057-4c4d-a509-94aa57705a8c",
+    "id": "urn:wmo:md:ca-eccc-msc:29c5a21a-8a5f-410d-b2a3-c3f3dadad86f",
     "conformsTo": [
         "http://wis.wmo.int/spec/wcmp/2/conf/core"
     ],
@@ -9,42 +9,39 @@
         "coordinates": [
             [
                 [
-                    -142,
-                    42
+                    -180,
+                    -90
                 ],
                 [
-                    -142,
-                    84
+                    -180,
+                    90
                 ],
                 [
-                    -52,
-                    84
+                    180,
+                    90
                 ],
                 [
-                    -52,
-                    42
+                    180,
+                    -90
                 ],
                 [
-                    -142,
-                    42
+                    -180,
+                    -90
                 ]
             ]
         ]
     },
     "properties": {
-        "title": "Hourly Climate Observations",
-        "description": "Canadian hourly climate data are available for public access from the ECCC/MSC's National Climate Archive. These are surface weather stations that produce hourly meteorological observations, taken each hour of the day. Only a subset of the total stations found on Environment and Climate Change Canada’s Historical Climate Data Page is shown due to size limitations.The priorities for inclusion are as follows: stations in cities with populations of 10000+, stations that are Regional Basic Climatological Network status and stations with 30+ years of data.",
+        "title": "Global Sea-Ice Analysis System",
+        "description": "Environment and Climate Change Canada provides global sea-ice analysis fields produced by its operational Global Deterministic Prediction System (GDPS) and interpolated to a rotated latitude-longitude grid with 0.09 x 0.09 degree resolution. The data files are in NetCDF format (NetCDF-4 classic model) and comply with the Climate and Forecast Conventions. The Global Sea-Ice Analysis System is an analysis system based on 3D-Var assimilation covering all waters (ocean and lakes) at a 10km horizontal resolution on a YIN-YANG grid and using a 6 hours persistence forecast for the background state. This analysis assimilates 4 times a day satellite remote sensing data and Canadian Ice Service ice charts.",
         "themes": [
             {
                 "concepts": [
                     {
-                        "id": "Climate"
+                        "id": "Ice"
                     },
                     {
-                        "id": "Climate archives"
-                    },
-                    {
-                        "id": "Climate change"
+                        "id": "Analysis"
                     }
                 ],
                 "scheme": "https://canada.multites.net/cst/EAEAD1E6-7DD2-4997-BE7F-40BFB1CBE8A2/CST20230912.rdf"
@@ -52,7 +49,10 @@
             {
                 "concepts": [
                     {
-                        "id": "climate"
+                        "id": "cryosphere"
+                    },
+                    {
+                        "id": "ocean"
                     }
                 ],
                 "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
@@ -62,7 +62,7 @@
         "language": {
             "code": "en"
         },
-        "created": "2022-03-09T00:00:00Z",
+        "created": "2021-05-03T00:00:00Z",
         "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
         "contacts": [
             {
@@ -105,25 +105,18 @@
             }
         ],
         "keywords": [
-            "Weather and Climate",
-            "National (CA)",
-            "Atmosphere"
+            "Sea-ice",
+            "Fraction"
         ],
         "wmo:dataPolicy": "core"
     },
     "links": [
         {
-            "href": "https://api.weather.gc.ca/collections/climate-hourly/items/",
-            "type": "application/geo+json",
-            "rel": "items",
-            "title": "climate-hourly"
-        },
-        {
             "href": "mqtts://hpfx.collab.science.gc.ca:8883",
             "type": "application/geo+json",
             "rel": "items",
             "title": "MSC Datamart MQTT",
-            "channel": "origin/a/wis2/ca-eccc-msc/data/core/climate/surface-based-observations/sub-daily"
+            "channel": "origin/a/wis2/ca-eccc-msc/data/core/cryosphere/experimental"
         },
         {
             "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
@@ -134,7 +127,7 @@
     ],
     "time": {
         "interval": [
-            "1953-01-01",
+            "2021-03-01",
             ".."
         ]
     },
