@@ -198,7 +198,7 @@ class WIS2Publisher:
             if self.cache.get(message['properties']['data_id']) is not None:
                 update_link = deepcopy(message['links'][0])
                 update_link['rel'] = 'update'
-                message['links'].append(update_link)
+                message['links'] = [update_link]
 
         LOGGER.info(json.dumps(message, indent=4))
         msg = (f'Publishing WIS2 notification message to '
