@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# Copyright (C) 2025 Tom Kralidis
+# Copyright (C) 2026 Tom Kralidis
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@ from typing import Union
 import uuid
 
 from paho.mqtt import publish
-from pywis_pubsub.publish import create_message
+from pywis_pubsub.publish import create_message, get_url_info
 import redis
 from sarracenia.flowcb import FlowCB
 import yaml
@@ -174,13 +174,15 @@ class WIS2Publisher:
 
         metadata_id = f"urn:wmo:md:{CENTRE_ID}:{dataset['metadata-id']}"
 
+        url_info = get_url_info(url)
+
         message = create_message(
             identifier=str(uuid.uuid4()),
             metadata_id=metadata_id,
             datetime_=datetime_,
             topic=topic,
             content_type=dataset['media-type'],
-            url=url
+            url_info=url_info
         )
 
         cache = dataset.get('cache', True)

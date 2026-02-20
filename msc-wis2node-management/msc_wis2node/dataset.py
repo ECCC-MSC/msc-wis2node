@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# Copyright (C) 2025 Tom Kralidis
+# Copyright (C) 2026 Tom Kralidis
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -30,7 +30,7 @@ import zipfile
 import click
 from paho.mqtt import publish
 from pygeometa.core import read_mcf
-from pywis_pubsub.publish import create_message
+from pywis_pubsub.publish import create_message, get_url_info
 import yaml
 
 from msc_wis2node import cli_options
@@ -184,12 +184,14 @@ def delete_metadata_record(identifier: str) -> bool:
     topic = f'{TOPIC_PREFIX}/{CENTRE_ID}/metadata'
     LOGGER.debug(f'Topic: {topic}')
 
+    url_info = get_url_info('https://dd.weather.gc.ca')
+
     message = create_message(
         identifier=str(uuid.uuid4()),
         metadata_id=identifier,
         topic=topic,
         content_type='application/geo+json',
-        url='https://dd.weather.gc.ca',
+        url_info=url_info,
         operation='delete'
     )
 
