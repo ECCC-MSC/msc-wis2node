@@ -1,6 +1,6 @@
 <script setup>
-import { NLayoutSider, NMenu } from 'naive-ui'
-import { computed } from 'vue'
+import { NLayoutSider, NLayoutHeader, NMenu } from 'naive-ui'
+import { computed, ref, onMounted } from 'vue'
 
 // Props
 const props = defineProps({
@@ -18,7 +18,7 @@ const props = defineProps({
   },
   collapsedWidth: {
     type: Number,
-    default: 64,
+    default: 30,
   },
   title: {
     type: String,
@@ -34,6 +34,27 @@ const activeKey = computed({
   get: () => props.value,
   set: (val) => emit('update:value', val),
 })
+
+const windowWidth = ref(window.innerWidth)
+const windowHeight = ref(window.innerHeight)
+
+const resizeSidebar = () => {
+  windowWidth.value = window.innerWidth
+  windowHeight.value = window.innerHeight
+  siderCollapsed.value = isMobile.value
+}
+
+const isMobile = computed(() => windowWidth.value < 1000)
+const siderCollapsed = ref(isMobile.value)
+
+onMounted(() => {
+  window.addEventListener('resize', resizeSidebar)
+})
+
+// Needed to implement side bar collapse
+function siderChange() {
+  siderCollapsed.value = !siderCollapsed.value
+}
 </script>
 
 <template>
@@ -43,10 +64,13 @@ const activeKey = computed({
     :collapsed-width="collapsedWidth"
     :width="width"
     show-trigger
+    :show-collapsed-content="false"
+    :collapsed="siderCollapsed"
+    v-on:update:collapsed="siderChange"
   >
-    <div class="app-sider-title">
+    <n-layout-header class="app-sider-title">
       {{ title }}
-    </div>
+    </n-layout-header>
 
     <n-menu v-model:value="activeKey" :options="options" />
   </n-layout-sider>
