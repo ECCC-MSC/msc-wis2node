@@ -2,7 +2,7 @@
 import { NLayoutHeader, NButton, NIcon, NSpace, NText } from 'naive-ui'
 import { SunnyOutline, MoonOutline } from '@vicons/ionicons5'
 
-const props = defineProps({
+defineProps({
   title: {
     type: String,
     default: 'Dashboard',
