@@ -190,10 +190,8 @@ class WIS2Publisher:
             LOGGER.info(f'Setting properties.cache={cache}')
             message['properties']['cache'] = False
 
-        LOGGER.debug('Removing system and version from data_id')
-        data_id = message['properties']['data_id']
-        tokens = data_id.split('/')
-        message['properties']['data_id'] = '/'.join(tokens[2:])
+        message['properties']['data_id'] = self._generate_data_id(message)
+        # message['properties'].pop('integrity')
 
         if self.cache is not None:
             LOGGER.info(f"Checking for duplicate: {message['properties']['data_id']}")  # noqa
@@ -229,6 +227,26 @@ class WIS2Publisher:
         LOGGER.info('Updating dataset distribution metrics')
         self._update_dataset_distribution_metrics(
             metadata_id, message['links'][0]['length'])
+
+    def _generate_data_id(self, message: dict) -> str:
+        """
+        Generate data_id for a data granule
+
+        :param message: `dict` of notification message
+
+        :returns: `str` of computed data_id
+        """
+
+        LOGGER.debug('Removing system and version from data_id')
+        data_id = message['properties']['data_id']
+        tokens = data_id.split('/')
+        data_id = '/'.join(tokens[2:])
+        metadata_id = message['properties']['metadata_id']
+        LOGGER.debug('Using first 8 characters of integrity value')
+        integrity = message['properties']['integrity']['value'][:8]
+        new_data_id = f'{metadata_id}--{data_id}--{integrity}'
+
+        return new_data_id
 
     def _update_dataset_distribution_metrics(self, metadata_id, filesize) -> None:  # noqa
         """
