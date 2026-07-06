@@ -29,9 +29,9 @@ sudo service cron start
 service cron status
 
 echo "Setting up MSC dataset config"
-msc-wis2node dataset setup
+/venv/bin/msc-wis2node dataset setup
 
 echo "starting sr3..."
-sr3 --logStdout start subscribe/dd.weather.gc.ca-all && sleep infinity
+/venv/bin/sr3 --logStdout start subscribe/dd.weather.gc.ca-all && sleep infinity
 
 echo "END /entrypoint.sh"

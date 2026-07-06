@@ -17,7 +17,7 @@
 #
 ###############################################################################
 
-FROM ubuntu:jammy
+FROM ubuntu:noble
 
 LABEL maintainer="tomkralidis@gmail.com"
 
@@ -25,7 +25,7 @@ ARG SR3_CONFIG /home/msc-wis2node/.config/sr3
 
 ENV TZ="Etc/UTC" \
     DEBIAN_FRONTEND="noninteractive" \
-    DEBIAN_PACKAGES="bash cron curl git python3-pip python3-setuptools sudo vim" \
+    DEBIAN_PACKAGES="bash cron curl git python3-pip python3-setuptools python3-venv sudo vim" \
     MSC_WIS2NODE_DATASET_CONFIG=/home/msc-wis2node/datasets.yml
 
 # copy the app 
@@ -35,10 +35,11 @@ COPY ./docker/msc-wis2node-management.cron /var/spool/cron/crontabs/msc-wis2node
 RUN apt-get update -y && \
     # install dependencies
     apt-get install -y ${DEBIAN_PACKAGES} && \
-    pip3 install --no-cache-dir -r /app/requirements.txt && \
+    python3 -m venv /venv && \
+    /venv/bin/pip3 install --no-cache-dir -r /app/requirements.txt && \
     # install msc-wis2node
     cd /app && \
-    pip3 install -e . && \
+    /venv/bin/pip3 install -e . && \
     chmod +x /app/docker/entrypoint.sh && \
     # cleanup
     apt autoremove -y && \
