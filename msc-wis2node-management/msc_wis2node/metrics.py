@@ -44,7 +44,7 @@ def get_metrics() -> dict:
     metrics = {}
     gdc_baseurl = f'{WIS2_GDC}/items/urn:wmo:md:ca-eccc-msc:'
 
-    r = redis.Redis().from_url(CACHE)
+    r = redis.Redis().from_url(CACHE, protocol=2)
 
     for key in r.scan_iter(DATASET_METRICS_KEY_PATTERN):
         LOGGER.debug(f'Key: {key}')
@@ -97,7 +97,7 @@ def delete_metrics() -> None:
     :returns: `None`
     """
 
-    r = redis.Redis().from_url(CACHE)
+    r = redis.Redis().from_url(CACHE, protocol=2)
     for key in r.scan_iter(DATASET_METRICS_KEY_PATTERN):
         LOGGER.debug(f'Deleting key: {key}')
         r.delete(key)

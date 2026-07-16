@@ -83,7 +83,7 @@ class WIS2Publisher:
         self.client_id = get_mqtt_client_id()
 
         if CACHE is not None:
-            self.cache = redis.Redis().from_url(CACHE)
+            self.cache = redis.Redis().from_url(CACHE, protocol=2)
 
         if BROKER_PORT == 8883:
             self.tls = get_mqtt_tls_settings()
