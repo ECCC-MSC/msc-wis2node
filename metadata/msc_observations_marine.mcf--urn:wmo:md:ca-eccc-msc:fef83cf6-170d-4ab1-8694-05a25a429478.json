@@ -1,0 +1,171 @@
+{
+    "id": "urn:wmo:md:ca-eccc-msc:fef83cf6-170d-4ab1-8694-05a25a429478",
+    "conformsTo": [
+        "http://wis.wmo.int/spec/wcmp/2/conf/core"
+    ],
+    "type": "Feature",
+    "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+            [
+                [
+                    [
+                        -140.8,
+                        41.83
+                    ],
+                    [
+                        -140.8,
+                        82.5
+                    ],
+                    [
+                        -52.6,
+                        82.5
+                    ],
+                    [
+                        -52.6,
+                        41.83
+                    ],
+                    [
+                        -140.8,
+                        41.83
+                    ]
+                ]
+            ]
+        ]
+    },
+    "properties": {
+        "title": "Hourly moored buoy marine data",
+        "description": "The MSC moored buoy network operates approximately 20-40 moored buoys, varying based on seasonal changes, along the West and East coasts, and inland lakes. These buoys include 3-meter discus buoys along the coasts and both 3 and 1.7-meter Watchkeeper buoys on inland lakes. The network utilizes two types of payloads, namely Watchman100 (WM100) and Watchman500 (WM500), with a transition to the latter since 2021. WM500 payloads offer full-time Iridium data transmission with additional wave and housekeeping elements reported at regular hourly intervals. Buoys with WM100 payloads primarily use satellite telemetry (GOES) for data delivery.",
+        "themes": [
+            {
+                "concepts": [
+                    {
+                        "id": "Meteorological data"
+                    },
+                    {
+                        "id": "Marine"
+                    },
+                    {
+                        "id": "Atmospheric pressure"
+                    },
+                    {
+                        "id": "Air Temperature"
+                    },
+                    {
+                        "id": "Wind"
+                    },
+                    {
+                        "id": "Wave"
+                    },
+                    {
+                        "id": "Oceans"
+                    },
+                    {
+                        "id": "Lakes"
+                    }
+                ],
+                "scheme": "https://canada.multites.net/cst/EAEAD1E6-7DD2-4997-BE7F-40BFB1CBE8A2/CST20230912.rdf"
+            },
+            {
+                "concepts": [
+                    {
+                        "id": "weather"
+                    }
+                ],
+                "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
+            }
+        ],
+        "type": "dataset",
+        "language": {
+            "code": "en"
+        },
+        "created": "2024-02-15T00:00:00Z",
+        "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
+        "formats": [
+            {
+                "name": "GeoJSON"
+            }
+        ],
+        "contacts": [
+            {
+                "addresses": [
+                    {
+                        "deliveryPoint": [
+                            "77 Westmorland Street, suite 260"
+                        ],
+                        "city": "Fredericton",
+                        "administrativeArea": "New Brunswick",
+                        "postalCode": "E3B 6Z4",
+                        "country": "Canada"
+                    }
+                ],
+                "roles": [
+                    "host"
+                ],
+                "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
+                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
+                "position": "National Inquiry Response Team",
+                "hoursOfService": "0700h - 1500h EST",
+                "contactInstructions": "email",
+                "phones": [
+                    {
+                        "value": "+18199972800"
+                    }
+                ],
+                "emails": [
+                    {
+                        "value": "ECWeather-Meteo@ec.gc.ca"
+                    }
+                ],
+                "links": [
+                    {
+                        "rel": "canonical",
+                        "type": "text/html",
+                        "href": "https://www.canada.ca/en/environment-climate-change.html"
+                    }
+                ]
+            }
+        ],
+        "keywords": [
+            "Station pressure",
+            "Maximum temperature",
+            "Minimum temperature",
+            "Mean temperature",
+            "Average temperature",
+            "Wind direction",
+            "Wind speed",
+            "Weather and Climate",
+            "National (CA)",
+            "Atmosphere"
+        ],
+        "wmo:dataPolicy": "core"
+    },
+    "links": [
+        {
+            "href": "mqtts://hpfx.collab.science.gc.ca:8883",
+            "type": "application/geo+json",
+            "rel": "items",
+            "title": "MSC Datamart MQTT",
+            "channel": "origin/a/wis2/ca-eccc-msc/data/core/ocean/surface-based-observations/moored-buoys-and-moorings"
+        },
+        {
+            "href": "https://api.weather.gc.ca/collections/bulletins-realtime/items?lang=en&f=json&issuer_code=CWAO&type=IO",
+            "type": "application/geo+json",
+            "rel": "collection",
+            "title": "bulletins-realtime"
+        },
+        {
+            "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
+            "type": "text/html",
+            "rel": "license",
+            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
+        }
+    ],
+    "time": {
+        "interval": [
+            "2022-10-22",
+            ".."
+        ]
+    },
+    "generated_by": "pygeometa 0.22.dev1"
+}

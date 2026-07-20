@@ -1,0 +1,191 @@
+{
+    "id": "urn:wmo:md:ca-eccc-msc:76747350-2faa-490e-90d1-0e5af6e66027",
+    "conformsTo": [
+        "http://wis.wmo.int/spec/wcmp/2/conf/core"
+    ],
+    "type": "Feature",
+    "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+            [
+                [
+                    [
+                        -141.01,
+                        41.67
+                    ],
+                    [
+                        -141.01,
+                        82.12
+                    ],
+                    [
+                        -52.62,
+                        82.12
+                    ],
+                    [
+                        -52.62,
+                        41.67
+                    ],
+                    [
+                        -141.01,
+                        41.67
+                    ]
+                ]
+            ]
+        ]
+    },
+    "properties": {
+        "title": "Monthly Mean of Water Level or Flow",
+        "description": "The monthly mean is the average of daily mean values for a given month.",
+        "themes": [
+            {
+                "concepts": [
+                    {
+                        "id": "Water"
+                    },
+                    {
+                        "id": "Inland waters"
+                    },
+                    {
+                        "id": "Water management"
+                    }
+                ],
+                "scheme": "https://canada.multites.net/cst/EAEAD1E6-7DD2-4997-BE7F-40BFB1CBE8A2/CST20230912.rdf"
+            },
+            {
+                "concepts": [
+                    {
+                        "id": "hydrology"
+                    }
+                ],
+                "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
+            }
+        ],
+        "type": "dataset",
+        "language": {
+            "code": "en"
+        },
+        "created": "2018-08-24T00:00:00Z",
+        "updated": "2022-10-13T00:00:00Z",
+        "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
+        "contacts": [
+            {
+                "addresses": [
+                    {
+                        "deliveryPoint": [
+                            "77 Westmorland Street, suite 260"
+                        ],
+                        "city": "Fredericton",
+                        "administrativeArea": "New Brunswick",
+                        "postalCode": "E3B 6Z4",
+                        "country": "Canada"
+                    }
+                ],
+                "roles": [
+                    "host"
+                ],
+                "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
+                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
+                "position": "National Inquiry Response Team",
+                "hoursOfService": "0700h - 1500h EST",
+                "contactInstructions": "email",
+                "phones": [
+                    {
+                        "value": "+18199972800"
+                    }
+                ],
+                "emails": [
+                    {
+                        "value": "ECWeather-Meteo@ec.gc.ca"
+                    }
+                ],
+                "links": [
+                    {
+                        "rel": "canonical",
+                        "type": "text/html",
+                        "href": "https://www.canada.ca/en/environment-climate-change.html"
+                    }
+                ]
+            }
+        ],
+        "keywords": [
+            "Historical",
+            "Archive",
+            "Hydrology",
+            "Hydrometric",
+            "Streamflow",
+            "Discharge",
+            "Water level",
+            "Water quantity",
+            "Sediment concentration",
+            "Water",
+            "National (CA)",
+            "Observation",
+            "Measurement"
+        ],
+        "wmo:dataPolicy": "core"
+    },
+    "links": [
+        {
+            "href": "https://api.weather.gc.ca/collections/hydrometric-monthly-mean/items/",
+            "type": "application/geo+json",
+            "rel": "items",
+            "title": "hydrometric-monthly-mean"
+        },
+        {
+            "href": "https://api.weather.gc.ca/collections/hydrometric-stations/items/",
+            "type": "application/geo+json",
+            "rel": "items",
+            "title": "hydrometric-stations"
+        },
+        {
+            "href": "https://api.weather.gc.ca/collections/hydrometric-daily-mean/items/",
+            "type": "application/geo+json",
+            "rel": "items",
+            "title": "hydrometric-daily-mean"
+        },
+        {
+            "href": "https://api.weather.gc.ca/collections/hydrometric-annual-statistics/items/",
+            "type": "application/geo+json",
+            "rel": "items",
+            "title": "hydrometric-annual-statistics"
+        },
+        {
+            "href": "https://api.weather.gc.ca/collections/hydrometric-annual-peaks/items/",
+            "type": "application/geo+json",
+            "rel": "items",
+            "title": "hydrometric-annual-peaks"
+        },
+        {
+            "href": "https://wateroffice.ec.gc.ca/mainmenu/historical_data_index_e.html",
+            "type": "text/html",
+            "rel": "about",
+            "title": "Historical Hydrometric Data"
+        },
+        {
+            "href": "https://www.canada.ca/en/environment-climate-change/services/water-overview/quantity/monitoring/survey/data-products-services/national-archive-hydat.html",
+            "type": "text/html",
+            "rel": "about",
+            "title": "National Water Data Archive"
+        },
+        {
+            "href": "mqtts://hpfx.collab.science.gc.ca:8883",
+            "type": "application/geo+json",
+            "rel": "items",
+            "title": "MSC Datamart MQTT",
+            "channel": "origin/a/wis2/ca-eccc-msc/data/core/hydrology/experimental"
+        },
+        {
+            "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
+            "type": "text/html",
+            "rel": "license",
+            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
+        }
+    ],
+    "time": {
+        "interval": [
+            "1850-01-01",
+            ".."
+        ]
+    },
+    "generated_by": "pygeometa 0.22.dev1"
+}

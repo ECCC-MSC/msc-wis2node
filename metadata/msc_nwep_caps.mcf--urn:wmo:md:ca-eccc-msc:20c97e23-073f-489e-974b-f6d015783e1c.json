@@ -1,0 +1,160 @@
+{
+    "id": "urn:wmo:md:ca-eccc-msc:20c97e23-073f-489e-974b-f6d015783e1c",
+    "conformsTo": [
+        "http://wis.wmo.int/spec/wcmp/2/conf/core"
+    ],
+    "type": "Feature",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -180,
+                    43.936456
+                ],
+                [
+                    -180,
+                    90
+                ],
+                [
+                    180,
+                    90
+                ],
+                [
+                    180,
+                    43.936456
+                ],
+                [
+                    -180,
+                    43.936456
+                ]
+            ]
+        ]
+    },
+    "properties": {
+        "title": "Canadian Arctic Prediction System [experimental]",
+        "description": "The Canadian Arctic Prediction System (CAPS) is an experimental coupled atmosphere-ocean-ice prediction system based on a limited-area configuration (LAM) of the Global Environmental Multiscale (GEM) model, coupled with the Nucleus of European Modeling of the Ocean (NEMO) and the Community ICe Code (CICE). It covers the entire Arctic basin with a horizontal grid resolution of approximately 3 km. The system CAPS is driven by ECCC's Global Deterministic Prediction System (GDPS), which provides initial and lateral boundary conditions for atmospheric fields. Initial hydrometeorological fields are recycled from the 12-hour forecast of the previous CAPS integration. In addition, the GDPS is used to force the ocean-ice model outside the coupled regions. Initial conditions for ocean-ice fields are taken from the Regional Ocean-Ice Prediction System (RIOPS). Ocean boundary conditions in the North Atlantic and North Pacific come from the GDPS. The system CAPS runs twice a day and is initialized at 00 and 12 UTC, respectively, with a 48-hour integration.",
+        "themes": [
+            {
+                "concepts": [
+                    {
+                        "id": "Weather forecasts"
+                    },
+                    {
+                        "id": "Precipitation"
+                    },
+                    {
+                        "id": "Air temperature"
+                    },
+                    {
+                        "id": "Humidity"
+                    },
+                    {
+                        "id": "Snow"
+                    },
+                    {
+                        "id": "Wind"
+                    },
+                    {
+                        "id": "Meteorological data"
+                    }
+                ],
+                "scheme": "https://canada.multites.net/cst/EAEAD1E6-7DD2-4997-BE7F-40BFB1CBE8A2/CST20230912.rdf"
+            },
+            {
+                "concepts": [
+                    {
+                        "id": "weather"
+                    }
+                ],
+                "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
+            }
+        ],
+        "type": "dataset",
+        "language": {
+            "code": "en"
+        },
+        "created": "2025-06-23T00:00:00Z",
+        "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
+        "formats": [
+            {
+                "name": "WMS"
+            }
+        ],
+        "contacts": [
+            {
+                "addresses": [
+                    {
+                        "deliveryPoint": [
+                            "77 Westmorland Street, suite 260"
+                        ],
+                        "city": "Fredericton",
+                        "administrativeArea": "New Brunswick",
+                        "postalCode": "E3B 6Z4",
+                        "country": "Canada"
+                    }
+                ],
+                "roles": [
+                    "host"
+                ],
+                "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
+                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
+                "position": "National Inquiry Response Team",
+                "hoursOfService": "0700h - 1500h EST",
+                "contactInstructions": "email",
+                "phones": [
+                    {
+                        "value": "+18199972800"
+                    }
+                ],
+                "emails": [
+                    {
+                        "value": "ECWeather-Meteo@ec.gc.ca"
+                    }
+                ],
+                "links": [
+                    {
+                        "rel": "canonical",
+                        "type": "text/html",
+                        "href": "https://www.canada.ca/en/environment-climate-change.html"
+                    }
+                ]
+            }
+        ],
+        "keywords": [
+            "Prediction",
+            "High resolution",
+            "Deterministic",
+            "Arctic"
+        ],
+        "wmo:dataPolicy": "core"
+    },
+    "links": [
+        {
+            "href": "https://geo.weather.gc.ca/geomet?lang=en&service=WMS&request=GetCapabilities&layers=CAPS_3km_AirTemp_2m",
+            "type": "application/xml",
+            "rel": "data",
+            "title": "CAPS - Air temperature at 2m above ground [°C]"
+        },
+        {
+            "href": "mqtts://hpfx.collab.science.gc.ca:8883",
+            "type": "application/geo+json",
+            "rel": "items",
+            "title": "MSC Datamart MQTT",
+            "channel": "origin/a/wis2/ca-eccc-msc/data/core/weather/prediction/forecast/short-range/deterministic/limited-area"
+        },
+        {
+            "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
+            "type": "text/html",
+            "rel": "license",
+            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
+        }
+    ],
+    "time": {
+        "interval": [
+            "2018-01-24",
+            ".."
+        ]
+    },
+    "generated_by": "pygeometa 0.22.dev1"
+}

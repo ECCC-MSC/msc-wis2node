@@ -1,0 +1,156 @@
+{
+    "id": "urn:wmo:md:ca-eccc-msc:3e0f265d-f33d-477f-b113-8e9c43c689b1",
+    "conformsTo": [
+        "http://wis.wmo.int/spec/wcmp/2/conf/core"
+    ],
+    "type": "Feature",
+    "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+            [
+                [
+                    [
+                        -72.0416665,
+                        41.9583335
+                    ],
+                    [
+                        -72.0416665,
+                        60.0415978
+                    ],
+                    [
+                        -44.2917685,
+                        60.0415978
+                    ],
+                    [
+                        -44.2917685,
+                        41.9583335
+                    ],
+                    [
+                        -72.0416665,
+                        41.9583335
+                    ]
+                ]
+            ]
+        ]
+    },
+    "properties": {
+        "title": "Coastal Flooding Risk Index",
+        "description": "The coastal flooding risk index in GeoJSON format is a geo and time referenced polygon product issued by the Meteorological Service of Canada (MSC) to articulate the coastal flooding risk, impact and probability. Products are issued daily by Storm Prediction Centres and intended to provide early notification, out to 5 days, of coastal flooding due to astronomical tide, storm surge and wave impacts.",
+        "themes": [
+            {
+                "concepts": [
+                    {
+                        "id": "Floods"
+                    },
+                    {
+                        "id": "Tides"
+                    },
+                    {
+                        "id": "Coastal waters"
+                    }
+                ],
+                "scheme": "https://canada.multites.net/cst/EAEAD1E6-7DD2-4997-BE7F-40BFB1CBE8A2/CST20230912.rdf"
+            },
+            {
+                "concepts": [
+                    {
+                        "id": "ocean"
+                    }
+                ],
+                "scheme": "https://codes.wmo.int/wis/topic-hierarchy/earth-system-discipline"
+            }
+        ],
+        "type": "dataset",
+        "language": {
+            "code": "en"
+        },
+        "created": "2023-06-15T00:00:00Z",
+        "updated": "2026-05-27T00:00:00Z",
+        "rights": "Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)",
+        "formats": [
+            {
+                "name": "GeoJSON"
+            }
+        ],
+        "contacts": [
+            {
+                "addresses": [
+                    {
+                        "deliveryPoint": [
+                            "77 Westmorland Street, suite 260"
+                        ],
+                        "city": "Fredericton",
+                        "administrativeArea": "New Brunswick",
+                        "postalCode": "E3B 6Z4",
+                        "country": "Canada"
+                    }
+                ],
+                "roles": [
+                    "host"
+                ],
+                "organization": "Government of Canada; Environment and Climate Change Canada; Meteorological Service of Canada",
+                "name": "National Inquiry Response Team / Équipe nationale de réponse des demandes du public",
+                "position": "National Inquiry Response Team",
+                "hoursOfService": "0700h - 1500h EST",
+                "contactInstructions": "email",
+                "phones": [
+                    {
+                        "value": "+18199972800"
+                    }
+                ],
+                "emails": [
+                    {
+                        "value": "ECWeather-Meteo@ec.gc.ca"
+                    }
+                ],
+                "links": [
+                    {
+                        "rel": "canonical",
+                        "type": "text/html",
+                        "href": "https://www.canada.ca/en/environment-climate-change.html"
+                    }
+                ]
+            }
+        ],
+        "keywords": [
+            "Risk",
+            "Index",
+            "Probability",
+            "Storm surge",
+            "Wave impact",
+            "Water",
+            "Weather and Climate",
+            "National (CA)",
+            "Ocean"
+        ],
+        "wmo:dataPolicy": "core"
+    },
+    "links": [
+        {
+            "href": "https://api.weather.gc.ca/collections/coastal_flooding_risk_index/items/",
+            "type": "application/geo+json",
+            "rel": "items",
+            "title": "coastal_flooding_risk_index"
+        },
+        {
+            "href": "mqtts://hpfx.collab.science.gc.ca:8883",
+            "type": "application/geo+json",
+            "rel": "items",
+            "title": "MSC Datamart MQTT",
+            "channel": "origin/a/wis2/ca-eccc-msc/data/core/ocean/experimental"
+        },
+        {
+            "href": "https://eccc-msc.github.io/open-data/licence/readme_en",
+            "type": "text/html",
+            "rel": "license",
+            "title": "Environment and Climate Change Canada Data Servers End-use Licence"
+        }
+    ],
+    "time": {
+        "interval": [
+            "2026-04-20",
+            ".."
+        ]
+    },
+    "generated_by": "pygeometa 0.22.dev1"
+}
