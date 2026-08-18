@@ -30,7 +30,7 @@ import zipfile
 import click
 from paho.mqtt import publish
 from pygeometa.core import read_mcf
-from pywis_pubsub.publish import create_message, get_url_info
+from pywis_pubsub.wnm.publish import create_message, get_url_info
 import yaml
 
 from msc_wis2node import cli_options

@@ -27,7 +27,7 @@ from typing import Union
 import uuid
 
 from paho.mqtt import publish
-from pywis_pubsub.publish import create_message, get_url_info
+from pywis_pubsub.wnm.publish import create_message, get_url_info
 import redis
 from sarracenia.flowcb import FlowCB
 import yaml
