@@ -17,7 +17,10 @@ const options = {
 export const useNotifMsg = defineStore('notifs', () => {
   // Values associated with the n-grid-items
   // notification statistics on Overview page
+  const totalMsgPerDay = ref([0, 0, 0, 0, 0, 0, 0])
+  const msgDateIndex = ref(0)
   const totalNumMsg = ref(0)
+  const numMsgCurrentDate = ref(0)
   const currMinNumMsg = ref(0)
   const avgMessages = ref(0)
   const timeUntilUpdate = ref(60)
@@ -43,6 +46,7 @@ export const useNotifMsg = defineStore('notifs', () => {
   notifClient.on('message', function () {
     currMinNumMsg.value = currMinNumMsg.value + 1
     totalNumMsg.value = totalNumMsg.value + 1
+    numMsgCurrentDate.value = numMsgCurrentDate.value + 1
   })
 
   // Update the msg/s value every min
@@ -69,11 +73,33 @@ export const useNotifMsg = defineStore('notifs', () => {
   }
   setInterval(countDown, 1000)
 
+  function updateMsgValuesDaily() {
+    if (msgDateIndex.value < 7) {
+      totalMsgPerDay.value[msgDateIndex.value] = numMsgCurrentDate.value
+      numMsgCurrentDate.value = 0
+      msgDateIndex.value = msgDateIndex.value + 1
+    } else {
+      // Ensure that only last 7 days data is kept
+      // Update totalMsgPerDay array and totalNumMsg
+      let newTotal = 0
+      for (let i=0; i<6; i++) {
+        totalMsgPerDay.value[i] = totalMsgPerDay.value[i+1]
+        newTotal = newTotal + totalMsgPerDay.value[i+1]
+      }
+      totalMsgPerDay.value[6] = numMsgCurrentDate.value
+      newTotal = newTotal + numMsgCurrentDate.value
+      totalNumMsg.value = newTotal
+      numMsgCurrentDate.value = 0
+    }
+  }
+  // Runs daily
+  setInterval(updateMsgValuesDaily, 86400000)
   return {
     totalNumMsg,
     currMinNumMsg,
     avgMessages,
     timeUntilUpdate,
     avgMsgChartData,
+    msgDateIndex
   }
 })
