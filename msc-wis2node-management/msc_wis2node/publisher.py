@@ -50,18 +50,21 @@ class WIS2FlowCB(FlowCB):
         :returns: None
         """
 
+        LOGGER.info('after_accept called')
         new_incoming = []
 
         for msg in worklist.incoming:
+            LOGGER.info(f'Message {msg}')
             try:
-                LOGGER.debug('Processing message')
+                LOGGER.info('Processing message')
 
                 wis2_publisher = WIS2Publisher()
 
                 if wis2_publisher.publish(msg['baseUrl'], msg['relPath']):
                     new_incoming.append(msg)
                 else:
-                    return
+                    LOGGER.info('False')
+                    continue
             except Exception as err:
                 LOGGER.error(f'Error publishing message: {err}', exc_info=True)
                 worklist.failed.append(msg)
@@ -104,14 +107,14 @@ class WIS2Publisher:
         dataset = self.identify(relative_path)
 
         if dataset is None:
-            LOGGER.debug('Dataset not found; skipping')
+            LOGGER.info('Dataset not found; skipping')
             return False
 
         relative_path2 = relative_path.lstrip('/')
         base_url2 = base_url.rstrip('/')
         url = f'{base_url2}/{relative_path2}'
 
-        LOGGER.debug(f'Publishing dataset notification: {url}')
+        LOGGER.info(f'Publishing dataset notification: {url}')
         self.publish_to_wis2(dataset, url)
 
         return True
@@ -127,32 +130,34 @@ class WIS2Publisher:
         """
 
         for dataset in self.datasets:
-            LOGGER.debug(f'Dataset: {dataset}')
+            LOGGER.info(f'Dataset: {dataset}')
             match = False
             subtopic_dirpath = self._subtopic2dirpath(dataset['subtopic'])
 
-            LOGGER.debug(f'Testing subtopic match: {subtopic_dirpath}')
+            LOGGER.info('Testing subtopic match')
+            LOGGER.info(f'Path: {path}')
+            LOGGER.info(f'Subtopic dirpath: {subtopic_dirpath}')
             if fnmatch(path, subtopic_dirpath):
-                LOGGER.debug('Found matching subtopic')
+                LOGGER.info('Found matching subtopic')
                 match = True
 
                 for regex in dataset.get('regexes', []):
                     match = False
-                    LOGGER.debug(f'Testing regex match: {regex}')
+                    LOGGER.info(f'Testing regex match: {regex}')
                     if re.search(regex, path) is not None:
-                        LOGGER.debug('Found matching regex')
+                        LOGGER.info('Found matching regex')
                         match = True
                         break
 
                 if match:
-                    LOGGER.debug('Found matching dataset definition')
+                    LOGGER.info('Found matching dataset definition')
                     return dataset
             else:
-                LOGGER.debug('NO MATCH')
-                LOGGER.debug(path)
-                LOGGER.debug(subtopic_dirpath)
+                LOGGER.info('NO MATCH')
+                LOGGER.info(path)
+                LOGGER.info(subtopic_dirpath)
 
-        LOGGER.debug('No match found')
+        LOGGER.info('No match found')
 
         return None
 
@@ -237,12 +242,12 @@ class WIS2Publisher:
         :returns: `str` of computed data_id
         """
 
-        LOGGER.debug('Removing system and version from data_id')
+        LOGGER.info('Removing system and version from data_id')
         data_id = message['properties']['data_id']
         tokens = data_id.split('/')
         data_id = '/'.join(tokens[2:])
         metadata_id = message['properties']['metadata_id']
-        LOGGER.debug('Using first 8 characters of integrity value')
+        LOGGER.info('Using first 8 characters of integrity value')
         integrity = message['properties']['integrity']['value'][:8]
         new_data_id = f'{metadata_id}--{data_id}--{integrity}'
 
@@ -266,13 +271,13 @@ class WIS2Publisher:
         total_files_cache_key = f'metrics_total_{today}_files'
         total_bytes_cache_key = f'metrics_total_{today}_bytes'
 
-        LOGGER.debug('Incrementing dataset number of files published')
+        LOGGER.info('Incrementing dataset number of files published')
         self.cache.incr(dataset_files_cache_key)
 
-        LOGGER.debug('Incrementing all total number of files published')
+        LOGGER.info('Incrementing all total number of files published')
         self.cache.incr(total_files_cache_key)
 
-        LOGGER.debug('Updating dataset total bytes')
+        LOGGER.info('Updating dataset total bytes')
         dataset_bytes = self.cache.get(dataset_bytes_cache_key)
 
         if dataset_bytes is None:
@@ -282,7 +287,7 @@ class WIS2Publisher:
                 dataset_bytes_cache_key, int(dataset_bytes) + filesize
             )
 
-        LOGGER.debug('Updating all total bytes')
+        LOGGER.info('Updating all total bytes')
         total_bytes = self.cache.get(total_bytes_cache_key)
 
         if total_bytes is None:
@@ -303,13 +308,13 @@ class WIS2Publisher:
         :returns: `str` of directory path
         """
 
-        LOGGER.debug(f'AMQP subtopic: {subtopic}')
+        LOGGER.info(f'AMQP subtopic: {subtopic}')
 
-        dirpath = '/' + subtopic.replace('*.', '/').replace('.', '/').rstrip('/#')  # noqa
+        dirpath = '/' + subtopic.replace('.*.', '/*/').replace('*.', '/').replace('.', '/').rstrip('/#')  # noqa
         dirpath = dirpath.replace('//', '/')
         dirpath = f'*{dirpath}*'
 
-        LOGGER.debug(f'directory path: {dirpath}')
+        LOGGER.info(f'directory path: {dirpath}')
 
         return dirpath
 
@@ -330,18 +335,18 @@ class WIS2Publisher:
         match = re.search(topic, pattern)
 
         if match is None:
-            LOGGER.debug(f'No match ({pattern} not in {topic})')
+            LOGGER.info(f'No match ({pattern} not in {topic})')
             return None
 
         groups = [int(m) for m in match.groups()]
-        LOGGER.debug(f'datetime regex groups found: {groups}')
+        LOGGER.info(f'datetime regex groups found: {groups}')
 
         if len(groups) < 3:
-            LOGGER.debug('Casting date')
+            LOGGER.info('Casting date')
             obj = date(*groups)
             value = obj.isoformat()
         else:
-            LOGGER.debug('Casting datetime')
+            LOGGER.info('Casting datetime')
             dt = datetime(*groups, tzinfo=timezone.utc)
             value = f'{dt.isoformat()}Z'
 
