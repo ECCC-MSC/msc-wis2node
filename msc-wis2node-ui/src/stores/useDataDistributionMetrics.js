@@ -286,10 +286,16 @@ export const useDataDistributionMetrics = defineStore('metrics', () => {
     fileTotals.value = []
     sizeTotals.value = []
     await fetchFileList()
-
-    const latest = files.value[files.value.length - 1]
-    await fetchFile(latest)
+    if (files.value.length > 0) {
+      const latest = files.value[files.value.length - 1]
+      await fetchFile(latest)
+    }
   }
+
+  async function refreshDaily() {
+    await refresh()
+  }
+  setInterval(refreshDaily, 86400000)
 
   return {
     // state

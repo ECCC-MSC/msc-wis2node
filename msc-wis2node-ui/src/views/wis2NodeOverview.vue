@@ -14,7 +14,7 @@ import ActivityCharts from '../components/ActivityCharts.vue'
 import MetricFilesData from '@/components/MetricFilesData.vue'
 
 const notifsStore = useNotifMsg()
-const { avgMessages, timeUntilUpdate, totalNumMsg } = storeToRefs(notifsStore)
+const { avgMessages, timeUntilUpdate, totalNumMsg, msgDateIndex } = storeToRefs(notifsStore)
 
 const errorsStore = useErrorMsg()
 const { totalNumErrors, totalElapsedTime } = storeToRefs(errorsStore)
@@ -40,7 +40,9 @@ const brokerTopic = import.meta.env.VITE_TOPIC_NOTIFICATION
         <n-card>
           <n-text depth="3">Total messages</n-text>
           <div class="stat-value">{{ totalNumMsg }}</div>
-          <n-text depth="3">in the last {{ totalElapsedTime }} minutes</n-text>
+          <n-text depth="3" v-if="msgDateIndex === 0">in the last {{ totalElapsedTime }} minutes</n-text>
+          <n-text depth="3" v-else-if="msgDateIndex === 1">across the previous day and the last {{ totalElapsedTime }} minutes of today</n-text>
+          <n-text depth="3" v-else>across the previous {{ msgDateIndex }} days and in the last {{ totalElapsedTime }} minutes of today</n-text>
         </n-card>
       </n-grid-item>
 
@@ -58,7 +60,9 @@ const brokerTopic = import.meta.env.VITE_TOPIC_NOTIFICATION
         <n-card>
           <n-text depth="3">Dropped / Error Messages</n-text>
           <div class="stat-value">{{ totalNumErrors }}</div>
-          <n-text type="error">in the last {{ totalElapsedTime }} minutes</n-text>
+          <n-text type="error" v-if="msgDateIndex === 0">in the last {{ totalElapsedTime }} minutes</n-text>
+          <n-text type="error" v-else-if="msgDateIndex === 1">across the previous day and the last {{ totalElapsedTime }} minutes of today</n-text>
+          <n-text type="error" v-else>across the previous {{ msgDateIndex }} days and in the last {{ totalElapsedTime }} minutes of today</n-text>
         </n-card>
       </n-grid-item>
     </n-grid>

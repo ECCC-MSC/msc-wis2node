@@ -94,6 +94,24 @@ export const useErrorMsg = defineStore('errors', () => {
   }
   setInterval(incrementErrorMins, 60000)
 
+  function lessThanLimit(err) {
+    const currentTime = new Date()
+    const postedTime = new Date(err.time)
+    const timeDifference = currentTime - postedTime
+    return (timeDifference / (1000 * 60 * 60 * 24) <= 7)
+  }
+
+  function updateStoredErrorsHourly() {
+    // Need to remove errors older than 7 days
+    errorsList.value = errorsList.value.filter(lessThanLimit)
+    totalNumErrors.value = errorsList.value.length
+  }
+  setInterval(updateStoredErrorsHourly, 3600000)
+
+  function resetElapsedTimeDaily() {
+    totalElapsedTime.value = 0
+  }
+  setInterval(resetElapsedTimeDaily, 86400000)
   return {
     totalNumErrors,
     totalElapsedTime,
