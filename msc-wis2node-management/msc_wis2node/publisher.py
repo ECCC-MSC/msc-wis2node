@@ -64,6 +64,7 @@ class WIS2FlowCB(FlowCB):
                     new_incoming.append(msg)
                 else:
                     LOGGER.info('False')
+                    worklist.rejected.append(msg)
                     continue
             except Exception as err:
                 LOGGER.error(f'Error publishing message: {err}', exc_info=True)
