@@ -36,7 +36,7 @@ jobs:
         bash validate-wcmp2.sh
     - name: Publish WNMs of new/updated WCMP2 records
       run: |
-        git diff --name-only HEAD^ HEAD | grep "\.json" | while IFS= read -r wcmp2file; do
+        git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" -- 'metadata/*.json' | while IFS= read -r wcmp2file; do
           echo "Publishing $wcmp2file"
           pywis-pubsub wnm publish --topic origin/a/wis2/${CENTRE_ID}/metadata --config config/pywis-pubsub-publish.yml -u https://eccc-msc.github.io/msc-wis2node/$wcmp2file -op update -v DEBUG
         done
