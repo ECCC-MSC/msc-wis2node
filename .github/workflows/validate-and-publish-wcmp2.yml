@@ -19,6 +19,7 @@ jobs:
       uses: actions/checkout@master
       with:
         ref: gh-pages
+        fetch-depth: 0
     - uses: actions/setup-python@v5
       name: Setup Python ${{ matrix.python-version }}
       with:
