@@ -8,8 +8,8 @@ on:
   push:
     branches:
       - 'gh-pages'
-    paths:
-      - 'metadata/*.json'
+#    paths:
+#      - 'metadata/*.json'
 
 jobs:
   main:
@@ -33,7 +33,9 @@ jobs:
         pywcmp bundle sync        
     - name: Validate WCMP2 records
       run: |
-        bash validate-wcmp2.sh
+        git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" -- 'metadata/*.json' | while IFS= read -r wcmp2file; do
+          pywcmp ets validate $wcmp2file
+        done
     - name: Publish WNMs of new/updated WCMP2 records
       run: |
         git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" -- 'metadata/*.json' | while IFS= read -r wcmp2file; do
